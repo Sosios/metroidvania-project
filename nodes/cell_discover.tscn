@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ddvj77xpwnr1x"]
+
+[ext_resource type="Script" uid="uid://bj2qp7afjef5r" path="res://nodes/cell_discover.gd" id="1_bkagh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkagh"]
+size = Vector2(480, 270)
+
+[node name="CellDiscover" type="Area2D" unique_id=553221677]
+collision_layer = 8
+script = ExtResource("1_bkagh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=395143464]
+position = Vector2(240, 135)
+shape = SubResource("RectangleShape2D_bkagh")
+debug_color = Color(0.18431373, 0.6431373, 0, 0.07058824)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

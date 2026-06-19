@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://0f8w36pd68gk"
+path="res://.godot/imported/monogram-bitmap.png-5a2bb60d8bdb5b1da45c03a4f2d9ceb5.fontdata"
+
+[deps]
+
+source_file="res://assets/Fonts/monogram-bitmap.png"
+dest_files=["res://.godot/imported/monogram-bitmap.png-5a2bb60d8bdb5b1da45c03a4f2d9ceb5.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray()
+kerning_pairs=PackedStringArray()
+columns=16
+rows=8
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2

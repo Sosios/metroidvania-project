@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dvexwf5iiejj8"]
+
+[ext_resource type="Script" uid="uid://dxah86mx7ikmv" path="res://nodes/gravity_shift.gd" id="1_jhuf3"]
+
+[node name="GravityShift" type="Area2D" unique_id=1192841641]
+collision_layer = 1024
+script = ExtResource("1_jhuf3")
+direction = "Right"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

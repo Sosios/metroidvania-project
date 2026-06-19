@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://bjvftcgxvs7po"]
+
+[ext_resource type="Texture2D" uid="uid://eeooqwxlxllk" path="res://sword_palette_wood.png" id="1_rjucg"]
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_wygj7"]
+[ext_resource type="Texture2D" uid="uid://2smncfwssspr" path="res://assets/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/sword_01a.png" id="2_rjucg"]
+
+[resource]
+script = ExtResource("1_wygj7")
+name = "Epee basique"
+type = "sword"
+texture = ExtResource("2_rjucg")
+palette = ExtResource("1_rjucg")
+attack = 5.0
+description = "Une epee tout ce qu'il y a plus de basique. ATK+5"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

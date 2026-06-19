@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cuirwss3x0plt"]
+
+[ext_resource type="Texture2D" uid="uid://c2tmmnl25k42p" path="res://assets/Sunny-land-files/Assets/environment/Props/platform-long.png" id="1_gfj5l"]
+[ext_resource type="Script" uid="uid://c1qm2ft7yiip8" path="res://scenes/objects/moving_platform.gd" id="1_ll65p"]
+
+[sub_resource type="Curve2D" id="Curve2D_ll65p"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -67, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfj5l"]
+size = Vector2(32, 16)
+
+[node name="MovingPlatform" type="Path2D" unique_id=1132493905]
+curve = SubResource("Curve2D_ll65p")
+script = ExtResource("1_ll65p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=729475948]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=696274453]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1306227012]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1000286507]
+shape = SubResource("RectangleShape2D_gfj5l")
+one_way_collision = true
+
+[node name="PlatformLong" type="Sprite2D" parent="AnimatableBody2D" unique_id=1710889482]
+texture = ExtResource("1_gfj5l")

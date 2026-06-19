@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c2obqt1a0xfax"]
+
+[ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="1_8dp8w"]
+[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="2_jb4ro"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lacew"]
+shader = ExtResource("1_8dp8w")
+shader_parameter/from = Color(0.53701174, 0.5370112, 0.5370113, 1)
+shader_parameter/to = Color(0.21358356, 0.3394541, 0.022021262, 1)
+shader_parameter/tolerance = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dp8w"]
+size = Vector2(16, 16)
+
+[node name="Platform" type="StaticBody2D" unique_id=159017599]
+collision_layer = 6
+collision_mask = 3
+
+[node name="Tiles" type="Sprite2D" parent="." unique_id=3084867]
+material = SubResource("ShaderMaterial_lacew")
+position = Vector2(0, 8)
+texture = ExtResource("2_jb4ro")
+region_enabled = true
+region_rect = Rect2(64, 32, 15.956314, 15.832191)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=389997442]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_8dp8w")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qed8vtrml2bj"]
+
+[ext_resource type="Script" uid="uid://cggp0ylp3fobr" path="res://nodes/state_machine.gd" id="1_k8082"]
+
+[node name="StateMachine" type="Node" unique_id=594427277 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_k8082")
+initial_state = NodePath("")

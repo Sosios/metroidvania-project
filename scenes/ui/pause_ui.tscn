@@ -1,0 +1,930 @@
+[gd_scene format=3 uid="uid://bepixm2ukmcfs"]
+
+[ext_resource type="Script" uid="uid://bvgqcwm4vdwdc" path="res://scenes/ui/pause_ui.gd" id="1_8dn2d"]
+[ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_8dn2d"]
+[ext_resource type="PackedScene" uid="uid://bjwhjvghb2oi7" path="res://scenes/ui/pause_button.tscn" id="2_ghgjp"]
+[ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="3_yrwkb"]
+[ext_resource type="Texture2D" uid="uid://dpwklm5xkj6aq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="5_lauhp"]
+[ext_resource type="StyleBox" uid="uid://dwo03y8ish1qt" path="res://styles/focus.tres" id="5_mbdly"]
+[ext_resource type="PackedScene" uid="uid://cfh5xobje8wjd" path="res://scenes/ui/inventory_slot.tscn" id="6_i86gu"]
+[ext_resource type="Shader" uid="uid://oqb1ow5oiqq4" path="res://shaders/scout.gdshader" id="7_nw1ig"]
+[ext_resource type="Texture2D" uid="uid://chbv5jctjvafw" path="res://sword_palette.png" id="8_1wi1b"]
+[ext_resource type="Texture2D" uid="uid://eeooqwxlxllk" path="res://sword_palette_wood.png" id="9_xo6fl"]
+[ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="11_xo6fl"]
+
+[sub_resource type="Animation" id="Animation_mbdly"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(463, 124.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_top")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_right")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_bottom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_left")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_top")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_right")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_bottom")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Container2/Left:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, 123)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../Container2/Label:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 101)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Label:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_lauhp"]
+resource_name = "right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(449, 123), Vector2(449, 138), Vector2(449, 123), Vector2(449, 138), Vector2(449, 123)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.76666665, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.76666665, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.76666665, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Resume:theme_override_styles/focus:expand_margin_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.76666665, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_top")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_right")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MarginContainer/VBoxContainer/Options:theme_override_styles/focus:expand_margin_bottom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_left")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_top")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_right")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MarginContainer/VBoxContainer/Quit:theme_override_styles/focus:expand_margin_bottom")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [6.0, 2.0, 6.0, 2.0, 6.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Container2/Left:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(29, 123), Vector2(29, 137), Vector2(29, 123), Vector2(29, 137), Vector2(29, 123)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../Container2/Label:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 100), Vector2(0, 114), Vector2(0, 100), Vector2(0, 114), Vector2(0, 100)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Label:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(384, 104), Vector2(384, 118), Vector2(384, 104), Vector2(384, 118), Vector2(384, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbdly"]
+_data = {
+&"RESET": SubResource("Animation_mbdly"),
+&"right": SubResource("Animation_lauhp")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lauhp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbdly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i86gu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nw1ig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ibklw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wi1b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dn2d"]
+font = ExtResource("3_yrwkb")
+font_size = 32
+font_color = Color(0.2, 0.14509805, 0.05490196, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbdly"]
+texture = ExtResource("2_8dn2d")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(259, 180, 90, 25)
+modulate_color = Color(0.75, 0.638625, 0.50249994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i86gu"]
+texture = ExtResource("2_8dn2d")
+texture_margin_left = 8.0
+texture_margin_top = 9.0
+texture_margin_right = 8.0
+texture_margin_bottom = 9.0
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(148, 148, 24, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nw1ig"]
+texture = ExtResource("2_8dn2d")
+texture_margin_left = 8.0
+texture_margin_top = 9.0
+texture_margin_right = 8.0
+texture_margin_bottom = 9.0
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(148, 148, 24, 25)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mbdly"]
+font = ExtResource("3_yrwkb")
+font_color = Color(0.2, 0.14509805, 0.05490196, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lauhp"]
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(535, 181, 17, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1wi1b"]
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(567, 182, 17, 20)
+modulate_color = Color(0.7490196, 0.6392157, 0.5019608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibklw"]
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(567, 182, 17, 20)
+
+[sub_resource type="InputEventAction" id="InputEventAction_i86gu"]
+action = &"rb"
+
+[sub_resource type="Shortcut" id="Shortcut_nw1ig"]
+events = [SubResource("InputEventAction_i86gu")]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibklw"]
+shader = ExtResource("7_nw1ig")
+shader_parameter/palette_array_size = 9
+shader_parameter/input_palette_texture = ExtResource("8_1wi1b")
+shader_parameter/output_palette_texture = ExtResource("9_xo6fl")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+
+[sub_resource type="InputEventAction" id="InputEventAction_mbdly"]
+action = &"lb"
+
+[sub_resource type="Shortcut" id="Shortcut_mbdly"]
+events = [SubResource("InputEventAction_mbdly")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i86gu"]
+font = ExtResource("3_yrwkb")
+font_color = Color(0.2, 0.14509805, 0.05490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nv6fo"]
+font = ExtResource("11_xo6fl")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xo6fl"]
+font = ExtResource("11_xo6fl")
+font_color = Color(0.5647059, 0.38431373, 0.3647059, 1)
+
+[node name="PauseUI" type="CanvasLayer" unique_id=460654282]
+process_mode = 3
+script = ExtResource("1_8dn2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2146563752]
+root_node = NodePath("../TabContainer/Container")
+libraries/ = SubResource("AnimationLibrary_mbdly")
+autoplay = &"right"
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=570717477]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lauhp")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_mbdly")
+theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_i86gu")
+theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_nw1ig")
+theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_ibklw")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_1wi1b")
+current_tab = 0
+clip_tabs = false
+tabs_visible = false
+
+[node name="Container" type="Control" parent="TabContainer" unique_id=607698453]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TabContainer/Container" unique_id=1217253850]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -109.5
+offset_right = 144.5
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(11, 155, 26, 28)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Container" unique_id=730906727]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -109.5
+offset_right = 144.5
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Container/MarginContainer" unique_id=1998834390]
+process_mode = 3
+custom_minimum_size = Vector2(257, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Container/MarginContainer/VBoxContainer" unique_id=14388921]
+layout_mode = 2
+text = "Menu pause"
+label_settings = SubResource("LabelSettings_8dn2d")
+horizontal_alignment = 1
+
+[node name="Resume" parent="TabContainer/Container/MarginContainer/VBoxContainer" unique_id=1285086536 instance=ExtResource("2_ghgjp")]
+custom_minimum_size = Vector2(0.08, 36)
+layout_mode = 2
+focus_neighbor_right = NodePath("../../../Right")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mbdly")
+theme_override_styles/focus = ExtResource("5_mbdly")
+text = "Retourner au jeu"
+script = null
+
+[node name="Options" parent="TabContainer/Container/MarginContainer/VBoxContainer" unique_id=1032689657 instance=ExtResource("2_ghgjp")]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_i86gu")
+text = "Options
+"
+script = null
+
+[node name="Quit" parent="TabContainer/Container/MarginContainer/VBoxContainer" unique_id=370979567 instance=ExtResource("2_ghgjp")]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_nw1ig")
+text = "Quitter le jeu"
+script = null
+
+[node name="Label" type="Label" parent="TabContainer/Container" unique_id=835496533]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 104.0
+offset_right = 480.0
+offset_bottom = 118.000114
+text = "Inventaire"
+label_settings = SubResource("LabelSettings_mbdly")
+horizontal_alignment = 1
+
+[node name="Right" type="Button" parent="TabContainer/Container" unique_id=1604778368]
+custom_minimum_size = Vector2(17, 21)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -10.5
+offset_bottom = 10.501495
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-2, 2)
+theme_override_styles/normal = SubResource("StyleBoxTexture_lauhp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1wi1b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ibklw")
+theme_override_styles/focus = ExtResource("5_mbdly")
+shortcut = SubResource("Shortcut_nw1ig")
+
+[node name="Container2" type="Control" parent="TabContainer" unique_id=87501571]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TabContainer/Container2" unique_id=2124180736]
+process_mode = 3
+custom_minimum_size = Vector2(343, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -109.5
+offset_right = 190.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(11, 155, 26, 28)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Container2" unique_id=47307237]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -109.5
+offset_right = 190.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Container2/MarginContainer" unique_id=870543373]
+process_mode = 3
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Container2/MarginContainer/VBoxContainer" unique_id=1308325723]
+layout_mode = 2
+text = "Inventaire"
+label_settings = SubResource("LabelSettings_8dn2d")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Container2/MarginContainer/VBoxContainer" unique_id=1379453675]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=769588295]
+custom_minimum_size = Vector2(200, 114.92)
+layout_mode = 2
+theme_override_constants/h_separation = 114
+theme_override_constants/v_separation = 18
+columns = 2
+
+[node name="InventorySlot" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=2009577376 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=60200254 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=850828112 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1325487193 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=540038857 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=2011114213 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=958919441 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1483957810 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1386013906 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=707442528 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=479744380 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=537525755 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1738868204 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=925218029 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=988924536 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=859193767 instance=ExtResource("6_i86gu")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=737417712]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 66
+
+[node name="TextureRect" type="SubViewportContainer" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=725173194]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=1841312139]
+material = SubResource("ShaderMaterial_ibklw")
+rotation = -3.1415927
+scale = Vector2(2, -2)
+texture = ExtResource("5_lauhp")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 80)
+
+[node name="Left" type="Button" parent="TabContainer/Container2" unique_id=495752853]
+custom_minimum_size = Vector2(17, 21)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 29.0
+offset_top = 123.0
+offset_right = 46.0
+offset_bottom = 144.03998
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_styles/normal = SubResource("StyleBoxTexture_lauhp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1wi1b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ibklw")
+theme_override_styles/focus = ExtResource("5_mbdly")
+shortcut = SubResource("Shortcut_mbdly")
+
+[node name="Label" type="Label" parent="TabContainer/Container2" unique_id=1945743297]
+layout_mode = 0
+offset_top = 101.0
+offset_right = 96.0
+offset_bottom = 120.97695
+text = "Menu pause"
+label_settings = SubResource("LabelSettings_i86gu")
+horizontal_alignment = 1
+
+[node name="EquippedWeapon" type="Sprite2D" parent="TabContainer/Container2" unique_id=783661249]
+position = Vector2(363, 220)
+texture = ExtResource("2_8dn2d")
+region_enabled = true
+region_rect = Rect2(153, 57, 30, 30)
+
+[node name="WeaponSprite" type="Sprite2D" parent="TabContainer/Container2/EquippedWeapon" unique_id=777519242]
+
+[node name="EquippedArmor" type="Sprite2D" parent="TabContainer/Container2" unique_id=486367420]
+position = Vector2(407, 220)
+texture = ExtResource("2_8dn2d")
+region_enabled = true
+region_rect = Rect2(153, 57, 30, 30)
+
+[node name="ArmorSprite" type="Sprite2D" parent="TabContainer/Container2/EquippedArmor" unique_id=681697229]
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="TabContainer/Container2" unique_id=2063030193]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 19.0
+offset_right = 452.0
+offset_bottom = 88.0
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(107, 155, 26, 26)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Container2/NinePatchRect2" unique_id=122541897]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 26.0
+theme_override_constants/margin_left = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Container2/NinePatchRect2/MarginContainer" unique_id=1762647788]
+layout_mode = 2
+
+[node name="Niveau" type="HBoxContainer" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer" unique_id=1467597179]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Niveau" unique_id=858596446]
+layout_mode = 2
+text = "Niveau: "
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Label2" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Niveau" unique_id=1192100926]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Experience" type="HBoxContainer" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer" unique_id=608485748]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Experience" unique_id=1566060922]
+layout_mode = 2
+text = "Experience: "
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Label2" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Experience" unique_id=960522441]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Attaque2" type="HBoxContainer" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer" unique_id=109064685]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Attaque2" unique_id=1264908768]
+layout_mode = 2
+text = "Attaque: "
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Label2" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Attaque2" unique_id=830016572]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Défense" type="HBoxContainer" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer" unique_id=718344714]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Défense" unique_id=1123025184]
+layout_mode = 2
+text = "Defense: "
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="Label2" type="Label" parent="TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Défense" unique_id=2051509506]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nv6fo")
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="TabContainer/Container2" unique_id=879097757]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 237.0
+offset_right = 431.0
+offset_bottom = 268.0
+texture = ExtResource("2_8dn2d")
+region_rect = Rect2(107, 155, 26, 26)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect3" unique_id=1304037049]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 49.0
+offset_bottom = 27.0
+label_settings = SubResource("LabelSettings_xo6fl")
+
+[connection signal="pressed" from="TabContainer/Container/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="TabContainer/Container/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TabContainer/Container/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="TabContainer/Container2/Left" to="." method="_on_left_pressed"]

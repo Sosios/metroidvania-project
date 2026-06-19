@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://blssvmg60kdnq"]
+
+[ext_resource type="Texture2D" uid="uid://b0ca3m2wc32kk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_bovvr"]
+[ext_resource type="Script" uid="uid://fomfdld4cudy" path="res://scenes/levels/level_root.gd" id="1_dgq62"]
+[ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/player/player.tscn" id="3_b2cq8"]
+[ext_resource type="Script" uid="uid://cbc542ytf8y71" path="res://scenes/levels/camera_2d.gd" id="4_f5m83"]
+[ext_resource type="PackedScene" uid="uid://bd3uscjuont7o" path="res://globals/transition_layer.tscn" id="5_4po5r"]
+[ext_resource type="PackedScene" uid="uid://q8gsdgjbwhd5" path="res://scenes/ui/ui.tscn" id="6_2basl"]
+[ext_resource type="PackedScene" uid="uid://bepixm2ukmcfs" path="res://scenes/ui/pause_ui.tscn" id="6_adcqg"]
+[ext_resource type="PackedScene" uid="uid://b2kjk6m1oackm" path="res://map/map.tscn" id="7_o4pvo"]
+
+[node name="Level" type="Node2D" unique_id=342494649]
+script = ExtResource("1_dgq62")
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=1528076793]
+
+[node name="MovingPlatforms" type="Node2D" parent="." unique_id=1087597022]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=318202915]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1987599270]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(480, 0)
+repeat_times = 7
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1407988765]
+z_index = -2
+position = Vector2(-6, 258)
+texture = ExtResource("1_bovvr")
+region_enabled = true
+region_rect = Rect2(0, -175.36418, 480, 827.8642)
+
+[node name="Player" parent="." unique_id=971349243 instance=ExtResource("3_b2cq8")]
+position = Vector2(239, 138)
+collision_mask = 78
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=312523826]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 270
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("4_f5m83")
+
+[node name="Platforms" type="Node2D" parent="." unique_id=983043142]
+
+[node name="Areas" type="Node2D" parent="." unique_id=1586744123]
+
+[node name="TransitionAreas" type="Node2D" parent="." unique_id=1196047754]
+
+[node name="TransitionPoints" type="Node2D" parent="." unique_id=1995865306]
+
+[node name="CellAreas" type="Node2D" parent="." unique_id=995269704]
+
+[node name="TransitionLayer" parent="." unique_id=420257169 instance=ExtResource("5_4po5r")]
+
+[node name="UI" parent="." unique_id=833769472 instance=ExtResource("6_2basl")]
+
+[node name="Map" parent="UI" unique_id=894290120 instance=ExtResource("7_o4pvo")]
+visible = false
+
+[node name="PauseUI" parent="." unique_id=1193603374 instance=ExtResource("6_adcqg")]
+visible = false

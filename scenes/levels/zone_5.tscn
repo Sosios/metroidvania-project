@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cha3l73d54iyj"]
+
+[ext_resource type="PackedScene" uid="uid://blssvmg60kdnq" path="res://scenes/levels/level_root.tscn" id="1_jysf3"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="2_4x3hk"]
+
+[node name="Zone5" unique_id=342494649 instance=ExtResource("1_jysf3")]
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_4x3hk")]
+
+[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=443074881 instance=ExtResource("2_4x3hk")]
+position = Vector2(0, 270)
+
+[node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=99001433 instance=ExtResource("2_4x3hk")]
+position = Vector2(0, 540)
+
+[node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=950991967 instance=ExtResource("2_4x3hk")]
+position = Vector2(0, 810)

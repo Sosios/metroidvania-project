@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bjwhjvghb2oi7"]
+
+[ext_resource type="Script" uid="uid://dcswmkgdtp7be" path="res://scenes/ui/pause_button.gd" id="1_23jja"]
+[ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="1_kjjq4"]
+[ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_q8tpf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjjq4"]
+texture = ExtResource("1_q8tpf")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8tpf"]
+texture = ExtResource("1_q8tpf")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(259, 180, 90, 25)
+modulate_color = Color(0.75, 0.638625, 0.50249994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dog6p"]
+texture = ExtResource("1_q8tpf")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s75l5"]
+texture = ExtResource("1_q8tpf")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3p3uo"]
+texture = ExtResource("1_q8tpf")
+texture_margin_left = 8.0
+texture_margin_top = 9.0
+texture_margin_right = 8.0
+texture_margin_bottom = 9.0
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(148, 148, 24, 25)
+
+[node name="PauseButton" type="Button" unique_id=1862688846]
+custom_minimum_size = Vector2(0, 36)
+offset_right = 346.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.2, 0.14479999, 0.055999994, 1)
+theme_override_fonts/font = ExtResource("1_kjjq4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_kjjq4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q8tpf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dog6p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s75l5")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3p3uo")
+script = ExtResource("1_23jja")
