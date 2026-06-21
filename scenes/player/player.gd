@@ -3,6 +3,15 @@ extends CharacterBody2D
 
 @export var attack_1_area: Area2D
 @export var attack_2_area: Area2D
+@export var attack_3_area: Area2D
+@export var attack_4_area: Area2D
+@export var attack_5_area: Area2D
+@export var attack_6_area: Area2D
+@onready var areas = $Areas.get_children()
+
+var attack_1_times := [0.5,0.4162,0.4162]
+var attack_2_times := [0.332,0.5,0.25]
+var attack_3_times := [0.5,0.6664]
 
 @onready var hit_timer: Timer = $Timers/HitTimer
 
@@ -13,9 +22,10 @@ extends CharacterBody2D
 @export var collision : CollisionShape2D
 @export var animation_player: AnimationPlayer
 
+var can_attack = true
+
 @onready var animations = $AnimationPlayers.get_children()
 @onready var sprites = $Sprites.get_children()
-@onready var hitboxes = $HitBoxes.get_children()
 @onready var collisions = $Collisions.get_children()
 
 signal create_platform
@@ -64,14 +74,11 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
-	if attack_1_area.monitoring:
-		for body in attack_1_area.get_overlapping_bodies():
-			if "hit" in body:
-				body.hit(SaveLoad.save_file.attack)
-	if attack_2_area.monitoring:			
-		for body in attack_2_area.get_overlapping_bodies():
-			if "hit" in body:
-				body.hit(SaveLoad.save_file.attack)
+	for area in areas:
+		if area.monitoring:
+			for body in area.get_overlapping_bodies():
+				if "hit" in body:
+					body.hit(SaveLoad.save_file.attack)
 
 func change_character_right():
 	if SaveLoad.save_file.player_selected < SaveLoad.save_file.characters_unlocked:
@@ -110,6 +117,7 @@ func change_character():
 	for animation in sprites:
 		animation.hide()
 	sprite.show()
+	animation_player = animations[SaveLoad.save_file.player_selected]
 
 
 func update_inventory():
@@ -184,3 +192,7 @@ func _on_hit_timer_timeout() -> void:
 func set_progress_value(value: float):
 	# in my case i'm tweening a shader on a texture rect, but you can use anything with a material on it
 	sprite.material.set_shader_parameter("progress", value);
+
+
+func _on_attack_timer_timeout() -> void:
+	can_attack = true

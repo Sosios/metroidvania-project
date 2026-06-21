@@ -16,10 +16,12 @@ func physics_update(delta):
 	if !Globals.stop:
 		if direction:
 			Transitioned.emit(self,"run")
-		if Input.is_action_just_pressed("attack"):
+		if Input.is_action_just_pressed("attack") and player.can_attack:
 			Transitioned.emit(self,"attack1")
 		#Transition to dash
 		if Input.is_action_just_pressed("dash"):
 			Transitioned.emit(self,"dash")
 			player.sprite.play("fall")
+		if Input.is_action_pressed("down") and SaveLoad.save_file.player_selected == 0:
+			Transitioned.emit(self,"crouch")
 	

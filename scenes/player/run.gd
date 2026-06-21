@@ -22,13 +22,17 @@ func physics_update(_delta):
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
-			player.attack_1_area.scale.x = -1
-			player.attack_2_area.scale.x = -1
+			if SaveLoad.save_file.player_selected == 0:
+				player.attack_1_area.position.x = -15
+			for area in player.areas:
+				area.scale.x = -1
 		else:
 			player.sprite.flip_h = false
 			Globals.direction = 1
-			player.attack_1_area.scale.x = 1
-			player.attack_2_area.scale.x = 1
+			if SaveLoad.save_file.player_selected == 0:
+				player.attack_1_area.position.x = 6
+			for area in player.areas:
+				area.scale.x = 1
 	
 	#Transition to idle
 	else:
@@ -40,7 +44,7 @@ func physics_update(_delta):
 		Transitioned.emit(self,"jump")
 		
 	#Transition to attack
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and player.can_attack:
 		Transitioned.emit(self,"attack1")
 		
 	#Transition to dash
