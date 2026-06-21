@@ -24,8 +24,8 @@ var health = 100:
 			health = min(value,SaveLoad.save_file.max_health)
 		elif value < health:
 			var raw_damage = health - value
-			var damage = max(raw_damage - SaveLoad.save_file.defense, 1)
-			health -= damage
+			var real_damage = max(raw_damage - SaveLoad.save_file.defense, 1)
+			health -= real_damage
 		else:
 			health = value
 		stat_change.emit()

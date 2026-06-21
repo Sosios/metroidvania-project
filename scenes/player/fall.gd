@@ -32,9 +32,8 @@ func physics_update(delta):
 	
 	#Idle transition
 	if player.velocity.y == 0:
-		Transitioned.emit(self,"idle")
-		player.sprite.play("idle")
-		player.can_double_jump = true
+		Transitioned.emit(self,"land")
+
 	
 	#Double jump
 	if SaveLoad.save_file.can_double_jump:

@@ -1,5 +1,6 @@
 @tool
 extends Area2D
+class_name CellDiscover
 
 @export var id = 0
 

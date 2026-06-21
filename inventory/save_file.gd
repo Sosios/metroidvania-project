@@ -34,6 +34,10 @@ func discover_room(room: int):
 @export var attack := 10.0
 @export var defense := 5.0
 
+@export var player_selected := 0
+
+@export var characters_unlocked := 2
+
 @export var max_health := 100.0:
 	set(value):
 		max_health = value

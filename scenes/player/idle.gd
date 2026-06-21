@@ -5,6 +5,7 @@ var player: CharacterBody2D
 
 func enter():
 	player = get_player()
+	player.sprite.play("idle")
 	player.velocity.x = 0.0
 
 func physics_update(delta):

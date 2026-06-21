@@ -22,7 +22,7 @@ var paused = false
 
 func _ready() -> void:
 	player.position = $TransitionPoints.get_children()[Globals.marker].position
-	$Player/AnimatedSprite2D.flip_h = Globals.flip_h
+	player.sprite.flip_h = Globals.flip_h
 	player.connect("create_platform",_on_create_platform)
 	if Globals.jump_up:
 		$Player/StateMachine.current_state = $Player/StateMachine/Jump

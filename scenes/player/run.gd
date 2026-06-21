@@ -34,7 +34,6 @@ func physics_update(_delta):
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed * speed_mult)
 		Transitioned.emit(self,"idle")
-		player.sprite.play("idle")
 	
 	#Transition to jump
 	if Input.is_action_just_pressed("jump") and player.is_on_floor() and not Input.is_action_pressed("down"):

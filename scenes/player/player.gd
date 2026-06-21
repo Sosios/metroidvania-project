@@ -1,8 +1,8 @@
 extends CharacterBody2D
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var sprite: AnimatedSprite2D
 
-@onready var attack_1_area: Area2D = $Attack1Area
-@onready var attack_2_area: Area2D = $Attack2Area
+@export var attack_1_area: Area2D
+@export var attack_2_area: Area2D
 
 @onready var hit_timer: Timer = $Timers/HitTimer
 
@@ -10,8 +10,13 @@ extends CharacterBody2D
 
 @export var speed = 10.0
 @export var jump_velocity = 10.0
+@export var collision : CollisionShape2D
+@export var animation_player: AnimationPlayer
 
-
+@onready var animations = $AnimationPlayers.get_children()
+@onready var sprites = $Sprites.get_children()
+@onready var hitboxes = $HitBoxes.get_children()
+@onready var collisions = $Collisions.get_children()
 
 signal create_platform
 
@@ -25,6 +30,7 @@ var is_gravity = false
 var is_in_gravity_area:= false
 
 func _ready() -> void:
+	change_character()
 	sprite.material.set_shader_parameter("output_palette_texture",SaveLoad.save_file.weapon.palette)
 	SaveLoad.save_file.connect("update",update_inventory)
 
@@ -56,24 +62,54 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 			up_direction = Vector2.UP
 	
-	if Input.is_action_just_pressed("create"):
-		create_platform.emit()
-	
-	if Input.is_action_just_pressed("gravity"):
-		is_gravity = !is_gravity
-		
 	
 	move_and_slide()
-	if $Attack1Area.monitoring:
-		for body in $Attack1Area.get_overlapping_bodies():
+	if attack_1_area.monitoring:
+		for body in attack_1_area.get_overlapping_bodies():
 			if "hit" in body:
 				body.hit(SaveLoad.save_file.attack)
-	if $Attack2Area.monitoring:			
-		for body in $Attack2Area.get_overlapping_bodies():
+	if attack_2_area.monitoring:			
+		for body in attack_2_area.get_overlapping_bodies():
 			if "hit" in body:
 				body.hit(SaveLoad.save_file.attack)
 
+func change_character_right():
+	if SaveLoad.save_file.player_selected < SaveLoad.save_file.characters_unlocked:
+		SaveLoad.save_file.player_selected += 1
+	else:
+		SaveLoad.save_file.player_selected = 0
+	change_character()
 
+func change_character_left():
+	if SaveLoad.save_file.player_selected == 0:
+		SaveLoad.save_file.player_selected = SaveLoad.save_file.characters_unlocked
+	else:
+		SaveLoad.save_file.player_selected -= 1
+	change_character()
+
+func change_character():
+	if SaveLoad.save_file.player_selected == 0:
+		$Collision2.disabled = true
+		$Collision3.disabled = true
+		$Collision1.disabled = false
+		#$Sprites/AnimatedSprite2D.show()
+		#$Sprites/AnimatedSprite2D2.hide()
+		#$Sprites/AnimatedSprite2D3.hide()
+	elif SaveLoad.save_file.player_selected == 1:
+		$Collision1.disabled = true
+		$Collision3.disabled = true
+		$Collision2.disabled = false
+		#$Sprites/AnimatedSprite2D.hide()
+		#$Sprites/AnimatedSprite2D2.show()
+		#$Sprites/AnimatedSprite2D3.hide()
+	else:
+		$Collision1.disabled = true
+		$Collision3.disabled = false
+		$Collision2.disabled = true
+	sprite = sprites[SaveLoad.save_file.player_selected]
+	for animation in sprites:
+		animation.hide()
+	sprite.show()
 
 
 func update_inventory():
@@ -86,6 +122,19 @@ func update_inventory():
 #func _on_attack_2_area_body_entered(body: Node2D) -> void:
 	#if "hit" in body:
 		#body.hit(Globals.damage)
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("create"):
+		create_platform.emit()
+	
+	if Input.is_action_just_pressed("gravity"):
+		is_gravity = !is_gravity
+		
+	if $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3]:
+		if Input.is_action_just_pressed("lb"):
+			change_character_left()
+		if Input.is_action_just_pressed("rb"):
+			change_character_right()
 
 func shade(color):
 	$WallParticles.emitting = true
