@@ -3,7 +3,7 @@ class_name EnemyStun
 
 @export var boar: CharacterBody2D
 
-@export var hit_timer = 0.1
+@export var hit_timer = 0.2
 var timer
 
 

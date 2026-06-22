@@ -22,22 +22,19 @@ func physics_update(_delta):
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
-			if SaveLoad.save_file.player_selected == 0:
-				player.attack_1_area.position.x = -15
-			for area in player.areas:
-				area.scale.x = -1
+			player.attack_1_area.position.x = -8
+			player.attack_1_area.scale.x = -1
 		else:
 			player.sprite.flip_h = false
 			Globals.direction = 1
-			if SaveLoad.save_file.player_selected == 0:
-				player.attack_1_area.position.x = 6
-			for area in player.areas:
-				area.scale.x = 1
+			player.attack_1_area.position.x = 8
+			player.attack_1_area.scale.x = 1
 	
 	#Transition to idle
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed * speed_mult)
 		Transitioned.emit(self,"idle")
+		player.current_direction = 0
 	
 	#Transition to jump
 	if Input.is_action_just_pressed("jump") and player.is_on_floor() and not Input.is_action_pressed("down"):

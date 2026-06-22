@@ -20,7 +20,7 @@ func physics_update(delta):
 		direction = 1.0
 	elif (Globals.player_pos.x - boar.global_position.x) < 0:
 		direction = -1.0
-	if abs(Globals.player_pos.x - boar.global_position.x) < 35:
+	if abs(Globals.player_pos.x - boar.global_position.x) < 25:
 		tween.tween_property(boar,"velocity",Vector2(0,0),0.2)
 		#boar.velocity.x = 0
 		boar.sprite.play("idle")

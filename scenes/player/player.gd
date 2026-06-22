@@ -2,11 +2,6 @@ extends CharacterBody2D
 @export var sprite: AnimatedSprite2D
 
 @export var attack_1_area: Area2D
-@export var attack_2_area: Area2D
-@export var attack_3_area: Area2D
-@export var attack_4_area: Area2D
-@export var attack_5_area: Area2D
-@export var attack_6_area: Area2D
 @onready var areas = $Areas.get_children()
 
 var attack_1_times := [0.5,0.4162,0.4162]
@@ -14,6 +9,8 @@ var attack_2_times := [0.332,0.5,0.25]
 var attack_3_times := [0.5,0.6664]
 
 @onready var hit_timer: Timer = $Timers/HitTimer
+
+@export var invicibility = false
 
 @onready var state_machine: Node = $StateMachine
 
@@ -30,14 +27,21 @@ var can_attack = true
 
 signal create_platform
 
+var current_direction = 0
+
 var speed_mult = 30.0
 var jump_mult = -30.0
 var can_double_jump = true
 var can_move = true
 var vuln = true
 
+var air_time = 0.0
+
 var is_gravity = false
 var is_in_gravity_area:= false
+
+var flip_h = false
+var current_animation: String
 
 func _ready() -> void:
 	change_character()
@@ -74,11 +78,14 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
-	for area in areas:
-		if area.monitoring:
-			for body in area.get_overlapping_bodies():
-				if "hit" in body:
-					body.hit(SaveLoad.save_file.attack)
+	if attack_1_area.monitoring:
+		print("monitoring")
+		for body in attack_1_area.get_overlapping_bodies():
+			print(body)
+			if "hit" in body:
+				body.hit(SaveLoad.save_file.attack)
+	else:
+		print("not")
 
 func change_character_right():
 	if SaveLoad.save_file.player_selected < SaveLoad.save_file.characters_unlocked:
@@ -95,6 +102,8 @@ func change_character_left():
 	change_character()
 
 func change_character():
+	flip_h = sprite.flip_h
+	current_animation = sprite.animation
 	if SaveLoad.save_file.player_selected == 0:
 		$Collision2.disabled = true
 		$Collision3.disabled = true
@@ -114,6 +123,12 @@ func change_character():
 		$Collision3.disabled = false
 		$Collision2.disabled = true
 	sprite = sprites[SaveLoad.save_file.player_selected]
+	sprite.flip_h = flip_h
+	sprite.play(current_animation)
+	if sprite.flip_h:
+		attack_1_area.scale.x = -1
+	else:
+		attack_1_area.scale.x = 1
 	for animation in sprites:
 		animation.hide()
 	sprite.show()
@@ -159,13 +174,13 @@ func unshade():
 	$PointLight2D.enabled = false
 
 func hurt(damage,pos):
-	if vuln:
+	if vuln and not invicibility:
 		var direction = (global_position - pos).normalized()
 		hit_timer.start()
 		Globals.health -= damage
 		can_move = false
 		var tween = create_tween()
-		tween.tween_property(self, "global_position",global_position+Vector2(direction.x, -0.75)*20,0.2).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "global_position",global_position+Vector2(direction.x, -0.5)*40,0.2).set_ease(Tween.EASE_OUT)
 		vuln = false
 		hit_timer.start()
 		await tween.finished

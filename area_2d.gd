@@ -7,5 +7,4 @@ func _physics_process(delta: float) -> void:
 		if "hit" in body:
 			body.hit(damage)
 		if "hurt" in body:
-			body.hurt(0,global_position)
-			Globals.health = Globals.health * 0.9
+			body.hurt(SaveLoad.save_file.max_health * 0.1,global_position)

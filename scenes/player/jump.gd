@@ -37,13 +37,11 @@ func physics_update(delta):
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
-			player.attack_1_area.scale.x = -1
-			player.attack_2_area.scale.x = -1
+			player.attack_1_area.scale.x = 1
 		else:
 			player.sprite.flip_h = false
 			Globals.direction = 1
 			player.attack_1_area.scale.x = 1
-			player.attack_2_area.scale.x = 1
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed * speed_mult)
 	
@@ -57,6 +55,11 @@ func physics_update(delta):
 			player.can_double_jump = false
 			
 	#Transition to dash
-	if Input.is_action_just_pressed("dash"):
-		Transitioned.emit(self,"dash")
-		player.sprite.play("fall")
+		
+	if !Globals.stop:
+		if Input.is_action_just_pressed("attack") and player.can_attack and SaveLoad.save_file.player_selected == 0:
+			Transitioned.emit(self,"jumpattack1")
+		#Transition to dash
+		if Input.is_action_just_pressed("dash"):
+			Transitioned.emit(self,"dash")
+			player.sprite.play("fall")

@@ -11,5 +11,8 @@ func enter():
 	
 func physics_update(delta):
 	timer -= delta
+	if Input.is_action_just_pressed("attack"):
+		Transitioned.emit(self,"crouch_attack")
 	if timer <= 0:
+		player.animation_player.play_backwards("crouch")
 		Transitioned.emit(self,"idle")
