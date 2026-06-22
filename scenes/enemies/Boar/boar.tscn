@@ -248,6 +248,7 @@ boar = NodePath("../..")
 [node name="Follow" type="Node" parent="StateMachine" unique_id=1052855450 node_paths=PackedStringArray("boar")]
 script = ExtResource("8_rpqi3")
 boar = NodePath("../..")
+speed = 150
 
 [node name="Hit" type="Node" parent="StateMachine" unique_id=2051564519 node_paths=PackedStringArray("boar")]
 script = ExtResource("9_ht0ru")

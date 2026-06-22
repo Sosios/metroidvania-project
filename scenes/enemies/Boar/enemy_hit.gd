@@ -3,7 +3,7 @@ class_name EnemyHit
 
 @export var boar: CharacterBody2D
 
-@export var hit_timer = 0.3
+@export var hit_timer = 0.5
 var timer
 
 

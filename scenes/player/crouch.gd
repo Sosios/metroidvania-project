@@ -6,9 +6,9 @@ var player: CharacterBody2D
 
 func enter():
 	player = get_player()
-	player.sprite.play("crouch")
-	player.animation_player.play("crouch")
 	
 func physics_update(delta):
+	if Input.is_action_just_pressed("attack"):
+		Transitioned.emit(self,"crouchattack")
 	if Input.is_action_just_released("down"):
 		Transitioned.emit(self,"getup")

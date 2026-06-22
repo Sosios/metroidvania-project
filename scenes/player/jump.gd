@@ -60,6 +60,6 @@ func physics_update(delta):
 		if Input.is_action_just_pressed("attack") and player.can_attack and SaveLoad.save_file.player_selected == 0:
 			Transitioned.emit(self,"jumpattack1")
 		#Transition to dash
-		if Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash") and SaveLoad.save_file.player_selected == 1:
 			Transitioned.emit(self,"dash")
 			player.sprite.play("fall")

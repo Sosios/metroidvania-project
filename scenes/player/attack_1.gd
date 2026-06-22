@@ -23,6 +23,7 @@ func update(delta):
 			if Input.is_action_just_pressed("attack"):
 				Transitioned.emit(self,"attack2")
 		else:
+			player.attack_1_area.monitoring = false
 			player.can_attack = false
 			attack_timer.start()
 			Transitioned.emit(self,"idle")

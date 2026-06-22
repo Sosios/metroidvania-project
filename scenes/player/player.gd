@@ -21,9 +21,13 @@ var attack_3_times := [0.5,0.6664]
 
 var can_attack = true
 
+
+		
+
 @onready var animations = $AnimationPlayers.get_children()
 @onready var sprites = $Sprites.get_children()
 @onready var collisions = $Collisions.get_children()
+
 
 signal create_platform
 
@@ -102,22 +106,17 @@ func change_character_left():
 	change_character()
 
 func change_character():
+	attack_1_area.monitoring = false
 	flip_h = sprite.flip_h
 	current_animation = sprite.animation
 	if SaveLoad.save_file.player_selected == 0:
 		$Collision2.disabled = true
 		$Collision3.disabled = true
 		$Collision1.disabled = false
-		#$Sprites/AnimatedSprite2D.show()
-		#$Sprites/AnimatedSprite2D2.hide()
-		#$Sprites/AnimatedSprite2D3.hide()
 	elif SaveLoad.save_file.player_selected == 1:
 		$Collision1.disabled = true
 		$Collision3.disabled = true
 		$Collision2.disabled = false
-		#$Sprites/AnimatedSprite2D.hide()
-		#$Sprites/AnimatedSprite2D2.show()
-		#$Sprites/AnimatedSprite2D3.hide()
 	else:
 		$Collision1.disabled = true
 		$Collision3.disabled = false
@@ -147,10 +146,10 @@ func update_inventory():
 		#body.hit(Globals.damage)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("create"):
+	if Input.is_action_just_pressed("create") and SaveLoad.save_file.player_selected == 0:
 		create_platform.emit()
 	
-	if Input.is_action_just_pressed("gravity"):
+	if Input.is_action_just_pressed("gravity") and SaveLoad.save_file.player_selected == 2:
 		is_gravity = !is_gravity
 		
 	if $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3]:
@@ -175,6 +174,7 @@ func unshade():
 
 func hurt(damage,pos):
 	if vuln and not invicibility:
+		attack_1_area.monitoring = false
 		var direction = (global_position - pos).normalized()
 		hit_timer.start()
 		Globals.health -= damage

@@ -23,6 +23,7 @@ func update(delta):
 			if Input.is_action_just_pressed("attack") and SaveLoad.save_file.player_selected != 2:
 				Transitioned.emit(self,"attack3")
 		else:
+			player.attack_1_area.monitoring = false
 			player.can_attack = false
 			attack_timer.start()
 			Transitioned.emit(self,"idle")

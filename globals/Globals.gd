@@ -7,6 +7,11 @@ var player_pos
 
 var direction = 1
 
+var attack_1_times := [0.5,0.4162,0.4162]
+var attack_2_times := [0.332,0.5,0.25]
+var attack_3_times := [0.5,0.6664]
+
+
 var damage = 10
 
 var jump_up = false

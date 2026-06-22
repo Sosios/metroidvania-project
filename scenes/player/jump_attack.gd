@@ -16,7 +16,7 @@ var wait_time = 0.1
 
 func enter():
 	attack_time = 0.4162
-	wait_time = 0.2
+	wait_time = 0.1
 	player.velocity.x = 0.0
 	player.sprite.play("jump_attack_1")
 	player.animation_player.play("jump_attack1")

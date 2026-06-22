@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://m0kid4kp6pco" path="res://assets/particles/white.png" id="19_8ydkj"]
 [ext_resource type="Material" uid="uid://cn1y7pwo55n56" path="res://assets/particles/new_particle_process_material.tres" id="20_3j4b4"]
 [ext_resource type="Script" uid="uid://cudie52r05trc" path="res://scenes/player/jump_attack_2.gd" id="20_tffgl"]
+[ext_resource type="Script" uid="uid://bs32edp2a0o0u" path="res://scenes/player/crouch_attack.gd" id="24_iqsei"]
 [ext_resource type="Script" uid="uid://3dqxku3drhgx" path="res://scenes/player/land.gd" id="28_iqsei"]
 
 [sub_resource type="Animation" id="Animation_8ydkj"]
@@ -103,6 +104,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Collision1:shape:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, 23)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Collision1:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.5, -11.5)]
 }
 
 [sub_resource type="Animation" id="Animation_007i1"]
@@ -273,6 +298,34 @@ tracks/3/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_5q8fn"]
+resource_name = "crouch"
+length = 0.166
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Collision1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15, 23), Vector2(15, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Collision1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.5, -11.5), Vector2(2.5, -6)]
+}
+
 [sub_resource type="Animation" id="Animation_8qxvo"]
 resource_name = "crouch_attack"
 length = 0.75
@@ -435,6 +488,7 @@ _data = {
 &"attack1": SubResource("Animation_007i1"),
 &"attack2": SubResource("Animation_3j4b4"),
 &"attack3": SubResource("Animation_yj68g"),
+&"crouch": SubResource("Animation_5q8fn"),
 &"crouch_attack": SubResource("Animation_8qxvo"),
 &"jump_attack1": SubResource("Animation_28m0y"),
 &"jump_attack2": SubResource("Animation_uniwh")
@@ -1203,9 +1257,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ui8rx")
 }],
-"loop": true,
+"loop": false,
 "name": &"get_up",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2684,13 +2738,12 @@ scale_max = 0.5
 color = Color(0.99999505, 0.41565442, 0.35607842, 0.7529412)
 color_ramp = SubResource("GradientTexture1D_f0qoe")
 
-[node name="Player" type="CharacterBody2D" unique_id=971349243 node_paths=PackedStringArray("sprite", "attack_1_area", "collision", "animation_player") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=971349243 node_paths=PackedStringArray("sprite", "attack_1_area", "animation_player") groups=["Player"]]
 collision_mask = 846
 script = ExtResource("1_75vfm")
 sprite = NodePath("Sprites/AnimatedSprite2D")
 attack_1_area = NodePath("Areas/Attack1Area")
 jump_velocity = 20.0
-collision = NodePath("")
 animation_player = NodePath("AnimationPlayers/AnimationPlayer")
 
 [node name="AnimationPlayers" type="Node2D" parent="." unique_id=590523831]
@@ -2725,7 +2778,6 @@ texture = ExtResource("2_uf5tr")
 texture_scale = 0.15
 
 [node name="Collision1" type="CollisionShape2D" parent="." unique_id=1555011998]
-visible = false
 position = Vector2(2.5, -11.5)
 shape = SubResource("RectangleShape2D_ioxgp")
 
@@ -2761,10 +2813,8 @@ material = SubResource("ShaderMaterial_uf5tr")
 position = Vector2(-2.6109662, 5.181344)
 scale = Vector2(2.611, 1.295)
 sprite_frames = SubResource("SpriteFrames_h17s1")
-animation = &"crouch_attack"
+animation = &"idle"
 autoplay = "idle"
-frame = 9
-frame_progress = 1.0
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprites" unique_id=423164987]
@@ -2774,10 +2824,8 @@ material = SubResource("ShaderMaterial_uf5tr")
 position = Vector2(-2.6109662, -5.1813498)
 scale = Vector2(2.611, 1.2950001)
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"attack_3"
+animation = &"idle"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprites" unique_id=1069560831]
 visible = false
@@ -2786,7 +2834,7 @@ material = SubResource("ShaderMaterial_uf5tr")
 position = Vector2(0, -56.994823)
 scale = Vector2(2.6109662, 1.295337)
 sprite_frames = SubResource("SpriteFrames_ioxgp")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Collisions" type="Node2D" parent="." unique_id=208247054]
@@ -2850,7 +2898,9 @@ script = ExtResource("16_ioxgp")
 [node name="GetUp" type="Node" parent="StateMachine" unique_id=1607730758]
 script = ExtResource("17_cnsyf")
 
-[node name="CrouchAttack" type="Node" parent="StateMachine" unique_id=1467543441]
+[node name="CrouchAttack" type="Node" parent="StateMachine" unique_id=1467543441 node_paths=PackedStringArray("attack_timer")]
+script = ExtResource("24_iqsei")
+attack_timer = NodePath("../../Timers/AttackTimer")
 
 [node name="Hit" type="Node" parent="StateMachine" unique_id=1930804011]
 script = ExtResource("14_uf5tr")

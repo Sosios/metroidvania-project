@@ -16,22 +16,17 @@ var wait_time = 0.1
 
 func enter():
 	attack_time = 0.4162
-	wait_time = 0.2
-	player.velocity.x = 0.0
-	player.sprite.play("jump_attack_1")
-	player.animation_player.play("jump_attack1")
+	wait_time = 0.1
+	player.sprite.play("jump_attack_2")
+	player.animation_player.play("jump_attack2")
 	
 func update(delta):
-	attack_time -= delta
-	if attack_time <= 0:
-		wait_time -= delta
-		if wait_time > 0:
-			if Input.is_action_just_pressed("attack"):
-				Transitioned.emit(self,"jumpattack2")
-		else:
-			player.can_attack = false
-			attack_timer.start()
-			Transitioned.emit(self,"fall")
+	if attack_time > 0:
+		attack_time -= delta
+	else:
+		player.can_attack = false
+		attack_timer.start()
+		Transitioned.emit(self,"fall")
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		player.velocity.x = direction * speed * speed_mult

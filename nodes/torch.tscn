@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://7bg37d0cumx5"]
+
+[ext_resource type="Script" uid="uid://dsmh7fsdrkubk" path="res://nodes/torch.gd" id="1_r5pxk"]
+[ext_resource type="Texture2D" uid="uid://bixe4aisdu2ym" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchC1.png" id="2_u0ivu"]
+[ext_resource type="Texture2D" uid="uid://brrm1ee3j8qd8" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchC2.png" id="3_vjcub"]
+[ext_resource type="Texture2D" uid="uid://syfdn3udm848" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchC3.png" id="4_olu50"]
+[ext_resource type="Texture2D" uid="uid://vdr4n4mst3x3" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchC4.png" id="5_5s35w"]
+[ext_resource type="Texture2D" uid="uid://bo6xjm1kh57yw" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchB1.png" id="6_iycwb"]
+[ext_resource type="Texture2D" uid="uid://deyp5itwrq3ep" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchB2.png" id="7_asy2g"]
+[ext_resource type="Texture2D" uid="uid://b0eis3bw0r0ca" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchB3.png" id="8_pl5b4"]
+[ext_resource type="Texture2D" uid="uid://wkg7c1olic7b" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchB4.png" id="9_4nts3"]
+[ext_resource type="Texture2D" uid="uid://bie24mok7it0k" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchA1.png" id="10_pgcyg"]
+[ext_resource type="Texture2D" uid="uid://bqlmnp5oio28" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchA2.png" id="11_d1e48"]
+[ext_resource type="Texture2D" uid="uid://dqprpa7gp7ygp" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchA3.png" id="12_6uqjm"]
+[ext_resource type="Texture2D" uid="uid://d0ub4xqmanvqw" path="res://assets/Backgrounds/PixelPlatformerSet2v.1.1/Anim/torchA4.png" id="13_6abax"]
+[ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="14_vjcub"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdl1s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u0ivu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vjcub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_olu50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5s35w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0uew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_iycwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_asy2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pl5b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4nts3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4amc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_pgcyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d1e48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6uqjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6abax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Torch" type="Node2D" unique_id=627410971]
+script = ExtResource("1_r5pxk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2131940948]
+visible = false
+offset_left = -16.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = 18.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="Options" type="Node2D" parent="." unique_id=2058249836]
+
+[node name="Ground" type="AnimatedSprite2D" parent="Options" unique_id=2043211294]
+sprite_frames = SubResource("SpriteFrames_mdl1s")
+autoplay = "default"
+frame_progress = 0.70947975
+
+[node name="LeftWall" type="AnimatedSprite2D" parent="Options" unique_id=1209048670]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_v0uew")
+autoplay = "default"
+frame_progress = 0.3110724
+
+[node name="RightWall" type="AnimatedSprite2D" parent="Options" unique_id=1004931897]
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_h4amc")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1540866556]
+position = Vector2(3, 1)
+color = Color(0, 1, 1, 1)
+texture = ExtResource("14_vjcub")
