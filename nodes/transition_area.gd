@@ -1,4 +1,6 @@
+@tool
 extends Area2D
+class_name TransitionArea
 
 @export_file("*.tscn") var target: String = "" 
 

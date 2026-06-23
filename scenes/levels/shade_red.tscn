@@ -2,16 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cqv1ocf2xyyjt" path="res://scenes/levels/shade_red.gd" id="1_07c63"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jtl3"]
-size = Vector2(89, 156)
-
 [node name="ShadeRed" type="Area2D" unique_id=1177037532]
 collision_layer = 512
 script = ExtResource("1_07c63")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1962826388]
-position = Vector2(303.5, 114)
-shape = SubResource("RectangleShape2D_5jtl3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

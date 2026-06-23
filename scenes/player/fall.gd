@@ -33,13 +33,15 @@ func physics_update(delta):
 	
 	#Idle transition
 	if player.velocity.y == 0:
-		if air_time >= 3.0:
-			Transitioned.emit(self,"land")
-		else:
 			if direction:
 				Transitioned.emit(self,"run")
 			else:
-				Transitioned.emit(self,"idle")
+				if Input.is_action_pressed("down"):
+					player.sprite.play("crouch")
+					player.animation_player.play("crouch")
+					Transitioned.emit(self,"crouch")
+				else:
+					Transitioned.emit(self,"idle")
 
 	
 	#Double jump
