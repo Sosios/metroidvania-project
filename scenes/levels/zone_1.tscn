@@ -105,58 +105,51 @@ tile_set = ExtResource("2_5jtl3")
 
 [node name="Torch" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=627410971 instance=ExtResource("7_ki25l")]
 position = Vector2(107, 176)
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1574228028 instance=ExtResource("7_ki25l")]
 position = Vector2(226, 176)
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=1121418537 instance=ExtResource("7_ki25l")]
 position = Vector2(435, 162)
 type = "1"
-color = Color(0.36078432, 0.7764706, 1, 1)
+energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch4" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="3" unique_id=2146854490 instance=ExtResource("7_ki25l")]
 position = Vector2(757, 139)
 type = "1"
-color = Color(0.36078432, 0.7764706, 1, 1)
+energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch5" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="4" unique_id=764432595 instance=ExtResource("7_ki25l")]
 position = Vector2(501, 190)
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch11" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="5" unique_id=1963180465 instance=ExtResource("7_ki25l")]
 position = Vector2(601, 126)
 type = "2"
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch9" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="6" unique_id=1558280419 instance=ExtResource("7_ki25l")]
 position = Vector2(906, 174)
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch6" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="7" unique_id=1204791131 instance=ExtResource("7_ki25l")]
 position = Vector2(921, 61)
 type = "2"
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
 [node name="Torch7" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="8" unique_id=1240383459 instance=ExtResource("7_ki25l")]
 position = Vector2(313, 156)
 type = "2"
-color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 tex_scale = 0.25
 
@@ -202,6 +195,7 @@ position = Vector2(304, 177)
 position = Vector2(735, 96)
 
 [node name="Player" parent="." index="5" unique_id=971349243]
+top_level = true
 position = Vector2(159, 192)
 collision_mask = 1870
 
@@ -212,9 +206,9 @@ limit_smoothed = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player" index="14" unique_id=1710554001]
 position = Vector2(2, -11)
-energy = 0.7
+energy = 0.5
 texture = ExtResource("9_ueieb")
-texture_scale = 0.25
+texture_scale = 0.2
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("5_4vx7k")]
 position = Vector2(813.7863, 7.2825394)
@@ -231,8 +225,7 @@ position = Vector2(12, 192)
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=602858780]
 position = Vector2(927, 192)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="10" unique_id=1048770824]
-color = Color(1, 1, 0.95686275, 1)
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="10" unique_id=1826806825]
 energy = 0.9
 blend_mode = 1
 

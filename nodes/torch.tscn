@@ -77,6 +77,8 @@ animations = [{
 
 [node name="Torch" type="Node2D" unique_id=627410971]
 script = ExtResource("1_r5pxk")
+energy = 1.0
+tex_scale = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2131940948]
 visible = false
@@ -106,5 +108,5 @@ autoplay = "default"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1540866556]
 position = Vector2(3, 1)
-color = Color(0, 1, 1, 1)
+color = Color(0.36078432, 0.7764706, 1, 1)
 texture = ExtResource("14_vjcub")

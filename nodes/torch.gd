@@ -1,10 +1,17 @@
 @tool
 extends Node2D
 
+@onready var point_light_2d: PointLight2D = $PointLight2D
+
+
 func _ready():
 	for option in $Options.get_children():
 		option.hide()
 	$Options.get_child(int(type)).show()
+	if point_light_2d:
+		point_light_2d.color = color
+		point_light_2d.energy = energy
+		point_light_2d.texture_scale = tex_scale
 
 @export_enum("0","1","2") var type = "0":
 	set(value):
@@ -13,18 +20,21 @@ func _ready():
 			for option in $Options.get_children():
 				option.hide()
 			$Options.get_child(int(type)).show()
-@export_color_no_alpha var color = Color(0.0, 1.0, 1.0, 1.0):
+@export_color_no_alpha var color = Color("5cc6ff"):
 	set(value):
-		color = value
-		$PointLight2D.color = color
-@export var energy = 1.0:
+		if point_light_2d:
+			color = value
+			point_light_2d.color = color
+@export var energy = 1.5:
 	set(value):
-		energy = value
-		$PointLight2D.energy = energy
-@export var tex_scale = 1.0:
+		if point_light_2d:
+			energy = value
+			point_light_2d.energy = energy
+@export var tex_scale = 0.25:
 	set(value):
-		tex_scale = value
-		$PointLight2D.texture_scale = tex_scale
+		if point_light_2d:
+			tex_scale = value
+			point_light_2d.texture_scale = tex_scale
 
 func _process(_delta):
 	pass
