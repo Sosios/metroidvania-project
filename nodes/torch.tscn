@@ -77,8 +77,6 @@ animations = [{
 
 [node name="Torch" type="Node2D" unique_id=627410971]
 script = ExtResource("1_r5pxk")
-energy = 1.0
-tex_scale = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2131940948]
 visible = false
@@ -96,12 +94,14 @@ autoplay = "default"
 frame_progress = 0.70947975
 
 [node name="LeftWall" type="AnimatedSprite2D" parent="Options" unique_id=1209048670]
+visible = false
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_v0uew")
 autoplay = "default"
 frame_progress = 0.3110724
 
 [node name="RightWall" type="AnimatedSprite2D" parent="Options" unique_id=1004931897]
+visible = false
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_h4amc")
 autoplay = "default"
@@ -109,4 +109,7 @@ autoplay = "default"
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1540866556]
 position = Vector2(3, 1)
 color = Color(0.36078432, 0.7764706, 1, 1)
+energy = 1.5
+shadow_enabled = true
 texture = ExtResource("14_vjcub")
+texture_scale = 0.25

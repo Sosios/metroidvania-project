@@ -12,6 +12,7 @@
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="5_o6v00"]
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="7_s21t7"]
 [ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="10_o6v00"]
+[ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="11_o6v00"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_47l24"]
 shader = ExtResource("5_o6v00")
@@ -25,11 +26,14 @@ size = Vector2(14, 216)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhsnm"]
 size = Vector2(5, 61)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47l24"]
+size = Vector2(162.5, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iync"]
 size = Vector2(286, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7c2t7"]
-size = Vector2(122, 224)
+size = Vector2(109, 224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ucrw"]
 size = Vector2(57, 294.9502)
@@ -101,38 +105,24 @@ tile_set = ExtResource("2_jpt1v")
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("7_s21t7")]
 position = Vector2(144, 188)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Torch2" parent="Objects/Torches" index="1" unique_id=120474309 instance=ExtResource("7_s21t7")]
 position = Vector2(403, 189)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Torch3" parent="Objects/Torches" index="2" unique_id=118105602 instance=ExtResource("7_s21t7")]
 position = Vector2(633, 189)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Torch4" parent="Objects/Torches" index="3" unique_id=1502490197 instance=ExtResource("7_s21t7")]
 position = Vector2(1113, 187)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Torch5" parent="Objects/Torches" index="4" unique_id=1841352528 instance=ExtResource("7_s21t7")]
 position = Vector2(1423, 188)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Torch6" parent="Objects/Torches" index="5" unique_id=316433964 instance=ExtResource("7_s21t7")]
 position = Vector2(1817, 190)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Torch7" parent="Objects/Torches" index="6" unique_id=389061580 instance=ExtResource("7_s21t7")]
 position = Vector2(2142, 189)
-energy = 1.5
-tex_scale = 0.25
 
 [node name="Boar" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=185224842 instance=ExtResource("3_0627x")]
 position = Vector2(793, 194)
@@ -188,6 +178,12 @@ energy = 0.5
 texture = ExtResource("10_o6v00")
 texture_scale = 0.2
 
+[node name="HurtArea" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=754456728 instance=ExtResource("11_o6v00")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/HurtArea" index="0" unique_id=2134197415]
+position = Vector2(932, 253)
+shape = SubResource("RectangleShape2D_47l24")
+
 [node name="Zone4" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("3_7c2t7")]
 target = "uid://dm0lbjknwgj1g"
 
@@ -201,7 +197,7 @@ target = "uid://c0vrm2n1pdkuq"
 marker = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/Zone2" index="0" unique_id=927963972]
-position = Vector2(-48, 102)
+position = Vector2(-54.5, 102)
 shape = SubResource("RectangleShape2D_7c2t7")
 debug_color = Color(0.24126634, 0.24272451, 0.22955745, 0.41960785)
 

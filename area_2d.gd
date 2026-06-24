@@ -5,6 +5,6 @@ extends Area2D
 func _physics_process(delta: float) -> void:
 	for body in get_overlapping_bodies():
 		if "hit" in body:
-			body.hit(body.health * 0.1)
+			body.hit(body.max_health * 0.2)
 		if "hurt" in body:
 			body.hurt(SaveLoad.save_file.max_health * 0.1,global_position)

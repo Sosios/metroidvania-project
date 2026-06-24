@@ -27,6 +27,9 @@ func _ready() -> void:
 	if Globals.jump_up:
 		$Player/StateMachine.current_state = $Player/StateMachine/Jump
 		$Player/StateMachine/Jump.enter()
+	if Globals.dash:
+		$Player/StateMachine.current_state = $Player/StateMachine/Dash
+		$Player/StateMachine/Dash.enter()
 	Globals.stop = true
 	await get_tree().create_timer(0.2).timeout
 	Globals.stop = false

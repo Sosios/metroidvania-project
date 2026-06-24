@@ -2743,7 +2743,6 @@ collision_mask = 846
 script = ExtResource("1_75vfm")
 sprite = NodePath("Sprites/AnimatedSprite2D")
 attack_1_area = NodePath("Areas/Attack1Area")
-jump_velocity = 20.0
 animation_player = NodePath("AnimationPlayers/AnimationPlayer")
 
 [node name="AnimationPlayers" type="Node2D" parent="." unique_id=590523831]
@@ -2828,7 +2827,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprites" unique_id=1069560831]
-visible = false
 texture_filter = 5
 material = SubResource("ShaderMaterial_uf5tr")
 position = Vector2(0, -56.994823)
@@ -2885,6 +2883,7 @@ attack_timer = NodePath("../../Timers/AttackTimer")
 
 [node name="Jump" type="Node" parent="StateMachine" unique_id=1323241454]
 script = ExtResource("11_fcs02")
+jump_velocity = 25.0
 
 [node name="JumpAttack1" type="Node" parent="StateMachine" unique_id=461696057]
 script = ExtResource("16_cnsyf")

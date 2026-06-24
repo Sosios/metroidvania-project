@@ -13,6 +13,7 @@ func enter():
 	timer = hit_timer
 	boar.sprite.play("hit")
 	boar.health -= boar.damage_taken
+	boar.progress_bar.max_value = boar.max_health
 	boar.progress_bar.value = boar.health
 	boar.progress_bar.show()
 

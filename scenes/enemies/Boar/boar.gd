@@ -18,6 +18,8 @@ var damage_taken : float
 
 var health = 25.0
 
+var max_health = 25.0
+
 @export var exp_points:float = 25.0
 
 func _ready() -> void:

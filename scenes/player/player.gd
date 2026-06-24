@@ -146,13 +146,13 @@ func update_inventory():
 		#body.hit(Globals.damage)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("create") and SaveLoad.save_file.player_selected == 0:
+	if Input.is_action_just_pressed("create") and SaveLoad.save_file.can_platform and SaveLoad.save_file.player_selected == 0 and $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3,$StateMachine/Idle,$StateMachine/JumpAttack1,$StateMachine/JumpAttack2,$StateMachine/CrouchAttack]:
 		create_platform.emit()
 	
-	if Input.is_action_just_pressed("gravity") and SaveLoad.save_file.player_selected == 2:
+	if Input.is_action_just_pressed("gravity") and SaveLoad.save_file.can_gravity and SaveLoad.save_file.player_selected == 2:
 		is_gravity = !is_gravity
 		
-	if $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3]:
+	if $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3,$StateMachine/CrouchAttack,$StateMachine/JumpAttack1,$StateMachine/JumpAttack2]:
 		if Input.is_action_just_pressed("lb"):
 			change_character_left()
 		if Input.is_action_just_pressed("rb"):

@@ -23,7 +23,7 @@ script = ExtResource("1_dgq62")
 
 [node name="Player" parent="." unique_id=971349243 instance=ExtResource("3_b2cq8")]
 position = Vector2(239, 138)
-collision_mask = 78
+collision_mask = 334
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=312523826]
 limit_left = 0
@@ -48,16 +48,20 @@ metadata/_edit_group_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1724915358]
 enabled = false
-energy = 0.9
+energy = 0.7
 blend_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="TransitionLayer" parent="." unique_id=420257169 instance=ExtResource("5_4po5r")]
 
 [node name="UI" parent="." unique_id=833769472 instance=ExtResource("6_2basl")]
+process_priority = 2
 
 [node name="Map" parent="UI" unique_id=894290120 instance=ExtResource("7_o4pvo")]
 visible = false
 
-[node name="PauseUI" parent="." unique_id=1193603374 instance=ExtResource("6_adcqg")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014856886]
+
+[node name="PauseUI" parent="CanvasLayer" unique_id=1193603374 instance=ExtResource("6_adcqg")]
+process_priority = 2
 visible = false

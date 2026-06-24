@@ -10,7 +10,10 @@ class_name TransitionArea
 
 @export var jump_up = false
 
+@export var dash = false
+
 func _on_body_entered(body: Node2D) -> void:
+	Globals.dash = dash
 	Globals.marker = marker
 	Globals.flip_h = body.sprite.flip_h
 	Globals.jump_up = jump_up

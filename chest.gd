@@ -12,12 +12,13 @@ func _ready() -> void:
 
 	
 func update_status():
-	$Sprite2D.texture = item.texture
-	$Label.text = item.name
-	if id in SaveLoad.save_file.opened_chests:
-		$AnimatedSprite2D.animation = "opened"
-	else:
-		$AnimatedSprite2D.animation = "closed"
+	if item:
+		$Sprite2D.texture = item.texture
+		$Label.text = item.name
+		if id in SaveLoad.save_file.opened_chests:
+			$AnimatedSprite2D.animation = "opened"
+		else:
+			$AnimatedSprite2D.animation = "closed"
 
 
 func _on_body_entered(body: Node2D) -> void:
