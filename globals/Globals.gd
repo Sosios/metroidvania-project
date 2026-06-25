@@ -2,8 +2,9 @@ extends Node
 
 signal stat_change
 signal pos_change
+signal boss_update
 
-var player_pos
+var player_pos: Vector2
 
 var direction = 1
 
@@ -22,6 +23,22 @@ var current_room = 0:
 		pos_change.emit()
 
 var stop = false
+
+var show_bar: bool = false:
+	set(value):
+		show_bar = value
+		boss_update.emit()
+
+var boss_health: float:
+	set(value):
+		boss_health = value
+		boss_update.emit()
+
+var boss_name: String = ""
+
+var boss_max_health: float
+
+var shake: bool = false
 
 var health = 100:
 	set(value):

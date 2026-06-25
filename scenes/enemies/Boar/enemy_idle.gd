@@ -41,7 +41,6 @@ func physics_update(delta):
 func _on_area_enter():
 	if boar.is_on_floor():
 		Transitioned.emit(self,"follow")
-		print("emit follow")
 
 func _on_touch_wall():
 	direction.x = -direction.x

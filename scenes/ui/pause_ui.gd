@@ -47,7 +47,6 @@ func _input(event: InputEvent) -> void:
 					$TabContainer/Container2/Left.grab_focus()
 			update_slots()
 		pause = !pause
-		print(get_tree().paused)
 
 func update_slots():
 	for i in range(min(SaveLoad.save_file.slots.size(),slots.size())):

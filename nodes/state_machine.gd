@@ -13,6 +13,7 @@ func _ready() -> void:
 			child.Transitioned.connect(on_child_transition)
 	
 	if initial_state:
+		await owner.ready
 		initial_state.enter()
 		current_state = initial_state
 		

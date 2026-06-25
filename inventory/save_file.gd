@@ -26,6 +26,10 @@ func discover_room(room: int):
 
 @export var opened_chests := []
 
+@export var opened_doors := []
+
+@export var defeated_bosses := []
+
 @export var can_double_jump := false
 @export var can_dash := false
 @export var can_platform := false
@@ -36,7 +40,7 @@ func discover_room(room: int):
 
 @export var player_selected := 0
 
-@export var characters_unlocked := 2
+@export var characters_unlocked := 0
 
 @export var max_health := 100.0:
 	set(value):
@@ -58,6 +62,8 @@ func discover_room(room: int):
 @export var nxtlvl := 100.0
 var lvl_exp_cap = 0
 @export var level := 1
+
+
 
 func insert(item: InvItem):
 	var item_slots = slots.filter(func(slot):return slot.item == item)

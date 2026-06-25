@@ -18,6 +18,9 @@
 [ext_resource type="TileSet" uid="uid://bc17wi8eevycr" path="res://scenes/levels/tile_set.tres" id="14_lbt0x"]
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="15_g8wbx"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="16_l1686"]
+[ext_resource type="PackedScene" uid="uid://cgegqekgc7dn7" path="res://nodes/boss_spawn.tscn" id="17_l1686"]
+[ext_resource type="PackedScene" uid="uid://bwxni51yeq2ap" path="res://scenes/bosses/gollux/boss_1.tscn" id="18_d76wp"]
+[ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="19_npc5s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d76wp"]
 texture = ExtResource("5_sgosr")
@@ -7467,6 +7470,21 @@ type = "2"
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1614685710 instance=ExtResource("16_l1686")]
 position = Vector2(864, -48)
 id = 5
+
+[node name="BossSpawn" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1422244529 instance=ExtResource("17_l1686")]
+position = Vector2(480, 223)
+boss = ExtResource("18_d76wp")
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
+limit_top = -272
+limit_right = 960
+limit_bottom = 272
+
+[node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=90593867]
+position = Vector2(2, -11)
+energy = 0.5
+texture = ExtResource("19_npc5s")
+texture_scale = 0.2
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("14_jrxnd")]
 

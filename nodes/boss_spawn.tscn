@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cgegqekgc7dn7"]
+
+[ext_resource type="Script" uid="uid://b3yegnbnxjvhd" path="res://boss_spawn.gd" id="1_gqbl8"]
+
+[node name="BossSpawn" type="Marker2D" unique_id=1422244529]
+script = ExtResource("1_gqbl8")
+id = null

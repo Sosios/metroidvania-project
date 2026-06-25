@@ -36,4 +36,3 @@ func _on_area_exit():
 
 func _on_hit_taken():
 	Transitioned.emit(self, "hit")
-	print("emit hit")

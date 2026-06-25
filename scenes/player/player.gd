@@ -83,13 +83,9 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	if attack_1_area.monitoring:
-		print("monitoring")
 		for body in attack_1_area.get_overlapping_bodies():
-			print(body)
 			if "hit" in body:
 				body.hit(SaveLoad.save_file.attack)
-	else:
-		print("not")
 
 func change_character_right():
 	if SaveLoad.save_file.player_selected < SaveLoad.save_file.characters_unlocked:

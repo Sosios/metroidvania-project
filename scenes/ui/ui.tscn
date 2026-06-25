@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bxrtjv1ckitna" path="res://assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_BarFill01a.png" id="3_aac20"]
 [ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="4_g5kmx"]
 [ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="5_0dwhk"]
+[ext_resource type="FontFile" uid="uid://dmg05ejiqhh6q" path="res://assets/Fonts/BoldPixels.ttf" id="6_pfayw"]
 
 [sub_resource type="Theme" id="Theme_0dwhk"]
 
@@ -17,6 +18,9 @@ corner_detail = 1
 [sub_resource type="LabelSettings" id="LabelSettings_jcn1r"]
 font = ExtResource("5_0dwhk")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vp6q"]
+font = ExtResource("6_pfayw")
 
 [node name="UI" type="CanvasLayer" unique_id=833769472]
 script = ExtResource("1_u7n8c")
@@ -80,5 +84,39 @@ offset_right = 42.0
 offset_bottom = 15.0
 text = "50/100"
 label_settings = SubResource("LabelSettings_jcn1r")
+
+[node name="BossHealth" type="Control" parent="." unique_id=1088891485]
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -20.0
+offset_right = -5.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="BossHealth" unique_id=1378894411]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -27.0
+offset_right = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BossHealth" unique_id=1329407433]
+layout_mode = 0
+offset_left = 98.0
+offset_top = -55.0
+offset_right = 138.0
+offset_bottom = -32.0
+label_settings = SubResource("LabelSettings_7vp6q")
 
 [connection signal="timeout" from="MarginContainer2/Timer" to="." method="_on_timer_timeout"]

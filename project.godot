@@ -63,6 +63,7 @@ import/blender/enabled=false
 Entity=""
 Player=""
 ShadeRed=""
+Bosses=""
 
 [input]
 
