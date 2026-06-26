@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var pause = false
-@onready var slots: Array = $TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/GridContainer.get_children()
+@onready var slots: Array = $TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/GridContainer.get_children()
 
 @onready var level_label: Label = $TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Niveau/Label2
 @onready var xp_label: Label = $TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Experience/Label2
@@ -52,6 +52,8 @@ func update_slots():
 	for i in range(min(SaveLoad.save_file.slots.size(),slots.size())):
 		slots[i].update(SaveLoad.save_file.slots[i])
 	$TabContainer/Container2/EquippedWeapon/WeaponSprite.texture = SaveLoad.save_file.weapon.texture
+	if SaveLoad.save_file.armor:
+		$TabContainer/Container2/EquippedArmor/ArmorSprite.texture = SaveLoad.save_file.armor.texture
 	$TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect/Sprite2D.material.set_shader_parameter("output_palette_texture",SaveLoad.save_file.weapon.palette)
 	attack_label.text = str(int(SaveLoad.save_file.weapon.attack + SaveLoad.save_file.attack))
 	if SaveLoad.save_file.armor:

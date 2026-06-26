@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://38sgqm5tccxb"]
+
+[ext_resource type="Texture2D" uid="uid://dbbp5wnan1yjx" path="res://assets/Personnages/Jotem/Jotem spritesheet.png" id="1_1hhfx"]
+[ext_resource type="Texture2D" uid="uid://dv14o455mpk7r" path="res://assets/Personnages/Jotem/Jotem spritesheet_normal_map.png" id="2_iiuo4"]
+
+[resource]
+diffuse_texture = ExtResource("1_1hhfx")
+normal_texture = ExtResource("2_iiuo4")

@@ -494,6 +494,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hitbox/CollisionShape2D3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:strength")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
 
 [sub_resource type="Animation" id="Animation_280r5"]
 resource_name = "attack_1"
@@ -574,7 +598,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.8333334, 1, 1.1666667, 1.8333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(20, 0), Vector2(1108, 0), Vector2(22, 0), Vector2(16, 0)]
+"values": [Vector2(20, 0), Vector2(1108, 1), Vector2(22, 0), Vector2(16, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -599,6 +623,30 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hitbox/CollisionShape2D3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8333334, 1.1666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:strength")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8333334, 1, 1.1666667),
+"transitions": PackedFloat32Array(1, 1000000, 1000000, 1000000),
+"update": 0,
+"values": [50.0, 50.0, 80.0, 50.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5551t"]
@@ -637,6 +685,7 @@ debug_color = Color(0.9764706, 0, 0, 0.41960785)
 shape = SubResource("RectangleShape2D_5551t")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Hitbox" unique_id=578469031]
+scale = Vector2(1.0508225, -34.05658)
 shape = SubResource("RectangleShape2D_tk4qi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1240476604]

@@ -15,7 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://klt57jvkwe2d" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background_obj01.png" id="13_k57uc"]
 [ext_resource type="TileSet" uid="uid://bc17wi8eevycr" path="res://scenes/levels/tile_set.tres" id="14_ixuqb"]
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="15_od0v7"]
+[ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="16_q4kie"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="16_s81dt"]
+[ext_resource type="Resource" uid="uid://dedthxg6tnjl3" path="res://inventory/keys/key_01.tres" id="17_m7xdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbsy5"]
 texture = ExtResource("5_y0euc")
@@ -7433,13 +7435,13 @@ tile_set = ExtResource("14_ixuqb")
 [node name="Torches" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1070898777]
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("15_od0v7")]
-position = Vector2(370, 184)
+position = Vector2(371, 190)
 
 [node name="Torch2" parent="Objects/Torches" index="1" unique_id=730690349 instance=ExtResource("15_od0v7")]
-position = Vector2(235, 187)
+position = Vector2(234, 190)
 
 [node name="Torch3" parent="Objects/Torches" index="2" unique_id=1547553300 instance=ExtResource("15_od0v7")]
-position = Vector2(114, 187)
+position = Vector2(109, 191)
 
 [node name="Torch4" parent="Objects/Torches" index="3" unique_id=1212320659 instance=ExtResource("15_od0v7")]
 position = Vector2(54, 90)
@@ -7448,6 +7450,11 @@ type = "1"
 [node name="Torch5" parent="Objects/Torches" index="4" unique_id=1726032925 instance=ExtResource("15_od0v7")]
 position = Vector2(427, 131)
 type = "2"
+
+[node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1614685710 instance=ExtResource("16_q4kie")]
+position = Vector2(394, 190)
+item = ExtResource("17_m7xdu")
+id = 4
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("16_s81dt")]
 target = "uid://buma7x4obvec6"

@@ -3,8 +3,9 @@ class_name PlayerFall
 
 @onready var player: CharacterBody2D = get_player()
 
-@export var speed = 10.0
 @export var jump_velocity = 10.0
+
+var coyote_timer: float
 
 var air_time = 0.0
 
@@ -12,14 +13,18 @@ var speed_mult = 30.0
 var jump_mult = -30.0
 
 func _enter() -> void:
+	coyote_timer = 2.0
 	player.sprite("fall")
 
 func physics_update(delta):
 	#Air movement
+	if not player.coyote_timer.is_stopped():
+		if Input.is_action_just_pressed("jump") and not Input.is_action_pressed("down"):
+			Transitioned.emit(self,"jump")
 	air_time += delta
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		player.velocity.x = direction * speed * speed_mult
+		player.velocity.x = direction * player.speed * speed_mult
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
@@ -29,7 +34,7 @@ func physics_update(delta):
 			Globals.direction = 1
 			player.attack_1_area.scale.x = 1
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, speed * speed_mult)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.speed * speed_mult)
 	
 	#Idle transition
 	if player.velocity.y == 0:

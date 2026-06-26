@@ -3,7 +3,7 @@ class_name PlayerRun
 
 var player: CharacterBody2D
 
-@export var speed : float = 10.0
+
 
 var speed_mult : float = 30.0
 
@@ -15,10 +15,11 @@ func enter():
 	
 func physics_update(_delta):
 	
+	
 	#Movement
 	var direction : float = Input.get_axis("left", "right")
 	if direction:
-		player.velocity.x = direction * speed * speed_mult
+		player.velocity.x = direction * player.speed * speed_mult
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
@@ -29,7 +30,7 @@ func physics_update(_delta):
 	
 	#Transition to idle
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, speed * speed_mult)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.speed * speed_mult)
 		Transitioned.emit(self,"idle")
 		player.current_direction = 0
 	

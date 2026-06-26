@@ -3,7 +3,6 @@ class_name PlayerJumpAttack2
 
 @onready var player: CharacterBody2D = get_player()
 
-@export var speed = 10.0
 @export var jump_velocity = 20.0
 
 var speed_mult = 30.0
@@ -29,7 +28,7 @@ func update(delta):
 		Transitioned.emit(self,"fall")
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		player.velocity.x = direction * speed * speed_mult
+		player.velocity.x = direction * player.speed * speed_mult
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
@@ -38,7 +37,7 @@ func update(delta):
 			Globals.direction = 1
 		player.attack_1_area.position.x = abs(player.attack_1_area.position.x) * Globals.direction
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, speed * speed_mult)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.speed * speed_mult)
 	if player.velocity.y == 0:
 		if direction:
 			Transitioned.emit(self,"run")

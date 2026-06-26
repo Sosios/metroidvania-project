@@ -16,6 +16,10 @@ signal description
 
 signal update_weapon
 
+signal update_armor
+
+signal use_heal
+
 var item_selected : InvSlot
 
 func _ready():
@@ -38,7 +42,7 @@ func update(slot: InvSlot):
 		focus_mode = Control.FOCUS_ALL
 		item_selected = slot
 		
-		if item_selected.item.type == "sword":
+		if item_selected.item.type in ["sword","armor"]:
 			button_2_label.text = "Equiper"
 		else:
 			button_2_label.text = "Utiliser"
@@ -82,10 +86,16 @@ func _on_button_2_pressed() -> void:
 		SaveLoad.save_file.weapon = item_selected.item
 		update_weapon.emit()
 		$AnimationPlayer.play_backwards("menu")
-		grab_focus()
-		update(item_selected)
-		focus_mode = Control.FOCUS_ALL
-		
+	elif item_selected.item.type == "armor":
+		SaveLoad.save_file.armor = item_selected.item
+		update_armor.emit()
+	elif item_selected.item.type == "heal":
+		Globals.health += item_selected.item.heal
+		SaveLoad.save_file.throw(item_selected.item)
+	$AnimationPlayer.play_backwards("menu")
+	grab_focus()
+	update(item_selected)
+	focus_mode = Control.FOCUS_ALL
 
 
 func _on_button_3_pressed() -> void:

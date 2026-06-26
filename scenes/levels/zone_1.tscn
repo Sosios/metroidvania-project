@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="7_ki25l"]
 [ext_resource type="Texture2D" uid="uid://80sd37e16gys" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background_obj04.png" id="8_nnsbt"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="9_scins"]
-[ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="9_ueieb"]
 [ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="9_voivb"]
 [ext_resource type="Texture2D" uid="uid://du57loqnht2lo" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_1.png" id="10_yb0r2"]
 [ext_resource type="Texture2D" uid="uid://12y4axelnibd" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_2.png" id="11_onbes"]
@@ -7398,6 +7397,19 @@ size = Vector2(20, 284)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cafox"]
 size = Vector2(6.5, 43.25)
 
+[sub_resource type="Gradient" id="Gradient_3qouw"]
+offsets = PackedFloat32Array(0.4, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dbxk1"]
+gradient = SubResource("Gradient_3qouw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8333334, 0.16666667)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpot8"]
 size = Vector2(193.60689, 292)
 
@@ -7551,16 +7563,18 @@ top_level = true
 position = Vector2(159, 192)
 collision_mask = 1870
 
-[node name="Camera2D" parent="Player" index="13" unique_id=312523826]
+[node name="PointLight2D2" type="PointLight2D" parent="Player" index="14" unique_id=1248550265]
+position = Vector2(3, -11)
+scale = Vector2(1.4375, 1.4375)
+energy = 0.1
+texture = SubResource("GradientTexture2D_dbxk1")
+texture_scale = 0.8
+height = 40.0
+
+[node name="Camera2D" parent="Player" index="15" unique_id=312523826]
 limit_right = 960
 limit_bottom = 271
 limit_smoothed = true
-
-[node name="PointLight2D2" type="PointLight2D" parent="Player" index="14" unique_id=1710554001]
-position = Vector2(2, -11)
-energy = 0.5
-texture = ExtResource("9_ueieb")
-texture_scale = 0.2
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("5_4vx7k")]
 position = Vector2(813.7863, 7.2825394)

@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://bh6uxou2focey"]
+
+[ext_resource type="Texture2D" uid="uid://cum7hpjd4rl7q" path="res://assets/Personnages/Characters Pack/Outline/WarriorMan-Sheet.png" id="1_bknba"]
+[ext_resource type="Texture2D" uid="uid://baf5k20pw8fht" path="res://assets/Personnages/Characters Pack/Outline/WarriorMan-Sheet_normal_map.png" id="2_cmvxq"]
+
+[resource]
+diffuse_texture = ExtResource("1_bknba")
+normal_texture = ExtResource("2_cmvxq")

@@ -24,6 +24,9 @@ func update_status():
 func _on_body_entered(body: Node2D) -> void:
 	if id not in SaveLoad.save_file.opened_chests:
 		$AnimationPlayer.play("open")
-		SaveLoad.save_file.insert(item)
+		if item.type != "key":
+			SaveLoad.save_file.insert(item)
+		else:
+			SaveLoad.save_file.unlocked_doors.append(item.key_id)
 		$AnimatedSprite2D.animation = "opened"
 		SaveLoad.save_file.opened_chests.append(id)

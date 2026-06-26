@@ -14,7 +14,7 @@ var attack_3_times := [0.5,0.6664]
 
 @onready var state_machine: Node = $StateMachine
 
-@export var speed = 10.0
+@export var speed = 8.0
 @export var jump_velocity = 10.0
 @export var collision : CollisionShape2D
 @export var animation_player: AnimationPlayer
@@ -41,8 +41,12 @@ var vuln = true
 
 var air_time = 0.0
 
+@onready var coyote_timer: Timer = $Timers/CoyoteTimer
+
 var is_gravity = false
 var is_in_gravity_area:= false
+
+var coyote := false
 
 var flip_h = false
 var current_animation: String
@@ -53,35 +57,40 @@ func _ready() -> void:
 	SaveLoad.save_file.connect("update",update_inventory)
 
 func _physics_process(delta: float) -> void:
+	if coyote and not is_on_floor():
+		coyote_timer.start()
+	coyote = is_on_floor()
+	
 	Globals.player_pos = global_position
 	
-	if (velocity.y>0 and (not is_gravity or not is_in_gravity_area)) or (velocity.y<0 and is_gravity):
-		sprite.play("fall")
-		$StateMachine.current_state = $StateMachine/Fall
-		$StateMachine/Fall.enter()
-		
-	
-	if Input.is_action_pressed("down"):
-		if Input.is_action_just_pressed("jump"):
-			set_collision_mask_value(7, false)
+	if !Globals.stop:
+		if (velocity.y>0 and (not is_gravity or not is_in_gravity_area)) or (velocity.y<0 and is_gravity):
 			sprite.play("fall")
 			$StateMachine.current_state = $StateMachine/Fall
 			$StateMachine/Fall.enter()
-			await get_tree().create_timer(0.2).timeout
-			set_collision_mask_value(7, true)
-			
-	if $StateMachine.current_state.name != "Dash":
-		if is_in_gravity_area and is_gravity and not is_on_ceiling():
-			sprite.flip_v = true
-			velocity -= get_gravity() * delta
-			up_direction = Vector2.DOWN
-		else:
-			sprite.flip_v = false
-			velocity += get_gravity() * delta
-			up_direction = Vector2.UP
+		
+	
+		if Input.is_action_pressed("down"):
+			if Input.is_action_just_pressed("jump"):
+				set_collision_mask_value(7, false)
+				sprite.play("fall")
+				$StateMachine.current_state = $StateMachine/Fall
+				$StateMachine/Fall.enter()
+				await get_tree().create_timer(0.2).timeout
+				set_collision_mask_value(7, true)
+				
+		if $StateMachine.current_state.name != "Dash":
+			if is_in_gravity_area and is_gravity and not is_on_ceiling():
+				sprite.flip_v = true
+				velocity -= get_gravity() * delta
+				up_direction = Vector2.DOWN
+			else:
+				sprite.flip_v = false
+				velocity += get_gravity() * delta
+				up_direction = Vector2.UP
 	
 	
-	move_and_slide()
+		move_and_slide()
 	if attack_1_area.monitoring:
 		for body in attack_1_area.get_overlapping_bodies():
 			if "hit" in body:

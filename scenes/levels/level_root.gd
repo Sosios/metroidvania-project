@@ -21,6 +21,7 @@ var paused = false
 
 
 func _ready() -> void:
+	update.emit()
 	player.position = $TransitionPoints.get_children()[Globals.marker].position
 	player.sprite.flip_h = Globals.flip_h
 	player.connect("create_platform",_on_create_platform)
@@ -33,7 +34,6 @@ func _ready() -> void:
 	Globals.stop = true
 	await get_tree().create_timer(0.2).timeout
 	Globals.stop = false
-	update.emit()
 
 func _input(event: InputEvent) -> void:
 	pass

@@ -1,6 +1,140 @@
 [gd_scene format=3 uid="uid://bjc0hgsp0gpds"]
 
 [ext_resource type="Script" uid="uid://csf02ju0dwa0n" path="res://globals/game.gd" id="1_qdmn5"]
+[ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_ehmke"]
+[ext_resource type="FontFile" uid="uid://b1xgnmi5ygort" path="res://assets/Fonts/AvenuePixel-Regular Mac.ttf" id="3_nqac0"]
+[ext_resource type="FontFile" uid="uid://cbxiwr3q6adyx" path="res://assets/Fonts/AvenuePixelStroke-Regular.ttf" id="4_y5hx0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtn3d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1pwi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylvxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06wfu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehmke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqac0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5hx0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0hhh"]
+font = ExtResource("4_y5hx0")
+font_size = 96
 
 [node name="Game" type="Node" unique_id=1162406907]
 script = ExtResource("1_qdmn5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1746685711]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = -7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1975562784]
+layout_mode = 2
+alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/HBoxContainer" unique_id=170982345]
+visible = false
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=1986026357]
+position = Vector2(-8, 27)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ehmke")
+region_enabled = true
+region_rect = Rect2(245, 2, 7, 12)
+
+[node name="New" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=366931069]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_nqac0")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vtn3d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1pwi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ylvxq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_06wfu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ehmke")
+text = "Nouvelle partie"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1525406659]
+layout_mode = 2
+alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/HBoxContainer2" unique_id=878792900]
+visible = false
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/SubViewportContainer" unique_id=1211011830]
+position = Vector2(-8, 27)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ehmke")
+region_enabled = true
+region_rect = Rect2(245, 2, 7, 12)
+
+[node name="Load" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=741333401]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nqac0")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vtn3d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1pwi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ylvxq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_06wfu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nqac0")
+text = "Charger une partie"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1128459957]
+layout_mode = 2
+alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/HBoxContainer3" unique_id=1713863578]
+visible = false
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/SubViewportContainer" unique_id=1738697513]
+position = Vector2(-8, 28)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ehmke")
+region_enabled = true
+region_rect = Rect2(245, 2, 7, 12)
+
+[node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=1830088344]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nqac0")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vtn3d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1pwi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ylvxq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_06wfu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5hx0")
+text = "Quitter le jeu"
+
+[node name="Label" type="Label" parent="." unique_id=2124946976]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 480.0
+offset_bottom = 145.0
+text = "GAME NAME"
+label_settings = SubResource("LabelSettings_u0hhh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="focus_entered" from="VBoxContainer/HBoxContainer/New" to="." method="_on_new_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/HBoxContainer/New" to="." method="_on_new_focus_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/New" to="." method="_on_new_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/HBoxContainer2/Load" to="." method="_on_load_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/HBoxContainer2/Load" to="." method="_on_load_focus_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Load" to="." method="_on_load_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/HBoxContainer3/Quit" to="." method="_on_quit_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/HBoxContainer3/Quit" to="." method="_on_quit_focus_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Quit" to="." method="_on_quit_pressed"]

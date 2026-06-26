@@ -77,6 +77,8 @@ animations = [{
 
 [node name="Torch" type="Node2D" unique_id=627410971]
 script = ExtResource("1_r5pxk")
+energy = 1.5
+tex_scale = 0.5
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2131940948]
 visible = false
@@ -112,4 +114,5 @@ color = Color(0.36078432, 0.7764706, 1, 1)
 energy = 1.5
 shadow_enabled = true
 texture = ExtResource("14_vjcub")
-texture_scale = 0.25
+texture_scale = 0.5
+height = 30.0

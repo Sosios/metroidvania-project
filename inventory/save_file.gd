@@ -28,6 +28,8 @@ func discover_room(room: int):
 
 @export var opened_doors := []
 
+@export var unlocked_doors := []
+
 @export var defeated_bosses := []
 
 @export var can_double_jump := false

@@ -10,15 +10,14 @@ radius = 81.02469
 script = ExtResource("1_v51y8")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2049234397]
-position = Vector2(245.99998, 135)
+position = Vector2(-4.5776367e-05, -1.5258789e-05)
 scale = Vector2(0.24593748, 0.24593748)
 color = Color(0.3872354, 0.053129166, 0, 1)
-energy = 16.0
+energy = 64.0
 texture = ExtResource("1_yqx2y")
-texture_scale = 1.25
+texture_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069293423]
-position = Vector2(242, 125)
 shape = SubResource("CircleShape2D_vpi6i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

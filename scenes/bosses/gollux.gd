@@ -31,6 +31,8 @@ var health = max_health:
 
 @export var shield: bool = false
 
+@export var strength: float = 50.0
+
 @onready var navigation: NavigationAgent2D = $NavigationAgent2D
 
 @onready var target_position:= Vector2.ZERO
@@ -55,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	for body in $Hitbox.get_overlapping_bodies():
 		if "hurt" in body:
-			body.hurt(25,global_position)
+			body.hurt(strength,global_position)
 
 
 func hit(damage):
@@ -72,6 +74,8 @@ func hit(damage):
 		tween.tween_property(sprite,"modulate:a",0,0.5)
 		queue_free()
 		SaveLoad.save_file.defeated_bosses.append(0)
+		SaveLoad.save_file.unlocked_doors.append(1)
+		SaveLoad.save_file.unlocked_doors.append(3)
 		Globals.show_bar = false
 #func _on_hurt_box_body_entered(body: Node2D) -> void:
 	#if "hurt" in body and $StateMachine.current_state == $StateMachine/Follow:

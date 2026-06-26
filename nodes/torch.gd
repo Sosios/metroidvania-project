@@ -25,7 +25,7 @@ func _ready():
 		if point_light_2d:
 			color = value
 			point_light_2d.color = color
-@export var energy = 1.5:
+@export var energy = 2.0:
 	set(value):
 		if point_light_2d:
 			energy = value

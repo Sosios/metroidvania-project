@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var label: Label = $MarginContainer2/Label
 @onready var boss_label: Label = $BossHealth/Label
-@onready var boss_progress_bar: ProgressBar = $BossHealth/ProgressBar
+@onready var boss_progress_bar: TextureProgressBar = $BossHealth/ProgressBar
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,15 +13,16 @@ func _ready() -> void:
 	Globals.connect("stat_change",update_health)
 	Globals.connect("boss_update",update_boss)
 	SaveLoad.save_file.connect("update",update_health)
-	get_parent().connect("update",update_health)
+	get_parent().get_parent().connect("update",update_health)
 
 func update_health():
-	$ProgressBar2.value = Globals.health
-	$ProgressBar2.max_value = SaveLoad.save_file.max_health
-	$Label.text = str(int(Globals.health))+"/"+str(int(SaveLoad.save_file.max_health))
-	$ProgressBar.value = SaveLoad.save_file.exp_points
-	$ProgressBar.min_value = SaveLoad.save_file.lvl_exp_cap
-	$ProgressBar.max_value = SaveLoad.save_file.nxtlvl
+	$HealthBar.value = Globals.health
+	$HealthBar.max_value = SaveLoad.save_file.max_health
+	$Health.text = str(int(Globals.health))
+	$MaxHealth.text = "/"+str(int(SaveLoad.save_file.max_health))
+	$ExpBar.value = SaveLoad.save_file.exp_points
+	$ExpBar.min_value = SaveLoad.save_file.lvl_exp_cap
+	$ExpBar.max_value = SaveLoad.save_file.nxtlvl
 
 func update_boss():
 	if Globals.show_bar:

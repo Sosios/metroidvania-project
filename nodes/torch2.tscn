@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://10d7qyxbr7w2"]
+
+[ext_resource type="Script" uid="uid://buitktv50nmlq" path="res://nodes/torch_2.gd" id="1_fxbk8"]
+[ext_resource type="Texture2D" uid="uid://ckotnx1owq3eq" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-C-01.png" id="2_t2ih1"]
+[ext_resource type="Texture2D" uid="uid://lu8s3bwgh8im" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-C-02.png" id="3_0cxlt"]
+[ext_resource type="Texture2D" uid="uid://b4m1gwitrtvq3" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-C-03.png" id="4_nb6to"]
+[ext_resource type="Texture2D" uid="uid://dysnti02od3fo" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-C-04.png" id="5_8pdfx"]
+[ext_resource type="Texture2D" uid="uid://d1coollo31nao" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-B-01.png" id="6_ti1ww"]
+[ext_resource type="Texture2D" uid="uid://digqrnvhrpb4q" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-B-02.png" id="7_kqaoi"]
+[ext_resource type="Texture2D" uid="uid://duwtm2mjqde6y" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-B-03.png" id="8_fagby"]
+[ext_resource type="Texture2D" uid="uid://idgfllheag6n" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-B-04.png" id="9_a8e6n"]
+[ext_resource type="Texture2D" uid="uid://c2r7rpn7dbcu" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-A-01.png" id="10_8l43l"]
+[ext_resource type="Texture2D" uid="uid://dnifegklyucms" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-A-02.png" id="11_d131t"]
+[ext_resource type="Texture2D" uid="uid://cxn7drrtf8ohp" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-A-03.png" id="12_edkyo"]
+[ext_resource type="Texture2D" uid="uid://b15sd0pv8mjuq" path="res://assets/Backgrounds/PixelPlatformerSet1v.1.1/Anim/torch-A-04.png" id="13_vjbs7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1t7hn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t2ih1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0cxlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nb6to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8pdfx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukaou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ti1ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqaoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fagby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a8e6n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgyhy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8l43l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d131t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_edkyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vjbs7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ssj06"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3e42q"]
+gradient = SubResource("Gradient_ssj06")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.16666667, 0.16666667)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
+[node name="Torch" type="Node2D" unique_id=627410971]
+script = ExtResource("1_fxbk8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2131940948]
+visible = false
+offset_left = -119.0
+offset_top = -135.8077
+offset_right = 113.0
+offset_bottom = 140.8077
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="Options" type="Node2D" parent="." unique_id=2058249836]
+
+[node name="Ground" type="AnimatedSprite2D" parent="Options" unique_id=581760413]
+sprite_frames = SubResource("SpriteFrames_1t7hn")
+frame_progress = 0.043151565
+
+[node name="LeftWall" type="AnimatedSprite2D" parent="Options" unique_id=1461334345]
+sprite_frames = SubResource("SpriteFrames_ukaou")
+
+[node name="RightWall" type="AnimatedSprite2D" parent="Options" unique_id=1229569883]
+sprite_frames = SubResource("SpriteFrames_kgyhy")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1540866556]
+color = Color(1, 0.6156863, 0.42745098, 1)
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_3e42q")
+texture_scale = 3.0
+height = 30.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1384385975]
+visible = false
+color = Color(0.24477637, 0.2447764, 0.24477637, 1)
