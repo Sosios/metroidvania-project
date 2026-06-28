@@ -72,7 +72,7 @@ target = "uid://da7f111jvwaot"
 marker = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/B4" index="0" unique_id=887168553]
-position = Vector2(507, 129.5)
+position = Vector2(500, 132)
 shape = SubResource("RectangleShape2D_xdfq1")
 
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1210397553]

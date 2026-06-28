@@ -13,7 +13,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uo6xk"]
 shader = ExtResource("3_ca0rq")
 shader_parameter/from = Color(0.53333336, 0.45882353, 0.32156864, 1)
-shader_parameter/to = Color(0.53313285, 0.45895782, 0.71112853, 1)
+shader_parameter/to = Color(0.53313285, 0.59000057, 0.89165515, 1)
 shader_parameter/tolerance = 0.3150000149625
 
 [sub_resource type="Gradient" id="Gradient_c8ohj"]
