@@ -115,4 +115,4 @@ energy = 1.5
 shadow_enabled = true
 texture = ExtResource("14_vjcub")
 texture_scale = 0.5
-height = 30.0
+height = 20.0

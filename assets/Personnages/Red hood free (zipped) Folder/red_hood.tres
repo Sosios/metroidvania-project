@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://bpi785ceckgdp"]
+
+[ext_resource type="Texture2D" uid="uid://cujouahh0273h" path="res://assets/Personnages/Red hood free (zipped) Folder/red_hood_sprite_sheet2.png" id="1_lliqh"]
+[ext_resource type="Texture2D" uid="uid://8016dxnhgdh2" path="res://assets/Personnages/Red hood free (zipped) Folder/red_hood_sprite_sheet_normal_map.png" id="2_jtrxq"]
+
+[resource]
+diffuse_texture = ExtResource("1_lliqh")
+normal_texture = ExtResource("2_jtrxq")

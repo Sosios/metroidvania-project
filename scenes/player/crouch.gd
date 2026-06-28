@@ -12,3 +12,5 @@ func physics_update(delta):
 		Transitioned.emit(self,"crouchattack")
 	if !Input.is_action_pressed("down"):
 		Transitioned.emit(self,"getup")
+	if Input.is_action_just_pressed("jump"):
+		Transitioned.emit(self,"jump")

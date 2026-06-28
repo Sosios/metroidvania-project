@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bgbev2y0y1f50" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background02.png" id="3_j6a4i"]
 [ext_resource type="Texture2D" uid="uid://bd3lajj6a57s4" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background03.png" id="4_q1pff"]
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="6_1r4dw"]
+[ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="8_j6a4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drkag"]
 size = Vector2(80, 45)
@@ -56,17 +57,25 @@ tile_set = ExtResource("2_hhnc7")
 
 [node name="Torch" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=627410971 instance=ExtResource("6_1r4dw")]
 position = Vector2(380, 144)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=15189945 instance=ExtResource("6_1r4dw")]
 position = Vector2(299, 179)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=1572975992 instance=ExtResource("6_1r4dw")]
 position = Vector2(248, 65)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="3" unique_id=1627182158 instance=ExtResource("6_1r4dw")]
 position = Vector2(132, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Chest" parent="." index="4" unique_id=1614685710 instance=ExtResource("3_5nwnj")]
 position = Vector2(51, 192)
@@ -74,6 +83,13 @@ position = Vector2(51, 192)
 [node name="Player" parent="." index="6" unique_id=971349243]
 position = Vector2(265, 92)
 metadata/_edit_group_ = true
+
+[node name="PointLight2D3" type="PointLight2D" parent="Player" index="16" unique_id=1263088988]
+position = Vector2(2, -11)
+energy = 0.3
+texture = ExtResource("8_j6a4i")
+texture_scale = 0.2
+height = 30.0
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("3_hhnc7")]
 target = "uid://b2pq023kmfvg1"

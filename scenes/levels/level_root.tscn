@@ -43,12 +43,11 @@ script = ExtResource("4_f5m83")
 [node name="TransitionPoints" type="Node2D" parent="." unique_id=1995865306]
 
 [node name="CellAreas" type="Node2D" parent="." unique_id=995269704]
-metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1724915358]
 enabled = false
-energy = 0.7
+energy = 0.9
 blend_mode = 1
 metadata/_edit_lock_ = true
 

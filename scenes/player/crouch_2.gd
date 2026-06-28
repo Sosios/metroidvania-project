@@ -13,6 +13,8 @@ func enter():
 	player.animation_player.play_backwards("crouch")
 	
 func physics_update(delta):
+	if Input.is_action_just_pressed("jump"):
+		Transitioned.emit(self,"jump")
 	timer -= delta
 	if timer <= 0:
 		player.animation_player.play_backwards("crouch")

@@ -100,7 +100,7 @@ color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 
 [node name="Ground" type="AnimatedSprite2D" parent="Options" unique_id=581760413]
 sprite_frames = SubResource("SpriteFrames_1t7hn")
-frame_progress = 0.043151565
+frame_progress = 0.09511695
 
 [node name="LeftWall" type="AnimatedSprite2D" parent="Options" unique_id=1461334345]
 sprite_frames = SubResource("SpriteFrames_ukaou")
@@ -114,7 +114,7 @@ energy = 1.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_3e42q")
 texture_scale = 3.0
-height = 30.0
+height = 20.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1384385975]
 visible = false

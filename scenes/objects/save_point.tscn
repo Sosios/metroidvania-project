@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://dbgl2sbpbad3g"]
 
 [ext_resource type="Script" uid="uid://rm6nrru5vojs" path="res://scenes/objects/save_point.gd" id="1_v51y8"]
-[ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="1_yqx2y"]
+
+[sub_resource type="Gradient" id="Gradient_yqx2y"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v51y8"]
+gradient = SubResource("Gradient_yqx2y")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.1, 0.2)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yqx2y"]
+gradient = SubResource("Gradient_yqx2y")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.1, 0.2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vpi6i"]
 radius = 81.02469
@@ -12,12 +26,23 @@ script = ExtResource("1_v51y8")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2049234397]
 position = Vector2(-4.5776367e-05, -1.5258789e-05)
 scale = Vector2(0.24593748, 0.24593748)
-color = Color(0.3872354, 0.053129166, 0, 1)
-energy = 64.0
-texture = ExtResource("1_yqx2y")
-texture_scale = 0.5
+color = Color(0.38709083, 0.24269372, 0, 1)
+energy = 14.45
+texture = SubResource("GradientTexture2D_v51y8")
+texture_scale = 10.13
+height = 30.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=492539028]
+position = Vector2(-4.5776367e-05, -1.5258789e-05)
+scale = Vector2(0.15625018, 0.15625018)
+color = Color(0.9999996, 0.23727605, 0.06715054, 1)
+energy = 281.25
+texture = SubResource("GradientTexture2D_yqx2y")
+texture_scale = 8.89
+height = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069293423]
+visible = false
 shape = SubResource("CircleShape2D_vpi6i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

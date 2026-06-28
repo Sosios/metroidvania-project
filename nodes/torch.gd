@@ -25,12 +25,12 @@ func _ready():
 		if point_light_2d:
 			color = value
 			point_light_2d.color = color
-@export var energy = 2.0:
+@export var energy = 3.0:
 	set(value):
 		if point_light_2d:
 			energy = value
 			point_light_2d.energy = energy
-@export var tex_scale = 0.25:
+@export var tex_scale = 0.15:
 	set(value):
 		if point_light_2d:
 			tex_scale = value

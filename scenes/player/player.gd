@@ -10,6 +10,11 @@ var attack_3_times := [0.5,0.6664]
 
 @onready var hit_timer: Timer = $Timers/HitTimer
 
+@onready var general_ap: AnimationPlayer = $General
+
+var hit_global_position: Vector2
+var hit_damage: float
+
 @export var invicibility = false
 
 @onready var state_machine: Node = $StateMachine
@@ -52,6 +57,7 @@ var flip_h = false
 var current_animation: String
 
 func _ready() -> void:
+	show()
 	change_character()
 	sprite.material.set_shader_parameter("output_palette_texture",SaveLoad.save_file.weapon.palette)
 	SaveLoad.save_file.connect("update",update_inventory)
@@ -62,7 +68,6 @@ func _physics_process(delta: float) -> void:
 	coyote = is_on_floor()
 	
 	Globals.player_pos = global_position
-	
 	if !Globals.stop:
 		if (velocity.y>0 and (not is_gravity or not is_in_gravity_area)) or (velocity.y<0 and is_gravity):
 			sprite.play("fall")
@@ -89,8 +94,7 @@ func _physics_process(delta: float) -> void:
 				velocity += get_gravity() * delta
 				up_direction = Vector2.UP
 	
-	
-		move_and_slide()
+	move_and_slide()
 	if attack_1_area.monitoring:
 		for body in attack_1_area.get_overlapping_bodies():
 			if "hit" in body:
@@ -133,9 +137,12 @@ func change_character():
 		attack_1_area.scale.x = -1
 	else:
 		attack_1_area.scale.x = 1
+	#general_ap.play("change_chara")
 	for animation in sprites:
 		animation.hide()
+	#await get_tree().create_timer(0.3).timeout
 	sprite.show()
+	#general_ap.play_backwards("change_chara")
 	animation_player = animations[SaveLoad.save_file.player_selected]
 
 
@@ -167,7 +174,7 @@ func shade(color):
 	$WallParticles.emitting = true
 	var tween = create_tween()
 	tween.tween_method(set_progress_value,0.0,0.8,0.2)
-	$PointLight2D.enabled = true
+	$ShadeLight.enabled = true
 	#sprite.material.set_shader_parameter("progress", 0.8);	
 
 func unshade():
@@ -179,32 +186,12 @@ func unshade():
 
 func hurt(damage,pos):
 	if vuln and not invicibility:
-		attack_1_area.monitoring = false
-		var direction = (global_position - pos).normalized()
-		hit_timer.start()
-		Globals.health -= damage
-		can_move = false
-		var tween = create_tween()
-		tween.tween_property(self, "global_position",global_position+Vector2(direction.x, -0.5)*40,0.2).set_ease(Tween.EASE_OUT)
+		hit_global_position = pos
+		hit_damage = damage
 		vuln = false
 		hit_timer.start()
-		await tween.finished
-		can_move = true
-		sprite.visible = false
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = true
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = false
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = true
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = false
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = true
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = false
-		await get_tree().create_timer(0.1).timeout
-		sprite.visible = true
+		$StateMachine.current_state = $StateMachine/Hit
+		$StateMachine/Hit.enter()
 
 func _on_hit_timer_timeout() -> void:
 	vuln = true

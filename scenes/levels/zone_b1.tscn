@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="10_4u1pk"]
 [ext_resource type="Texture2D" uid="uid://bymat20irvk84" path="res://assets/Sunny-land-files/Assets/environment/Props/spikes.png" id="11_wleeh"]
 
-[sub_resource type="Curve2D" id="Curve2D_bbrji"]
+[sub_resource type="Curve2D" id="Curve2D_4u1pk"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 214, 0)
@@ -30,8 +30,16 @@ size = Vector2(108.5, 9.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq6le"]
 size = Vector2(238, 9.5)
 
+[sub_resource type="Gradient" id="Gradient_4u1pk"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ogboc"]
+gradient = SubResource("Gradient_4u1pk")
+fill_from = Vector2(0.5, 0.4)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rt4wv"]
-size = Vector2(20, 131)
+size = Vector2(20, 226.5)
 
 [node name="Level" unique_id=342494649 instance=ExtResource("1_h25df")]
 
@@ -41,7 +49,7 @@ repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallaxes/Parallax2D2" index="0" unique_id=753635847]
 texture_repeat = 2
-position = Vector2(515, 232)
+position = Vector2(511, 232)
 texture = ExtResource("2_pjwxy")
 
 [node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="1" unique_id=927927599]
@@ -118,9 +126,9 @@ tile_set = ExtResource("8_js1sf")
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("9_bbrji")]
 visible = false
 position = Vector2(545, 144)
-curve = SubResource("Curve2D_bbrji")
+curve = SubResource("Curve2D_4u1pk")
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="15" unique_id=312523826]
 limit_right = 1440
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="6" unique_id=278051066]
@@ -165,6 +173,12 @@ texture = ExtResource("11_wleeh")
 region_enabled = true
 region_rect = Rect2(0, 0, 236.81, 10)
 
+[node name="DarkLight" type="PointLight2D" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="1" unique_id=928818606]
+position = Vector2(694.9999, 136.5)
+scale = Vector2(23.531246, 4.8281245)
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ogboc")
+
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("3_llcsn")]
 target = "uid://w1pgx5fp357c"
 marker = 1
@@ -179,7 +193,7 @@ target = "uid://w1pgx5fp357c"
 marker = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea2" index="0" unique_id=582251497]
-position = Vector2(-11, 151)
+position = Vector2(-11, 103.25)
 shape = SubResource("RectangleShape2D_rt4wv")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=476625543]
@@ -192,3 +206,7 @@ position = Vector2(480, 0)
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=1067793381 instance=ExtResource("4_pjwxy")]
 position = Vector2(960, 0)
+
+[node name="DirectionalLight2D" parent="." index="13" unique_id=1724915358]
+enabled = true
+energy = 0.1

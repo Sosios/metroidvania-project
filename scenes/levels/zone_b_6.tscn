@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bk71q4jlu57vn"]
+
+[ext_resource type="PackedScene" uid="uid://blssvmg60kdnq" path="res://scenes/levels/level_root.tscn" id="1_w66yq"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="2_pkvge"]
+
+[node name="ZoneB6" unique_id=342494649 instance=ExtResource("1_w66yq")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=959399848]
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_pkvge")]
+
+[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=636480274 instance=ExtResource("2_pkvge")]
+position = Vector2(-480, 0)

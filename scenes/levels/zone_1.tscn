@@ -7487,35 +7487,53 @@ tile_set = ExtResource("2_5jtl3")
 
 [node name="Torch" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=627410971 instance=ExtResource("7_ki25l")]
 position = Vector2(107, 176)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1574228028 instance=ExtResource("7_ki25l")]
 position = Vector2(226, 176)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=1121418537 instance=ExtResource("7_ki25l")]
 position = Vector2(435, 162)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="3" unique_id=2146854490 instance=ExtResource("7_ki25l")]
 position = Vector2(757, 139)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="4" unique_id=764432595 instance=ExtResource("7_ki25l")]
 position = Vector2(501, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch11" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="5" unique_id=1963180465 instance=ExtResource("7_ki25l")]
 position = Vector2(601, 126)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch9" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="6" unique_id=1558280419 instance=ExtResource("7_ki25l")]
 position = Vector2(906, 174)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch6" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="7" unique_id=1204791131 instance=ExtResource("7_ki25l")]
 position = Vector2(921, 61)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch7" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="8" unique_id=1240383459 instance=ExtResource("7_ki25l")]
 position = Vector2(313, 156)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("5_scins")]
 
@@ -7571,7 +7589,7 @@ texture = SubResource("GradientTexture2D_dbxk1")
 texture_scale = 0.8
 height = 40.0
 
-[node name="Camera2D" parent="Player" index="15" unique_id=312523826]
+[node name="Camera2D" parent="Player" index="18" unique_id=312523826]
 limit_right = 960
 limit_bottom = 271
 limit_smoothed = true
