@@ -2,7 +2,7 @@ extends Node
 
 var save_file : Save
 
-const save_location := "user://SaveFile.tres"
+const save_location := "user://SaveFile.res"
 
 #var contents_to_save: Dictionary = {
 	#"progress_bar_value": 0.0,

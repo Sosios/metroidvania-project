@@ -7468,30 +7468,46 @@ metadata/_edit_group_ = true
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("17_gxvc4")]
 position = Vector2(58, 189)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects/Torches" index="1" unique_id=2124453176 instance=ExtResource("17_gxvc4")]
 position = Vector2(379, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects/Torches" index="2" unique_id=1453561944 instance=ExtResource("17_gxvc4")]
 position = Vector2(212, 191)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects/Torches" index="3" unique_id=1960757511 instance=ExtResource("17_gxvc4")]
 position = Vector2(-385, 192)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects/Torches" index="4" unique_id=568096605 instance=ExtResource("17_gxvc4")]
 position = Vector2(-507, 52)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch6" parent="Objects/Torches" index="5" unique_id=310895095 instance=ExtResource("17_gxvc4")]
 position = Vector2(-844, 72)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch7" parent="Objects/Torches" index="6" unique_id=117440922 instance=ExtResource("17_gxvc4")]
 position = Vector2(-741, 100)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch8" parent="Objects/Torches" index="7" unique_id=705517542 instance=ExtResource("17_gxvc4")]
 position = Vector2(-608, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Chests" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1544375741]
 
@@ -7510,14 +7526,14 @@ position = Vector2(-64, 192)
 curve = SubResource("Curve2D_c1bce")
 path_time = 3.0
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
-limit_left = -960
-
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=752613843]
 position = Vector2(2, -11)
 energy = 0.5
 texture = ExtResource("20_sojff")
 texture_scale = 0.2
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+limit_left = -960
 
 [node name="HurtArea" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=754456728 instance=ExtResource("21_cfyfm")]
 

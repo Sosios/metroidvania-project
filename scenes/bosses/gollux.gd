@@ -69,14 +69,8 @@ func hit(damage):
 		$HitTimer.start()
 		vuln = false
 	if health <= 0:
-		sprite.play("hit")
-		var tween = create_tween()
-		tween.tween_property(sprite,"modulate:a",0,0.5)
-		queue_free()
-		SaveLoad.save_file.defeated_bosses.append(0)
-		SaveLoad.save_file.unlocked_doors.append(1)
-		SaveLoad.save_file.unlocked_doors.append(3)
-		Globals.show_bar = false
+		$StateMachine.current_state = $StateMachine/Dead
+		$StateMachine.current_state.enter()
 #func _on_hurt_box_body_entered(body: Node2D) -> void:
 	#if "hurt" in body and $StateMachine.current_state == $StateMachine/Follow:
 		#body.hurt(10,global_position)

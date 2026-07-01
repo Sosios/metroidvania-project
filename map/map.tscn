@@ -5,6 +5,12 @@
 [ext_resource type="TileSet" uid="uid://tq62fuhb0jq4" path="res://tilesets/new_tile_set.tres" id="3_urblq"]
 [ext_resource type="Script" uid="uid://bwnccml3p1gux" path="res://map/map_rooms.gd" id="5_iw27f"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_6qmw3"]
+font_size = 4
+font_color = Color(0.03876, 1, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_lgq1i"]
 font_size = 3
 outline_size = 1
@@ -41,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gqbix")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -61,6 +67,435 @@ tile_set = ExtResource("3_urblq")
 script = ExtResource("5_iw27f")
 
 [node name="IndicationsDev" type="Node2D" parent="." unique_id=825476058]
+
+[node name="Noms de salle" type="Node2D" parent="IndicationsDev" unique_id=141890277]
+
+[node name="1" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1192821863]
+offset_left = 81.0
+offset_top = 71.0
+offset_right = 85.0
+offset_bottom = 80.0
+text = "1"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="2" type="Label" parent="IndicationsDev/Noms de salle" unique_id=358031039]
+offset_left = 98.0
+offset_top = 71.0
+offset_right = 102.0
+offset_bottom = 80.0
+text = "2"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="3" type="Label" parent="IndicationsDev/Noms de salle" unique_id=980061949]
+offset_left = 129.0
+offset_top = 71.0
+offset_right = 133.0
+offset_bottom = 80.0
+text = "3"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="4" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1578215479]
+offset_left = 115.0
+offset_top = 79.0
+offset_right = 119.0
+offset_bottom = 88.0
+text = "4"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="5" type="Label" parent="IndicationsDev/Noms de salle" unique_id=30078404]
+offset_left = 154.0
+offset_top = 73.0
+offset_right = 163.0
+offset_bottom = 82.0
+text = "5"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="h1" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1982981972]
+offset_left = 145.0
+offset_top = 79.0
+offset_right = 154.0
+offset_bottom = 100.0
+text = "h1
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="6" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1278806906]
+offset_left = 139.0
+offset_top = 96.0
+offset_right = 148.0
+offset_bottom = 117.0
+text = "6"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="7" type="Label" parent="IndicationsDev/Noms de salle" unique_id=2068004731]
+offset_left = 143.0
+offset_top = 109.0
+offset_right = 152.0
+offset_bottom = 130.0
+text = "7"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="8" type="Label" parent="IndicationsDev/Noms de salle" unique_id=887303858]
+offset_left = 167.0
+offset_top = 102.0
+offset_right = 176.0
+offset_bottom = 123.0
+text = "8"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="9" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1872092106]
+offset_left = 178.0
+offset_top = 111.0
+offset_right = 187.0
+offset_bottom = 132.0
+text = "9"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="S1" type="Label" parent="IndicationsDev/Noms de salle" unique_id=48317551]
+offset_left = 121.0
+offset_top = 103.0
+offset_right = 130.0
+offset_bottom = 124.0
+text = "S1"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="T1" type="Label" parent="IndicationsDev/Noms de salle" unique_id=2013107889]
+offset_left = 161.0
+offset_top = 87.0
+offset_right = 170.0
+offset_bottom = 108.0
+text = "T1"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B1" type="Label" parent="IndicationsDev/Noms de salle" unique_id=721377729]
+offset_left = 176.0
+offset_top = 87.0
+offset_right = 185.0
+offset_bottom = 108.0
+text = "B1"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B2" type="Label" parent="IndicationsDev/Noms de salle" unique_id=793692523]
+offset_left = 197.0
+offset_top = 88.0
+offset_right = 206.0
+offset_bottom = 109.0
+text = "B2"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B3" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1820681269]
+offset_left = 215.0
+offset_top = 85.0
+offset_right = 224.0
+offset_bottom = 106.0
+text = "B3"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B4" type="Label" parent="IndicationsDev/Noms de salle" unique_id=739479072]
+offset_left = 224.0
+offset_top = 65.0
+offset_right = 233.0
+offset_bottom = 86.0
+text = "B4"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B5" type="Label" parent="IndicationsDev/Noms de salle" unique_id=605281848]
+offset_left = 236.0
+offset_top = 64.0
+offset_right = 245.0
+offset_bottom = 85.0
+text = "B5
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B6" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1039881063]
+offset_left = 212.0
+offset_top = 55.0
+offset_right = 221.0
+offset_bottom = 76.0
+text = "B6
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="S2" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1379359743]
+offset_left = 219.0
+offset_top = 49.0
+offset_right = 228.0
+offset_bottom = 70.0
+text = "S2
+
+
+
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B7" type="Label" parent="IndicationsDev/Noms de salle" unique_id=202393547]
+offset_left = 237.0
+offset_top = 29.0
+offset_right = 246.0
+offset_bottom = 50.0
+text = "B7
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B8" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1744917116]
+offset_left = 248.0
+offset_top = 32.0
+offset_right = 257.0
+offset_bottom = 53.0
+text = "B8
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B9" type="Label" parent="IndicationsDev/Noms de salle" unique_id=746245527]
+offset_left = 198.0
+offset_top = 112.0
+offset_right = 207.0
+offset_bottom = 133.0
+text = "B9
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B10" type="Label" parent="IndicationsDev/Noms de salle" unique_id=17251967]
+offset_left = 206.0
+offset_top = 102.0
+offset_right = 217.0
+offset_bottom = 123.0
+text = "B10
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B11" type="Label" parent="IndicationsDev/Noms de salle" unique_id=585487017]
+offset_left = 216.0
+offset_top = 96.0
+offset_right = 227.0
+offset_bottom = 117.0
+text = "B11
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B12" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1154468895]
+offset_left = 232.0
+offset_top = 89.0
+offset_right = 243.0
+offset_bottom = 110.0
+text = "B12
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B13" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1945457951]
+offset_left = 200.0
+offset_top = 81.0
+offset_right = 211.0
+offset_bottom = 102.0
+text = "B13
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B14" type="Label" parent="IndicationsDev/Noms de salle" unique_id=615550629]
+offset_left = 205.0
+offset_top = 73.0
+offset_right = 216.0
+offset_bottom = 94.0
+text = "B14
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B15" type="Label" parent="IndicationsDev/Noms de salle" unique_id=700879368]
+offset_left = 192.0
+offset_top = 73.0
+offset_right = 203.0
+offset_bottom = 94.0
+text = "B15
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B16" type="Label" parent="IndicationsDev/Noms de salle" unique_id=3086980]
+offset_left = 185.0
+offset_top = 65.0
+offset_right = 196.0
+offset_bottom = 86.0
+text = "B16
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B17" type="Label" parent="IndicationsDev/Noms de salle" unique_id=638700714]
+offset_left = 177.0
+offset_top = 49.0
+offset_right = 188.0
+offset_bottom = 70.0
+text = "B17
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="B18" type="Label" parent="IndicationsDev/Noms de salle" unique_id=2004224695]
+offset_left = 198.0
+offset_top = 49.0
+offset_right = 209.0
+offset_bottom = 70.0
+text = "B18
+"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="S3" type="Label" parent="IndicationsDev/Noms de salle" unique_id=301943996]
+offset_left = 192.0
+offset_top = 56.0
+offset_right = 203.0
+offset_bottom = 77.0
+text = "S3"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="T2" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1857860558]
+offset_left = 177.0
+offset_top = 57.0
+offset_right = 188.0
+offset_bottom = 78.0
+text = "T2"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C1" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1466183835]
+offset_left = 169.0
+offset_top = 57.0
+offset_right = 180.0
+offset_bottom = 78.0
+text = "C1"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C2" type="Label" parent="IndicationsDev/Noms de salle" unique_id=338183443]
+offset_left = 169.0
+offset_top = 44.0
+offset_right = 180.0
+offset_bottom = 65.0
+text = "C2"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C3" type="Label" parent="IndicationsDev/Noms de salle" unique_id=325610504]
+offset_left = 172.0
+offset_top = 33.0
+offset_right = 183.0
+offset_bottom = 54.0
+text = "C3"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C4" type="Label" parent="IndicationsDev/Noms de salle" unique_id=336822956]
+offset_left = 170.0
+offset_top = 24.0
+offset_right = 181.0
+offset_bottom = 45.0
+text = "C4"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C5" type="Label" parent="IndicationsDev/Noms de salle" unique_id=453138925]
+offset_left = 142.0
+offset_top = 37.0
+offset_right = 153.0
+offset_bottom = 58.0
+text = "C5"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C6" type="Label" parent="IndicationsDev/Noms de salle" unique_id=2035033190]
+offset_left = 123.0
+offset_top = 47.0
+offset_right = 134.0
+offset_bottom = 68.0
+text = "C6"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C7" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1485429642]
+offset_left = 136.0
+offset_top = 48.0
+offset_right = 147.0
+offset_bottom = 69.0
+text = "C7"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C8" type="Label" parent="IndicationsDev/Noms de salle" unique_id=443675336]
+offset_left = 117.0
+offset_top = 34.0
+offset_right = 128.0
+offset_bottom = 55.0
+text = "C8"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C9" type="Label" parent="IndicationsDev/Noms de salle" unique_id=846519145]
+offset_left = 105.0
+offset_top = 41.0
+offset_right = 116.0
+offset_bottom = 62.0
+text = "C9"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C10" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1163254869]
+offset_left = 100.0
+offset_top = 29.0
+offset_right = 111.0
+offset_bottom = 50.0
+text = "C10"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C11" type="Label" parent="IndicationsDev/Noms de salle" unique_id=442722642]
+offset_left = 92.0
+offset_top = 41.0
+offset_right = 103.0
+offset_bottom = 62.0
+text = "C11"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C12" type="Label" parent="IndicationsDev/Noms de salle" unique_id=204308866]
+offset_left = 105.0
+offset_top = 13.0
+offset_right = 116.0
+offset_bottom = 34.0
+text = "C12"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C13" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1477999722]
+offset_left = 113.0
+offset_top = 10.0
+offset_right = 124.0
+offset_bottom = 31.0
+text = "C13"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C14" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1665386648]
+offset_left = 80.0
+offset_top = 25.0
+offset_right = 91.0
+offset_bottom = 46.0
+text = "C14"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C15" type="Label" parent="IndicationsDev/Noms de salle" unique_id=535103702]
+offset_left = 64.0
+offset_top = 26.0
+offset_right = 75.0
+offset_bottom = 47.0
+text = "C15"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C16" type="Label" parent="IndicationsDev/Noms de salle" unique_id=619871432]
+offset_left = 76.0
+offset_top = 13.0
+offset_right = 87.0
+offset_bottom = 34.0
+text = "C16"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C17" type="Label" parent="IndicationsDev/Noms de salle" unique_id=186650284]
+offset_left = 88.0
+offset_top = 16.0
+offset_right = 99.0
+offset_bottom = 37.0
+text = "C17"
+label_settings = SubResource("LabelSettings_6qmw3")
+
+[node name="C18" type="Label" parent="IndicationsDev/Noms de salle" unique_id=1781277702]
+offset_left = 63.0
+offset_top = 48.0
+offset_right = 74.0
+offset_bottom = 69.0
+text = "C18"
+label_settings = SubResource("LabelSettings_6qmw3")
 
 [node name="Label" type="Label" parent="IndicationsDev" unique_id=444469493]
 offset_left = 127.0
@@ -108,6 +543,15 @@ offset_top = 109.0
 offset_right = 170.0
 offset_bottom = 120.0
 text = "Boss1
+"
+label_settings = SubResource("LabelSettings_lgq1i")
+
+[node name="Label9" type="Label" parent="IndicationsDev" unique_id=773787513]
+offset_left = 237.0
+offset_top = 30.0
+offset_right = 246.0
+offset_bottom = 43.0
+text = "Boss2
 "
 label_settings = SubResource("LabelSettings_lgq1i")
 

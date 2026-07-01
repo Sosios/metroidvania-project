@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://jp70fetihhgh" path="res://scenes/bosses/move.gd" id="10_hof2c"]
 [ext_resource type="Script" uid="uid://2ih043b41qqu" path="res://scenes/bosses/attack_1.gd" id="11_y4ohl"]
 [ext_resource type="Script" uid="uid://lqr4f643njcv" path="res://scenes/bosses/attack_2.gd" id="12_73iao"]
+[ext_resource type="Script" uid="uid://c2lynampxro7e" path="res://scenes/bosses/gollux/dead.gd" id="13_deaew"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fklnq"]
 shader = ExtResource("2_deaew")
@@ -287,7 +288,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k28l5")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_1",
 "speed": 6.0
 }, {
@@ -349,7 +350,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lerel")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_2",
 "speed": 6.0
 }, {
@@ -366,7 +367,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hg66h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hit",
 "speed": 6.0
 }, {
@@ -386,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_28sfb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 6.0
 }, {
@@ -415,7 +416,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hy2ka")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move",
 "speed": 12.0
 }]
@@ -709,6 +710,9 @@ script = ExtResource("12_73iao")
 animation_player = NodePath("../../AnimationPlayer")
 
 [node name="Hit" type="Node" parent="StateMachine" unique_id=498571275]
+
+[node name="Dead" type="Node" parent="StateMachine" unique_id=2124909740]
+script = ExtResource("13_deaew")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=137047583]
 

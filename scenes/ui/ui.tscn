@@ -96,6 +96,7 @@ horizontal_alignment = 2
 autostart = true
 
 [node name="BossHealth" type="Control" parent="." unique_id=1088891485]
+visible = false
 layout_mode = 3
 anchor_top = 0.92600006
 anchor_right = 1.0

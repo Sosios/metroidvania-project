@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://vmfjlf3p28gi"]
+
+[ext_resource type="PackedScene" uid="uid://u61ie0fy4m61" path="res://scenes/levels/save_4.tscn" id="1_wctfk"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="2_b0bgc"]
+
+[node name="Save5" unique_id=342494649 instance=ExtResource("1_wctfk")]
+
+[node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
+target = "uid://dxi5cr44lecpt"
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_b0bgc")]

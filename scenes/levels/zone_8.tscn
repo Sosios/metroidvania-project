@@ -7456,30 +7456,46 @@ tile_set = ExtResource("14_lbt0x")
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("15_g8wbx")]
 position = Vector2(176, 208)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch7" parent="Objects/Torches" index="1" unique_id=2138919639 instance=ExtResource("15_g8wbx")]
 position = Vector2(904, -140)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch8" parent="Objects/Torches" index="2" unique_id=1366698857 instance=ExtResource("15_g8wbx")]
 position = Vector2(56, -140)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects/Torches" index="3" unique_id=1830545905 instance=ExtResource("15_g8wbx")]
 position = Vector2(368, 208)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects/Torches" index="4" unique_id=1591763564 instance=ExtResource("15_g8wbx")]
 position = Vector2(560, 208)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects/Torches" index="5" unique_id=90485977 instance=ExtResource("15_g8wbx")]
 position = Vector2(736, 208)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects/Torches" index="6" unique_id=1813782451 instance=ExtResource("15_g8wbx")]
 position = Vector2(896, 208)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch6" parent="Objects/Torches" index="7" unique_id=1343367451 instance=ExtResource("15_g8wbx")]
 position = Vector2(906, 80)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1614685710 instance=ExtResource("16_l1686")]
 position = Vector2(864, -48)
@@ -7489,16 +7505,16 @@ id = 5
 position = Vector2(480, 223)
 boss = ExtResource("18_d76wp")
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
-limit_top = -272
-limit_right = 960
-limit_bottom = 272
-
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=90593867]
 position = Vector2(2, -11)
 energy = 0.5
 texture = ExtResource("19_npc5s")
 texture_scale = 0.2
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+limit_top = -272
+limit_right = 960
+limit_bottom = 272
 
 [node name="Zone7" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("14_jrxnd")]
 target = "uid://b75jxjc0e1fcs"

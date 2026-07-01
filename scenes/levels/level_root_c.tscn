@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bihcqnumyfb1r"]
+
+[ext_resource type="PackedScene" uid="uid://blssvmg60kdnq" path="res://scenes/levels/level_root.tscn" id="1_5j7cq"]
+[ext_resource type="Texture2D" uid="uid://beft8ofr4u1gw" path="res://assets/Backgrounds/Layers/sky_lightened.png" id="2_dp2eb"]
+[ext_resource type="Texture2D" uid="uid://ckxy2cms87og4" path="res://assets/Backgrounds/Layers/clouds_bg.png" id="3_8xfa1"]
+[ext_resource type="Texture2D" uid="uid://bw1q1aq5bfuf2" path="res://assets/Backgrounds/Layers/glacial_mountains.png" id="4_vunah"]
+[ext_resource type="Texture2D" uid="uid://dbpnwkpuuqabx" path="res://assets/Backgrounds/Layers/clouds_mg_3.png" id="5_tp2pq"]
+[ext_resource type="Texture2D" uid="uid://wrr5sxqcvk5h" path="res://assets/Backgrounds/Layers/clouds_mg_2.png" id="6_va5fr"]
+[ext_resource type="Texture2D" uid="uid://ctfg3pvu30gd4" path="res://assets/Backgrounds/Layers/cloud_lonely.png" id="7_jvk8r"]
+[ext_resource type="Texture2D" uid="uid://srdn40pw7fcs" path="res://assets/Backgrounds/Layers/clouds_mg_1.png" id="8_05fs6"]
+[ext_resource type="TileSet" uid="uid://djkdguta8ng7f" path="res://scenes/levels/snow_tile_set.tres" id="9_dp2eb"]
+[ext_resource type="Texture2D" uid="uid://5idck42a5ejo" path="res://assets/snow.png" id="10_8xfa1"]
+
+[sub_resource type="Gradient" id="Gradient_3qouw"]
+offsets = PackedFloat32Array(0.4, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5j7cq"]
+gradient = SubResource("Gradient_3qouw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8333334, 0.16666667)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6qmw3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(379.105, 41.44, 1)
+gravity = Vector3(173.51, 272.68, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+
+[node name="LevelRootC" unique_id=342494649 instance=ExtResource("1_5j7cq")]
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1447725800]
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(1693, -25)
+repeat_size = Vector2(384, 216)
+repeat_times = 5
+
+[node name="SkyLightened" type="Sprite2D" parent="Parallaxes/Parallax2D" index="0" unique_id=1101281174]
+position = Vector2(192, -491)
+texture = ExtResource("2_dp2eb")
+
+[node name="Parallax2D7" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="1" unique_id=1721839706]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="CloudsBg" type="Sprite2D" parent="Parallaxes/Parallax2D7" index="0" unique_id=2116381114]
+position = Vector2(192, 162)
+texture = ExtResource("3_8xfa1")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="2" unique_id=425883995]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="GlacialMountains" type="Sprite2D" parent="Parallaxes/Parallax2D3" index="0" unique_id=1515435899]
+position = Vector2(192, 162)
+texture = ExtResource("4_vunah")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="3" unique_id=1950627768]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="CloudsMg3" type="Sprite2D" parent="Parallaxes/Parallax2D4" index="0" unique_id=1754973661]
+position = Vector2(192, 162)
+texture = ExtResource("5_tp2pq")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="4" unique_id=1638867097]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="CloudsMg2" type="Sprite2D" parent="Parallaxes/Parallax2D5" index="0" unique_id=1649185785]
+position = Vector2(192, 162)
+texture = ExtResource("6_va5fr")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="5" unique_id=1369733159]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(250, 216)
+autoscroll = Vector2(5, 0)
+repeat_times = 25
+
+[node name="CloudLonely" type="Sprite2D" parent="Parallaxes/Parallax2D2" index="0" unique_id=1624604968]
+position = Vector2(192, 161)
+texture = ExtResource("7_jvk8r")
+
+[node name="Parallax2D6" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="6" unique_id=2117827893]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="CloudsMg1" type="Sprite2D" parent="Parallaxes/Parallax2D6" index="0" unique_id=1889488509]
+position = Vector2(192, 162)
+texture = ExtResource("8_05fs6")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=266087114]
+tile_set = ExtResource("9_dp2eb")
+
+[node name="PlayerLight" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=1158790758]
+position = Vector2(3, -11)
+scale = Vector2(1.4375, 1.4375)
+energy = 0.1
+texture = SubResource("GradientTexture2D_5j7cq")
+texture_scale = 0.8
+height = 40.0
+
+[node name="Snow" type="Node2D" parent="." index="8" unique_id=2059205359]
+
+[node name="Parallax2D" type="Parallax2D" parent="Snow" index="0" unique_id=1442336408]
+scroll_scale = Vector2(0, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Snow/Parallax2D" index="0" unique_id=182932870]
+position = Vector2(176, 2)
+amount = 315
+texture = ExtResource("10_8xfa1")
+lifetime = 1.5
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_6qmw3")

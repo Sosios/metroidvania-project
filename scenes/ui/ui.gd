@@ -23,6 +23,7 @@ func update_health():
 	$ExpBar.value = SaveLoad.save_file.exp_points
 	$ExpBar.min_value = SaveLoad.save_file.lvl_exp_cap
 	$ExpBar.max_value = SaveLoad.save_file.nxtlvl
+	$Label.text = str(SaveLoad.save_file.level)
 
 func update_boss():
 	if Globals.show_bar:
