@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ovw7hw38l1pt"]
+
+[ext_resource type="PackedScene" uid="uid://blssvmg60kdnq" path="res://scenes/levels/level_root.tscn" id="1_pni1d"]
+[ext_resource type="Texture2D" uid="uid://c6yc3kvmhtkae" path="res://assets/Backgrounds/Parallax/free-city-backgrounds-pixel-art/city 2/1.png" id="2_7you7"]
+[ext_resource type="Texture2D" uid="uid://oob7ixyovqhk" path="res://assets/Backgrounds/Parallax/free-city-backgrounds-pixel-art/city 2/2.png" id="3_acnq4"]
+[ext_resource type="Texture2D" uid="uid://ibdrpaoxhpga" path="res://assets/Backgrounds/Parallax/free-city-backgrounds-pixel-art/city 2/3.png" id="4_818rc"]
+[ext_resource type="Texture2D" uid="uid://pf1u8wdoa2y7" path="res://assets/Backgrounds/Parallax/free-city-backgrounds-pixel-art/city 2/4.png" id="5_lh3hk"]
+[ext_resource type="Texture2D" uid="uid://b1vfc6twu270y" path="res://assets/Backgrounds/Parallax/free-city-backgrounds-pixel-art/city 2/5.png" id="6_0n2ao"]
+[ext_resource type="Texture2D" uid="uid://ds5fsnpodomay" path="res://assets/Backgrounds/Parallax/free-city-backgrounds-pixel-art/city 2/6.png" id="7_irkii"]
+[ext_resource type="TileSet" uid="uid://dd0xhymxycjtk" path="res://scenes/levels/industrial_tileset.tres" id="8_7you7"]
+[ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_8rbrt"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="9_dtx4n"]
+
+[node name="LevelRootD" unique_id=342494649 instance=ExtResource("1_pni1d")]
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=963810810]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(324, 0)
+repeat_times = 6
+
+[node name="1" type="Sprite2D" parent="Parallaxes/Parallax2D" index="0" unique_id=2053622527]
+position = Vector2(288, 108)
+texture = ExtResource("2_7you7")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="1" unique_id=1429397586]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(324, 0)
+repeat_times = 6
+
+[node name="2" type="Sprite2D" parent="Parallaxes/Parallax2D2" index="0" unique_id=1368029177]
+position = Vector2(288, 197)
+texture = ExtResource("3_acnq4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="2" unique_id=103011134]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(324, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallaxes/Parallax2D3" index="0" unique_id=2020995626]
+position = Vector2(288, 108)
+texture = ExtResource("4_818rc")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="3" unique_id=1558401910]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(324, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallaxes/Parallax2D4" index="0" unique_id=499384661]
+position = Vector2(288, 108)
+texture = ExtResource("5_lh3hk")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="4" unique_id=26305783]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(324, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallaxes/Parallax2D5" index="0" unique_id=1586904780]
+position = Vector2(288, 108)
+texture = ExtResource("6_0n2ao")
+
+[node name="Parallax2D6" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="5" unique_id=1118331577]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(324, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallaxes/Parallax2D6" index="0" unique_id=2045841913]
+position = Vector2(288, 108)
+texture = ExtResource("7_irkii")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=1447175048]
+tile_set = ExtResource("8_7you7")
+
+[node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("8_8rbrt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1972837965]
+
+[node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=2137886638]
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("9_dtx4n")]

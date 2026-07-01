@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ciwxkae2rd2tx"]
+
+[ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="1_e8vgk"]
+
+[resource]
+shader = ExtResource("1_e8vgk")
+shader_parameter/from = Color(0.36078432, 0.4392157, 0.47058824, 1)
+shader_parameter/to = Color(0, 0.7273974, 0.7735731, 1)
+shader_parameter/tolerance = 0.38800001843

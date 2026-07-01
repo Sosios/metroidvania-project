@@ -7609,14 +7609,13 @@ position = Vector2(12, 192)
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=602858780]
 position = Vector2(927, 192)
 
-[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="." index="10" unique_id=1826806825]
-energy = 0.9
-blend_mode = 1
-
 [node name="0" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("9_scins")]
 
 [node name="1" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1559310973 instance=ExtResource("9_scins")]
 position = Vector2(480, 0)
 id = 1
+
+[node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
+enabled = true
 
 [editable path="Enemies/EnemyBarriers"]

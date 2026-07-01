@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://b77a0663d8tr2"]
+
+[ext_resource type="Texture2D" uid="uid://bli0ioh8o82gw" path="res://assets/Backgrounds/sci-fi platformer - free/tileset.png" id="1_su7ra"]
+[ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="2_rtnkb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg5n0"]
+atlas = ExtResource("1_su7ra")
+region = Rect2(192, 80, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdl0x"]
+atlas = ExtResource("1_su7ra")
+region = Rect2(208, 80, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy31a"]
+atlas = ExtResource("1_su7ra")
+region = Rect2(224, 80, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q3st"]
+atlas = ExtResource("1_su7ra")
+region = Rect2(240, 80, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qmw3"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_tg5n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdl0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy31a")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1q3st")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksq3u"]
+size = Vector2(0, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
+size = Vector2(13, 4)
+
+[sub_resource type="Animation" id="Animation_3k2g5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtArea/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_4pwy4"]
+resource_name = "default"
+length = 1.5000167113706468
+loop_mode = 1
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtArea/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.1666667, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 20), Vector2(0, 20), Vector2(3, 20), Vector2(3, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hqp3"]
+_data = {
+&"RESET": SubResource("Animation_3k2g5"),
+&"default": SubResource("Animation_4pwy4")
+}
+
+[node name="Laser" type="StaticBody2D" unique_id=1915944351]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=748990004]
+sprite_frames = SubResource("SpriteFrames_6qmw3")
+frame_progress = 0.9734126
+
+[node name="HurtArea" parent="." unique_id=754456728 instance=ExtResource("2_rtnkb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea" unique_id=1525006664]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ksq3u")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1400013745]
+position = Vector2(0.5, 22)
+shape = SubResource("RectangleShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=819287779]
+position = Vector2(0.5, -22)
+shape = SubResource("RectangleShape2D_6qmw3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=115757320]
+libraries/ = SubResource("AnimationLibrary_6hqp3")
+autoplay = &"default"
