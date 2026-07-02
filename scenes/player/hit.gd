@@ -11,6 +11,7 @@ func ready():
 	player = get_player()
 
 func enter():
+	
 	player = get_player()
 	player.attack_1_area.monitoring = false
 	direction = (player.global_position - player.hit_global_position).normalized()
@@ -20,6 +21,9 @@ func enter():
 	player.sprite.play("hit")
 	player.general_ap.play("hit")
 	timer = 0.2
+	Engine.time_scale = 0.05
+	await get_tree().create_timer(0.015).timeout
+	Engine.time_scale = 1
 	player.velocity = Vector2(direction.x, -0.5).normalized()*200
 	
 func physics_update(delta):

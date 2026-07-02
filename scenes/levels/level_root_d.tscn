@@ -11,6 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_8rbrt"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="9_dtx4n"]
 
+[sub_resource type="Gradient" id="Gradient_3qouw"]
+offsets = PackedFloat32Array(0.4, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7you7"]
+gradient = SubResource("Gradient_3qouw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8333334, 0.16666667)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
 [node name="LevelRootD" unique_id=342494649 instance=ExtResource("1_pni1d")]
 
 [node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=963810810]
@@ -75,6 +88,14 @@ texture = ExtResource("7_irkii")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=1447175048]
 tile_set = ExtResource("8_7you7")
+
+[node name="PlayerLight" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=346002094]
+position = Vector2(3, -11)
+scale = Vector2(1.4375, 1.4375)
+energy = 0.1
+texture = SubResource("GradientTexture2D_7you7")
+texture_scale = 0.8
+height = 40.0
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("8_8rbrt")]
 

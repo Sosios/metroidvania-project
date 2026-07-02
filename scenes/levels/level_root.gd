@@ -8,16 +8,8 @@ class_name Level
 
 var platform_scene = preload("res://scenes/objects/platform.tscn")
 
-var map_scene = preload("res://map/map.tscn")
-
-var is_map = false
-
-var map : Node
-
 signal update
 
-
-var paused = false
 
 
 func _ready() -> void:
@@ -35,8 +27,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	Globals.stop = false
 
-func _input(event: InputEvent) -> void:
-	pass
+
+func _process(_delta: float) -> void:
+	$CanvasModulate.color = Globals.screen_color
 
 func _on_create_platform():
 	var platform = platform_scene.instantiate()

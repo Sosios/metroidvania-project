@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="2_q81wc"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="3_cxfhr"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="3_l86ki"]
-[ext_resource type="Texture2D" uid="uid://ud6xuuner58a" path="res://assets/Backgrounds/Rocky Roads/Enemies/ice_spikes_2.png" id="5_q81wc"]
+[ext_resource type="Texture2D" uid="uid://ud6xuuner58a" path="res://assets/Ennemis/Rocky Roads/ice_spikes_2.png" id="5_q81wc"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="6_l86ki"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tn235"]

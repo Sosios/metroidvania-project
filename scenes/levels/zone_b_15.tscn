@@ -44,6 +44,7 @@ metadata/_snap_enabled = true
 size = Vector2(46, 122)
 
 [node name="ZoneB15" unique_id=342494649 instance=ExtResource("1_kxauy")]
+screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1569264536]
 scroll_scale = Vector2(0.4, 1)
@@ -166,3 +167,4 @@ position = Vector2(36, 190)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("12_inb02")]
 id = 68
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)

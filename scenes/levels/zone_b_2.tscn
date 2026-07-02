@@ -46,6 +46,7 @@ fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.508547, 0.36324787)
 
 [node name="ZoneB2" unique_id=342494649 instance=ExtResource("1_lbq3m")]
+screen_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1167577311]
 scroll_scale = Vector2(0.4, 1)
@@ -227,28 +228,36 @@ position = Vector2(728, 43)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("10_bewp0")]
 id = 22
+color = Color(0.70980394, 0.70980394, 0.70980394, 1)
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=258542917 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 0)
 id = 23
+color = Color(0.70980394, 0.70980394, 0.70980394, 1)
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=703608551 instance=ExtResource("10_bewp0")]
 position = Vector2(0, 272)
 id = 24
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+change_color = true
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=29947679 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 272)
 id = 25
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=1191154090 instance=ExtResource("10_bewp0")]
 position = Vector2(0, 546)
 id = 26
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=1461208366 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 546)
 id = 27
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="DarkLight" type="PointLight2D" parent="." index="11" unique_id=2118431544]
+visible = false
 position = Vector2(477.5, 419.5)
 scale = Vector2(16.265627, 13.140625)
 energy = 0.7
@@ -258,6 +267,5 @@ texture = SubResource("GradientTexture2D_h1sda")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="DirectionalLight2D" parent="." index="12" unique_id=1724915358]
-enabled = true
-energy = 0.1
+[node name="CanvasModulate" parent="." index="12" unique_id=344921272]
+color = Color(0.70980394, 0.70980394, 0.70980394, 1)

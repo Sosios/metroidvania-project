@@ -7406,6 +7406,7 @@ size = Vector2(288, 23)
 size = Vector2(32, 122)
 
 [node name="Zone6" unique_id=342494649 instance=ExtResource("1_3w8vh")]
+screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1437069560]
 scroll_scale = Vector2(0.2, 0.2)
@@ -7570,14 +7571,14 @@ metadata/_edit_lock_ = true
 
 [node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("22_2kd47")]
 id = 173
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover2" parent="CellAreas" index="1" unique_id=241023261 instance=ExtResource("22_2kd47")]
 position = Vector2(-480, 0)
 id = 29
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover3" parent="CellAreas" index="2" unique_id=306789832 instance=ExtResource("22_2kd47")]
 position = Vector2(-960, 0)
 id = 28
-
-[node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
-enabled = true
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)

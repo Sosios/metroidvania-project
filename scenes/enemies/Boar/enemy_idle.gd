@@ -44,6 +44,7 @@ func _on_area_enter():
 
 func _on_touch_wall():
 	direction.x = -direction.x
+	wander_time = randf_range(1, 3)
 	
 func _on_hit_taken():
 	Transitioned.emit(self, "hit")

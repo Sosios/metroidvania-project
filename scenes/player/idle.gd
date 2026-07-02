@@ -6,10 +6,14 @@ var player: CharacterBody2D
 func enter():
 	player = get_player()
 	player.sprite.play("idle")
+	player.animation_player.play("RESET")
 	player.velocity.x = 0.0
+	var tween = create_tween()
+	tween.tween_property(player,"scale",Vector2(1,1),0.2).set_trans(Tween.TRANS_ELASTIC)
 
 func physics_update(delta):
-	
+	if player.jump_buffer_timer.time_left > 0.0:
+		Transitioned.emit(self,"jump")
 	if Input.is_action_just_pressed("jump") and not Input.is_action_pressed("down"):
 		Transitioned.emit(self,"jump")
 	var direction := Input.get_axis("left", "right")

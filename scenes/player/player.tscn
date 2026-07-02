@@ -2853,7 +2853,7 @@ color_ramp = SubResource("GradientTexture1D_f0qoe")
 
 [node name="Player" type="CharacterBody2D" unique_id=971349243 node_paths=PackedStringArray("sprite", "attack_1_area", "animation_player") groups=["Player"]]
 visible = false
-collision_mask = 846
+collision_mask = 876
 script = ExtResource("1_75vfm")
 sprite = NodePath("Sprites/AnimatedSprite2D")
 attack_1_area = NodePath("Areas/Attack1Area")
@@ -2935,7 +2935,7 @@ shape = SubResource("CapsuleShape2D_iqsei")
 position = Vector2(7, -11)
 scale = Vector2(1, 1.0000002)
 collision_layer = 16
-collision_mask = 2
+collision_mask = 18
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Areas/Attack1Area" unique_id=175250458]
 position = Vector2(-28.75, -11.999997)
@@ -2992,6 +2992,10 @@ wait_time = 0.7
 wait_time = 0.2
 one_shot = true
 
+[node name="JumpBufferTimer" type="Timer" parent="Timers" unique_id=2131229062]
+wait_time = 0.1
+one_shot = true
+
 [node name="StateMachine" parent="." unique_id=594427277 node_paths=PackedStringArray("initial_state") instance=ExtResource("8_5gtgg")]
 initial_state = NodePath("Idle")
 
@@ -3027,7 +3031,6 @@ attack_timer = NodePath("../../Timers/AttackTimer")
 
 [node name="Jump" type="Node" parent="StateMachine" unique_id=1323241454]
 script = ExtResource("11_fcs02")
-jump_velocity = 25.0
 
 [node name="JumpAttack1" type="Node" parent="StateMachine" unique_id=461696057]
 script = ExtResource("16_cnsyf")

@@ -40,6 +40,7 @@ size = Vector2(137, 43)
 size = Vector2(145, 43)
 
 [node name="ZoneB13" unique_id=342494649 instance=ExtResource("1_wu28o")]
+screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1780283929]
 scroll_scale = Vector2(0.4, 1)
@@ -160,3 +161,4 @@ position = Vector2(257, 36)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("11_pq8db")]
 id = 46
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)

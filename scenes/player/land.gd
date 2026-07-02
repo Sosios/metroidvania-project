@@ -10,6 +10,9 @@ func enter():
 	player = get_player()
 	player.velocity = Vector2(0,0)
 	player.sprite.play("land")
+	player.scale = Vector2(1.2,0.7)
+	#var tween = create_tween()
+	#tween.tween_property(player,"scale",Vector2(1,1),0.2)
 	
 func physics_update(delta):
 	timer -= delta

@@ -159,7 +159,9 @@ shape = SubResource("RectangleShape2D_p6bh4")
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("10_y53wj")]
 id = 47
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=177739170 instance=ExtResource("10_y53wj")]
 position = Vector2(480, 0)
 id = 48
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)

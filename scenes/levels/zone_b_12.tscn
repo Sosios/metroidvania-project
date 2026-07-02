@@ -36,6 +36,7 @@ metadata/_snap_enabled = true
 size = Vector2(64, 154)
 
 [node name="ZoneB12" unique_id=342494649 instance=ExtResource("1_tymsk")]
+screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=2962892]
 scroll_scale = Vector2(0.4, 1)
@@ -128,6 +129,7 @@ texture = SubResource("GradientTexture2D_o6btw")
 texture_scale = 0.8
 
 [node name="DarkLight" type="PointLight2D" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=853396729]
+visible = false
 position = Vector2(552, 47.999996)
 scale = Vector2(23.531246, 10.000001)
 blend_mode = 1

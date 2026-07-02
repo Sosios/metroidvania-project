@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://cm6tfu50xoctf"]
+
+[ext_resource type="Texture2D" uid="uid://bl5v0qck0geay" path="res://assets/Ennemis/Rocky Roads/bat.png" id="1_atqi6"]
+[ext_resource type="Texture2D" uid="uid://o0fpujjam75q" path="res://assets/Ennemis/Rocky Roads/bat_normal.png" id="2_7uofc"]
+
+[resource]
+diffuse_texture = ExtResource("1_atqi6")
+normal_texture = ExtResource("2_7uofc")

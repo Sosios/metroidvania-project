@@ -11,14 +11,20 @@ var jump_mult = -30.0
 
 func enter():
 	player = get_player()
+	player.animation_player.play("RESET")
+	player.scale = Vector2(0.8,1.2)
 	if player.is_in_gravity_area and player.is_gravity:
-		player.velocity.y = -jump_velocity * jump_mult
+		player.velocity.y = -jump_velocity * jump_mult * 0.9
 	else:
-		player.velocity.y = jump_velocity * jump_mult
+		player.velocity.y = jump_velocity * jump_mult * 0.9
 	player.sprite.play("jump")
+	var tween = create_tween()
+	tween.tween_property(player,"scale",Vector2(1,1),0.4)
 
 func physics_update(delta):
 	#State transition
+	if Input.is_action_just_released("jump") and player.velocity.y < 0.0:
+		player.velocity.y *= 0.45
 	if player.velocity.y > 0:
 		player.sprite.play("fall")
 	if player.is_on_floor() or (player.is_gravity and player.is_on_ceiling()):
@@ -32,7 +38,7 @@ func physics_update(delta):
 	#Jump movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		player.velocity.x = direction * player.speed * speed_mult
+		player.velocity.x = move_toward(player.velocity.x, direction * player.speed * speed_mult,2500 * delta)
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
@@ -41,7 +47,7 @@ func physics_update(delta):
 			Globals.direction = 1
 		player.attack_1_area.position.x = abs(player.attack_1_area.position.x) * Globals.direction
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.speed * speed_mult)
+		player.velocity.x = move_toward(player.velocity.x, 0, 2500 * delta)
 	
 	#Double jump
 	if SaveLoad.save_file.can_double_jump:

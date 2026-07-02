@@ -7405,6 +7405,7 @@ size = Vector2(19, 130)
 size = Vector2(20, 85)
 
 [node name="Zone7" unique_id=342494649 instance=ExtResource("1_j23ew")]
+screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallaxes" type="Node2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1643625741]
 
@@ -7645,34 +7646,39 @@ position = Vector2(-1408, 224)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("18_5t4ft")]
 id = 9
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=27771384 instance=ExtResource("18_5t4ft")]
 position = Vector2(-480, 0)
 id = 174
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=650317362 instance=ExtResource("18_5t4ft")]
 position = Vector2(-960, 0)
 id = 11
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1298849295 instance=ExtResource("18_5t4ft")]
 position = Vector2(0, 272)
 id = 4
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover7" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=1357309342 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 0)
 id = 10
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover8" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=2019340527 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 272)
 id = 12
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="6" unique_id=908148120 instance=ExtResource("18_5t4ft")]
 position = Vector2(-480, 272)
 id = 13
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="7" unique_id=1723515048 instance=ExtResource("18_5t4ft")]
 position = Vector2(-960, 272)
 id = 17
-
-[node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
-enabled = true
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)

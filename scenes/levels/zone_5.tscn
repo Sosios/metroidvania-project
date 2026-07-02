@@ -7646,18 +7646,20 @@ position = Vector2(-16, 336)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_4x3hk")]
 id = 171
+color = null
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=443074881 instance=ExtResource("2_4x3hk")]
 position = Vector2(0, 270)
 id = 172
+color = null
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=99001433 instance=ExtResource("2_4x3hk")]
 position = Vector2(0, 540)
 id = 7
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+change_color = true
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=950991967 instance=ExtResource("2_4x3hk")]
 position = Vector2(0, 810)
 id = 8
-
-[node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
-enabled = true
+color = null

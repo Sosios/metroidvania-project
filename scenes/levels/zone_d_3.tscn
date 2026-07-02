@@ -26,6 +26,9 @@ material = SubResource("ShaderMaterial_5lmda")
 tile_map_data = PackedByteArray("AAAhAAwAAgADAAMAAAAhAAsAAgADAAEAAAAhAAoAAgADAAIAAAAhAAkAAgADAAIAAAAhAAgAAgADAAEAAAAhAAcAAgADAAEAAAAhAAYAAgADAAEAAAAhAAUAAgADAAAAAAAgAAwAAgABAAMAAAAgAAsAAgABAAEAAAAgAAoAAgACAAEAAAAgAAkAAgABAAIAAAAgAAgAAgABAAEAAAAgAAcAAgABAAEAAAAgAAYAAgACAAEAAAAgAAUAAgABAAAAAAAfAAwAAgABAAMAAAAfAAsAAgABAAIAAAAfAAoAAgABAAEAAAAfAAkAAgABAAEAAAAfAAgAAgABAAIAAAAfAAcAAgABAAEAAAAfAAYAAgABAAIAAAAfAAUAAgACAAAAAAAeAAwAAgAAAAMAAAAeAAsAAgAAAAIAAAAeAAoAAgAAAAEAAAAeAAkAAgAAAAIAAAAeAAgAAgAAAAIAAAAeAAcAAgAAAAEAAAAeAAYAAgAAAAEAAAAeAAUAAgAAAAAAAAA=")
 tile_set = ExtResource("3_wtk2n")
 
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
+limit_right = 1440
+
 [node name="HurtArea" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=754456728 instance=ExtResource("4_adw5h")]
 
 [node name="Tileset" type="Sprite2D" parent="Areas/HurtArea" index="0" unique_id=1395386548]
@@ -103,6 +106,10 @@ region_rect = Rect2(192, 56, 13, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/HurtArea" index="12" unique_id=103293623]
 position = Vector2(832, 252.375)
 shape = SubResource("RectangleShape2D_6qmw3")
+
+[node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
+target = "uid://bnrarke2g3ftg"
+marker = 2
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=553221677 instance=ExtResource("6_0hxjp")]
 position = Vector2(480, 0)

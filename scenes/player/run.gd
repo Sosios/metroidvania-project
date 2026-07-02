@@ -12,14 +12,18 @@ var speed_mult : float = 30.0
 func enter():
 	player = get_player()
 	player.sprite.play("run")
+	player.animation_player.play("RESET")
+	var tween = create_tween()
+	tween.tween_property(player,"scale",Vector2(1,1),0.2)
 	
-func physics_update(_delta):
+func physics_update(delta):
 	
-	
+	if player.jump_buffer_timer.time_left > 0.0:
+		Transitioned.emit(self,"jump")
 	#Movement
 	var direction : float = Input.get_axis("left", "right")
 	if direction:
-		player.velocity.x = direction * player.speed * speed_mult
+		player.velocity.x = move_toward(player.velocity.x, direction * player.speed * speed_mult,2500 * delta)
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true
 			Globals.direction = -1
@@ -30,13 +34,14 @@ func physics_update(_delta):
 	
 	#Transition to idle
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.speed * speed_mult)
+		player.velocity.x = move_toward(player.velocity.x, 0, 2500*delta)
 		Transitioned.emit(self,"idle")
 		player.current_direction = 0
 	
 	#Transition to jump
 	if Input.is_action_just_pressed("jump") and player.is_on_floor() and not Input.is_action_pressed("down"):
 		Transitioned.emit(self,"jump")
+		
 		
 	#Transition to attack
 	if Input.is_action_just_pressed("attack") and player.can_attack:

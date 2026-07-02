@@ -48,10 +48,15 @@ var air_time = 0.0
 
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 
+@onready var jump_buffer_timer: Timer = $Timers/JumpBufferTimer
+
+
+
 var is_gravity = false
 var is_in_gravity_area:= false
 
 var coyote := false
+var buffer := false
 
 var flip_h = false
 var current_animation: String
@@ -69,8 +74,7 @@ func _physics_process(delta: float) -> void:
 	
 	Globals.player_pos = global_position
 	if !Globals.stop:
-		if (velocity.y>0 and (not is_gravity or not is_in_gravity_area)) or (velocity.y<0 and is_gravity):
-			sprite.play("fall")
+		if (velocity.y>0 and (not is_gravity or not is_in_gravity_area)) or (velocity.y<0 and is_gravity) and $StateMachine.current_state != $StateMachine/Fall:
 			$StateMachine.current_state = $StateMachine/Fall
 			$StateMachine/Fall.enter()
 		
@@ -182,7 +186,7 @@ func unshade():
 	var tween = create_tween()
 	tween.tween_method(set_progress_value,0.8,0.0,0.2)
 	#sprite.material.set_shader_parameter("progress", 0.0);
-	$PointLight2D.enabled = false
+	$ShadeLight.enabled = false
 
 func hurt(damage,pos):
 	if vuln and not invicibility:

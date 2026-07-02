@@ -14,8 +14,11 @@ func enter():
 	dash_time = 0.2
 	player = get_player()
 	player.velocity.y = 0
+	player.scale = Vector2(1.9,0.1)
 	player.sprite.play("fall")
 	player.set_collision_mask_value(9,false)
+	var tween = create_tween()
+	tween.tween_property(player,"scale",Vector2.ONE,dash_time)
 	
 func physics_update(delta):
 	dash_time -= delta

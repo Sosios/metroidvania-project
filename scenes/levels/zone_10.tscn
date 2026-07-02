@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="5_mreil"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="6_wmvfk"]
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="7_nxthm"]
+[ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_4hwy4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("3_4hwy4")
@@ -15,7 +16,7 @@ shader_parameter/from = Color(0.02745098, 0.05490196, 0.16078432, 1)
 shader_parameter/to = Color(0, 0, 0.9187369, 1)
 shader_parameter/tolerance = 0.362000017195
 
-[sub_resource type="Curve2D" id="Curve2D_l27oo"]
+[sub_resource type="Curve2D" id="Curve2D_4hwy4"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -261)
@@ -30,6 +31,9 @@ size = Vector2(143, 164)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1v4"]
 size = Vector2(543.5, 138.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpot8"]
+size = Vector2(193.60689, 292)
 
 [node name="Zone10" unique_id=342494649 instance=ExtResource("1_14ueb")]
 
@@ -97,7 +101,7 @@ tex_scale = 0.15
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("6_wmvfk")]
 position = Vector2(313, 134)
-curve = SubResource("Curve2D_l27oo")
+curve = SubResource("Curve2D_4hwy4")
 path_time = 2.5
 
 [node name="GravityShift" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1192841641 instance=ExtResource("7_nxthm")]
@@ -114,21 +118,52 @@ shape = SubResource("RectangleShape2D_vq0c4")
 position = Vector2(623.75, -155.25)
 shape = SubResource("RectangleShape2D_hj1v4")
 
+[node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
+target = "uid://dne71tc1klkc"
+marker = 1
+
+[node name="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1752090192]
+position = Vector2(243.21368, 112.71746)
+
+[node name="TransitionArea2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="1" unique_id=1209097092 instance=ExtResource("8_4hwy4")]
+position = Vector2(-339, -228)
+target = "uid://ln3ahbt4wh27"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea2" index="0" unique_id=33722974]
+position = Vector2(243.21368, 112.71746)
+shape = SubResource("RectangleShape2D_hpot8")
+debug_color = Color(0.036217537, 0.03417754, 0.025156727, 0.41960785)
+
+[node name="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1067890749]
+position = Vector2(943, 155)
+
+[node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=563185620]
+position = Vector2(63, -101)
+
 [node name="0" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677]
 id = 135
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+change_color = null
 
 [node name="1" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1432021171 instance=ExtResource("2_usytp")]
 position = Vector2(480, 0)
 id = 132
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+change_color = null
 
 [node name="2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=833299366 instance=ExtResource("2_usytp")]
 position = Vector2(0, -270)
 id = 133
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+change_color = true
 
 [node name="3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1373542 instance=ExtResource("2_usytp")]
 position = Vector2(480, -270)
 id = 134
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+change_color = null
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
+visible = false
 enabled = true
 energy = 0.8

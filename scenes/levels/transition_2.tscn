@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://blssvmg60kdnq" path="res://scenes/levels/level_root.tscn" id="1_dot4v"]
 [ext_resource type="TileSet" uid="uid://bc17wi8eevycr" path="res://scenes/levels/tile_set.tres" id="2_kmdoa"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="3_kmdoa"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="4_mvxxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvxxo"]
 size = Vector2(41, 144)
@@ -15,6 +16,7 @@ tile_set = ExtResource("2_kmdoa")
 
 [node name="C1" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("3_kmdoa")]
 position = Vector2(75, 91)
+target = "uid://1qvhjlpnfxdn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/C1" index="0" unique_id=844933935]
 position = Vector2(-94.5, 83)
@@ -34,3 +36,7 @@ position = Vector2(440, 208)
 
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=1975010936]
 position = Vector2(32, 207)
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_mvxxo")]
+id = 91
+change_color = true

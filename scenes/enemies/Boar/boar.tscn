@@ -93,7 +93,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v5xp5")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -110,7 +110,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sgqmv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hu72h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 10.0
 }, {
@@ -156,7 +156,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r4bt4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -192,7 +192,7 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="Boar" type="CharacterBody2D" unique_id=185224842 groups=["Entity"]]
 collision_layer = 2
-collision_mask = 69
+collision_mask = 341
 script = ExtResource("1_5yffh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1757946096]

@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://ql41wd6q7x2d"]
+
+[ext_resource type="Texture2D" uid="uid://cuwauanxm6k0k" path="res://assets/Ennemis/Rocky Roads/slime.tres" id="1_2bpdq"]
+[ext_resource type="Script" uid="uid://b3gja01rokmi0" path="res://scenes/enemies/Slime/slime.gd" id="1_oecqv"]
+[ext_resource type="PackedScene" uid="uid://qed8vtrml2bj" path="res://nodes/state_machine.tscn" id="2_olux3"]
+[ext_resource type="Script" uid="uid://dh0trwvpy0556" path="res://scenes/enemies/Slime/idle.gd" id="4_mengd"]
+[ext_resource type="Script" uid="uid://cmb7y6gak0kw" path="res://scenes/enemies/Slime/hit.gd" id="5_pidmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io1h2"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvcic"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3gi3"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oecqv"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mengd"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidmu"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytg72"]
+atlas = ExtResource("1_2bpdq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvgx8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io1h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvcic")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3gi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oecqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mengd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidmu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytg72")
+}],
+"loop": 1,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
+size = Vector2(16, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1tmjs"]
+a = Vector2(-16, -9)
+b = Vector2(-16, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x5063"]
+a = Vector2(-16, -9)
+b = Vector2(-16, 14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvn01"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rh0lt"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Slime" type="CharacterBody2D" unique_id=1109252605]
+collision_layer = 0
+collision_mask = 413
+script = ExtResource("1_oecqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2027519266]
+sprite_frames = SubResource("SpriteFrames_jvgx8")
+animation = &"dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1648871216]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_6qmw3")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=875490503]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=598835863]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_6qmw3")
+
+[node name="StateMachine" parent="." unique_id=594427277 instance=ExtResource("2_olux3")]
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=523584855 node_paths=PackedStringArray("slime")]
+script = ExtResource("4_mengd")
+slime = NodePath("../..")
+
+[node name="Hit" type="Node" parent="StateMachine" unique_id=753461904]
+script = ExtResource("5_pidmu")
+
+[node name="DirectionChangeArea" type="Area2D" parent="." unique_id=469035121]
+collision_layer = 128
+collision_mask = 132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirectionChangeArea" unique_id=1271109214]
+position = Vector2(9, -6)
+shape = SubResource("SegmentShape2D_1tmjs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DirectionChangeArea" unique_id=143217812]
+position = Vector2(23, -6)
+shape = SubResource("SegmentShape2D_x5063")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=606844120]
+offset_left = -17.0
+offset_top = 11.0
+offset_right = 14.0
+offset_bottom = 15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jvn01")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rh0lt")
+max_value = 25.0
+value = 25.0
+show_percentage = false

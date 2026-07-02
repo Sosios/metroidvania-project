@@ -15,12 +15,14 @@ var jump_mult = -30.0
 func _enter() -> void:
 	coyote_timer = 2.0
 	player.sprite("fall")
+	var tween = create_tween()
+	tween.tween_property(player,"scale",Vector2(0.7,1.3),0.2)
 
 func physics_update(delta):
+	player.velocity.y *= 1.1
 	#Air movement
-	if not player.coyote_timer.is_stopped():
-		if Input.is_action_just_pressed("jump") and not Input.is_action_pressed("down"):
-			Transitioned.emit(self,"jump")
+	if Input.is_action_just_pressed("jump"):
+		player.jump_buffer_timer.start()
 	air_time += delta
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -38,15 +40,16 @@ func physics_update(delta):
 	
 	#Idle transition
 	if player.velocity.y == 0:
-			if direction:
-				Transitioned.emit(self,"run")
+		player.scale = Vector2(1.2,0.8)
+		if direction:
+			Transitioned.emit(self,"run")
+		else:
+			if Input.is_action_pressed("down"):
+				player.sprite.play("crouch")
+				player.animation_player.play("crouch")
+				Transitioned.emit(self,"crouch")
 			else:
-				if Input.is_action_pressed("down"):
-					player.sprite.play("crouch")
-					player.animation_player.play("crouch")
-					Transitioned.emit(self,"crouch")
-				else:
-					Transitioned.emit(self,"idle")
+				Transitioned.emit(self,"idle")
 
 	
 	#Double jump

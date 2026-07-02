@@ -65,6 +65,7 @@ func discover_room(room: int):
 var lvl_exp_cap = 0
 @export var level := 1
 
+var screen_color
 
 
 func insert(item: InvItem):

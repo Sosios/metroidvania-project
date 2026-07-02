@@ -16,6 +16,7 @@ tile_set = ExtResource("2_hqamu")
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("3_lk64l")]
 position = Vector2(-27, 148)
+target = "uid://bnrarke2g3ftg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1324961344]
 position = Vector2(-4.5, 7.5)
@@ -23,6 +24,8 @@ shape = SubResource("RectangleShape2D_6qmw3")
 
 [node name="TransitionArea2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="1" unique_id=2021392120 instance=ExtResource("3_lk64l")]
 position = Vector2(516, 169)
+target = "uid://c28cdxw3b7fks"
+marker = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea2" index="0" unique_id=58647034]
 position = Vector2(-4.5, 7.5)
@@ -36,3 +39,4 @@ position = Vector2(49, 208)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_hq1w2")]
 id = 136
+change_color = true

@@ -45,10 +45,9 @@ script = ExtResource("4_f5m83")
 [node name="CellAreas" type="Node2D" parent="." unique_id=995269704]
 metadata/_edit_group_ = true
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1724915358]
-enabled = false
-energy = 0.8
-blend_mode = 1
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=344921272]
+position = Vector2(727.49994, 493.5)
+scale = Vector2(77.828125, 60.51563)
 metadata/_edit_lock_ = true
 
 [node name="TransitionLayer" parent="." unique_id=420257169 instance=ExtResource("5_4po5r")]

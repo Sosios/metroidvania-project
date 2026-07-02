@@ -7378,6 +7378,7 @@ metadata/_better_terrain = {
 size = Vector2(31, 85)
 
 [node name="Zone9" unique_id=342494649 instance=ExtResource("1_8fhvq")]
+screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1258646603]
 scroll_scale = Vector2(0.1, 0.1)
@@ -7480,6 +7481,4 @@ position = Vector2(42, 205)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("19_m7xdu")]
 id = 33
-
-[node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
-enabled = true
+color = Color(0.15294118, 0.15294118, 0.15294118, 1)

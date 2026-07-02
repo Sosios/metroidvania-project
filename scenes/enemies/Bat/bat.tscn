@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://c66wv7q5lgv2o"]
+
+[ext_resource type="Texture2D" uid="uid://cm6tfu50xoctf" path="res://assets/Ennemis/Rocky Roads/bat.tres" id="1_71fn5"]
+[ext_resource type="Script" uid="uid://by450yvcukvc" path="res://scenes/enemies/Bat/bat.gd" id="1_e1lu6"]
+[ext_resource type="Shader" uid="uid://oqb1ow5oiqq4" path="res://shaders/scout.gdshader" id="1_kdnp2"]
+[ext_resource type="Texture2D" uid="uid://bijc4bf4ayt15" path="res://assets/Ennemis/Rocky Roads/bat_palette_.png" id="2_85n13"]
+[ext_resource type="PackedScene" uid="uid://qed8vtrml2bj" path="res://nodes/state_machine.tscn" id="3_mamjo"]
+[ext_resource type="Script" uid="uid://ckw78inqptvop" path="res://scenes/enemies/Bat/idle.gd" id="4_mamjo"]
+[ext_resource type="Script" uid="uid://bddkg32j30co" path="res://scenes/enemies/Bat/fly.gd" id="5_h6hk6"]
+[ext_resource type="Script" uid="uid://c5ddgtpmrfsa2" path="res://scenes/enemies/Bat/hit.gd" id="7_85n13"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
+shader = ExtResource("1_kdnp2")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("2_85n13")
+shader_parameter/output_palette_texture = ExtResource("2_85n13")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85n13"]
+atlas = ExtResource("1_71fn5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7rsh"]
+atlas = ExtResource("1_71fn5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0idw"]
+atlas = ExtResource("1_71fn5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo0u1"]
+atlas = ExtResource("1_71fn5")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqpsb"]
+atlas = ExtResource("1_71fn5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxebe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85n13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7rsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0idw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo0u1")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqpsb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksq3u"]
+size = Vector2(274, 267)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gxkd"]
+size = Vector2(12, 12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85n13"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7rsh"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Bat" type="CharacterBody2D" unique_id=1265163812]
+collision_layer = 2
+collision_mask = 340
+script = ExtResource("1_e1lu6")
+speed = 50.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1940283063]
+material = SubResource("ShaderMaterial_5lmda")
+sprite_frames = SubResource("SpriteFrames_bxebe")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=58285570]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1025759439]
+position = Vector2(0, 133.5)
+shape = SubResource("RectangleShape2D_ksq3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028312693]
+visible = false
+shape = SubResource("RectangleShape2D_7gxkd")
+
+[node name="StateMachine" parent="." unique_id=594427277 node_paths=PackedStringArray("initial_state") instance=ExtResource("3_mamjo")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=654582325 node_paths=PackedStringArray("bat")]
+script = ExtResource("4_mamjo")
+bat = NodePath("../..")
+
+[node name="Fly" type="Node" parent="StateMachine" unique_id=98262169 node_paths=PackedStringArray("bat")]
+script = ExtResource("5_h6hk6")
+bat = NodePath("../..")
+
+[node name="Hit" type="Node" parent="StateMachine" unique_id=1097280567 node_paths=PackedStringArray("bat")]
+script = ExtResource("7_85n13")
+bat = NodePath("../..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1747670913]
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=604695079]
+visible = false
+collision_layer = 32
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox" unique_id=1157892293]
+shape = SubResource("RectangleShape2D_7gxkd")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1828613426]
+offset_left = -17.0
+offset_top = 11.0
+offset_right = 14.0
+offset_bottom = 15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_85n13")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p7rsh")
+max_value = 25.0
+value = 25.0
+show_percentage = false
+
+[node name="NavigationTimer" type="Timer" parent="." unique_id=1344451975]
+wait_time = 0.5
+
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
+[connection signal="timeout" from="NavigationTimer" to="StateMachine/Fly" method="_on_navigation_timer_timeout"]

@@ -4,6 +4,8 @@ signal stat_change
 signal pos_change
 signal boss_update
 
+var screen_color:Color = Color(1.0, 1.0, 1.0, 1.0)
+
 var player_pos: Vector2
 
 var direction = 1

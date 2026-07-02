@@ -797,9 +797,9 @@ sprite_frames = SubResource("SpriteFrames_05x41")
 autoplay = "default"
 frame_progress = 0.2777345
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=500719531]
+[node name="MapUI" type="CanvasLayer" parent="." unique_id=500719531]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=110911274]
+[node name="Label" type="Label" parent="MapUI" unique_id=110911274]
 offset_left = 190.0
 offset_top = 248.0
 offset_right = 478.0
@@ -808,7 +808,7 @@ text = "Ctrl/X : Changer zoom"
 label_settings = SubResource("LabelSettings_6qmw3")
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer" unique_id=2127011055]
+[node name="Label2" type="Label" parent="MapUI" unique_id=2127011055]
 offset_top = 5.0
 offset_right = 482.0
 offset_bottom = 38.0

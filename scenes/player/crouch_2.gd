@@ -14,6 +14,7 @@ func enter():
 	
 func physics_update(delta):
 	if Input.is_action_just_pressed("jump"):
+		player.scale = Vector2(0.4,1.6)
 		Transitioned.emit(self,"jump")
 	timer -= delta
 	if timer <= 0:

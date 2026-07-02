@@ -13,6 +13,12 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lmda"]
+size = Vector2(48, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wntdq"]
+size = Vector2(146, 259)
+
 [node name="ZoneD1" unique_id=342494649 instance=ExtResource("1_38auk")]
 
 [node name="Parallaxes" parent="." index="0" unique_id=691625541]
@@ -45,9 +51,37 @@ curve = SubResource("Curve2D_bmtx4")
 limit_left = -962
 limit_bottom = 540
 
-[node name="T3" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="1" unique_id=71833735 instance=ExtResource("3_8yy8r")]
+[node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
+target = "uid://ln3ahbt4wh27"
+marker = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/T3" index="0" unique_id=913214098]
+[node name="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1972837965]
+position = Vector2(504, 147)
+shape = SubResource("RectangleShape2D_5lmda")
+
+[node name="D2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="1" unique_id=1288886856 instance=ExtResource("3_8yy8r")]
+position = Vector2(-1488, -48)
+target = "uid://qg33p04swb2p"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/D2" index="0" unique_id=772618234]
+position = Vector2(504, 147)
+shape = SubResource("RectangleShape2D_5lmda")
+
+[node name="D3" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="2" unique_id=1179244900 instance=ExtResource("3_8yy8r")]
+position = Vector2(-1489, 264)
+target = "uid://dmx02glipsodd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/D3" index="0" unique_id=1516812896]
+position = Vector2(504, 147)
+shape = SubResource("RectangleShape2D_5lmda")
+
+[node name="D4" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="3" unique_id=1078668979 instance=ExtResource("3_8yy8r")]
+position = Vector2(-1280, 528)
+target = "uid://bgsi3ppemubmv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/D4" index="0" unique_id=1835298594]
+position = Vector2(553, 142.5)
+shape = SubResource("RectangleShape2D_wntdq")
 
 [node name="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=2137886638]
 position = Vector2(437, 208)
@@ -56,10 +90,15 @@ position = Vector2(437, 208)
 position = Vector2(-920, 160)
 
 [node name="Marker2D3" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="2" unique_id=1837496319]
-position = Vector2(-932, 464)
+position = Vector2(-935, 464)
+
+[node name="Marker2D4" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="3" unique_id=1461209564]
+position = Vector2(-719, 484)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677]
 id = 137
+color = Color(0.69803923, 0.53333336, 0.44705883, 1)
+change_color = true
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=65206285 instance=ExtResource("3_bmtx4")]
 position = Vector2(-481, 0)
@@ -80,3 +119,6 @@ id = 140
 [node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=1441496931 instance=ExtResource("3_bmtx4")]
 position = Vector2(-962, 270)
 id = 139
+
+[node name="CanvasModulate" parent="." index="11" unique_id=344921272]
+color = Color(0.6986019, 0.53412783, 0.44796598, 1)

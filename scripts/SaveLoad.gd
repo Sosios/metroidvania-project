@@ -23,10 +23,12 @@ func _ready() -> void:
 
 func _save():
 	var error := ResourceSaver.save(save_file, save_location)
+	save_file.screen_color = Globals.screen_color
 	if error != OK:
 		push_error("Erreur lors de la sauvegarde.")
 	
 func _load():
 	if FileAccess.file_exists(save_location):
 		save_file = ResourceLoader.load(save_location)
+		Globals.screen_color = save_file.screen_color
 		
