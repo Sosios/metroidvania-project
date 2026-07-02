@@ -82,3 +82,4 @@ position = Vector2(348, 207)
 position = Vector2(427, 207)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_0disf")]
+id = 52

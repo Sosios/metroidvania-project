@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="9_0um5i"]
 [ext_resource type="PackedScene" uid="uid://br2bbfpkry2n3" path="res://scenes/levels/shade_red.tscn" id="10_tbjh5"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="11_lu3lr"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="12_0um5i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dui57"]
 shader = ExtResource("5_3xnqh")
@@ -74,6 +75,8 @@ tile_set = ExtResource("5_dui57")
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("8_k3m0a")]
 position = Vector2(313, 158)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1614685710 instance=ExtResource("9_0um5i")]
 position = Vector2(201, 158)
@@ -98,6 +101,9 @@ shape = SubResource("RectangleShape2D_k3m0a")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1402958728]
 position = Vector2(441, 142)
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("12_0um5i")]
+id = 151
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

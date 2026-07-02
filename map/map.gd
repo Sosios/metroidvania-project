@@ -1,5 +1,6 @@
 extends Node2D
 
+
 func _ready():
 	$IndicationsDev.hide()
 	
@@ -17,3 +18,5 @@ func _input(event: InputEvent) -> void:
 			resume()
 		else:
 			paused()
+			$MapRooms.update()
+			$MapRooms.update_discover()

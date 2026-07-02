@@ -128,7 +128,7 @@ visible = false
 position = Vector2(545, 144)
 curve = SubResource("Curve2D_4u1pk")
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="15" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_right = 1440
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="6" unique_id=278051066]
@@ -200,12 +200,15 @@ shape = SubResource("RectangleShape2D_rt4wv")
 position = Vector2(68, 208)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_pjwxy")]
+id = 19
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1380454183 instance=ExtResource("4_pjwxy")]
 position = Vector2(480, 0)
+id = 20
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=1067793381 instance=ExtResource("4_pjwxy")]
 position = Vector2(960, 0)
+id = 21
 
 [node name="DirectionalLight2D" parent="." index="13" unique_id=1724915358]
 enabled = true

@@ -7490,65 +7490,99 @@ id = 3
 [node name="Torch" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=627410971 instance=ExtResource("17_l0jhl")]
 position = Vector2(-1386, 389)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=55615409 instance=ExtResource("17_l0jhl")]
 position = Vector2(-996, 463)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="3" unique_id=352410978 instance=ExtResource("17_l0jhl")]
 position = Vector2(-1065, 317)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="4" unique_id=403336555 instance=ExtResource("17_l0jhl")]
 position = Vector2(-762, 423)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="5" unique_id=1243550156 instance=ExtResource("17_l0jhl")]
 position = Vector2(-1204, 205)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch6" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="6" unique_id=42914651 instance=ExtResource("17_l0jhl")]
 position = Vector2(-1000, 51)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch7" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="7" unique_id=540394493 instance=ExtResource("17_l0jhl")]
 position = Vector2(-762, 59)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch8" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="8" unique_id=671326985 instance=ExtResource("17_l0jhl")]
 position = Vector2(-629, 206)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch9" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="9" unique_id=1528244446 instance=ExtResource("17_l0jhl")]
 position = Vector2(-616, 463)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch10" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="10" unique_id=679610475 instance=ExtResource("17_l0jhl")]
 position = Vector2(89, 178)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch11" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="11" unique_id=1121269010 instance=ExtResource("17_l0jhl")]
 position = Vector2(172, 462)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch12" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="12" unique_id=96612606 instance=ExtResource("17_l0jhl")]
 position = Vector2(279, 246)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch13" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="13" unique_id=671957210 instance=ExtResource("17_l0jhl")]
 position = Vector2(279, 125)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch14" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="14" unique_id=221384159 instance=ExtResource("17_l0jhl")]
 position = Vector2(279, 11)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch15" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="15" unique_id=719133355 instance=ExtResource("17_l0jhl")]
 position = Vector2(393, 59)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch16" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="16" unique_id=2142259704 instance=ExtResource("17_l0jhl")]
 position = Vector2(395, 183)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch17" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="17" unique_id=1596777994 instance=ExtResource("17_l0jhl")]
 position = Vector2(393, 288)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("15_531bf")]
 position = Vector2(-42, 479)
@@ -7560,15 +7594,15 @@ position = Vector2(12, 439)
 curve = SubResource("Curve2D_lnk7k")
 path_time = 3.0
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
-limit_left = -1440
-limit_bottom = 544
-
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=950967684]
 position = Vector2(2, -11)
 energy = 0.5
 texture = ExtResource("16_i3qoc")
 texture_scale = 0.2
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+limit_left = -1440
+limit_bottom = 544
 
 [node name="HurtArea" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=754456728 instance=ExtResource("19_l0jhl")]
 
@@ -7610,27 +7644,35 @@ position = Vector2(400, 480)
 position = Vector2(-1408, 224)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("18_5t4ft")]
+id = 9
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=27771384 instance=ExtResource("18_5t4ft")]
 position = Vector2(-480, 0)
+id = 174
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=650317362 instance=ExtResource("18_5t4ft")]
 position = Vector2(-960, 0)
+id = 11
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1298849295 instance=ExtResource("18_5t4ft")]
 position = Vector2(0, 272)
+id = 4
 
 [node name="CellDiscover7" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=1357309342 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 0)
+id = 10
 
 [node name="CellDiscover8" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=2019340527 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 272)
+id = 12
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="6" unique_id=908148120 instance=ExtResource("18_5t4ft")]
 position = Vector2(-480, 272)
+id = 13
 
 [node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="7" unique_id=1723515048 instance=ExtResource("18_5t4ft")]
 position = Vector2(-960, 272)
+id = 17
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

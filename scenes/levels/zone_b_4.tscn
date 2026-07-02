@@ -254,21 +254,27 @@ position = Vector2(32, -608)
 position = Vector2(432, -1152)
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("10_guksj")]
+id = 49
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=378693778 instance=ExtResource("10_guksj")]
 position = Vector2(0, -272)
+id = 64
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=1185904701 instance=ExtResource("10_guksj")]
 position = Vector2(0, -544)
+id = 65
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1023192376 instance=ExtResource("10_guksj")]
 position = Vector2(0, -816)
+id = 50
 
 [node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=376440703 instance=ExtResource("10_guksj")]
 position = Vector2(0, -1088)
+id = 51
 
 [node name="CellDiscover7" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=1183227894 instance=ExtResource("10_guksj")]
 position = Vector2(0, -1360)
+id = 53
 
 [node name="DarkLight" type="PointLight2D" parent="." index="12" unique_id=1461525394]
 position = Vector2(303.99997, -1019.16724)

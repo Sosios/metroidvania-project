@@ -15,7 +15,7 @@ shader_parameter/from = Color(0.02745098, 0.05490196, 0.16078432, 1)
 shader_parameter/to = Color(0, 0, 0.9187369, 1)
 shader_parameter/tolerance = 0.362000017195
 
-[sub_resource type="Curve2D" id="Curve2D_25rvi"]
+[sub_resource type="Curve2D" id="Curve2D_l27oo"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -261)
@@ -97,9 +97,8 @@ tex_scale = 0.15
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("6_wmvfk")]
 position = Vector2(313, 134)
-curve = SubResource("Curve2D_25rvi")
+curve = SubResource("Curve2D_l27oo")
 path_time = 2.5
-type = "0"
 
 [node name="GravityShift" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1192841641 instance=ExtResource("7_nxthm")]
 
@@ -115,14 +114,20 @@ shape = SubResource("RectangleShape2D_vq0c4")
 position = Vector2(623.75, -155.25)
 shape = SubResource("RectangleShape2D_hj1v4")
 
-[node name="1" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=553221677 instance=ExtResource("2_usytp")]
+[node name="0" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677]
+id = 135
+
+[node name="1" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1432021171 instance=ExtResource("2_usytp")]
 position = Vector2(480, 0)
+id = 132
 
 [node name="2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=833299366 instance=ExtResource("2_usytp")]
 position = Vector2(0, -270)
+id = 133
 
 [node name="3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1373542 instance=ExtResource("2_usytp")]
 position = Vector2(480, -270)
+id = 134
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

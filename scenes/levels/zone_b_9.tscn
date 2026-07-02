@@ -140,6 +140,8 @@ marker = 3
 position = Vector2(736, 68)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("3_b4jpx")]
+id = 43
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=372912610 instance=ExtResource("3_b4jpx")]
 position = Vector2(480, 0)
+id = 42

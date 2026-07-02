@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://cuirwss3x0plt"]
+[gd_scene format=4 uid="uid://cuirwss3x0plt"]
 
 [ext_resource type="Texture2D" uid="uid://c2tmmnl25k42p" path="res://assets/Sunny-land-files/Assets/environment/Props/platform-long.png" id="1_gfj5l"]
 [ext_resource type="Script" uid="uid://c1qm2ft7yiip8" path="res://scenes/objects/moving_platform.gd" id="1_ll65p"]
 [ext_resource type="Texture2D" uid="uid://cai6mua5tbwn0" path="res://assets/Backgrounds/Rocky Roads/Tilesets/tileset_snow.png" id="3_fja67"]
+[ext_resource type="TileSet" uid="uid://dd0xhymxycjtk" path="res://scenes/levels/industrial_tileset.tres" id="4_cr5dy"]
 
 [sub_resource type="Curve2D" id="Curve2D_ll65p"]
 resource_local_to_scene = true
@@ -15,43 +16,54 @@ point_count = 2
 size = Vector2(32, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfj5l"]
-size = Vector2(64, 4)
+size = Vector2(64, 32)
 
 [node name="MovingPlatform" type="Path2D" unique_id=1132493905]
 curve = SubResource("Curve2D_ll65p")
 script = ExtResource("1_ll65p")
-type = "1"
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=729475948]
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=696274453]
-remote_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/MovingPlatform/Platforms/AnimatableBody2D2")
+remote_path = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/MovingPlatform/Platforms/AnimatableBody2D")
 
 [node name="Platforms" type="Node2D" parent="." unique_id=943792004]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms" unique_id=1306227012]
-visible = false
 collision_layer = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/AnimatableBody2D" unique_id=1000286507]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_fja67")
-disabled = true
 one_way_collision = true
 
 [node name="PlatformLong" type="Sprite2D" parent="Platforms/AnimatableBody2D" unique_id=1710889482]
 texture = ExtResource("1_gfj5l")
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="Platforms" unique_id=1494478176]
+visible = false
 collision_layer = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/AnimatableBody2D2" unique_id=1428118318]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_gfj5l")
+disabled = true
 one_way_collision = true
 
 [node name="TilesetSnow" type="Sprite2D" parent="Platforms/AnimatableBody2D2" unique_id=614563813]
 texture = ExtResource("3_fja67")
 region_enabled = true
 region_rect = Rect2(112, 80, 64, 9)
+
+[node name="AnimatableBody2D3" type="AnimatableBody2D" parent="Platforms" unique_id=673563546]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/AnimatableBody2D3" unique_id=915581655]
+shape = SubResource("RectangleShape2D_gfj5l")
+disabled = true
+one_way_collision = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Platforms/AnimatableBody2D3" unique_id=216973382]
+tile_map_data = PackedByteArray("AAD+////AgAAAAAAAAD+/wAAAgAAAAEAAAD/////AgABAAAAAAD//wAAAgABAAEAAAAAAP//AgAEAAAAAAAAAAAAAgAEAAEAAAABAP//AgAFAAAAAAABAAAAAgAFAAEAAAA=")
+tile_set = ExtResource("4_cr5dy")

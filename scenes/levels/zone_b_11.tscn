@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="5_ro3ek"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="6_awx45"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="7_x53ku"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="8_q00tr"]
 
 [sub_resource type="Gradient" id="Gradient_al085"]
 offsets = PackedFloat32Array(0.6, 1)
@@ -103,3 +104,6 @@ shape = SubResource("RectangleShape2D_055hs")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=93722131]
 position = Vector2(65, 204)
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("8_q00tr")]
+id = 202

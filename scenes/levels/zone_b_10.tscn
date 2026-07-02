@@ -7,28 +7,28 @@
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="5_pmkqc"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_w5d4v"]
 
-[sub_resource type="Curve2D" id="Curve2D_oiijg"]
+[sub_resource type="Curve2D" id="Curve2D_yant0"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 16, 48, 0, 0, 0, 0, 16, -48)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_7vw7h"]
+[sub_resource type="Curve2D" id="Curve2D_vumaq"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -16, -80, 0, 0, 0, 0, -192, -80)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_svnn0"]
+[sub_resource type="Curve2D" id="Curve2D_nwdfk"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -244, -24, 0, 0, 0, 0, -109, -184)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_yant0"]
+[sub_resource type="Curve2D" id="Curve2D_pmkqc"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -244, -24, 0, 0, 0, 0, -72, -24)
@@ -99,22 +99,22 @@ type = "2"
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("4_nwdfk")]
 position = Vector2(320, 128)
-curve = SubResource("Curve2D_oiijg")
+curve = SubResource("Curve2D_yant0")
 path_time = 1.5
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=760125742 instance=ExtResource("4_nwdfk")]
 position = Vector2(320, 144)
-curve = SubResource("Curve2D_7vw7h")
+curve = SubResource("Curve2D_vumaq")
 path_time = 2.0
 
 [node name="MovingPlatform3" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="2" unique_id=1043771571 instance=ExtResource("4_nwdfk")]
 position = Vector2(331, 85)
-curve = SubResource("Curve2D_svnn0")
+curve = SubResource("Curve2D_nwdfk")
 path_time = 3.0
 
 [node name="MovingPlatform4" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="3" unique_id=914187844 instance=ExtResource("4_nwdfk")]
 position = Vector2(503, -79)
-curve = SubResource("Curve2D_yant0")
+curve = SubResource("Curve2D_pmkqc")
 path_time = 2.0
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
@@ -165,6 +165,8 @@ position = Vector2(450, -67)
 metadata/_edit_lock_ = true
 
 [node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("6_w5d4v")]
+id = 44
 
 [node name="CellDiscover2" parent="CellAreas" index="1" unique_id=1581367407 instance=ExtResource("6_w5d4v")]
 position = Vector2(0, -270)
+id = 45

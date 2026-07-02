@@ -213,24 +213,31 @@ position = Vector2(1382, 140)
 position = Vector2(1223, -174)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("9_80wc0")]
+id = 62
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1518056758 instance=ExtResource("9_80wc0")]
 position = Vector2(480, 0)
+id = 37
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=1895985657 instance=ExtResource("9_80wc0")]
 position = Vector2(960, 0)
+id = 38
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=502793357 instance=ExtResource("9_80wc0")]
 position = Vector2(0, -272)
+id = 40
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=979275068 instance=ExtResource("9_80wc0")]
 position = Vector2(480, -272)
+id = 63
 
 [node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=1232931717 instance=ExtResource("9_80wc0")]
 position = Vector2(960, -272)
+id = 39
 
 [node name="DarkLight" type="PointLight2D" parent="." index="11" unique_id=1962461147]
 position = Vector2(694.9999, -15.999969)
 scale = Vector2(23.531246, 10.000001)
 blend_mode = 1
 texture = SubResource("GradientTexture2D_e76yv")
+metadata/_edit_lock_ = true

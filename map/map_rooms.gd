@@ -4,9 +4,17 @@ extends TileMapLayer
 @onready var get_map_tiles = get_used_cells()
 var map
 
-var original_tiles = {} # cell coords -> [source_id, atlas_coords, alt_tile]
+var zoom :bool = true
 
-# Called when the node enters the scene tree for the first time.
+var original_tiles = {} 
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("dash"):
+		zoom = !zoom
+		update()
+		
+ 
+
 func _ready() -> void:
 	map = get_parent()
 	
@@ -17,16 +25,19 @@ func _ready() -> void:
 		count += 1
 	update()
 	update_discover()
-	Globals.connect("pos_change",update)
-	SaveLoad.save_file.connect("discover", update_discover)
 	
 	
 func update():
 	var tile_calc = map_to_local(get_map_tiles[Globals.current_room])
 	var calc_tile = local_to_map(player_map_pos.position)
 	player_map_pos.position = tile_calc
-	map.scale = Vector2(2,2)
-	map.position = get_viewport().get_visible_rect().size / 2 - tile_calc * 2
+	
+	if zoom:
+		map.scale = Vector2(2,2)
+		map.position = get_viewport().get_visible_rect().size / 2 - tile_calc * 2
+	else:
+		map.scale = Vector2(1,1)
+		map.position = Vector2(111,36)
 
 func update_discover():
 	for i in get_map_tiles.size():
@@ -38,6 +49,7 @@ func update_discover():
 			set_cell(cell, -1)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var direction = Input.get_vector("right","left","down","ui_up")
+	if direction:
+		map.global_position += direction * delta * 150

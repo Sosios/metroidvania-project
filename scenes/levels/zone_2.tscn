@@ -217,14 +217,14 @@ position = Vector2(1410, 190)
 
 [node name="4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_pklrx")]
 position = Vector2(960.3167, 4.5776367e-05)
-id = 4
+id = 3
 
 [node name="3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=149194738 instance=ExtResource("4_pklrx")]
 position = Vector2(480.1584, 0)
-id = 3
+id = 2
 
 [node name="2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=305717336 instance=ExtResource("4_pklrx")]
-id = 2
+id = 36
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

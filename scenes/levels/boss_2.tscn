@@ -154,12 +154,16 @@ position = Vector2(-4, -7.5)
 shape = SubResource("RectangleShape2D_ttcs1")
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("6_mct1u")]
+id = 54
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=648123274 instance=ExtResource("6_mct1u")]
 position = Vector2(480, 0)
+id = 55
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=1833770041 instance=ExtResource("6_mct1u")]
 position = Vector2(0, -271)
+id = 57
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=381119619 instance=ExtResource("6_mct1u")]
 position = Vector2(480, -271)
+id = 56

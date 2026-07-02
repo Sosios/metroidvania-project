@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="16_q4kie"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="16_s81dt"]
 [ext_resource type="Resource" uid="uid://dedthxg6tnjl3" path="res://inventory/keys/key_01.tres" id="17_m7xdu"]
+[ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="19_m7xdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbsy5"]
 texture = ExtResource("5_y0euc")
@@ -7436,20 +7437,30 @@ tile_set = ExtResource("14_ixuqb")
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("15_od0v7")]
 position = Vector2(371, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects/Torches" index="1" unique_id=730690349 instance=ExtResource("15_od0v7")]
 position = Vector2(234, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects/Torches" index="2" unique_id=1547553300 instance=ExtResource("15_od0v7")]
 position = Vector2(109, 191)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects/Torches" index="3" unique_id=1212320659 instance=ExtResource("15_od0v7")]
 position = Vector2(54, 90)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects/Torches" index="4" unique_id=1726032925 instance=ExtResource("15_od0v7")]
 position = Vector2(427, 131)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=1614685710 instance=ExtResource("16_q4kie")]
 position = Vector2(394, 190)
@@ -7466,6 +7477,9 @@ shape = SubResource("RectangleShape2D_c0jei")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=790043909]
 position = Vector2(42, 205)
+
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("19_m7xdu")]
+id = 33
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

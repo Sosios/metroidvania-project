@@ -7479,69 +7479,103 @@ metadata/_edit_lock_ = true
 
 [node name="Torch" parent="Objects" index="0" unique_id=627410971 instance=ExtResource("8_hlrgv")]
 position = Vector2(56, 191)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects" index="1" unique_id=123608812 instance=ExtResource("8_hlrgv")]
 position = Vector2(378, 154)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects" index="2" unique_id=1565718581 instance=ExtResource("8_hlrgv")]
 position = Vector2(377, 444)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects" index="3" unique_id=124334472 instance=ExtResource("8_hlrgv")]
 position = Vector2(458, 928)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects" index="4" unique_id=263693749 instance=ExtResource("8_hlrgv")]
 position = Vector2(95, 1038)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch6" parent="Objects" index="5" unique_id=424620570 instance=ExtResource("8_hlrgv")]
 position = Vector2(265, 877)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch7" parent="Objects" index="6" unique_id=388287917 instance=ExtResource("8_hlrgv")]
 position = Vector2(418, 752)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch8" parent="Objects" index="7" unique_id=762955577 instance=ExtResource("8_hlrgv")]
 position = Vector2(39, 586)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch9" parent="Objects" index="8" unique_id=1762184252 instance=ExtResource("8_hlrgv")]
 position = Vector2(171, 493)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch10" parent="Objects" index="9" unique_id=307237394 instance=ExtResource("8_hlrgv")]
 position = Vector2(295, 238)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch11" parent="Objects" index="10" unique_id=371673579 instance=ExtResource("8_hlrgv")]
 position = Vector2(38, 413)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch12" parent="Objects" index="11" unique_id=291735542 instance=ExtResource("8_hlrgv")]
 position = Vector2(83, 799)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch14" parent="Objects" index="12" unique_id=609633808 instance=ExtResource("8_hlrgv")]
 position = Vector2(378, 656)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch13" parent="Objects" index="13" unique_id=1929405246 instance=ExtResource("8_hlrgv")]
 position = Vector2(97, 640)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch15" parent="Objects" index="14" unique_id=1087287969 instance=ExtResource("8_hlrgv")]
 position = Vector2(232, 734)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch16" parent="Objects" index="15" unique_id=729678661 instance=ExtResource("8_hlrgv")]
 position = Vector2(300, 591)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch17" parent="Objects" index="16" unique_id=2077740339 instance=ExtResource("8_hlrgv")]
 position = Vector2(196, 333)
-
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
-limit_bottom = 1080
+energy = 3.0
+tex_scale = 0.15
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=534231624]
 position = Vector2(2, -11)
 energy = 0.5
 texture = ExtResource("18_c0v6q")
 texture_scale = 0.2
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+limit_bottom = 1080
 
 [node name="ShadeRed" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1177037532 instance=ExtResource("9_d2tt6")]
 
@@ -7611,15 +7645,19 @@ position = Vector2(336, 1027)
 position = Vector2(-16, 336)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_4x3hk")]
+id = 171
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=443074881 instance=ExtResource("2_4x3hk")]
 position = Vector2(0, 270)
+id = 172
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=99001433 instance=ExtResource("2_4x3hk")]
 position = Vector2(0, 540)
+id = 7
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=950991967 instance=ExtResource("2_4x3hk")]
 position = Vector2(0, 810)
+id = 8
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

@@ -105,32 +105,50 @@ tile_set = ExtResource("2_jpt1v")
 
 [node name="Torch" parent="Objects/Torches" index="0" unique_id=627410971 instance=ExtResource("7_s21t7")]
 position = Vector2(144, 188)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch2" parent="Objects/Torches" index="1" unique_id=120474309 instance=ExtResource("7_s21t7")]
 position = Vector2(403, 189)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch3" parent="Objects/Torches" index="2" unique_id=118105602 instance=ExtResource("7_s21t7")]
 position = Vector2(633, 189)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch4" parent="Objects/Torches" index="3" unique_id=1502490197 instance=ExtResource("7_s21t7")]
 position = Vector2(1113, 187)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch8" parent="Objects/Torches" index="4" unique_id=412919262 instance=ExtResource("7_s21t7")]
 position = Vector2(1673, 223)
 type = "2"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch9" parent="Objects/Torches" index="5" unique_id=1972285079 instance=ExtResource("7_s21t7")]
 position = Vector2(1607, 69)
 type = "1"
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch5" parent="Objects/Torches" index="6" unique_id=1841352528 instance=ExtResource("7_s21t7")]
 position = Vector2(1423, 188)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch6" parent="Objects/Torches" index="7" unique_id=316433964 instance=ExtResource("7_s21t7")]
 position = Vector2(1817, 190)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Torch7" parent="Objects/Torches" index="8" unique_id=389061580 instance=ExtResource("7_s21t7")]
 position = Vector2(2142, 189)
+energy = 3.0
+tex_scale = 0.15
 
 [node name="Boar" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=185224842 instance=ExtResource("3_0627x")]
 position = Vector2(793, 194)
@@ -177,14 +195,14 @@ shape = SubResource("RectangleShape2D_nhsnm")
 position = Vector2(1009, 181)
 shape = SubResource("RectangleShape2D_nhsnm")
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="13" unique_id=312523826]
-limit_right = 2400
-
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=786996680]
 position = Vector2(2, -11)
 energy = 0.5
 texture = ExtResource("10_o6v00")
 texture_scale = 0.2
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+limit_right = 2400
 
 [node name="HurtArea" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=754456728 instance=ExtResource("11_o6v00")]
 position = Vector2(912, 256)
@@ -230,23 +248,23 @@ position = Vector2(2373, 209)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_1iync")]
 position = Vector2(-0.4462738, -0.057861328)
-id = 5
+id = 4
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1631173209 instance=ExtResource("4_1iync")]
 position = Vector2(480, 0)
-id = 6
+id = 5
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=558492750 instance=ExtResource("4_1iync")]
 position = Vector2(960.58276, -0.119911194)
-id = 7
+id = 6
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1649864341 instance=ExtResource("4_1iync")]
 position = Vector2(1440.5989, 0)
-id = 8
+id = 7
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=964532054 instance=ExtResource("4_1iync")]
 position = Vector2(1920.6287, 0.15247726)
-id = 9
+id = 8
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true

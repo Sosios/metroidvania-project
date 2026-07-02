@@ -282,12 +282,16 @@ metadata/_edit_lock_ = true
 
 [node name="CellDiscover2" parent="CellAreas" index="1" unique_id=1008373193 instance=ExtResource("2_f1bag")]
 position = Vector2(0, -272)
+id = 70
 
 [node name="CellDiscover3" parent="CellAreas" index="2" unique_id=516639602 instance=ExtResource("2_f1bag")]
 position = Vector2(0, -544)
+id = 71
 
 [node name="CellDiscover4" parent="CellAreas" index="3" unique_id=1567959113 instance=ExtResource("2_f1bag")]
 position = Vector2(0, -816)
+id = 78
 
 [node name="CellDiscover5" parent="CellAreas" index="4" unique_id=777892924 instance=ExtResource("2_f1bag")]
 position = Vector2(0, -1088)
+id = 88

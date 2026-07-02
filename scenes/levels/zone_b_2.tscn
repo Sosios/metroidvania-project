@@ -225,25 +225,28 @@ position = Vector2(747, 737)
 [node name="Marker2D5" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="4" unique_id=743196609]
 position = Vector2(728, 43)
 
-[node name="CellAreas" parent="." index="10" unique_id=995269704]
-visible = false
+[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("10_bewp0")]
+id = 22
 
-[node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("10_bewp0")]
-
-[node name="CellDiscover2" parent="CellAreas" index="1" unique_id=258542917 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=258542917 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 0)
+id = 23
 
-[node name="CellDiscover3" parent="CellAreas" index="2" unique_id=703608551 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=703608551 instance=ExtResource("10_bewp0")]
 position = Vector2(0, 272)
+id = 24
 
-[node name="CellDiscover4" parent="CellAreas" index="3" unique_id=29947679 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=29947679 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 272)
+id = 25
 
-[node name="CellDiscover5" parent="CellAreas" index="4" unique_id=1191154090 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=1191154090 instance=ExtResource("10_bewp0")]
 position = Vector2(0, 546)
+id = 26
 
-[node name="CellDiscover6" parent="CellAreas" index="5" unique_id=1461208366 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=1461208366 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 546)
+id = 27
 
 [node name="DarkLight" type="PointLight2D" parent="." index="11" unique_id=2118431544]
 position = Vector2(477.5, 419.5)
@@ -253,6 +256,7 @@ blend_mode = 1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_h1sda")
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" parent="." index="12" unique_id=1724915358]
 enabled = true

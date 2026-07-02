@@ -29,7 +29,7 @@ func _ready() -> void:
 	$PathFollow2D/RemoteTransform2D.remote_path = $Platforms.get_children()[int(type)].get_path()
 	move_tween()
 	
-@export_enum("0","1") var type = "0":
+@export_enum("0","1","2") var type = "0":
 	set(value):
 		if get_child_count() > 0 and value != null:
 			type = value

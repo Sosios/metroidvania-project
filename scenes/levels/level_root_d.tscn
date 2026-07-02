@@ -18,7 +18,13 @@ scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(324, 0)
 repeat_times = 6
 
-[node name="1" type="Sprite2D" parent="Parallaxes/Parallax2D" index="0" unique_id=2053622527]
+[node name="ColorRect" type="ColorRect" parent="Parallaxes/Parallax2D" index="0" unique_id=856435256]
+offset_top = -1150.0
+offset_right = 575.0
+offset_bottom = -54.0
+color = Color(0.8039216, 0.5647059, 0.7254902, 1)
+
+[node name="1" type="Sprite2D" parent="Parallaxes/Parallax2D" index="1" unique_id=2053622527]
 position = Vector2(288, 108)
 texture = ExtResource("2_7you7")
 

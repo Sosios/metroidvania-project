@@ -7538,16 +7538,19 @@ position = Vector2(47, 224)
 position = Vector2(892, 224)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("14_ekl3k")]
+id = 35
 
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1937507868 instance=ExtResource("14_ekl3k")]
 position = Vector2(480, 0)
+id = 34
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=80715834 instance=ExtResource("14_ekl3k")]
 position = Vector2(480, -272)
+id = 16
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1695987193 instance=ExtResource("14_ekl3k")]
 position = Vector2(0, -272)
+id = 17
 
 [node name="DirectionalLight2D" parent="." index="11" unique_id=1724915358]
 enabled = true
-energy = 0.8
