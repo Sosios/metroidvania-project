@@ -19,10 +19,3 @@ func enter():
 	SaveLoad.save_file.unlocked_doors.append(1)
 	SaveLoad.save_file.unlocked_doors.append(3)
 	Globals.show_bar = false
-	
-	
-func update(delta):
-	timer -= delta
-	if timer <= 0:
-		boss.target_position = Globals.player_pos
-		Transitioned.emit(self, "move")

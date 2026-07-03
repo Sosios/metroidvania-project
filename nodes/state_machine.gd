@@ -39,3 +39,11 @@ func on_child_transition(state, new_state_name):
 	new_state.enter()
 	
 	current_state = new_state
+
+
+func _on_detect_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_detect_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

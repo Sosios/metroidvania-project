@@ -56,7 +56,6 @@ fill_to = Vector2(0.5, 1)
 metadata/_snap_enabled = true
 
 [node name="ZoneB3" unique_id=342494649 instance=ExtResource("1_bshkb")]
-screen_color = Color(0.70980394, 0.70980394, 0.70980394, 1)
 
 [node name="Parallaxes" parent="." index="0" unique_id=691625541]
 metadata/_edit_lock_ = true

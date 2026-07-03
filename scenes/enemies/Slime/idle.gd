@@ -1,18 +1,26 @@
 extends State
 
-@export var slime: CharacterBody2D
+var slime: CharacterBody2D
 
-var direction : Vector2
 var wander_time : float
+var timer : float
 
 func rand_direction():
-	direction = Vector2(randi_range(-1,1),0).normalized()
+	slime.direction = Vector2([-1,-1,0,1,1].pick_random(),0).normalized()
 	wander_time = randf_range(1, 3)
 	
 func enter():
-	slime.sprite.play("default")
+	slime = get_parent().get_parent()
+	print("IDLE ENTERED")
+	timer = 1.0
+	var tween = create_tween()
+	tween.tween_property(slime,"scale",Vector2.ONE,0.2)
+	slime.sprite.play("idle")
+	slime.hurt_box.monitoring = true
 	rand_direction()
-	slime.hit_taken.connect(_on_hit_taken)
+	if not slime.hit_taken.is_connected(_on_hit_taken):
+		slime.hit_taken.connect(_on_hit_taken)
+	slime.velocity = Vector2.ZERO
 	
 func update(delta):
 	if wander_time > 0:
@@ -21,22 +29,30 @@ func update(delta):
 		rand_direction()
 
 func physics_update(delta):
+	if slime.detect:
+		timer -= delta
+		if timer <=0:
+			Transitioned.emit(self,"attack")
 	if slime:
-		slime.velocity = direction * slime.speed 
-		if direction.x == 1:
-			slime.sprite.flip_h = true
-		elif direction.x == -1:
-			slime.sprite.flip_h = false
-		if slime.velocity.x == 0:
-			slime.sprite.play("idle")
-		else:
+		slime.velocity = slime.direction * slime.speed 
+		if slime.direction.x != 0 :
 			slime.sprite.play("walk")
-	slime.move_and_slide()
+		else:
+			slime.sprite.play("idle")
+		if slime.direction.x == 1:
+			slime.sprite.flip_h = false
+		elif slime.direction.x == -1:
+			slime.sprite.flip_h = true
 
 
 func _on_touch_wall():
-	direction.x = -direction.x
+	slime.direction.x = -slime.direction.x
 	wander_time = randf_range(1, 3)
+	rand_direction()
 	
 func _on_hit_taken():
 	Transitioned.emit(self, "hit")
+
+
+func _on_direction_change_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

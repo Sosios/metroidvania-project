@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://dv1s5vfp7h5p8"]
+
+[ext_resource type="Texture2D" uid="uid://g1a7hreamfbr" path="res://assets/Boss/skeletonAsset/skeletonSpriteSheet.png" id="1_58jqj"]
+[ext_resource type="Texture2D" uid="uid://dsc0pa85k04kh" path="res://assets/Boss/skeletonAsset/skeletonSpriteSheet_normal.png" id="2_d7621"]
+
+[resource]
+diffuse_texture = ExtResource("1_58jqj")
+normal_texture = ExtResource("2_d7621")

@@ -19,6 +19,8 @@ func enter():
 	player.sprite.play("jump_attack_2")
 	player.animation_player.play("jump_attack2")
 	
+	player.sprite.get_child(0).position.x = abs(player.attack_1_area.position.x) * Globals.direction
+	
 func update(delta):
 	if attack_time > 0:
 		attack_time -= delta
@@ -35,7 +37,7 @@ func update(delta):
 		else:
 			player.sprite.flip_h = false
 			Globals.direction = 1
-		player.attack_1_area.position.x = abs(player.attack_1_area.position.x) * Globals.direction
+		#player.attack_1_area.position.x = abs(player.attack_1_area.position.x) * Globals.direction
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, 2000 * delta)
 	if player.velocity.y == 0:

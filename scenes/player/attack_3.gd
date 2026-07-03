@@ -13,7 +13,10 @@ func enter():
 	wait_time = 0.2
 	player.velocity.x = 0.0
 	player.sprite.play("attack_3")
-	player.animation_player.play("attack3")
+	if Globals.direction == 1:
+		player.animation_player.play("attack3_right")
+	elif Globals.direction == -1:
+		player.animation_player.play("attack3_left")
 	
 func update(delta):
 	attack_time -= delta

@@ -103,6 +103,7 @@ func _physics_process(delta: float) -> void:
 		for body in attack_1_area.get_overlapping_bodies():
 			if "hit" in body:
 				body.hit(SaveLoad.save_file.attack)
+				
 
 func change_character_right():
 	if SaveLoad.save_file.player_selected < SaveLoad.save_file.characters_unlocked:
@@ -137,10 +138,7 @@ func change_character():
 	sprite = sprites[SaveLoad.save_file.player_selected]
 	sprite.flip_h = flip_h
 	sprite.play(current_animation)
-	if sprite.flip_h:
-		attack_1_area.scale.x = -1
-	else:
-		attack_1_area.scale.x = 1
+	attack_1_area = sprite.get_child(0)
 	#general_ap.play("change_chara")
 	for animation in sprites:
 		animation.hide()

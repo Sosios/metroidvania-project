@@ -167,3 +167,5 @@ change_color = null
 visible = false
 enabled = true
 energy = 0.8
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="15" unique_id=1171834906]

@@ -11,7 +11,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("1_kdnp2")
-shader_parameter/palette_array_size = 0
+shader_parameter/palette_array_size = 3
 shader_parameter/input_palette_texture = ExtResource("2_85n13")
 shader_parameter/output_palette_texture = ExtResource("2_85n13")
 shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

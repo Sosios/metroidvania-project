@@ -21,9 +21,10 @@ func enter():
 	player.sprite.play("hit")
 	player.general_ap.play("hit")
 	timer = 0.2
-	Engine.time_scale = 0.05
-	await get_tree().create_timer(0.015).timeout
-	Engine.time_scale = 1
+	if Engine.time_scale == 1:
+		Engine.time_scale = 0.05
+		await get_tree().create_timer(0.015).timeout
+		Engine.time_scale = 1
 	player.velocity = Vector2(direction.x, -0.5).normalized()*200
 	
 func physics_update(delta):

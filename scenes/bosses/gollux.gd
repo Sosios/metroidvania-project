@@ -33,8 +33,6 @@ var health = max_health:
 
 @export var strength: float = 50.0
 
-@onready var navigation: NavigationAgent2D = $NavigationAgent2D
-
 @onready var target_position:= Vector2.ZERO
 
 @onready var hitboxes:= $Hitbox.get_children()

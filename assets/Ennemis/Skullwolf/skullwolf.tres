@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://ctdcs3khdvgqi"]
+
+[ext_resource type="Texture2D" uid="uid://b3w765r8b8wet" path="res://assets/Ennemis/Skullwolf/Massacre Sprite Sheet.png" id="1_ndsrc"]
+[ext_resource type="Texture2D" uid="uid://dgou58500mjgy" path="res://assets/Ennemis/Skullwolf/Massacre Sprite Sheet_normal.png" id="2_x2i74"]
+
+[resource]
+diffuse_texture = ExtResource("1_ndsrc")
+normal_texture = ExtResource("2_x2i74")

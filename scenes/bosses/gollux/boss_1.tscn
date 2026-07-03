@@ -714,13 +714,10 @@ animation_player = NodePath("../../AnimationPlayer")
 [node name="Dead" type="Node" parent="StateMachine" unique_id=2124909740]
 script = ExtResource("13_deaew")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=137047583]
-
 [node name="HitTimer" type="Timer" parent="." unique_id=1386662905]
 wait_time = 0.2
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Attack1" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Attack2" method="_on_animation_player_animation_finished"]
-[connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

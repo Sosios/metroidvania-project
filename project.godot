@@ -64,6 +64,7 @@ Entity=""
 Player=""
 ShadeRed=""
 Bosses=""
+Projectile=""
 
 [input]
 

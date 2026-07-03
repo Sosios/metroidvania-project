@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://dn2p7kbofoa4n"]
+
+[ext_resource type="Texture2D" uid="uid://devj7wqvla8lq" path="res://assets/Ennemis/Slime_Enemy_Pixel_Monsters_Vol_1/Slime/spritesheets/blue/all.png" id="1_pa6ml"]
+[ext_resource type="Texture2D" uid="uid://cd4am2oq1gvvi" path="res://assets/Ennemis/Slime_Enemy_Pixel_Monsters_Vol_1/Slime/spritesheets/blue/all_normal.png" id="2_rme74"]
+
+[resource]
+diffuse_texture = ExtResource("1_pa6ml")
+normal_texture = ExtResource("2_rme74")

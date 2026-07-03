@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://b7dsfcsicqujt"]
+
+[ext_resource type="Texture2D" uid="uid://b3v0e3k25fl0t" path="res://assets/Boss/Pengu/pengu_attack_ray.png" id="1_boiou"]
+[ext_resource type="Texture2D" uid="uid://dtg6motty1cvd" path="res://assets/Boss/Pengu/pengu_attack_ray_normal.png" id="2_85lkk"]
+
+[resource]
+diffuse_texture = ExtResource("1_boiou")
+normal_texture = ExtResource("2_85lkk")

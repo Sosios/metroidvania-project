@@ -7406,7 +7406,6 @@ size = Vector2(288, 23)
 size = Vector2(32, 122)
 
 [node name="Zone6" unique_id=342494649 instance=ExtResource("1_3w8vh")]
-screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1437069560]
 scroll_scale = Vector2(0.2, 0.2)
@@ -7565,6 +7564,9 @@ shape = SubResource("RectangleShape2D_6bkom")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=87722518]
 position = Vector2(407, 204)
+
+[node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=1834900461]
+position = Vector2(-906, 125)
 
 [node name="CellAreas" parent="." index="10" unique_id=995269704]
 metadata/_edit_lock_ = true

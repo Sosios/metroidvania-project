@@ -45,7 +45,7 @@ func physics_update(delta):
 		else:
 			player.sprite.flip_h = false
 			Globals.direction = 1
-		player.attack_1_area.position.x = abs(player.attack_1_area.position.x) * Globals.direction
+		#player.attack_1_area.position.x = abs(player.attack_1_area.position.x) * Globals.direction
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, 2500 * delta)
 	

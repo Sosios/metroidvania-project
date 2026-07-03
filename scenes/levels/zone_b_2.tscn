@@ -46,7 +46,6 @@ fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.508547, 0.36324787)
 
 [node name="ZoneB2" unique_id=342494649 instance=ExtResource("1_lbq3m")]
-screen_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1167577311]
 scroll_scale = Vector2(0.4, 1)
@@ -130,7 +129,7 @@ tile_map_data = PackedByteArray("AAD///v/CgABABkAAAD///z/CgABABkAAAD///3/CgABABk
 tile_set = ExtResource("8_6egnh")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="2" unique_id=1506869944]
-tile_map_data = PackedByteArray("AAAOABsACgATAAIAAAAOABwACgATAAMAAAAPABsACgAUAAIAAAAPABwACgAUAAMAAAAQABsACgAVAAIAAAAQABwACgAVAAMAAAARABsACgAWAAIAAAARABwACgAWAAMAAAAWABUACgATAAIAABAVABUACgAUAAIAABAUABUACgAVAAIAABATABUACgAWAAIAABAWABYACgATAAMAABAVABYACgAUAAMAABAUABYACgAVAAMAABATABYACgAWAAMAABAOABEACgATAAIAAAAOABIACgATAAMAAAAPABEACgAUAAIAAAAPABIACgAUAAMAAAAQABEACgAVAAIAAAAQABIACgAVAAMAAAARABEACgAWAAIAAAARABIACgAWAAMAAAATACUACgATAAIAAAATACYACgATAAMAAAAUACUACgAUAAIAAAAUACYACgAUAAMAAAAVACUACgAVAAIAAAAVACYACgAVAAMAAAAWACUACgAWAAIAAAAWACYACgAWAAMAAAA=")
+tile_map_data = PackedByteArray("AAAOABsACgATAAMAAAAPABsACgAUAAMAAAAQABsACgAVAAMAAAARABsACgAWAAMAAAAWABUACgATAAIAABAVABUACgAUAAIAABAUABUACgAVAAIAABATABUACgAWAAIAABAWABYACgATAAMAABAVABYACgAUAAMAABAUABYACgAVAAMAABATABYACgAWAAMAABAOABEACgATAAIAAAAOABIACgATAAMAAAAPABEACgAUAAIAAAAPABIACgAUAAMAAAAQABEACgAVAAIAAAAQABIACgAVAAMAAAARABEACgAWAAIAAAARABIACgAWAAMAAAATACUACgATAAIAAAATACYACgATAAMAAAAUACUACgAUAAIAAAAUACYACgAUAAMAAAAVACUACgAVAAIAAAAVACYACgAVAAMAAAAWACUACgAWAAIAAAAWACYACgAWAAMAAAAOABoACgATAAIAAAAPABoACgAUAAIAAAAQABoACgAVAAIAAAARABoACgAWAAIAAAAXACEACgAWAAIAABAXACIACgAWAAMAABAYACEACgAVAAIAABAYACIACgAVAAMAABAZACEACgAUAAIAABAZACIACgAUAAMAABAaACEACgATAAIAABAaACIACgATAAMAABATAA4ACgAWAAIAABATAA8ACgAWAAMAABAUAA4ACgAVAAIAABAUAA8ACgAVAAMAABAVAA4ACgAUAAIAABAVAA8ACgAUAAMAABAWAA4ACgATAAIAABAWAA8ACgATAAMAABA=")
 tile_set = ExtResource("8_6egnh")
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1614685710 instance=ExtResource("9_vm5od")]
@@ -143,7 +142,7 @@ position = Vector2(767, 490)
 position = Vector2(512, 494)
 
 [node name="Torch5" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="3" unique_id=318312858 instance=ExtResource("13_h1sda")]
-position = Vector2(701, 743)
+position = Vector2(698, 785)
 type = "1"
 
 [node name="Torch2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="4" unique_id=2085380270 instance=ExtResource("13_h1sda")]
@@ -184,6 +183,7 @@ position = Vector2(-54, 129.5)
 shape = SubResource("RectangleShape2D_f3dvp")
 
 [node name="TransitionArea2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="1" unique_id=1772938433 instance=ExtResource("9_7fif0")]
+target = "uid://cme2js7d72r2a"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea2" index="0" unique_id=1529996304]
 position = Vector2(1001, 674.5)
@@ -198,6 +198,7 @@ position = Vector2(1001.5, 672)
 shape = SubResource("RectangleShape2D_yl2w2")
 
 [node name="B9" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="3" unique_id=584143799 instance=ExtResource("9_7fif0")]
+target = "uid://u2d6uxrfnjtf"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/B9" index="0" unique_id=2121551726]
 position = Vector2(743.5, 827)
@@ -205,6 +206,7 @@ shape = SubResource("RectangleShape2D_yhism")
 
 [node name="B13" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="4" unique_id=1465146111 instance=ExtResource("9_7fif0")]
 position = Vector2(-29, -898)
+target = "uid://b5l57p618jf6k"
 jump_up = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/B13" index="0" unique_id=866325975]
