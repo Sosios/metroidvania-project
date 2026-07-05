@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://tybvyg74pk35"]
+
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_rqxtg"]
+[ext_resource type="Texture2D" uid="uid://hjat1rmvpvhk" path="res://assets/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/sword_01c.png" id="2_u2sk2"]
+
+[resource]
+script = ExtResource("1_rqxtg")
+name = "Epee longue"
+type = "sword"
+texture = ExtResource("2_u2sk2")
+attack = 30.0
+description = "Epee commune mais puissante"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

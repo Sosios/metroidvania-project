@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_8dn2d"]
 [ext_resource type="PackedScene" uid="uid://bjwhjvghb2oi7" path="res://scenes/ui/pause_button.tscn" id="2_ghgjp"]
 [ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="3_yrwkb"]
-[ext_resource type="Texture2D" uid="uid://dpwklm5xkj6aq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="5_lauhp"]
 [ext_resource type="StyleBox" uid="uid://dwo03y8ish1qt" path="res://styles/focus.tres" id="5_mbdly"]
 [ext_resource type="PackedScene" uid="uid://cfh5xobje8wjd" path="res://scenes/ui/inventory_slot.tscn" id="6_i86gu"]
 [ext_resource type="Shader" uid="uid://oqb1ow5oiqq4" path="res://shaders/scout.gdshader" id="7_nw1ig"]
 [ext_resource type="Texture2D" uid="uid://chbv5jctjvafw" path="res://sword_palette.png" id="8_1wi1b"]
 [ext_resource type="Texture2D" uid="uid://eeooqwxlxllk" path="res://sword_palette_wood.png" id="9_xo6fl"]
+[ext_resource type="Texture2D" uid="uid://cum7hpjd4rl7q" path="res://assets/Personnages/Characters Pack/Outline/WarriorMan-Sheet.png" id="10_2o4wk"]
+[ext_resource type="Texture2D" uid="uid://cujouahh0273h" path="res://assets/Personnages/Red hood free (zipped) Folder/red_hood_sprite_sheet2.png" id="10_xo6fl"]
 [ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="11_xo6fl"]
+[ext_resource type="Texture2D" uid="uid://dbbp5wnan1yjx" path="res://assets/Personnages/Jotem/Jotem spritesheet.png" id="12_ufhlb"]
 
 [sub_resource type="Animation" id="Animation_mbdly"]
 length = 0.001
@@ -530,11 +532,12 @@ theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_i86gu")
 theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_nw1ig")
 theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_ibklw")
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_1wi1b")
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 
 [node name="Container" type="Control" parent="TabContainer" unique_id=607698453]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -647,7 +650,6 @@ theme_override_styles/focus = ExtResource("5_mbdly")
 shortcut = SubResource("Shortcut_nw1ig")
 
 [node name="Container2" type="Control" parent="TabContainer" unique_id=87501571]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -782,11 +784,32 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=1841312139]
 material = SubResource("ShaderMaterial_ibklw")
+position = Vector2(-9.5, 14.5)
 rotation = -3.1415927
 scale = Vector2(2, -2)
-texture = ExtResource("5_lauhp")
+texture = ExtResource("10_2o4wk")
 region_enabled = true
-region_rect = Rect2(0, 0, 64, 80)
+region_rect = Rect2(17, 78, 47, 44)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=678878936]
+visible = false
+material = SubResource("ShaderMaterial_ibklw")
+position = Vector2(-11.5, 6.5)
+rotation = -3.1415927
+scale = Vector2(2, -2)
+texture = ExtResource("10_xo6fl")
+region_enabled = true
+region_rect = Rect2(23, 12, 30, 40)
+
+[node name="Sprite2D3" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=414267324]
+visible = false
+material = SubResource("ShaderMaterial_ibklw")
+position = Vector2(-8.5, 1.5)
+rotation = -3.1415927
+scale = Vector2(2, -2)
+texture = ExtResource("12_ufhlb")
+region_enabled = true
+region_rect = Rect2(43, 84, 38, 51)
 
 [node name="Left" type="Button" parent="TabContainer/Container2" unique_id=495752853]
 custom_minimum_size = Vector2(17, 21)

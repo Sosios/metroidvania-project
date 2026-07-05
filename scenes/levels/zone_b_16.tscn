@@ -14,7 +14,12 @@
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="10_pxce8"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="11_xfsib"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="12_e051r"]
+[ext_resource type="Resource" uid="uid://bbsa43skhfeor" path="res://inventory/armor/armor_04.tres" id="12_s7psg"]
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="13_pxce8"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="14_upygx"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="15_a3wmw"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="16_2pxi3"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="17_cinxi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84ion"]
 shader = ExtResource("10_pxce8")
@@ -22,12 +27,15 @@ shader_parameter/from = Color(0.19215687, 0.14901961, 0.03529412, 1)
 shader_parameter/to = Color(0, 1.92523e-07, 0.37330815, 1)
 shader_parameter/tolerance = 0.4650000220875
 
-[sub_resource type="Curve2D" id="Curve2D_pxce8"]
+[sub_resource type="Curve2D" id="Curve2D_b3ik6"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -224)
 }
 point_count = 2
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 48)
 
 [sub_resource type="Gradient" id="Gradient_pxce8"]
 offsets = PackedFloat32Array(0.6, 1)
@@ -61,6 +69,11 @@ size = Vector2(296.75, 107.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7psg"]
 size = Vector2(64, 272)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nr633"]
+vertices = PackedVector2Array(438, -1046, 438, -954, 230, -954, 42, -1046, 42, -646, 230, -902, 106, -618, 427.85938, -902, 438, -891.8594, 438, -874, 294, -874, 438, -742, 470, -742, 470, -698, 374, -698, 438, -390, 470, -390, 470, -346, 310, -346, 438, 170, 470, 170, 470, 198, 250, 198, 250, -10, 438, -283.85938, 427.85938, -294, 42, -10, 42, -283.85938, 310, -294, 170, -362, 42, -362, 42, -523.8594, 52.140625, -534, 68.140625, -534, 10, -618, 10, -646, 294, -822, 106, -571.8594, 374, -571, 438, -523, 427.85938, -822, 438, -811.8594, 170, -294, 52.140625, -294)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(7, 8, 9, 10, 5), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(19, 22, 23, 24), PackedInt32Array(25, 24, 23, 26, 27, 28), PackedInt32Array(29, 30, 31, 32, 33), PackedInt32Array(6, 34, 35, 4), PackedInt32Array(6, 5, 10, 36), PackedInt32Array(18, 29, 33, 37, 38, 39, 15), PackedInt32Array(36, 40, 41, 11, 14, 6), PackedInt32Array(6, 14, 38, 37), PackedInt32Array(42, 29, 18, 28), PackedInt32Array(42, 28, 27), PackedInt32Array(42, 27, 43)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(32, -1056, 448, -1056, 448, -944, 240, -944, 240, -912, 432, -912, 448, -896, 448, -864, 304, -864, 304, -832, 432, -832, 448, -816, 448, -752, 480, -752, 480, -688, 384, -688, 384, -576, 448, -528, 448, -400, 480, -400, 480, -336, 320, -336, 320, -304, 432, -304, 448, -288, 448, -128, 448, 160, 480, 160, 480, 208, 240, 208, 240, 0, 32, 0, 32, -288, 48, -304, 160, -304, 160, -352, 32, -352, 32, -528, 48, -544, 64, -544, 96, -576, 96, -608, 0, -608, 0, -656, 32, -656)])
 
 [node name="ZoneB16" unique_id=342494649 instance=ExtResource("1_t4iki")]
 
@@ -171,14 +184,88 @@ tile_set = ExtResource("8_xfsib")
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1614685710 instance=ExtResource("11_xfsib")]
 position = Vector2(384, -1040)
 rotation = -3.1415927
-
-[node name="Chest2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=413688308 instance=ExtResource("11_xfsib")]
-position = Vector2(291, -962)
-rotation = -6.2831855
+item = ExtResource("12_s7psg")
+id = 21
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("12_e051r")]
 position = Vector2(224, -416)
-curve = SubResource("Curve2D_pxce8")
+curve = SubResource("Curve2D_b3ik6")
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("14_upygx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1626460969]
+position = Vector2(96, -656)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=1309122736]
+position = Vector2(384, -736)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="2" unique_id=646156070]
+position = Vector2(304, -912)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="3" unique_id=1423980419]
+position = Vector2(240, -992)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="4" unique_id=453548450]
+position = Vector2(160, -400)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="5" unique_id=1368358378]
+position = Vector2(320, -384)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="6" unique_id=1038271800]
+position = Vector2(480, -384)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="7" unique_id=940802802]
+position = Vector2(0, -656)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="8" unique_id=683771960]
+position = Vector2(480, -736)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="9" unique_id=1926910312]
+position = Vector2(240, -48)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="10" unique_id=936672330]
+position = Vector2(480, 160)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1265163812 instance=ExtResource("15_a3wmw")]
+position = Vector2(64, -296)
+type = "1"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=9197898 instance=ExtResource("15_a3wmw")]
+position = Vector2(384, -296)
+type = "1"
+
+[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1191406557 instance=ExtResource("15_a3wmw")]
+position = Vector2(56, -536)
+type = "1"
+
+[node name="Bat4" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=586474272 instance=ExtResource("15_a3wmw")]
+position = Vector2(408, -824)
+type = "1"
+
+[node name="Bat5" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=1197757317 instance=ExtResource("15_a3wmw")]
+position = Vector2(24, -648)
+type = "1"
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="6" unique_id=330946052 instance=ExtResource("16_2pxi3")]
+position = Vector2(392, -336)
+
+[node name="Skeleton2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="7" unique_id=2023651066 instance=ExtResource("16_2pxi3")]
+position = Vector2(88, -8)
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="8" unique_id=1109252605 instance=ExtResource("17_cinxi")]
+position = Vector2(72, -352)
+type = "1"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_top = -1088
@@ -299,3 +386,7 @@ id = 78
 [node name="CellDiscover5" parent="CellAreas" index="4" unique_id=777892924 instance=ExtResource("2_f1bag")]
 position = Vector2(0, -1088)
 id = 88
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=1265647088]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_nr633")

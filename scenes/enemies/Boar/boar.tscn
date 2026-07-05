@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://b5xolp4wxfkot" path="res://scenes/enemies/Boar/boar.gd" id="1_5yffh"]
 [ext_resource type="Texture2D" uid="uid://cgmpcmfteirnq" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet.png" id="1_rvpxh"]
 [ext_resource type="Texture2D" uid="uid://xjd48stig5lt" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet.png" id="2_5yffh"]
+[ext_resource type="Shader" uid="uid://oqb1ow5oiqq4" path="res://shaders/scout.gdshader" id="2_kbvu4"]
 [ext_resource type="Texture2D" uid="uid://dfnkqcdsav7fi" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet.png" id="3_jnvh3"]
+[ext_resource type="Texture2D" uid="uid://bp4n3kxbpy5xo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/palette.png" id="3_xsyr4"]
 [ext_resource type="Texture2D" uid="uid://b7fxv0p73nch1" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet.png" id="4_x8qa7"]
 [ext_resource type="PackedScene" uid="uid://qed8vtrml2bj" path="res://nodes/state_machine.tscn" id="6_v64mv"]
 [ext_resource type="Script" uid="uid://dxahr3efaacju" path="res://scenes/enemies/Boar/enemy_idle.gd" id="7_cb45n"]
@@ -11,6 +13,16 @@
 [ext_resource type="Script" uid="uid://bw2ugh5y5fwnv" path="res://scenes/enemies/Boar/enemy_hit.gd" id="9_ht0ru"]
 [ext_resource type="Script" uid="uid://6yiqa0jjtxik" path="res://scenes/enemies/Boar/falling.gd" id="10_05s3d"]
 [ext_resource type="Script" uid="uid://45nf6fxc5im8" path="res://scenes/enemies/Boar/stun.gd" id="11_cphac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
+shader = ExtResource("2_kbvu4")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("3_xsyr4")
+shader_parameter/output_palette_texture = ExtResource("3_xsyr4")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_its0r"]
 atlas = ExtResource("1_rvpxh")
@@ -165,7 +177,7 @@ animations = [{
 size = Vector2(21, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yffh"]
-size = Vector2(118, 12)
+size = Vector2(197, 12)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5yffh"]
 a = Vector2(-16, -9)
@@ -196,6 +208,7 @@ collision_mask = 341
 script = ExtResource("1_5yffh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1757946096]
+material = SubResource("ShaderMaterial_5lmda")
 sprite_frames = SubResource("SpriteFrames_17f1f")
 animation = &"idle"
 
@@ -208,7 +221,7 @@ shape = SubResource("RectangleShape2D_05s3d")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=781159882]
-position = Vector2(-62, 6)
+position = Vector2(-101.5, 6)
 shape = SubResource("RectangleShape2D_5yffh")
 debug_color = Color(0, 0.6496725, 0.14670363, 0.41960785)
 

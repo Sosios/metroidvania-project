@@ -91,7 +91,7 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="Bat" type="CharacterBody2D" unique_id=1265163812]
 collision_layer = 2
-collision_mask = 340
+collision_mask = 16
 script = ExtResource("1_e1lu6")
 speed = 50.0
 

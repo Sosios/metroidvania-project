@@ -10,6 +10,11 @@ size = Vector2(142, 121)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ic5a"]
 size = Vector2(107, 68)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5ic5a"]
+vertices = PackedVector2Array(326, 170, 470, 170, 470, 214, 90, 214, 90, 74, 250, 74, 326, 10, 250, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 0, 5, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(240, 0, 336, 0, 336, 160, 480, 160, 480, 224, 80, 224, 80, 64, 240, 64)])
+
 [node name="ZoneC9" unique_id=342494649 instance=ExtResource("1_5ic5a")]
 
 [node name="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=266087114]
@@ -38,3 +43,6 @@ metadata/_edit_lock_ = true
 
 [node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("3_3dts1")]
 id = 106
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=630095394]
+navigation_polygon = SubResource("NavigationPolygon_5ic5a")

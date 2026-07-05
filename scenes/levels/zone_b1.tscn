@@ -11,12 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://cvhs2bnrqs1u6" path="res://assets/Backgrounds/DarkForest/bgrd_tree5.png" id="7_4u1pk"]
 [ext_resource type="TileSet" uid="uid://jtr5i5jmpshj" path="res://tilesets/forest_tileset.tres" id="8_js1sf"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="9_bbrji"]
+[ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="9_o8wsh"]
 [ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="10_4u1pk"]
+[ext_resource type="Resource" uid="uid://7pbn0ufq1qv1" path="res://inventory/heal/potion_elixir.tres" id="10_k8qhs"]
 [ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="10_wleeh"]
 [ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="11_ogboc"]
 [ext_resource type="Texture2D" uid="uid://bymat20irvk84" path="res://assets/Sunny-land-files/Assets/environment/Props/spikes.png" id="11_wleeh"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="12_q46p0"]
 
-[sub_resource type="Curve2D" id="Curve2D_ogboc"]
+[sub_resource type="Curve2D" id="Curve2D_u0elk"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 214, 0)
@@ -125,16 +128,32 @@ tile_set = ExtResource("8_js1sf")
 tile_map_data = PackedByteArray("AAALAAcACwACABcAAAALAAgACwACABgAAAALAAkACwACABkAAAALAAoACwACABoAAAALAAsACwACABsAAAALAAwACwACABwAAAAMAAcACwADABcAAAAMAAgACwADABgAAAAMAAkACwADABkAAAAMAAoACwADABoAAAAMAAsACwADABsAAAAMAAwACwADABwAAAA=")
 tile_set = ExtResource("8_js1sf")
 
+[node name="Chest" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="2" unique_id=1614685710 instance=ExtResource("9_o8wsh")]
+position = Vector2(1061, 190)
+item = ExtResource("10_k8qhs")
+id = 7
+
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("9_bbrji")]
 visible = false
 position = Vector2(545, 144)
-curve = SubResource("Curve2D_ogboc")
+curve = SubResource("Curve2D_u0elk")
 
 [node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1288262999 instance=ExtResource("10_wleeh")]
 position = Vector2(341, 205)
 
-[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1109252605 instance=ExtResource("11_ogboc")]
+[node name="Skullwolf2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=715316536 instance=ExtResource("10_wleeh")]
+position = Vector2(850, 62)
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1109252605 instance=ExtResource("11_ogboc")]
 position = Vector2(154, 209)
+type = "1"
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1265163812 instance=ExtResource("12_q46p0")]
+position = Vector2(568, 7)
+type = "1"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=2046936953 instance=ExtResource("12_q46p0")]
+position = Vector2(1037, 7)
 type = "1"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]

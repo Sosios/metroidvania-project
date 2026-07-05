@@ -40,6 +40,8 @@ func discover_room(room: int):
 @export var attack := 10.0
 @export var defense := 5.0
 
+var final_attack := attack
+
 @export var player_selected := 0
 
 @export var characters_unlocked := 0
@@ -57,6 +59,12 @@ func discover_room(room: int):
 			lvl_exp_cap = nxtlvl
 			nxtlvl = (nxtlvl+100)*1.065
 			attack = (attack+5)*1.02
+			if player_selected == 0:
+				final_attack = attack
+			elif player_selected == 1:
+				final_attack = attack * 0.9
+			else:
+				final_attack = attack * 1.2
 			defense = (defense+5)*1.01
 			Globals.health = Globals.health * (((max_health+20)*1.03)/max_health)
 			max_health = (max_health+20)*1.03

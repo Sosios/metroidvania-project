@@ -3,9 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://ovw7hw38l1pt" path="res://scenes/levels/level_root_d.tscn" id="1_2836x"]
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="2_ws6sf"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="3_wtk2n"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="4_2opdg"]
 [ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="4_adw5h"]
+[ext_resource type="PackedScene" uid="uid://c4qtyidfpopjm" path="res://scenes/enemies/Boar/boar.tscn" id="5_0hxjp"]
 [ext_resource type="Texture2D" uid="uid://bli0ioh8o82gw" path="res://assets/Backgrounds/sci-fi platformer - free/tileset.png" id="5_2opdg"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_0hxjp"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="6_sadb4"]
+[ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="7_uuf2k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("2_ws6sf")
@@ -13,8 +17,16 @@ shader_parameter/from = Color(1, 1, 1, 1)
 shader_parameter/to = Color(1, 0, 0, 1)
 shader_parameter/tolerance = 0.5990000284525
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 48)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
 size = Vector2(158, 8.75)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ijvl2"]
+vertices = PackedVector2Array(1350, 154, 1430, 154, 1430, 198, 902, 198, 902, 230, 762, 230, 762, 198, 554, 198, 554, 90, 1350, 90, 470, 90, 470, 198, 154, 198, 154, 118, 58, 90, 58, 118)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(3, 6, 9, 0), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 10, 13, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(48, 80, 480, 80, 480, 208, 144, 208, 144, 128, 48, 128), PackedVector2Array(544, 80, 544, 208, 752, 208, 752, 240, 912, 240, 912, 208, 1424, 208, 1440, 208, 1440, 144, 1360, 144, 1360, 80)])
 
 [node name="ZoneD3" unique_id=342494649 instance=ExtResource("1_2836x")]
 
@@ -25,6 +37,41 @@ tile_map_data = PackedByteArray("AABaABIAAAAFAAcAAABaABEAAAAFAAMAAABaABAAAAAFAAY
 material = SubResource("ShaderMaterial_5lmda")
 tile_map_data = PackedByteArray("AAAhAAwAAgADAAMAAAAhAAsAAgADAAEAAAAhAAoAAgADAAIAAAAhAAkAAgADAAIAAAAhAAgAAgADAAEAAAAhAAcAAgADAAEAAAAhAAYAAgADAAEAAAAhAAUAAgADAAAAAAAgAAwAAgABAAMAAAAgAAsAAgABAAEAAAAgAAoAAgACAAEAAAAgAAkAAgABAAIAAAAgAAgAAgABAAEAAAAgAAcAAgABAAEAAAAgAAYAAgACAAEAAAAgAAUAAgABAAAAAAAfAAwAAgABAAMAAAAfAAsAAgABAAIAAAAfAAoAAgABAAEAAAAfAAkAAgABAAEAAAAfAAgAAgABAAIAAAAfAAcAAgABAAEAAAAfAAYAAgABAAIAAAAfAAUAAgACAAAAAAAeAAwAAgAAAAMAAAAeAAsAAgAAAAIAAAAeAAoAAgAAAAEAAAAeAAkAAgAAAAIAAAAeAAgAAgAAAAIAAAAeAAcAAgAAAAEAAAAeAAYAAgAAAAEAAAAeAAUAAgAAAAAAAAA=")
 tile_set = ExtResource("3_wtk2n")
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("4_2opdg")]
+position = Vector2(672, 112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1045915476]
+position = Vector2(80, 48)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=1380603496]
+position = Vector2(688, 48)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="2" unique_id=1696190514]
+position = Vector2(240, 48)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Boar" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=185224842 instance=ExtResource("5_0hxjp")]
+position = Vector2(1040, 192)
+type = "3"
+
+[node name="Boar2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=314538001 instance=ExtResource("5_0hxjp")]
+position = Vector2(432, 192)
+type = "3"
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1265163812 instance=ExtResource("6_sadb4")]
+position = Vector2(656, 80)
+type = "3"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=776462350 instance=ExtResource("6_sadb4")]
+position = Vector2(224, 80)
+type = "3"
+
+[node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=1288262999 instance=ExtResource("7_uuf2k")]
+position = Vector2(592, 208)
+type = "2"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_right = 1440
@@ -116,3 +163,6 @@ position = Vector2(480, 0)
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=2014727869 instance=ExtResource("6_0hxjp")]
 position = Vector2(960, 0)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=888034585]
+navigation_polygon = SubResource("NavigationPolygon_ijvl2")

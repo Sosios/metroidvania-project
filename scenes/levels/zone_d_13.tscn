@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b77a0663d8tr2" path="res://scenes/objects/laser.tscn" id="4_vrgbi"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="5_qjhnl"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="6_nwd0n"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="6_vrgbi"]
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="7_h1s7q"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="7_qjhnl"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_3ele1"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="8_glsn4"]
 
@@ -16,12 +18,15 @@ shader_parameter/from = Color(0.09019608, 0.078431375, 0.11372549, 1)
 shader_parameter/to = Color(0.0011053708, 0.07395216, 0.41484097, 1)
 shader_parameter/tolerance = 0.5570000264575
 
-[sub_resource type="Curve2D" id="Curve2D_3ele1"]
+[sub_resource type="Curve2D" id="Curve2D_nwd0n"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -240)
 }
 point_count = 2
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6qmw3"]
 shader = ExtResource("2_3ele1")
@@ -40,6 +45,11 @@ size = Vector2(113, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lmda"]
 size = Vector2(37.5, 149)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_h1s7q"]
+vertices = PackedVector2Array(10, -150, 102, -150, 102, -58, 22, -58, 10, -118, 102, 214, 10, 214, 10, 122, 90, 122, 102, -6, 90, 70, 22, -6, 10, 70, 10, -58, -22, -58, -22, -90, -54, -118, -54, -90, 326, -118, 470, -118, 470, -74, 326, -74, 326, 214, 202, 214, 202, -150, 326, -150, -186, 42, -186, 230, -198, 154, -198, 102, -234, 42, -250, 102, -250, 154, -470, 230, -326, 170, -186, -118, -138, -118, -138, -90, -186, -90, -186, -42, -234, -42, -470, 170, -326, 26, -278, 26, -278, -26, -326, -26, -326, -150, -186, -150)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 5, 8, 10), PackedInt32Array(11, 9, 10, 12), PackedInt32Array(11, 12, 13, 3), PackedInt32Array(4, 3, 13), PackedInt32Array(4, 13, 14, 15), PackedInt32Array(16, 4, 15, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(18, 21, 24), PackedInt32Array(25, 18, 24), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 26, 29, 31), PackedInt32Array(32, 28, 27, 33, 34), PackedInt32Array(35, 36, 37, 38), PackedInt32Array(38, 39, 40), PackedInt32Array(33, 41, 34), PackedInt32Array(31, 32, 34, 42, 43), PackedInt32Array(40, 30, 31, 43, 44), PackedInt32Array(40, 44, 45, 46, 47, 35), PackedInt32Array(40, 35, 38)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-480, 160, -336, 160, -336, -160, -176, -160, -176, -128, -128, -128, -128, -80, -176, -80, -176, -32, -224, -32, -224, 32, -192, 32, -192, -32, -176, -32, -176, 112, -240, 112, -240, 144, -208, 144, -208, 112, -176, 112, -176, 240, -288, 240, -288, -16, -320, -16, -320, 16, -288, 16, -288, 240, -480, 240), PackedVector2Array(-64, -128, -64, -80, -32, -80, -32, -48, 0, -48, 32, -48, 112, -48, 112, -160, 0, -160, 0, -128), PackedVector2Array(0, -16, 0, -48, 32, -48, 32, -16, 112, -16, 112, 224, 0, 224, 0, 112, 80, 112, 80, 80, 0, 80), PackedVector2Array(192, 224, 192, -160, 336, -160, 336, -128, 480, -128, 480, -64, 336, -64, 336, 224)])
 
 [node name="ZoneD13" unique_id=342494649 instance=ExtResource("1_6hdcd")]
 
@@ -65,8 +75,22 @@ position = Vector2(-115, -104)
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("5_qjhnl")]
 position = Vector2(275, 177)
-curve = SubResource("Curve2D_3ele1")
+curve = SubResource("Curve2D_nwd0n")
 type = "2"
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("6_vrgbi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1927727217]
+position = Vector2(-480, 176)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1265163812 instance=ExtResource("7_qjhnl")]
+position = Vector2(224, -160)
+type = "3"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1128015813 instance=ExtResource("7_qjhnl")]
+position = Vector2(-304, -160)
+type = "3"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_left = -480
@@ -127,3 +151,7 @@ id = 180
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=790388585 instance=ExtResource("8_glsn4")]
 position = Vector2(-480, -270)
 id = 181
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=1851247266]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_h1s7q")

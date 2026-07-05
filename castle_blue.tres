@@ -5,5 +5,5 @@
 [resource]
 shader = ExtResource("1_d1v0e")
 shader_parameter/from = Color(0.53333336, 0.45882353, 0.32156864, 1)
-shader_parameter/to = Color(0.53313285, 0.59000057, 0.89165515, 1)
-shader_parameter/tolerance = 0.3150000149625
+shader_parameter/to = Color(0.38109186, 0.6155507, 0.9537517, 1)
+shader_parameter/tolerance = 0.310000014725

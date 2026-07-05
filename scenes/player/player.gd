@@ -64,7 +64,6 @@ var current_animation: String
 func _ready() -> void:
 	show()
 	change_character()
-	sprite.material.set_shader_parameter("output_palette_texture",SaveLoad.save_file.weapon.palette)
 	SaveLoad.save_file.connect("update",update_inventory)
 
 func _physics_process(delta: float) -> void:
@@ -102,7 +101,7 @@ func _physics_process(delta: float) -> void:
 	if attack_1_area.monitoring:
 		for body in attack_1_area.get_overlapping_bodies():
 			if "hit" in body:
-				body.hit(SaveLoad.save_file.attack)
+				body.hit(SaveLoad.save_file.final_attack)
 				
 
 func change_character_right():
@@ -120,6 +119,12 @@ func change_character_left():
 	change_character()
 
 func change_character():
+	if SaveLoad.save_file.player_selected == 0:
+		final_attack = attack
+	elif SaveLoad.save_file.player_selected == 1:
+		final_attack = attack * 0.9
+	else:
+		final_attack = attack * 1.2
 	attack_1_area.monitoring = false
 	flip_h = sprite.flip_h
 	current_animation = sprite.animation
@@ -146,10 +151,16 @@ func change_character():
 	sprite.show()
 	#general_ap.play_backwards("change_chara")
 	animation_player = animations[SaveLoad.save_file.player_selected]
+	if SaveLoad.save_file.player_selected == 0:
+		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack
+	elif SaveLoad.save_file.player_selected == 1:
+		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 0.9
+	else:
+		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 1.2
 
 
 func update_inventory():
-	sprite.material.set_shader_parameter("output_palette_texture",SaveLoad.save_file.weapon.palette)
+	pass
 
 #func _on_attack_1_area_body_entered(body: Node2D) -> void:
 	#if "hit" in body:

@@ -33,7 +33,7 @@ func physics_update(delta):
 			boar.sprite.flip_h = true
 		elif direction.x == -1:
 			boar.sprite.flip_h = false
-		if boar.velocity.x == 0:
+		if boar.velocity.x == 0 or boar.is_on_wall():
 			boar.sprite.play("idle")
 		else:
 			boar.sprite.play("walk")

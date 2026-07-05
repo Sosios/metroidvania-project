@@ -180,6 +180,9 @@ shape = SubResource("RectangleShape2D_irdp1")
 [node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1265163812 instance=ExtResource("11_yg11n")]
 position = Vector2(1185, 51)
 
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=583701279 instance=ExtResource("11_yg11n")]
+position = Vector2(253, 37)
+
 [node name="Player" parent="." index="5" unique_id=971349243]
 position = Vector2(168, 128)
 
@@ -244,9 +247,6 @@ color = null
 [node name="2" parent="CellAreas" index="2" unique_id=305717336 instance=ExtResource("4_pklrx")]
 id = 36
 color = null
-
-[node name="CanvasModulate" parent="." index="11" unique_id=344921272]
-visible = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="13" unique_id=2068276441]
 visible = false

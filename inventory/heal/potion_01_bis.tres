@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://ct6hkvn6dx83g"]
+
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_u75av"]
+[ext_resource type="Texture2D" uid="uid://dout3dkb43a42" path="res://assets/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/potion_01a.png" id="2_hk4wh"]
+
+[resource]
+script = ExtResource("1_u75av")
+name = "Potion "
+type = "heal"
+texture = ExtResource("2_hk4wh")
+heal = 50.0
+description = "Une potion tout ce qu'il y a de plus basique"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

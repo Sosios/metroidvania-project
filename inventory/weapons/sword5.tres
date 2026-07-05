@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://20hnmq3xbwqq"]
+
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_nd5k2"]
+[ext_resource type="Texture2D" uid="uid://c31ly5hcgowuf" path="res://assets/Icons/c_sword_6.png" id="2_uhuga"]
+
+[resource]
+script = ExtResource("1_nd5k2")
+name = "Tyrfing"
+type = "sword"
+texture = ExtResource("2_uhuga")
+attack = 65.0
+description = "Une epee a allure extraordinaire"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

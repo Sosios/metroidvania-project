@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://tv2m6hokr801"]
+
+[ext_resource type="Texture2D" uid="uid://cra6vq1gigmie" path="res://assets/Ennemis/skeleton.png" id="1_i035o"]
+[ext_resource type="Texture2D" uid="uid://c5dyn7b2oaxni" path="res://assets/Ennemis/skeleton_normal.png" id="2_k5pkv"]
+
+[resource]
+diffuse_texture = ExtResource("1_i035o")
+normal_texture = ExtResource("2_k5pkv")

@@ -15,6 +15,11 @@ shader_parameter/tolerance = 0.5600000266
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lmda"]
 size = Vector2(242, 270)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_61xn4"]
+vertices = PackedVector2Array(426, -694, 426, -778, 438, -1046, 438, -330, 294, -778, 218, -806, 218, -858, 314, -566, 310, -330, 202, -390, 202, -442, 214, -566, 346, 70, 214, 70, 234, -6, 310, -198, 438, -198, 314, -650, 294, -694, 214, -650, 438, 186, 346, 122, 234, -58, 118, -6, 58, 214, 58, -902, 58, -1046, 86, -858, 470, 186, 470, 214, 214, 122, 58, -874, 10, -874, 10, -902, 86, -806, 70, -442, 118, -58, 70, -390)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5, 6), PackedInt32Array(7, 3, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(7, 17, 0, 3), PackedInt32Array(18, 0, 17, 19), PackedInt32Array(16, 20, 21, 12), PackedInt32Array(15, 14, 22), PackedInt32Array(23, 14, 13, 24), PackedInt32Array(25, 26, 2, 6, 27), PackedInt32Array(20, 28, 29, 24), PackedInt32Array(21, 20, 24, 30), PackedInt32Array(31, 32, 33, 25), PackedInt32Array(31, 25, 27, 34, 35), PackedInt32Array(19, 11, 10, 35, 34), PackedInt32Array(5, 4, 18, 19, 34), PackedInt32Array(15, 22, 36, 37, 9, 8), PackedInt32Array(13, 30, 24), PackedInt32Array(24, 31, 35, 37), PackedInt32Array(24, 37, 36, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(48, -1056, 448, -1056, 448, -320, 320, -320, 320, -208, 448, -208, 448, 176, 480, 176, 480, 224, 48, 224, 48, 112, 336, 112, 336, 80, 224, 80, 224, 112, 48, 112, 48, -16, 224, -16, 224, -48, 128, -48, 128, -16, 48, -16, 48, -400, 192, -400, 192, -432, 80, -432, 80, -400, 48, -400, 48, -576, 304, -576, 304, -640, 224, -640, 224, -576, 48, -576, 48, -688, 48, -704, 416, -704, 416, -768, 304, -768, 304, -704, 48, -704, 48, -816, 208, -816, 208, -848, 96, -848, 96, -816, 48, -816, 48, -864, 0, -864, 0, -912, 48, -912)])
+
 [node name="ZoneD6" unique_id=342494649 instance=ExtResource("1_gn0c8")]
 
 [node name="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=1447175048]
@@ -81,3 +86,6 @@ id = 150
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=2058760997 instance=ExtResource("3_61xn4")]
 position = Vector2(0, -1080)
 id = 149
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=1907817689]
+navigation_polygon = SubResource("NavigationPolygon_61xn4")

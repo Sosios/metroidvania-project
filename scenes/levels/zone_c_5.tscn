@@ -4,26 +4,38 @@
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="2_colmm"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="2_e1wp3"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="3_eksfb"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="3_pysd8"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="4_tvk5n"]
+[ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="5_35yqr"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="6_qiolj"]
 
-[sub_resource type="Curve2D" id="Curve2D_e1wp3"]
+[sub_resource type="Curve2D" id="Curve2D_arqp5"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -576, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_eksfb"]
+[sub_resource type="Curve2D" id="Curve2D_8y3hm"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -256, 208, 0, 0, 0, 0, -256, 16)
 }
 point_count = 2
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 48)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
 size = Vector2(60.875, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1wp3"]
 size = Vector2(64, 160)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_44qjm"]
+vertices = PackedVector2Array(438, 170, 470, 170, 470, 214, 390, 214, -326, 154, 390, 374, 262, 374, -342, 282, -342, 198, 262, 426, 390, 426, 390, 454, -470, 454, -470, 394, -438, 394, -438, 282, -470, 198, -470, 154, -326, 10, 438, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(9, 12, 13, 14), PackedInt32Array(6, 9, 14, 15, 7), PackedInt32Array(8, 16, 17, 4), PackedInt32Array(4, 18, 19, 0, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-480, 144, -336, 144, -336, 0, 448, 0, 448, 160, 480, 160, 480, 224, 400, 224, 400, 384, 272, 384, 272, 416, 400, 416, 400, 464, -480, 464, -480, 384, -448, 384, -448, 272, -352, 272, -352, 208, -480, 208)])
 
 [node name="ZoneC5" unique_id=342494649 instance=ExtResource("1_ginl2")]
 
@@ -35,15 +47,45 @@ tile_map_data = PackedByteArray("AAAdABAAAAADAAMAAAAdAA8AAAADAAMAAAAdAA4AAAADAAE
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("2_e1wp3")]
 position = Vector2(256, 224)
-curve = SubResource("Curve2D_e1wp3")
+curve = SubResource("Curve2D_arqp5")
 path_time = 3.0
 type = "1"
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1975027257 instance=ExtResource("2_e1wp3")]
 position = Vector2(256, 224)
-curve = SubResource("Curve2D_eksfb")
+curve = SubResource("Curve2D_8y3hm")
 path_time = 2.0
 type = "1"
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("3_pysd8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1864033412]
+position = Vector2(-464, 416)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=330946052 instance=ExtResource("4_tvk5n")]
+position = Vector2(-240, 464)
+type = "1"
+
+[node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1288262999 instance=ExtResource("5_35yqr")]
+position = Vector2(112, 464)
+type = "1"
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1265163812 instance=ExtResource("6_qiolj")]
+position = Vector2(-336, 144)
+type = "2"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=536441665 instance=ExtResource("6_qiolj")]
+position = Vector2(224, 0)
+type = "2"
+
+[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=464972603 instance=ExtResource("6_qiolj")]
+position = Vector2(288, 416)
+type = "2"
+
+[node name="Bat4" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="6" unique_id=29565246 instance=ExtResource("6_qiolj")]
+position = Vector2(-368, 272)
+type = "2"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_left = -480
@@ -80,17 +122,23 @@ position = Vector2(-448, 208)
 [node name="Marker2D3" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="2" unique_id=846954265]
 position = Vector2(-448, 464)
 
-[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("2_colmm")]
+[node name="CellAreas" parent="." index="11" unique_id=995269704]
+metadata/_edit_lock_ = true
+
+[node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("2_colmm")]
 id = 92
 
-[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=2120282793 instance=ExtResource("2_colmm")]
+[node name="CellDiscover2" parent="CellAreas" index="1" unique_id=2120282793 instance=ExtResource("2_colmm")]
 position = Vector2(0, 270)
 id = 93
 
-[node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=183209183 instance=ExtResource("2_colmm")]
+[node name="CellDiscover3" parent="CellAreas" index="2" unique_id=183209183 instance=ExtResource("2_colmm")]
 position = Vector2(-480, 0)
 id = 95
 
-[node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=27752742 instance=ExtResource("2_colmm")]
+[node name="CellDiscover4" parent="CellAreas" index="3" unique_id=27752742 instance=ExtResource("2_colmm")]
 position = Vector2(-480, 270)
 id = 94
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=249585294]
+navigation_polygon = SubResource("NavigationPolygon_44qjm")

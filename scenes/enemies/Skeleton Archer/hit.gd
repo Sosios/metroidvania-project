@@ -1,0 +1,42 @@
+extends State
+
+var skeleton: CharacterBody2D
+
+var hit_timer = 0.5
+var timer
+
+
+func enter():
+	skeleton = get_parent().get_parent()
+	timer = hit_timer
+	if Engine.time_scale == 1:
+		Engine.time_scale = 0.05
+		await get_tree().create_timer(0.015).timeout
+		Engine.time_scale = 1
+	skeleton.velocity = Vector2.ZERO
+	skeleton.health -= skeleton.damage_taken
+	skeleton.progress_bar.max_value = skeleton.max_health
+	skeleton.progress_bar.value = skeleton.health
+	skeleton.progress_bar.show()
+	skeleton.hurt_box.monitoring = false
+	
+	if skeleton.health <= 0:
+		var tween = create_tween()
+		tween.tween_property(skeleton.sprite,"modulate:a",0,0.4)
+		await get_tree().create_timer(0.4).timeout
+		SaveLoad.save_file.exp_points += skeleton.exp_points
+		skeleton.queue_free()
+	else:
+		skeleton.sprite.material.set_shader_parameter("progress", 0.8)
+
+func update(delta):
+	if not is_instance_valid(skeleton):
+		return
+	skeleton.velocity.x = move_toward(skeleton.velocity.x,0,0.1)
+	if timer > 0:
+		timer -= delta
+	else:
+		skeleton.sprite.material.set_shader_parameter("progress", 0) 
+		skeleton.progress_bar.hide()
+		Transitioned.emit(self, "idle")
+	

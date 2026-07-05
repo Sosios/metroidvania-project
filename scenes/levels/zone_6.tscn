@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="21_cfyfm"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="22_2kd47"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="22_arl76"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="22_gbquk"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="23_h0as7"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="24_h0as7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cafox"]
 shader = ExtResource("5_acjxx")
@@ -7392,18 +7395,26 @@ metadata/_better_terrain = {
 &"version": "0.2"
 }
 
-[sub_resource type="Curve2D" id="Curve2D_c1bce"]
+[sub_resource type="Curve2D" id="Curve2D_6vnoj"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -240, 0)
 }
 point_count = 2
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 58)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rua3q"]
 size = Vector2(288, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bkom"]
 size = Vector2(32, 122)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_j4fy4"]
+vertices = PackedVector2Array(-824.78906, 26, -586, 26, -586, 86, -746, 86, -840.78906, 74, -746, 138, -730, 138, -730, 154, -774, 198, -714, 154, -714, 170, -698, 170, -698, 186, -502, 138, -502, 42, -388.14063, 42, -372.14063, 58, -310, 198, -42, 198, -198, 58, -198, 42, -38.179688, 42, -22.179688, 74, 388.14063, 58, 406, 58, 406, 90, 372.14063, 74, 441.8203, 122, 470, 122, 470, 198, 425.8203, 90, 217.82031, 74, 201.82031, 42, 134.17969, 74, -42, 230, -310, 230, -774, 118, -966, 118, -966, 74, -890, 90, -890, 74, -854, 90, -854, 74, -619.8594, 186, -603.8594, 170, -537.8203, 170, -521.8203, 138, 150.17969, 42)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(7, 9, 10, 8), PackedInt32Array(10, 11, 12, 8), PackedInt32Array(13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21, 22), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(27, 28, 29, 18), PackedInt32Array(30, 27, 18, 25), PackedInt32Array(26, 25, 18, 31), PackedInt32Array(32, 31, 18, 33), PackedInt32Array(18, 34, 35, 17, 19), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(38, 40, 39), PackedInt32Array(36, 39, 41), PackedInt32Array(36, 41, 42, 4, 3), PackedInt32Array(36, 3, 5, 8), PackedInt32Array(17, 8, 12, 43), PackedInt32Array(17, 43, 44, 45), PackedInt32Array(17, 45, 46, 13), PackedInt32Array(17, 16, 19), PackedInt32Array(18, 22, 33), PackedInt32Array(32, 33, 47)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-960, 64, -880, 64, -880, 80, -864, 80, -864, 64, -848, 64, -832, 16, -576, 16, -576, 96, -736, 96, -736, 128, -720, 128, -720, 144, -704, 144, -704, 160, -688, 160, -688, 176, -624, 176, -608, 160, -544, 160, -528, 128, -512, 128, -512, 32, -384, 32, -368, 48, -224, 48, -208, 48, -208, 32, -32, 32, -16, 64, 128, 64, 144, 32, 208, 32, 224, 64, 368, 64, 384, 48, 416, 48, 416, 64, 416, 80, 432, 80, 448, 112, 480, 112, 480, 208, -32, 208, -32, 240, -320, 240, -320, 208, -784, 208, -784, 128, -976, 128, -976, 64)])
 
 [node name="Zone6" unique_id=342494649 instance=ExtResource("1_3w8vh")]
 
@@ -7528,8 +7539,34 @@ id = 2
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("19_pdso5")]
 position = Vector2(-64, 192)
-curve = SubResource("Curve2D_c1bce")
+curve = SubResource("Curve2D_6vnoj")
 path_time = 3.0
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1265163812 instance=ExtResource("22_gbquk")]
+position = Vector2(-180, 54)
+
+[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=587049551 instance=ExtResource("22_gbquk")]
+position = Vector2(-402, 52)
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1743715515 instance=ExtResource("22_gbquk")]
+position = Vector2(-635, 45)
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1109252605 instance=ExtResource("23_h0as7")]
+position = Vector2(174, 204)
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=798562314 instance=ExtResource("24_h0as7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1910163970]
+position = Vector2(-30, 150)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=1112752254]
+position = Vector2(-321, 152)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="2" unique_id=1567635419]
+position = Vector2(-859, 68)
+shape = SubResource("SegmentShape2D_6qmw3")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=752613843]
 position = Vector2(2, -11)
@@ -7584,3 +7621,6 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 position = Vector2(-960, 0)
 id = 28
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=179095922]
+navigation_polygon = SubResource("NavigationPolygon_j4fy4")

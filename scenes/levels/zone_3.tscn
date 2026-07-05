@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="7_s21t7"]
 [ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="10_47l24"]
 [ext_resource type="Texture2D" uid="uid://c630mjbiusg8o" path="res://assets/particles/textures/circle.png" id="10_o6v00"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="11_fp172"]
 [ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="11_o6v00"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_47l24"]
@@ -159,13 +160,10 @@ tex_scale = 0.15
 [node name="Boar" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=185224842 instance=ExtResource("3_0627x")]
 position = Vector2(793, 194)
 
-[node name="Boar2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=276477777 instance=ExtResource("3_0627x")]
-position = Vector2(1062, 193)
-
-[node name="Boar3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1292858409 instance=ExtResource("3_0627x")]
+[node name="Boar3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1292858409 instance=ExtResource("3_0627x")]
 position = Vector2(1320, 194)
 
-[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=798562314 instance=ExtResource("4_u168b")]
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=798562314 instance=ExtResource("4_u168b")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1853457600]
 position = Vector2(313, 115)
@@ -195,14 +193,23 @@ shape = SubResource("RectangleShape2D_nhsnm")
 position = Vector2(1009, 181)
 shape = SubResource("RectangleShape2D_nhsnm")
 
-[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=1265163812 instance=ExtResource("10_47l24")]
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1265163812 instance=ExtResource("10_47l24")]
 position = Vector2(480, 32)
 
-[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=479830380 instance=ExtResource("10_47l24")]
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=479830380 instance=ExtResource("10_47l24")]
 position = Vector2(1184, 32)
 
-[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="6" unique_id=752309735 instance=ExtResource("10_47l24")]
+[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=752309735 instance=ExtResource("10_47l24")]
 position = Vector2(2000, 32)
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="6" unique_id=1109252605 instance=ExtResource("11_fp172")]
+position = Vector2(1587, 254)
+
+[node name="Slime2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="7" unique_id=1746742682 instance=ExtResource("11_fp172")]
+position = Vector2(502, 205)
+
+[node name="Slime3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="8" unique_id=549727790 instance=ExtResource("11_fp172")]
+position = Vector2(2082, 207)
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=786996680]
 position = Vector2(2, -11)
@@ -255,27 +262,30 @@ position = Vector2(278, 222)
 [node name="Marker2D3" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="2" unique_id=1175276046]
 position = Vector2(2373, 209)
 
-[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_1iync")]
+[node name="CellAreas" parent="." index="10" unique_id=995269704]
+metadata/_edit_lock_ = true
+
+[node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("4_1iync")]
 position = Vector2(-0.4462738, -0.057861328)
 id = 4
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1631173209 instance=ExtResource("4_1iync")]
+[node name="CellDiscover2" parent="CellAreas" index="1" unique_id=1631173209 instance=ExtResource("4_1iync")]
 position = Vector2(480, 0)
 id = 5
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=558492750 instance=ExtResource("4_1iync")]
+[node name="CellDiscover3" parent="CellAreas" index="2" unique_id=558492750 instance=ExtResource("4_1iync")]
 position = Vector2(960.58276, -0.119911194)
 id = 6
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1649864341 instance=ExtResource("4_1iync")]
+[node name="CellDiscover4" parent="CellAreas" index="3" unique_id=1649864341 instance=ExtResource("4_1iync")]
 position = Vector2(1440.5989, 0)
 id = 7
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=964532054 instance=ExtResource("4_1iync")]
+[node name="CellDiscover5" parent="CellAreas" index="4" unique_id=964532054 instance=ExtResource("4_1iync")]
 position = Vector2(1920.6287, 0.15247726)
 id = 8
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)

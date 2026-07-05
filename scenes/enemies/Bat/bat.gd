@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export_enum("0","1","2") var type = "0"
+@export_enum("0","1","2","3") var type = "0"
 
 signal enter
 
@@ -31,7 +31,7 @@ var health: float
 
 var max_health :float
 
-@export var exp_points:float
+var exp_points:float
 
 func _ready() -> void:
 	
@@ -50,6 +50,11 @@ func _ready() -> void:
 			health = 125.0
 			max_health = 125.0
 			exp_points = 100.0
+			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Ennemis/Rocky Roads/bat_palette_03.png"))
+		"4":
+			health = 250.0
+			max_health = 250
+			exp_points = 200.0
 			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Ennemis/Rocky Roads/bat_palette_03.png"))
 	progress_bar.value = health
 	progress_bar.hide()

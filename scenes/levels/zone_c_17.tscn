@@ -4,7 +4,9 @@
 [ext_resource type="TileSet" uid="uid://djkdguta8ng7f" path="res://scenes/levels/snow_tile_set.tres" id="2_b85eq"]
 [ext_resource type="Material" uid="uid://ciwxkae2rd2tx" path="res://scenes/levels/snow_blue_walls.tres" id="2_sug23"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="3_sug23"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="5_5q0db"]
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="5_siaqw"]
+[ext_resource type="Resource" uid="uid://7ctas56dcexo" path="res://inventory/keys/key_03.tres" id="5_tug7b"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="6_4c173"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_siaqw"]
 
@@ -33,6 +35,12 @@ tile_set = ExtResource("2_b85eq")
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1614685710 instance=ExtResource("3_sug23")]
 position = Vector2(74, 48)
 rotation = 3.1415927
+item = ExtResource("5_tug7b")
+id = 40
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=330946052 instance=ExtResource("5_5q0db")]
+position = Vector2(432, 144)
+type = "1"
 
 [node name="GravityShift" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1192841641 instance=ExtResource("5_siaqw")]
 position = Vector2(-8, 5)
@@ -63,6 +71,4 @@ position = Vector2(30, 192)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("6_siaqw")]
 id = 128
-
-[node name="DirectionalLight2D" parent="." index="12" unique_id=1724915358]
-energy = 0.9
+metadata/_edit_lock_ = true

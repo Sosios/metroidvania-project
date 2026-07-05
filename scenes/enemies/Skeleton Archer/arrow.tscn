@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bkeib4debfcnj"]
+
+[ext_resource type="Texture2D" uid="uid://jn5hu2hch85e" path="res://assets/Ennemis/PlayStation - Castlevania_ Symphony of the Night - Enemies - Skeleton Archer.png" id="1_2rbsu"]
+[ext_resource type="Script" uid="uid://b8f7k0fx0872o" path="res://scenes/enemies/Skeleton Archer/arrow.gd" id="1_aec2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
+size = Vector2(30, 4)
+
+[node name="Arrow" type="Area2D" unique_id=1000235702]
+script = ExtResource("1_aec2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=281454035]
+position = Vector2(15, 0)
+texture = ExtResource("1_2rbsu")
+region_enabled = true
+region_rect = Rect2(237, 58, 30, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=477301168]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_6qmw3")

@@ -4,23 +4,35 @@
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="2_4hrfb"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="2_ayluw"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="3_4hrfb"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="3_tigpm"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="4_ngppf"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="5_koupu"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="6_wqtlx"]
 
-[sub_resource type="Curve2D" id="Curve2D_4hrfb"]
+[sub_resource type="Curve2D" id="Curve2D_tigpm"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 144, -48, 0, 0, 0, 0, 144, 160)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_6nvx2"]
+[sub_resource type="Curve2D" id="Curve2D_ngppf"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 176, -16, 0, 0, 0, 0, 336, -16)
 }
 point_count = 2
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 48)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lmda"]
 size = Vector2(336, 48)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bf3vb"]
+vertices = PackedVector2Array(358, -230, 438, -230, 438, -138, 246, -138, 298, -214, 246, -86, 438, -86, 438, 214, 310, 214, 310, 262, 186, 262, 186, 214, 58, 214, 58, 10, 106, 10, 106, -90, 42, -90, 42, -214, 298, -262, 358, -262)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(8, 9, 10, 11, 5), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(5, 11, 14, 15, 3), PackedInt32Array(15, 16, 17, 4, 3), PackedInt32Array(0, 4, 18, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(288, -272, 288, -224, 32, -224, 32, -80, 96, -80, 96, 0, 48, 0, 48, 224, 176, 224, 176, 272, 320, 272, 320, 224, 448, 224, 448, -96, 256, -96, 256, -128, 448, -128, 448, -240, 368, -240, 368, -272)])
 
 [node name="ZoneC2" unique_id=342494649 instance=ExtResource("1_4vas3")]
 
@@ -29,14 +41,52 @@ tile_map_data = PackedByteArray("AAAdAOv/AAADAAMAAAAdAOz/AAADAAMAAAAdAO3/AAADAAM
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("2_4hrfb")]
 position = Vector2(208, 48)
-curve = SubResource("Curve2D_4hrfb")
+curve = SubResource("Curve2D_tigpm")
 path_time = 2.295
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1096035218 instance=ExtResource("2_4hrfb")]
 position = Vector2(-65.600006, 0)
 scale = Vector2(1.1, 1)
-curve = SubResource("Curve2D_6nvx2")
+curve = SubResource("Curve2D_ngppf")
 path_time = 2.295
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("3_tigpm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1154301108]
+position = Vector2(176, 176)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=1189112786]
+position = Vector2(320, 176)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="2" unique_id=419942187]
+position = Vector2(96, -128)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="3" unique_id=430545915]
+position = Vector2(256, -176)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1265163812 instance=ExtResource("4_ngppf")]
+position = Vector2(79, 7)
+type = "2"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=142459773 instance=ExtResource("4_ngppf")]
+position = Vector2(375, -89)
+type = "2"
+
+[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=2035157378 instance=ExtResource("4_ngppf")]
+position = Vector2(84, -217)
+type = "2"
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=1109252605 instance=ExtResource("5_koupu")]
+position = Vector2(379, -128)
+type = "2"
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=330946052 instance=ExtResource("6_wqtlx")]
+position = Vector2(49, -81)
+type = "1"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_top = -272
@@ -67,3 +117,7 @@ id = 75
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=969572691 instance=ExtResource("3_4hrfb")]
 position = Vector2(0, -270)
 id = 76
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=1316633104]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_bf3vb")

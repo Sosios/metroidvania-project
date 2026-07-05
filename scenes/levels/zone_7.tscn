@@ -23,6 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="17_l0jhl"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="18_5t4ft"]
 [ext_resource type="PackedScene" uid="uid://dmciop1bc5ysl" path="res://nodes/hurt_area.tscn" id="19_l0jhl"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="20_bf8cg"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="21_lodwg"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="22_c8074"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xqk2k"]
 texture = ExtResource("5_l0jhl")
@@ -7378,19 +7381,22 @@ metadata/_better_terrain = {
 &"version": "0.2"
 }
 
-[sub_resource type="Curve2D" id="Curve2D_cyblw"]
+[sub_resource type="Curve2D" id="Curve2D_bf8cg"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -403, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_lnk7k"]
+[sub_resource type="Curve2D" id="Curve2D_lodwg"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -411, 1, 0, 0, 0, 0, -410, -227)
 }
 point_count = 2
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+a = Vector2(0, -64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyblw"]
 size = Vector2(480, 16)
@@ -7404,8 +7410,12 @@ size = Vector2(19, 130)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qmej"]
 size = Vector2(20, 85)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gqbey"]
+vertices = PackedVector2Array(443.85938, 442, 470, 442, 470, 470, 378, 470, 378, 422, 390, 388.14063, 244.14063, 410, 294, 422, 294, 470, -10, 470, 203.85938, 410, -10, 518, -470, 518, -470, 470, -758, 470, -758, 374, -507.85938, 282, -938, 374, -938, 470, -1062, 470, -1062, 438, -1178, 438, -1178, 470, -1382, 470, -1382, 330, -1366, 330, -1366, 314, -1194, 314, -1194, 330, -1178, 340.14063, -1124.1406, 394, -1178, 330, -1078, 394, -1062, 378, -1078, 378, -1062, 282, -470, 214, -1446, 214, -1446, 138, -1419.8594, 138, -1403.8594, 122, -1382, 122, -948.1406, 154, -1382, 42, -1366, 42, -1366, 26, -1018, 26, -1018, 42, -1002, 42, -1002, 100.140625, -758, 100.140625, -758, 42, -742, 42, 86, 340.14063, -742, 26, 70, 26, 70, 42, 86, 42, 282, 394, 282, -22, 390, -22, -491.85938, 266, -470, 266, 123.859375, 378, 260.14063, 394, 187.85938, 394, 171.85938, 394, 155.85938, 378, -811.8594, 154)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(9, 11, 12, 13), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(21, 25, 28, 29, 30), PackedInt32Array(28, 31, 29), PackedInt32Array(20, 21, 30, 32), PackedInt32Array(17, 20, 32, 33), PackedInt32Array(32, 34, 33), PackedInt32Array(17, 33, 35, 16), PackedInt32Array(15, 17, 16), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(36, 39, 40, 41, 42), PackedInt32Array(41, 43, 44), PackedInt32Array(44, 45, 46, 47), PackedInt32Array(47, 48, 49, 41), PackedInt32Array(50, 51, 52, 53, 36), PackedInt32Array(52, 54, 55, 56), PackedInt32Array(56, 57, 53), PackedInt32Array(58, 59, 60, 5, 4, 7), PackedInt32Array(52, 56, 53), PackedInt32Array(41, 44, 47), PackedInt32Array(9, 13, 16, 61, 62, 53, 63), PackedInt32Array(64, 58, 7, 6), PackedInt32Array(65, 10, 9, 66), PackedInt32Array(67, 66, 9, 63), PackedInt32Array(53, 62, 36), PackedInt32Array(68, 50, 36), PackedInt32Array(41, 49, 42), PackedInt32Array(68, 36, 42)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1440, 128, -1424, 128, -1408, 112, -1392, 112, -1392, 32, -1376, 32, -1376, 16, -1008, 16, -1008, 32, -992, 32, -992, 96, -976, 112, -960, 128, -944, 144, -816, 144, -768, 96, -768, 32, -752, 32, -752, 16, 80, 16, 80, 32, 96, 32, 96, 336, 128, 368, 160, 368, 176, 384, 192, 384, 208, 400, 240, 400, 256, 384, 272, 384, 272, -32, 400, -32, 400, 384, 416, 400, 448, 432, 480, 432, 480, 480, 368, 480, 368, 432, 304, 432, 304, 480, 0, 480, 0, 528, -480, 528, -480, 480, -768, 480, -768, 384, -928, 384, -928, 480, -1072, 480, -1072, 448, -1168, 448, -1168, 480, -1392, 480, -1392, 320, -1376, 320, -1376, 304, -1184, 304, -1184, 320, -1168, 320, -1168, 336, -1152, 352, -1136, 368, -1120, 384, -1088, 384, -1088, 368, -1072, 368, -1072, 272, -512, 272, -496, 256, -480, 256, -480, 224, -1456, 224, -1456, 128)])
+
 [node name="Zone7" unique_id=342494649 instance=ExtResource("1_j23ew")]
-screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallaxes" type="Node2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1643625741]
 
@@ -7587,13 +7597,60 @@ tex_scale = 0.15
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("15_531bf")]
 position = Vector2(-42, 479)
-curve = SubResource("Curve2D_cyblw")
+curve = SubResource("Curve2D_bf8cg")
 path_time = 3.0
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=190072964 instance=ExtResource("15_531bf")]
 position = Vector2(12, 439)
-curve = SubResource("Curve2D_lnk7k")
+curve = SubResource("Curve2D_lodwg")
 path_time = 3.0
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("20_bf8cg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1741838681]
+position = Vector2(-480, 224)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=2116133842]
+position = Vector2(-480, 464)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="2" unique_id=529943848]
+position = Vector2(-768, 368)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="3" unique_id=910445699]
+position = Vector2(-928, 384)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="4" unique_id=1289345556]
+position = Vector2(0, 480)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="5" unique_id=819752805]
+position = Vector2(368, 432)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1265163812 instance=ExtResource("21_lodwg")]
+position = Vector2(-536, 292)
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1607061749 instance=ExtResource("21_lodwg")]
+position = Vector2(-825, 292)
+
+[node name="Bat3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=22836789 instance=ExtResource("21_lodwg")]
+position = Vector2(-1073, 38)
+
+[node name="Bat4" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=1547616379 instance=ExtResource("21_lodwg")]
+position = Vector2(-418, 35)
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=1109252605 instance=ExtResource("22_c8074")]
+position = Vector2(-640, 220)
+
+[node name="Slime2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="6" unique_id=1603558745 instance=ExtResource("22_c8074")]
+position = Vector2(-850, 381)
+
+[node name="Slime3" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="7" unique_id=1556437387 instance=ExtResource("22_c8074")]
+position = Vector2(145, 476)
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=950967684]
 position = Vector2(2, -11)
@@ -7644,41 +7701,48 @@ position = Vector2(400, 480)
 [node name="Marker2D3" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="2" unique_id=1251844844]
 position = Vector2(-1408, 224)
 
-[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("18_5t4ft")]
+[node name="CellAreas" parent="." index="10" unique_id=995269704]
+metadata/_edit_lock_ = true
+
+[node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("18_5t4ft")]
 id = 9
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=27771384 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover2" parent="CellAreas" index="1" unique_id=27771384 instance=ExtResource("18_5t4ft")]
 position = Vector2(-480, 0)
 id = 174
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=650317362 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover3" parent="CellAreas" index="2" unique_id=650317362 instance=ExtResource("18_5t4ft")]
 position = Vector2(-960, 0)
 id = 11
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1298849295 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover4" parent="CellAreas" index="3" unique_id=1298849295 instance=ExtResource("18_5t4ft")]
 position = Vector2(0, 272)
 id = 4
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover7" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=1357309342 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover7" parent="CellAreas" index="4" unique_id=1357309342 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 0)
 id = 10
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover8" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=2019340527 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover8" parent="CellAreas" index="5" unique_id=2019340527 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 272)
 id = 12
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="6" unique_id=908148120 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover5" parent="CellAreas" index="6" unique_id=908148120 instance=ExtResource("18_5t4ft")]
 position = Vector2(-480, 272)
 id = 13
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="7" unique_id=1723515048 instance=ExtResource("18_5t4ft")]
+[node name="CellDiscover6" parent="CellAreas" index="7" unique_id=1723515048 instance=ExtResource("18_5t4ft")]
 position = Vector2(-960, 272)
 id = 17
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=892868305]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_gqbey")

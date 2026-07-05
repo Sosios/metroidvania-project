@@ -7,8 +7,10 @@
 [ext_resource type="TileSet" uid="uid://bc17wi8eevycr" path="res://scenes/levels/tile_set.tres" id="4_bnjcu"]
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="5_mreil"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="6_wmvfk"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="7_mreil"]
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="7_nxthm"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_4hwy4"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="8_wmvfk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("3_4hwy4")
@@ -16,12 +18,16 @@ shader_parameter/from = Color(0.02745098, 0.05490196, 0.16078432, 1)
 shader_parameter/to = Color(0, 0, 0.9187369, 1)
 shader_parameter/tolerance = 0.362000017195
 
-[sub_resource type="Curve2D" id="Curve2D_4hwy4"]
+[sub_resource type="Curve2D" id="Curve2D_mreil"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -261)
 }
 point_count = 2
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+a = Vector2(0, -32)
+b = Vector2(0, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
 size = Vector2(80, 174)
@@ -46,6 +52,8 @@ tile_map_data = PackedByteArray("AAD6/+3/AwAGAAYAAAD6/+7/AwAGAAYAAAD6/+//AwAGAAY
 [node name="Door" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="4" unique_id=681805825 instance=ExtResource("2_l27oo")]
 position = Vector2(8, -120)
 scale = Vector2(-1, 1)
+id = 18
+type = "2"
 
 [node name="Ground3" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="5" unique_id=1383837019]
 material = SubResource("ShaderMaterial_5lmda")
@@ -101,8 +109,24 @@ tex_scale = 0.15
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("6_wmvfk")]
 position = Vector2(313, 134)
-curve = SubResource("Curve2D_4hwy4")
+curve = SubResource("Curve2D_mreil")
 path_time = 2.5
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("7_mreil")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=842429824]
+position = Vector2(352, -144)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=1500383912]
+position = Vector2(688, -144)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=1109252605 instance=ExtResource("8_wmvfk")]
+position = Vector2(524, -129)
+
+[node name="Slime2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1287655813 instance=ExtResource("8_wmvfk")]
+position = Vector2(276, 174)
 
 [node name="GravityShift" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1192841641 instance=ExtResource("7_nxthm")]
 
@@ -140,24 +164,27 @@ position = Vector2(943, 155)
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=563185620]
 position = Vector2(63, -101)
 
-[node name="0" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677]
+[node name="CellAreas" parent="." index="10" unique_id=995269704]
+metadata/_edit_lock_ = true
+
+[node name="0" parent="CellAreas" index="0" unique_id=553221677]
 id = 135
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 change_color = null
 
-[node name="1" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1432021171 instance=ExtResource("2_usytp")]
+[node name="1" parent="CellAreas" index="1" unique_id=1432021171 instance=ExtResource("2_usytp")]
 position = Vector2(480, 0)
 id = 132
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 change_color = null
 
-[node name="2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=833299366 instance=ExtResource("2_usytp")]
+[node name="2" parent="CellAreas" index="2" unique_id=833299366 instance=ExtResource("2_usytp")]
 position = Vector2(0, -270)
 id = 133
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 change_color = true
 
-[node name="3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=1373542 instance=ExtResource("2_usytp")]
+[node name="3" parent="CellAreas" index="3" unique_id=1373542 instance=ExtResource("2_usytp")]
 position = Vector2(480, -270)
 id = 134
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)

@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://bico6hhhjbwi"]
+
+[ext_resource type="Texture2D" uid="uid://dubupjgrbs80h" path="res://assets/Boss/EVil Wizard 2/Sprites/full_sheet.png" id="1_xcmgq"]
+[ext_resource type="Texture2D" uid="uid://dwo4ykm0ohskv" path="res://assets/Boss/EVil Wizard 2/Sprites/full_sheet_normal.png" id="2_6yxoo"]
+
+[resource]
+diffuse_texture = ExtResource("1_xcmgq")
+normal_texture = ExtResource("2_6yxoo")

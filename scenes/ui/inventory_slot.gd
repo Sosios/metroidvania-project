@@ -90,8 +90,11 @@ func _on_button_2_pressed() -> void:
 		SaveLoad.save_file.armor = item_selected.item
 		update_armor.emit()
 	elif item_selected.item.type == "heal":
-		Globals.health += item_selected.item.heal
-		SaveLoad.save_file.throw(item_selected.item)
+		if item_selected.item.name == "Elixir":
+			Globals.health = SaveLoad.save_file.max_health
+		else:
+			Globals.health += item_selected.item.heal
+			SaveLoad.save_file.throw(item_selected.item)
 	$AnimationPlayer.play_backwards("menu")
 	grab_focus()
 	update(item_selected)

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctdcs3khdvgqi" path="res://assets/Ennemis/Skullwolf/skullwolf.tres" id="1_khg61"]
 [ext_resource type="PackedScene" uid="uid://qed8vtrml2bj" path="res://nodes/state_machine.tscn" id="2_a0lqr"]
 [ext_resource type="Shader" uid="uid://oqb1ow5oiqq4" path="res://shaders/scout.gdshader" id="2_qp2xi"]
+[ext_resource type="Texture2D" uid="uid://b2pcou0bcdc1j" path="res://assets/Ennemis/Skullwolf/palette.png" id="3_qg3vv"]
 [ext_resource type="Script" uid="uid://bre5wl7y64sfy" path="res://scenes/enemies/Skullwolf/idle.gd" id="4_2icqc"]
 [ext_resource type="Script" uid="uid://bkmkc1stprqrk" path="res://scenes/enemies/Skullwolf/attack.gd" id="5_kgsgp"]
 [ext_resource type="Script" uid="uid://baonp565oi8up" path="res://scenes/enemies/Skullwolf/hit.gd" id="6_qp2xi"]
@@ -11,6 +12,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o4dm6"]
 shader = ExtResource("2_qp2xi")
 shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("3_qg3vv")
+shader_parameter/output_palette_texture = ExtResource("3_qg3vv")
 shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/color = Color(1, 1, 1, 1)
@@ -218,7 +221,7 @@ border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksq3u"]
-size = Vector2(408, 17)
+size = Vector2(428, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gxkd"]
 size = Vector2(54, 23)
@@ -268,7 +271,7 @@ script = ExtResource("6_qp2xi")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1188689925]
-position = Vector2(0, -8.5)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_ksq3u")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=280070716]

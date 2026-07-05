@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://wllhvgmvjghn"]
+
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_55131"]
+[ext_resource type="Texture2D" uid="uid://dy6y4wggfd012" path="res://assets/Icons/c_sword_4.png" id="2_wsr67"]
+
+[resource]
+script = ExtResource("1_55131")
+name = "Claymore"
+type = "sword"
+texture = ExtResource("2_wsr67")
+attack = 45.0
+description = "Une epee imposante"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

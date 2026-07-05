@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="2_0s4ch"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="2_2f530"]
 [ext_resource type="PackedScene" uid="uid://b77a0663d8tr2" path="res://scenes/objects/laser.tscn" id="2_3e11y"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="3_vboig"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="4_kp3db"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lmda"]
 size = Vector2(92, 138)
@@ -21,6 +26,19 @@ position = Vector2(102, -40)
 
 [node name="Laser3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=1775271892 instance=ExtResource("2_3e11y")]
 position = Vector2(120, -40)
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("3_vboig")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=47272636]
+position = Vector2(272, 112)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=621395406]
+position = Vector2(352, 112)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=330946052 instance=ExtResource("4_kp3db")]
+position = Vector2(312, 144)
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_top = -269

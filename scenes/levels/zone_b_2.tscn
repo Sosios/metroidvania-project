@@ -10,8 +10,17 @@
 [ext_resource type="TileSet" uid="uid://jtr5i5jmpshj" path="res://tilesets/forest_tileset.tres" id="8_6egnh"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="9_7fif0"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="9_vm5od"]
+[ext_resource type="Resource" uid="uid://tybvyg74pk35" path="res://inventory/weapons/Longsword.tres" id="10_7fif0"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="10_bewp0"]
+[ext_resource type="Resource" uid="uid://dlnstyn7lwhov" path="res://inventory/heal/potion_01.tres" id="11_bewp0"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="11_h1sda"]
+[ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="12_qtxg0"]
 [ext_resource type="PackedScene" uid="uid://10d7qyxbr7w2" path="res://nodes/torch2.tscn" id="13_h1sda"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="13_jl878"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="14_6egnh"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 48)
 
 [sub_resource type="Gradient" id="Gradient_h1sda"]
 offsets = PackedFloat32Array(0.6, 1)
@@ -44,6 +53,11 @@ size = Vector2(159, 159)
 gradient = SubResource("Gradient_vm5od")
 fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.508547, 0.36324787)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7fif0"]
+vertices = PackedVector2Array(790, 58, 950, 58, 950, 198, 358, 198, 779.8594, 426, 806, 452.14063, 806, 502, 422, 502, 395.85938, 426, 422, 602, 950, 602, 950, 742, 634, 662, 790, 742, 790, 806, 698, 806, 698, 742, 634, 742, 422, 662, 422, 758, 74, 758, 276.14063, 682, 314, 502, 234, 502, 234, 198, 358, 388.14063, 10, 198, 10, 58, 666, 58, 666, 10, 790, 10, 314, 644.1406, 74, 692.1406, 84.140625, 682)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(16, 17, 12), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 24, 3, 25), PackedInt32Array(24, 26, 27, 28), PackedInt32Array(28, 29, 30, 0), PackedInt32Array(28, 0, 3, 24), PackedInt32Array(22, 25, 8, 7, 9, 31), PackedInt32Array(13, 16, 12), PackedInt32Array(20, 32, 33, 21), PackedInt32Array(18, 21, 31, 9), PackedInt32Array(12, 18, 9), PackedInt32Array(12, 11, 13)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 208, 0, 48, 656, 48, 656, 0, 800, 0, 800, 48, 944, 48, 960, 48, 960, 208, 368, 208, 368, 384, 400, 416, 784, 416, 816, 448, 816, 512, 432, 512, 432, 592, 960, 592, 960, 752, 800, 752, 800, 816, 688, 816, 688, 752, 624, 752, 624, 672, 432, 672, 432, 768, 64, 768, 64, 688, 80, 672, 272, 672, 304, 640, 304, 512, 224, 512, 224, 208)])
 
 [node name="ZoneB2" unique_id=342494649 instance=ExtResource("1_lbq3m")]
 
@@ -129,14 +143,18 @@ tile_map_data = PackedByteArray("AAD///v/CgABABkAAAD///z/CgABABkAAAD///3/CgABABk
 tile_set = ExtResource("8_6egnh")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="2" unique_id=1506869944]
-tile_map_data = PackedByteArray("AAAOABsACgATAAMAAAAPABsACgAUAAMAAAAQABsACgAVAAMAAAARABsACgAWAAMAAAAWABUACgATAAIAABAVABUACgAUAAIAABAUABUACgAVAAIAABATABUACgAWAAIAABAWABYACgATAAMAABAVABYACgAUAAMAABAUABYACgAVAAMAABATABYACgAWAAMAABAOABEACgATAAIAAAAOABIACgATAAMAAAAPABEACgAUAAIAAAAPABIACgAUAAMAAAAQABEACgAVAAIAAAAQABIACgAVAAMAAAARABEACgAWAAIAAAARABIACgAWAAMAAAATACUACgATAAIAAAATACYACgATAAMAAAAUACUACgAUAAIAAAAUACYACgAUAAMAAAAVACUACgAVAAIAAAAVACYACgAVAAMAAAAWACUACgAWAAIAAAAWACYACgAWAAMAAAAOABoACgATAAIAAAAPABoACgAUAAIAAAAQABoACgAVAAIAAAARABoACgAWAAIAAAAXACEACgAWAAIAABAXACIACgAWAAMAABAYACEACgAVAAIAABAYACIACgAVAAMAABAZACEACgAUAAIAABAZACIACgAUAAMAABAaACEACgATAAIAABAaACIACgATAAMAABATAA4ACgAWAAIAABATAA8ACgAWAAMAABAUAA4ACgAVAAIAABAUAA8ACgAVAAMAABAVAA4ACgAUAAIAABAVAA8ACgAUAAMAABAWAA4ACgATAAIAABAWAA8ACgATAAMAABA=")
+tile_map_data = PackedByteArray("AAAOABsACgATAAMAAAAPABsACgAUAAMAAAAQABsACgAVAAMAAAARABsACgAWAAMAAAAWABUACgATAAIAABAVABUACgAUAAIAABAUABUACgAVAAIAABATABUACgAWAAIAABAWABYACgATAAMAABAVABYACgAUAAMAABAUABYACgAVAAMAABATABYACgAWAAMAABAOABEACgATAAIAAAAOABIACgATAAMAAAAPABEACgAUAAIAAAAPABIACgAUAAMAAAAQABEACgAVAAIAAAAQABIACgAVAAMAAAARABEACgAWAAIAAAARABIACgAWAAMAAAATACUACgATAAIAAAATACYACgATAAMAAAAUACUACgAUAAIAAAAUACYACgAUAAMAAAAVACUACgAVAAIAAAAVACYACgAVAAMAAAAWACUACgAWAAIAAAAWACYACgAWAAMAAAAOABoACgATAAIAAAAPABoACgAUAAIAAAAQABoACgAVAAIAAAARABoACgAWAAIAAAAXACEACgAWAAIAABAXACIACgAWAAMAABAYACEACgAVAAIAABAYACIACgAVAAMAABAZACEACgAUAAIAABAZACIACgAUAAMAABAaACEACgATAAIAABAaACIACgATAAMAABATAA4ACgAWAAIAABATAA8ACgAWAAMAABAUAA4ACgAVAAIAABAUAA8ACgAVAAMAABAVAA4ACgAUAAIAABAVAA8ACgAUAAMAABAWAA4ACgATAAIAABAWAA8ACgATAAMAABAXAC0ACgAWAAIAABAXAC4ACgAWAAMAABAYAC0ACgAVAAIAABAYAC4ACgAVAAMAABAZAC0ACgAUAAIAABAZAC4ACgAUAAMAABAaAC0ACgATAAIAABAaAC4ACgATAAMAABAnACwACgATAAIAAAAnAC0ACgATAAMAAAAoACwACgAUAAIAAAAoAC0ACgAUAAMAAAApACwACgAVAAIAAAApAC0ACgAVAAMAAAAqACwACgAWAAIAAAAqAC0ACgAWAAMAAAAuADAACgAWAAIAABAuADEACgAWAAMAABAvADAACgAVAAIAABAvADEACgAVAAMAABAwADAACgAUAAIAABAwADEACgAUAAMAABAxADAACgATAAIAABAxADEACgATAAMAABA=")
 tile_set = ExtResource("8_6egnh")
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1614685710 instance=ExtResource("9_vm5od")]
-position = Vector2(113, 744)
+position = Vector2(112, 752)
+item = ExtResource("10_7fif0")
+id = 22
 
 [node name="Chest2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="1" unique_id=77376413 instance=ExtResource("9_vm5od")]
-position = Vector2(767, 490)
+position = Vector2(768, 496)
+item = ExtResource("11_bewp0")
+id = 21
 
 [node name="Torch" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=627410971 instance=ExtResource("13_h1sda")]
 position = Vector2(512, 494)
@@ -162,6 +180,34 @@ position = Vector2(885, 736)
 [node name="Torch7" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="8" unique_id=1594275914 instance=ExtResource("13_h1sda")]
 position = Vector2(235, 382)
 type = "1"
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=330946052 instance=ExtResource("11_h1sda")]
+position = Vector2(497, 207)
+
+[node name="Skeleton2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=299484498 instance=ExtResource("11_h1sda")]
+position = Vector2(234, 766)
+
+[node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1265163812 instance=ExtResource("12_qtxg0")]
+position = Vector2(554, 603)
+type = "1"
+
+[node name="Bat2" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1153111807 instance=ExtResource("12_qtxg0")]
+position = Vector2(433, 53)
+type = "1"
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=1109252605 instance=ExtResource("13_jl878")]
+position = Vector2(906, 747)
+type = "1"
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="5" unique_id=798562314 instance=ExtResource("14_6egnh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=1594365676]
+position = Vector2(800, 704)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=460514739]
+position = Vector2(960, 704)
+shape = SubResource("SegmentShape2D_6qmw3")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="16" unique_id=2036527323]
 position = Vector2(3, -11)
@@ -228,32 +274,37 @@ position = Vector2(747, 737)
 [node name="Marker2D5" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="4" unique_id=743196609]
 position = Vector2(728, 43)
 
-[node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("10_bewp0")]
+[node name="CellAreas" parent="." index="10" unique_id=995269704]
+metadata/_edit_lock_ = true
+
+[node name="CellDiscover" parent="CellAreas" index="0" unique_id=553221677 instance=ExtResource("10_bewp0")]
 id = 22
 color = Color(0.70980394, 0.70980394, 0.70980394, 1)
+change_color = true
 
-[node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=258542917 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover2" parent="CellAreas" index="1" unique_id=258542917 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 0)
 id = 23
 color = Color(0.70980394, 0.70980394, 0.70980394, 1)
+change_color = true
 
-[node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=703608551 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover3" parent="CellAreas" index="2" unique_id=703608551 instance=ExtResource("10_bewp0")]
 position = Vector2(0, 272)
 id = 24
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 change_color = true
 
-[node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=29947679 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover4" parent="CellAreas" index="3" unique_id=29947679 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 272)
 id = 25
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="4" unique_id=1191154090 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover5" parent="CellAreas" index="4" unique_id=1191154090 instance=ExtResource("10_bewp0")]
 position = Vector2(0, 546)
 id = 26
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
-[node name="CellDiscover6" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="5" unique_id=1461208366 instance=ExtResource("10_bewp0")]
+[node name="CellDiscover6" parent="CellAreas" index="5" unique_id=1461208366 instance=ExtResource("10_bewp0")]
 position = Vector2(480, 546)
 id = 27
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
@@ -271,3 +322,7 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" parent="." index="12" unique_id=344921272]
 color = Color(0.70980394, 0.70980394, 0.70980394, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=21439351]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_7fif0")

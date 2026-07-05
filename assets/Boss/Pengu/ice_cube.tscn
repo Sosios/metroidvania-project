@@ -187,6 +187,7 @@ _data = {
 }
 
 [node name="IceCube" type="Area2D" unique_id=617173415 groups=["Projectile"]]
+collision_layer = 32
 script = ExtResource("1_3xpep")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555587005]

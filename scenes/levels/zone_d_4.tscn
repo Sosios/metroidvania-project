@@ -31,6 +31,11 @@ size = Vector2(61, 244)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udysh"]
 size = Vector2(39, 243)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tooa7"]
+vertices = PackedVector2Array(950, -150, 950, -74, 886, -74, 186, -102, 886, -150, 618, 138, 662, 122, 886, 122, 886, 198, 618, 86, 662, 38, 362, 198, 438, 138, 362, -42, 438, 86, 186, -186, 886, -198, 150, -198, 70, -186, 886, -10, 822, -10, 822, 38, 150, -42, 150, 6, 86, 6, 74, -58, 86, 58, 150, 58, 150, 106, 74, 154, 230, 106, 230, 198, 10, 198, 10, 154, 10, -58, 10, -86, 42, -86, 90, -198, 90, -262, 150, -262, 42, -198, 70, -102)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(6, 5, 9, 10), PackedInt32Array(5, 8, 11, 12), PackedInt32Array(12, 11, 13, 14), PackedInt32Array(4, 3, 15, 16), PackedInt32Array(17, 16, 15, 18), PackedInt32Array(2, 19, 20, 3), PackedInt32Array(3, 20, 21, 10, 13), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(28, 30, 31, 32, 29), PackedInt32Array(32, 33, 29), PackedInt32Array(26, 29, 25, 24), PackedInt32Array(25, 34, 35, 36), PackedInt32Array(37, 38, 39, 17), PackedInt32Array(37, 17, 18), PackedInt32Array(40, 37, 18), PackedInt32Array(36, 40, 18, 41), PackedInt32Array(22, 25, 36, 41, 3, 13), PackedInt32Array(14, 13, 10, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 208, 0, 144, 64, 144, 64, -48, 0, -48, 0, -96, 32, -96, 32, -208, 80, -208, 80, -272, 160, -272, 160, -208, 896, -208, 896, -160, 960, -160, 960, -64, 896, -64, 896, 0, 832, 0, 832, 48, 672, 48, 672, 112, 896, 112, 896, 208, 448, 208, 448, 128, 608, 128, 608, 96, 608, 96, 448, 96, 448, 208, 352, 208, 352, 96, 352, -32, 176, -32, 176, -176, 80, -176, 80, -112, 176, -112, 176, -32, 160, -32, 160, 16, 96, 16, 96, 48, 160, 48, 160, 96, 240, 96, 240, 208)])
+
 [node name="ZoneD4" unique_id=342494649 instance=ExtResource("1_tooa7")]
 
 [node name="Parallaxes" parent="." index="0" unique_id=691625541]
@@ -115,3 +120,6 @@ id = 145
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=2082220392 instance=ExtResource("6_5rdf4")]
 position = Vector2(480, -270)
 id = 148
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=2141525376]
+navigation_polygon = SubResource("NavigationPolygon_tooa7")

@@ -3,27 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://bihcqnumyfb1r" path="res://scenes/levels/level_root_c.tscn" id="1_3kdbg"]
 [ext_resource type="PackedScene" uid="uid://cuirwss3x0plt" path="res://scenes/objects/moving_platform.tscn" id="2_xlx8k"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="3_pnrmn"]
+[ext_resource type="PackedScene" uid="uid://dmbj5fu4ouoa6" path="res://scenes/objects/enemy_barriers.tscn" id="3_tdmob"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="4_kcd25"]
+[ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="4_o6dok"]
+[ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="5_dq8nm"]
+[ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="6_fpja0"]
+[ext_resource type="PackedScene" uid="uid://c4qtyidfpopjm" path="res://scenes/enemies/Boar/boar.tscn" id="7_s2mt4"]
 
-[sub_resource type="Curve2D" id="Curve2D_xlx8k"]
+[sub_resource type="Curve2D" id="Curve2D_qfsdu"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2, 32, 0, 0, 0, 0, -2, -127)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_pnrmn"]
+[sub_resource type="Curve2D" id="Curve2D_qvvu0"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2, 32, 0, 0, 0, 0, -2, -127)
 }
 point_count = 2
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
+b = Vector2(0, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
 size = Vector2(123, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xb4n7"]
 size = Vector2(123, 101)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_v4166"]
+vertices = PackedVector2Array(438, -134, 438, 198, 326, 198, 26, -26, 326, 262, 250, 262, 250, 198, 26, 198, -154, 26, -90, 26, -90, 182, -330, 182, -330, 262, -422, 262, -422, 182, -454, 182, -454, 26, -198, 26, -154, -26, -198, -74, -470, -74, -470, -102, -438, -102, -438, -134)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(6, 7, 3), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(11, 14, 17, 8), PackedInt32Array(18, 8, 17, 19), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(22, 23, 0, 19), PackedInt32Array(18, 19, 0, 3), PackedInt32Array(3, 2, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-432, 272, -432, 192, -464, 192, -464, 16, -208, 16, -208, -64, -480, -64, -480, -112, -448, -112, -448, -144, 288, -144, 352, -144, 448, -144, 448, 208, 336, 208, 336, 272, 240, 272, 240, 208, 16, 208, 16, -16, -144, -16, -144, 16, -80, 16, -80, 192, -320, 192, -320, 256, -320, 272)])
 
 [node name="ZoneC10" unique_id=342494649 instance=ExtResource("1_3kdbg")]
 
@@ -32,15 +45,57 @@ tile_map_data = PackedByteArray("AAAOABAAAAAFAAQAAAAOAA8AAAAFAAMAAAAOAA4AAAAFAAM
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=913465690 instance=ExtResource("2_xlx8k")]
 position = Vector2(304, 30)
-curve = SubResource("Curve2D_xlx8k")
+curve = SubResource("Curve2D_qfsdu")
 path_time = 3.0
 type = "1"
 
 [node name="MovingPlatform3" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1132493905 instance=ExtResource("2_xlx8k")]
 position = Vector2(-176, 129)
-curve = SubResource("Curve2D_pnrmn")
+curve = SubResource("Curve2D_qvvu0")
 path_time = 3.0
 type = "1"
+
+[node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("3_tdmob")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="0" unique_id=2089373924]
+position = Vector2(240, 176)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="1" unique_id=1438542567]
+position = Vector2(336, 176)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="2" unique_id=1804527538]
+position = Vector2(16, -48)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="3" unique_id=1505868151]
+position = Vector2(-144, -48)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="4" unique_id=5814349]
+position = Vector2(-208, -96)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Enemies/EnemyBarriers" index="5" unique_id=964014006]
+position = Vector2(-320, 160)
+shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="1" unique_id=330946052 instance=ExtResource("4_o6dok")]
+position = Vector2(-352, -64)
+type = "1"
+
+[node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="2" unique_id=1288262999 instance=ExtResource("5_dq8nm")]
+position = Vector2(64, 208)
+type = "1"
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="3" unique_id=1109252605 instance=ExtResource("6_fpja0")]
+position = Vector2(-32, -16)
+type = "2"
+
+[node name="Boar" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="4" unique_id=185224842 instance=ExtResource("7_s2mt4")]
+position = Vector2(-128, 176)
+type = "2"
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_left = -480
@@ -111,3 +166,7 @@ id = 11
 [node name="CellDiscover4" parent="CellAreas" index="3" unique_id=2109258245 instance=ExtResource("4_kcd25")]
 position = Vector2(-480, -270)
 id = 112
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=721048764]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_v4166")

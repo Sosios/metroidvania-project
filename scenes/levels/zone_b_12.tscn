@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cwlfo6ls4jw5f" path="res://assets/Backgrounds/DarkForest/bgrd_tree1.png" id="7_a0c8j"]
 [ext_resource type="TileSet" uid="uid://jtr5i5jmpshj" path="res://tilesets/forest_tileset.tres" id="8_ldytg"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="9_hy885"]
+[ext_resource type="Resource" uid="uid://7pbn0ufq1qv1" path="res://inventory/heal/potion_elixir.tres" id="10_84142"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="10_irk62"]
+[ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="11_6rdrw"]
 
 [sub_resource type="Gradient" id="Gradient_w38hd"]
 offsets = PackedFloat32Array(0.6, 1)
@@ -36,7 +38,6 @@ metadata/_snap_enabled = true
 size = Vector2(64, 154)
 
 [node name="ZoneB12" unique_id=342494649 instance=ExtResource("1_tymsk")]
-screen_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=2962892]
 scroll_scale = Vector2(0.4, 1)
@@ -120,6 +121,11 @@ tile_set = ExtResource("8_ldytg")
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1614685710 instance=ExtResource("9_hy885")]
 position = Vector2(311, 191)
+item = ExtResource("10_84142")
+id = 7
+
+[node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1288262999 instance=ExtResource("11_6rdrw")]
+position = Vector2(214, 205)
 
 [node name="PointLight2D3" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=693454795]
 position = Vector2(3, -11)

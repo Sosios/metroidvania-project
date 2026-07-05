@@ -8,6 +8,8 @@ var screen_color:Color = Color(1.0, 1.0, 1.0, 1.0)
 
 var player_pos: Vector2
 
+signal boss_spell_cast(pos)
+
 var direction = 1
 
 var attack_1_times := [0.5,0.4162,0.4162]

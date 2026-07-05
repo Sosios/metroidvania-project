@@ -3352,6 +3352,7 @@ script = ExtResource("1_75vfm")
 sprite = NodePath("Sprites/AnimatedSprite2D")
 attack_1_area = NodePath("Sprites/AnimatedSprite2D/Attack1Area")
 speed = 7.0
+jump_velocity = null
 animation_player = NodePath("AnimationPlayers/AnimationPlayer")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=162347144]

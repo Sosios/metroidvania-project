@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://dt7x1snawfeod"]
+
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_jjqb5"]
+[ext_resource type="Texture2D" uid="uid://x1mc5s6sn7sc" path="res://assets/Icons/sword10.png" id="2_jjqb5"]
+
+[resource]
+script = ExtResource("1_jjqb5")
+name = "Falchion"
+type = "sword"
+texture = ExtResource("2_jjqb5")
+attack = 85.0
+description = "Une epee a allure extraordinaire"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bihcqnumyfb1r" path="res://scenes/levels/level_root_c.tscn" id="1_ysfik"]
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="2_x8yly"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="3_363q1"]
+[ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="3_x8yly"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="4_8iufv"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="5_x70de"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_nsvpw"]
@@ -23,6 +24,11 @@ tile_map_data = PackedByteArray("AAAeABEAAAADAAQAAAAeABAAAAADAAMAAAAeAA8AAAADAAM
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=1614685710 instance=ExtResource("4_8iufv")]
 position = Vector2(324, 208)
+id = 28
+
+[node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1288262999 instance=ExtResource("3_x8yly")]
+position = Vector2(240, 224)
+type = "1"
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="6" unique_id=1988635446]
 material = SubResource("ShaderMaterial_6qmw3")

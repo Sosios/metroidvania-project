@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://ctk03uiw1prea"]
+
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_118lt"]
+[ext_resource type="Texture2D" uid="uid://cu4blx2t7xngc" path="res://assets/Icons/c_armor_6.png" id="2_118lt"]
+
+[resource]
+script = ExtResource("1_118lt")
+name = "Armure 5"
+type = "armor"
+texture = ExtResource("2_118lt")
+defense = 110.0
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"

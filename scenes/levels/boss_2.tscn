@@ -8,10 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="5_ttcs1"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="6_8pqt2"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_mct1u"]
+[ext_resource type="Resource" uid="uid://20hnmq3xbwqq" path="res://inventory/weapons/sword5.tres" id="7_46eiw"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="7_ttcs1"]
 [ext_resource type="PackedScene" uid="uid://cgegqekgc7dn7" path="res://nodes/boss_spawn.tscn" id="7_uo6xk"]
 [ext_resource type="PackedScene" uid="uid://scvycfl1yjns" path="res://scenes/bosses/skeleton/skeleton.tscn" id="8_0dp4c"]
+[ext_resource type="Resource" uid="uid://bbsa43skhfeor" path="res://inventory/armor/armor_04.tres" id="8_1ku14"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_8pqt2"]
+[ext_resource type="Resource" uid="uid://7pbn0ufq1qv1" path="res://inventory/heal/potion_elixir.tres" id="9_85o6d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uo6xk"]
 shader = ExtResource("3_ca0rq")
@@ -105,12 +108,15 @@ position = Vector2(816, 39)
 
 [node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="7" unique_id=1614685710 instance=ExtResource("6_8pqt2")]
 position = Vector2(110, -32)
+item = ExtResource("7_46eiw")
 
 [node name="Chest3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="8" unique_id=1929865919 instance=ExtResource("6_8pqt2")]
 position = Vector2(87, 79)
+item = ExtResource("8_1ku14")
 
 [node name="Chest2" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="9" unique_id=2115208939 instance=ExtResource("6_8pqt2")]
 position = Vector2(227, -32)
+item = ExtResource("9_85o6d")
 
 [node name="BossSpawn" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1422244529 instance=ExtResource("7_uo6xk")]
 position = Vector2(503, 207)

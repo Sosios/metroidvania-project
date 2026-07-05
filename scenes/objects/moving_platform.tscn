@@ -57,6 +57,7 @@ region_enabled = true
 region_rect = Rect2(112, 80, 64, 9)
 
 [node name="AnimatableBody2D3" type="AnimatableBody2D" parent="Platforms" unique_id=673563546]
+visible = false
 collision_layer = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/AnimatableBody2D3" unique_id=915581655]
