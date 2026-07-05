@@ -16,8 +16,6 @@ func enter():
 func die():
 	var tween = create_tween()
 	tween.tween_property(boss.sprite,"modulate:a",0,0.5)
-	await get_tree().create_timer(0.5).timeout
-	boss.queue_free()
 	SaveLoad.save_file.defeated_bosses.append(3)
 	SaveLoad.save_file.unlocked_doors.append(12)
 	Globals.show_bar = false

@@ -16,6 +16,10 @@ extends Area2D
 
 @export var end_game := false
 
+@export var credits := false
+
+@export var hide_player := false
+
 signal dialogue_box(title,text,face)
 
 signal info_box(title,text)
@@ -32,13 +36,15 @@ func _ready() -> void:
 		send_dialogue(0)
 
 func send_dialogue(current):
-	get_tree().paused = true
+	print(">>> send_dialogue appelé avec current=", current)
+	print(">>> dialogue.dialogue[current] = ", dialogue.dialogue[current])
+	print(">>> type du DialogueBox = ", dialogue.dialogue[current].type)
 	if dialogue.dialogue[current].type == "dialogue":
-		dialogue_box.emit(dialogue.dialogue[current].title,dialogue.dialogue[current].text,dialogue.dialogue[current].face)
-		#print("dialogue emit")
+		print(">>> émission dialogue_box")
+		dialogue_box.emit(dialogue.dialogue[current].title, dialogue.dialogue[current].text, dialogue.dialogue[current].face)
 	if dialogue.dialogue[current].type == "info":
-		info_box.emit(dialogue.dialogue[current].title,dialogue.dialogue[current].text)
-		#print("info emit")
+		print(">>> émission info_box")
+		info_box.emit(dialogue.dialogue[current].title, dialogue.dialogue[current].text)
 
 func play_next():
 	current_dialogue += 1
@@ -55,6 +61,10 @@ func play_next():
 			SaveLoad.save_file.can_gravity = true
 		if add_platform:
 			SaveLoad.save_file.can_platform  = true
+		if end_game:
+			Globals.final_dialogue.emit()
+		if credits:
+			TransitionLayer.change_scene("res://scenes/levels/credits.tscn")
 	else:
 		send_dialogue(current_dialogue)
 
@@ -63,4 +73,6 @@ func play_next():
 func _on_body_entered(body: Node2D) -> void:
 	if type == "on_collision" and id not in SaveLoad.save_file.discovered_dialogues:
 		Globals.dialogue = true
+		if Globals.stop:
+			await Globals.transition_finished
 		send_dialogue(0)

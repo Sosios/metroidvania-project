@@ -3,6 +3,9 @@ extends CanvasLayer
 @onready var label: Label = $MarginContainer2/Label
 @onready var boss_label: Label = $BossHealth/Label
 @onready var boss_progress_bar: TextureProgressBar = $BossHealth/ProgressBar
+@onready var timer_value: ProgressBar = $TimerValue
+
+@onready var characters := $HBoxContainer.get_children()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +15,7 @@ func _ready() -> void:
 	update_boss()
 	Globals.connect("stat_change",update_health)
 	Globals.connect("boss_update",update_boss)
+	Globals.connect("timer",update_timer)
 	SaveLoad.save_file.connect("update",update_health)
 	get_parent().get_parent().connect("update",update_health)
 
@@ -24,6 +28,17 @@ func update_health():
 	$ExpBar.min_value = SaveLoad.save_file.lvl_exp_cap
 	$ExpBar.max_value = SaveLoad.save_file.nxtlvl
 	$Label.text = str(SaveLoad.save_file.level)
+	for i in range(3):
+		if i > SaveLoad.save_file.characters_unlocked:
+			characters[i].hide()
+		else:
+			characters[i].show()
+		characters[i].border_color = Color(1.0, 1.0, 1.0, 1.0)
+	characters[SaveLoad.save_file.player_selected].border_color = Color(1.0, 0.0, 0.0, 1.0)
+
+func update_timer():
+	timer_value.max_value = Globals.timer_length
+	timer_value.value = Globals.elapsed_time
 
 func update_boss():
 	if Globals.show_bar:

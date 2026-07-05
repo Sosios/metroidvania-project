@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cvhijbl44bn5y" path="res://scenes/objects/door.tscn" id="2_ypc6l"]
 [ext_resource type="PackedScene" uid="uid://cgegqekgc7dn7" path="res://nodes/boss_spawn.tscn" id="3_g7y37"]
 [ext_resource type="PackedScene" uid="uid://ptx8ncr4ex5p" path="res://scenes/bosses/wizard/wizard.tscn" id="4_otheu"]
+[ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="5_otheu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4dm6"]
 size = Vector2(138, 163)
@@ -28,8 +29,12 @@ id = 3
 limit_top = -270
 limit_right = 960
 
+[node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1809543543 instance=ExtResource("5_otheu")]
+type = "on_collision"
+id = 28
+
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
-target = "res://scenes/levels/zone_d_17.tscn"
+target = "uid://cxuk0mf12exia"
 
 [node name="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1972837965]
 position = Vector2(1029, 166.5)

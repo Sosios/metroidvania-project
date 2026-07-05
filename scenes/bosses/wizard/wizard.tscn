@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://b3u12ui5wjy77" path="res://scenes/bosses/wizard/attack_2.gd" id="7_k7j4n"]
 [ext_resource type="Script" uid="uid://b1vu6gqkadyoq" path="res://scenes/bosses/wizard/cast.gd" id="8_2io5u"]
 [ext_resource type="Script" uid="uid://che3krml2anh5" path="res://scenes/bosses/wizard/dead.gd" id="10_23idh"]
+[ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="12_2io5u"]
+[ext_resource type="Resource" uid="uid://dch024br1me7w" path="res://dialogues/ending_dialogue.tres" id="13_gqg5g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("2_5tpvq")
@@ -715,6 +717,24 @@ tracks/2/keys = {
 "update": 1,
 "values": [1.0, 0.0]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_dialogue"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5tpvq"]
+resource_name = "ending_animation_1"
+step = 0.16666667
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_spvse"]
 _data = {
@@ -724,8 +744,12 @@ _data = {
 &"attack_2_left": SubResource("Animation_gqg5g"),
 &"attack_2_right": SubResource("Animation_6a646"),
 &"cast_spell": SubResource("Animation_dq0o5"),
-&"dead": SubResource("Animation_cpb4d")
+&"dead": SubResource("Animation_cpb4d"),
+&"ending_animation_1": SubResource("Animation_5tpvq")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udysh"]
+size = Vector2(6128, 153)
 
 [node name="Wizard" type="CharacterBody2D" unique_id=1685910147 groups=["Bosses"]]
 collision_layer = 2
@@ -788,5 +812,16 @@ script = ExtResource("10_23idh")
 [node name="HitTimer" type="Timer" parent="." unique_id=356285433]
 wait_time = 0.2
 one_shot = true
+
+[node name="DialogueSpawn" parent="." unique_id=1809543543 instance=ExtResource("12_2io5u")]
+position = Vector2(0, -1112)
+type = "on_collision"
+dialogue = ExtResource("13_gqg5g")
+id = 18
+end_game = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueSpawn" unique_id=39829489]
+position = Vector2(0, -66.5)
+shape = SubResource("RectangleShape2D_udysh")
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

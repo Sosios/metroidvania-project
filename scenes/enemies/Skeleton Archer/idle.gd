@@ -5,6 +5,7 @@ var skeleton: CharacterBody2D
 var wander_time : float
 var timer : float
 
+
 func rand_direction():
 	skeleton.direction = [-1,-1,0,1,1].pick_random()
 	wander_time = randf_range(1, 3)
@@ -43,7 +44,7 @@ func physics_update(delta):
 
 
 func _on_touch_wall():
-	skeleton.direction.x = -skeleton.direction.x
+	skeleton.direction = -skeleton.direction
 	wander_time = randf_range(1, 3)
 	rand_direction()
 	

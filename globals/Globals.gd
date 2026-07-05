@@ -14,6 +14,25 @@ signal next_dialogue
 
 signal transition_finished
 
+signal timer
+
+signal dialogue_emit(dialogue)
+
+signal final_dialogue
+
+signal save_ui
+
+
+var timer_length: float:
+	set(value):
+		timer_length = value
+		timer.emit()
+
+var elapsed_time: float:
+	set(value):
+		elapsed_time = value
+		timer.emit()
+
 var direction = 1
 
 var attack_1_times := [0.5,0.4162,0.4162]

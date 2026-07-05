@@ -7,6 +7,10 @@ class_name CellDiscover
 
 @export var change_color := false
 
+@export var save_id := 0
+
+
+
 func _on_body_entered(body: Node2D) -> void:
 	Globals.current_room = id
 	if id not in SaveLoad.save_file.discovered_rooms:

@@ -32,4 +32,6 @@ func physics_update(delta):
 			slime.velocity.x = 0
 			await get_tree().create_timer(0.2).timeout
 			slime.sprite.scale = Vector2(1.3,0.7)
+			var tween = create_tween()
+			tween.tween_property(slime,"scale",Vector2(1,1),0.2)
 			Transitioned.emit(self,"idle")

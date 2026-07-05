@@ -9,6 +9,12 @@
 [ext_resource type="Resource" uid="uid://7ctas56dcexo" path="res://inventory/keys/key_03.tres" id="5_tug7b"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="6_4c173"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_siaqw"]
+[ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="8_r88fh"]
+[ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="9_lhmyo"]
+[ext_resource type="Texture2D" uid="uid://sk5nwohccxd0" path="res://assets/Personnages/red_hood_face.png" id="10_bl4m2"]
+[ext_resource type="Texture2D" uid="uid://dfs6qx8pwvu2f" path="res://assets/Personnages/Jotem_face.png" id="11_n71dr"]
+[ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="12_xn27w"]
+[ext_resource type="Texture2D" uid="uid://38sgqm5tccxb" path="res://assets/Personnages/Jotem/jotem.tres" id="13_lhmyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
 size = Vector2(416, 101)
@@ -18,6 +24,85 @@ size = Vector2(271, 85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q0db"]
 size = Vector2(127.5, 91)
+
+[sub_resource type="Resource" id="Resource_61t6g"]
+script = ExtResource("9_lhmyo")
+face = ExtResource("10_bl4m2")
+text = "Papa, tu es la !"
+title = "Red Hood"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_bdwgn"]
+script = ExtResource("9_lhmyo")
+face = ExtResource("11_n71dr")
+text = "Ma fille, qu'est-ce que je suis content de te voir ! Merci d'avoir ouvert la porte, je vais enfin pouvoir sortir. Faisons ensemble de notre mieux pour sortir de ce chateau ensemble !"
+title = "Jotem"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_5lmda"]
+script = ExtResource("9_lhmyo")
+type = "info"
+text = "Vous pouvez maintenant jouer Jotem. Jotem a la capacite d'inverser la gravite sur des plafonds bleus en appuyant sur Ctrl ou X sur manette"
+title = "Jotem"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_trh6w"]
+script = ExtResource("12_xn27w")
+dialogue = Array[ExtResource("9_lhmyo")]([SubResource("Resource_61t6g"), SubResource("Resource_bdwgn"), SubResource("Resource_5lmda")])
+metadata/_custom_type_script = "uid://csoy2dj6jccux"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gxkd"]
+size = Vector2(128, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl4m2"]
+atlas = ExtResource("13_lhmyo")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n71dr"]
+atlas = ExtResource("13_lhmyo")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn27w"]
+atlas = ExtResource("13_lhmyo")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61t6g"]
+atlas = ExtResource("13_lhmyo")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trh6w"]
+atlas = ExtResource("13_lhmyo")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w045"]
+atlas = ExtResource("13_lhmyo")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qmw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl4m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n71dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn27w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61t6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trh6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w045")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksq3u"]
 size = Vector2(65, 102)
@@ -56,6 +141,22 @@ shape = SubResource("RectangleShape2D_4c173")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Areas/GravityShift" index="2" unique_id=1266005807]
 position = Vector2(376.25, 203)
 shape = SubResource("RectangleShape2D_5q0db")
+
+[node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="1" unique_id=1809543543 instance=ExtResource("8_r88fh")]
+type = "on_collision"
+dialogue = SubResource("Resource_trh6w")
+id = 6
+add_character = true
+add_gravity = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DialogueSpawn" index="0" unique_id=1965048632]
+position = Vector2(368, 211)
+shape = SubResource("RectangleShape2D_7gxkd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Areas/DialogueSpawn" index="1" unique_id=532376367]
+position = Vector2(368, 192)
+sprite_frames = SubResource("SpriteFrames_6qmw3")
+flip_h = true
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("6_4c173")]
 position = Vector2(56, 219)

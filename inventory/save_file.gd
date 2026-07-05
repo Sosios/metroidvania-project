@@ -44,9 +44,15 @@ func discover_room(room: int):
 
 var final_attack := attack
 
-@export var player_selected := 0
+@export var player_selected := 0:
+	set(value):
+		player_selected = value
+		update.emit()
 
-@export var characters_unlocked := 0
+@export var characters_unlocked := 0:
+	set(value):
+		characters_unlocked = value
+		update.emit()
 
 @export var max_health := 100.0:
 	set(value):

@@ -14,7 +14,7 @@ func paused():
 	show()
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("map"):
+	if event.is_action_pressed("map") and not Globals.dialogue:
 		if get_tree().paused:
 			resume()
 			$MapUI.hide()

@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	for body in $HurtBox.get_overlapping_bodies():
 		if "hurt" in body and $StateMachine.current_state == $StateMachine/Follow:
-			body.hurt(10,global_position)
+			body.hurt(damage_given,global_position)
 
 
 func hit(damage):

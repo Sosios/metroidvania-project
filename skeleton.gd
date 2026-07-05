@@ -53,6 +53,8 @@ func send_cube():
 	ice_cube.emit(Globals.player_pos)
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	sign = 1.0 if sprite.flip_h else -1.0
 	move_and_slide()
 	for body in hurt_box.get_overlapping_bodies():

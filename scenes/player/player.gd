@@ -24,6 +24,8 @@ var hit_damage: float
 @export var collision : CollisionShape2D
 @export var animation_player: AnimationPlayer
 
+var timer_lengths := [1.0,2.0,0.5]
+
 var can_attack = true
 
 
@@ -49,6 +51,7 @@ var air_time = 0.0
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 
 @onready var jump_buffer_timer: Timer = $Timers/JumpBufferTimer
+@onready var skill_timer: Timer = $Timers/SkillTimer
 
 
 
@@ -67,6 +70,10 @@ func _ready() -> void:
 	SaveLoad.save_file.connect("update",update_inventory)
 
 func _physics_process(delta: float) -> void:
+	if not skill_timer.is_stopped():
+		Globals.elapsed_time = skill_timer.wait_time - skill_timer.time_left
+		Globals.timer_length = skill_timer.wait_time
+	
 	if coyote and not is_on_floor():
 		coyote_timer.start()
 	coyote = is_on_floor()
@@ -151,6 +158,10 @@ func change_character():
 		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 0.9
 	else:
 		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 1.2
+		
+	skill_timer.stop()
+	skill_timer.wait_time = timer_lengths[SaveLoad.save_file.player_selected]
+	
 
 
 func update_inventory():
@@ -165,11 +176,13 @@ func update_inventory():
 		#body.hit(Globals.damage)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("create") and SaveLoad.save_file.can_platform and SaveLoad.save_file.player_selected == 0 and $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3,$StateMachine/Idle,$StateMachine/JumpAttack1,$StateMachine/JumpAttack2,$StateMachine/CrouchAttack]:
+	if Input.is_action_just_pressed("create") and skill_timer.is_stopped() and SaveLoad.save_file.can_platform and SaveLoad.save_file.player_selected == 0 and $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3,$StateMachine/Idle,$StateMachine/JumpAttack1,$StateMachine/JumpAttack2,$StateMachine/CrouchAttack]:
 		create_platform.emit()
+		skill_timer.start()
 	
-	if Input.is_action_just_pressed("gravity") and SaveLoad.save_file.can_gravity and SaveLoad.save_file.player_selected == 2:
+	if Input.is_action_just_pressed("gravity") and skill_timer.is_stopped() and SaveLoad.save_file.can_gravity and SaveLoad.save_file.player_selected == 2:
 		is_gravity = !is_gravity
+		skill_timer.start()
 		
 	if $StateMachine.current_state not in [$StateMachine/Attack1,$StateMachine/Attack2,$StateMachine/Attack3,$StateMachine/CrouchAttack,$StateMachine/JumpAttack1,$StateMachine/JumpAttack2]:
 		if Input.is_action_just_pressed("lb"):

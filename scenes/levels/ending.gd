@@ -1,23 +1,4 @@
-extends Node
-class_name Level
-@onready var camera_2d: Camera2D = $Player/Camera2D
-
-@onready var player: CharacterBody2D = $Player
-@onready var canvas_layer: CanvasLayer = $Control2/CanvasLayer
-
-
-var ice_cube_scene = preload("res://assets/Boss/Pengu/ice_cube.tscn")
-var fire_scene = preload("res://scenes/bosses/wizard/fire.tscn")
-var lightning_scene = preload("res://scenes/bosses/wizard/lightning.tscn")
-var arrow_scene = preload("res://scenes/enemies/Skeleton Archer/arrow.tscn")
-var platform_scene = preload("res://scenes/objects/platform.tscn")
-
-var info_scene= preload("res://scenes/ui/info_box.tscn")
-var dialogue_scene= preload("res://scenes/ui/dialogue_box.tscn")
-
-var spawn_scene = preload("res://scenes/ui/dialogue_spawn.tscn")
-
-signal update
+extends Level
 
 
 
@@ -25,6 +6,7 @@ func _ready() -> void:
 	update.emit()
 	player.position = $TransitionPoints.get_children()[Globals.marker].position
 	player.sprite.flip_h = Globals.flip_h
+	player.hide()
 	for boss in get_tree().get_nodes_in_group("Bosses"):
 		boss.connect("ice_cube", create_cube)
 		boss.connect("send_dialogue_spawn", show_dialogue)
@@ -33,7 +15,6 @@ func _ready() -> void:
 	for ui in get_tree().get_nodes_in_group("UI"):
 		ui.connect("dialogue_box", create_dialogue_box)
 		ui.connect("info_box", create_info_box)
-	Globals.connect
 	Globals.boss_spell_cast.connect(cast_spell)
 	player.connect("create_platform",_on_create_platform)
 	if Globals.jump_up:
@@ -46,7 +27,6 @@ func _ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	Globals.stop = false
 	
-
 
 func show_dialogue(dialogue_spawn):
 	get_tree().paused = true
@@ -105,8 +85,6 @@ func create_cube(pos):
 	ice_cube.position = player.position
 	$Platforms.add_child.call_deferred(ice_cube)
 
-func _process(_delta: float) -> void:
-	$CanvasModulate.color = Globals.screen_color
 
 func _on_create_platform():
 	var platform = platform_scene.instantiate()

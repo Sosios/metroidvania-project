@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c6fjb504u8ggw"]
+
+[ext_resource type="PackedScene" uid="uid://blssvmg60kdnq" path="res://scenes/levels/level_root.tscn" id="1_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="2_ouxo3"]
+[ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="3_icy5c"]
+[ext_resource type="Texture2D" uid="uid://dph1v4vity0mi" path="res://assets/Personnages/Hero_face.png" id="4_rmjfq"]
+[ext_resource type="Texture2D" uid="uid://dfs6qx8pwvu2f" path="res://assets/Personnages/Jotem_face.png" id="5_7pb6i"]
+[ext_resource type="Texture2D" uid="uid://sk5nwohccxd0" path="res://assets/Personnages/red_hood_face.png" id="6_xfk5q"]
+[ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="7_qogh7"]
+
+[sub_resource type="Resource" id="Resource_b5ncc"]
+script = ExtResource("3_icy5c")
+face = ExtResource("4_rmjfq")
+text = "On a reussi a s'echapper de plus belle !"
+title = "Heros"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_5lmda"]
+script = ExtResource("3_icy5c")
+face = ExtResource("5_7pb6i")
+text = "Eh bien, ce fut une sacree aventure"
+title = "Jotem"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_o4dm6"]
+script = ExtResource("3_icy5c")
+face = ExtResource("6_xfk5q")
+text = "Merci vraiment a toi pour ton aide"
+title = "Red Hood"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_tn235"]
+script = ExtResource("3_icy5c")
+face = ExtResource("4_rmjfq")
+text = "Pas de soucis, je n'aurais pas pu y arriver sans vous non plus"
+title = "Heros"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_8iyoh"]
+script = ExtResource("7_qogh7")
+dialogue = Array[ExtResource("3_icy5c")]([SubResource("Resource_b5ncc"), SubResource("Resource_5lmda"), SubResource("Resource_o4dm6"), SubResource("Resource_tn235")])
+metadata/_custom_type_script = "uid://csoy2dj6jccux"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq31s"]
+size = Vector2(584, 302)
+
+[node name="Level" unique_id=342494649 instance=ExtResource("1_mbbpy")]
+
+[node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1809543543 instance=ExtResource("2_ouxo3")]
+dialogue = SubResource("Resource_8iyoh")
+id = 12
+credits = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DialogueSpawn" index="0" unique_id=253094606]
+position = Vector2(250, 46)
+shape = SubResource("RectangleShape2D_mq31s")
+
+[node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1990900990]

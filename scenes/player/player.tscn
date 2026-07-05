@@ -2621,7 +2621,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vb1ce")
 }],
-"loop": 2,
+"loop": 0,
 "name": &"attack_3",
 "speed": 12.0
 }, {
@@ -3352,7 +3352,6 @@ script = ExtResource("1_75vfm")
 sprite = NodePath("Sprites/AnimatedSprite2D")
 attack_1_area = NodePath("Sprites/AnimatedSprite2D/Attack1Area")
 speed = 7.0
-jump_velocity = null
 animation_player = NodePath("AnimationPlayers/AnimationPlayer")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=162347144]
@@ -3446,7 +3445,7 @@ metadata/_edit_lock_ = true
 position = Vector2(1.9999738, 4.0010405)
 scale = Vector2(0.99998707, 1.0002605)
 collision_layer = 16
-collision_mask = 18
+collision_mask = 50
 monitoring = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprites/AnimatedSprite2D/Attack1Area" unique_id=175250458]
@@ -3460,15 +3459,14 @@ material = SubResource("ShaderMaterial_uf5tr")
 position = Vector2(-2.6109662, -5.1813498)
 scale = Vector2(2.611, 1.2950001)
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"attack_3"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.9755379
 
 [node name="Attack1Area" type="Area2D" parent="Sprites/AnimatedSprite2D2" unique_id=317286062]
 position = Vector2(10.999856, 4.001041)
 scale = Vector2(0.99998707, 1.0002605)
 collision_layer = 16
-collision_mask = 18
+collision_mask = 50
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprites/AnimatedSprite2D2/Attack1Area" unique_id=1741508968]
 position = Vector2(-1.0000014, 4.999994)
@@ -3489,7 +3487,7 @@ flip_h = true
 position = Vector2(6.0000005, 52.999996)
 scale = Vector2(0.99998707, 1.0002605)
 collision_layer = 16
-collision_mask = 18
+collision_mask = 50
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprites/AnimatedSprite2D3/Attack1Area" unique_id=1287039076]
 position = Vector2(-15, 2.999999)
@@ -3514,6 +3512,10 @@ one_shot = true
 
 [node name="JumpBufferTimer" type="Timer" parent="Timers" unique_id=2131229062]
 wait_time = 0.1
+one_shot = true
+
+[node name="SkillTimer" type="Timer" parent="Timers" unique_id=2053392642]
+wait_time = 2.0
 one_shot = true
 
 [node name="StateMachine" parent="." unique_id=594427277 node_paths=PackedStringArray("initial_state") instance=ExtResource("8_5gtgg")]

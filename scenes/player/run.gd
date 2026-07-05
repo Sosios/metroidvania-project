@@ -48,7 +48,8 @@ func physics_update(delta):
 		Transitioned.emit(self,"attack1")
 		
 	#Transition to dash
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash")  and player.skill_timer.is_stopped() and SaveLoad.save_file.can_dash and SaveLoad.save_file.player_selected == 1:
 		Transitioned.emit(self,"dash")
 		player.sprite.play("fall")
+		player.skill_timer.start()
 	

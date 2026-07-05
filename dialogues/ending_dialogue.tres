@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dch024br1me7w"]
+
+[ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="1_oirmq"]
+[ext_resource type="Texture2D" uid="uid://bebf3xbfhmq21" path="res://assets/Personnages/Evil_wizard_face.png" id="2_6gdxu"]
+[ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="2_orog5"]
+[ext_resource type="Texture2D" uid="uid://dph1v4vity0mi" path="res://assets/Personnages/Hero_face.png" id="3_nm3df"]
+[ext_resource type="Texture2D" uid="uid://sk5nwohccxd0" path="res://assets/Personnages/red_hood_face.png" id="4_uwnh8"]
+[ext_resource type="Texture2D" uid="uid://dfs6qx8pwvu2f" path="res://assets/Personnages/Jotem_face.png" id="5_v0kxg"]
+
+[sub_resource type="Resource" id="Resource_3wd6d"]
+script = ExtResource("1_oirmq")
+face = ExtResource("2_6gdxu")
+text = "J'admets ma defaite. Je vous libere."
+title = "Sorcier"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_uwnh8"]
+script = ExtResource("1_oirmq")
+face = ExtResource("2_6gdxu")
+text = "..."
+title = "Sorcier"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_mrkj6"]
+script = ExtResource("1_oirmq")
+face = ExtResource("3_nm3df")
+text = "Alors, c'est fini."
+title = "Heros"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_5lmda"]
+script = ExtResource("1_oirmq")
+face = ExtResource("4_uwnh8")
+text = "Le chateau est en train de s'ecrouler !"
+title = "Red Hood"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_o4dm6"]
+script = ExtResource("1_oirmq")
+face = ExtResource("5_v0kxg")
+text = "Il faut s'enfuir !"
+title = "Jotem"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[resource]
+script = ExtResource("2_orog5")
+dialogue = Array[ExtResource("1_oirmq")]([SubResource("Resource_3wd6d"), SubResource("Resource_uwnh8"), SubResource("Resource_mrkj6"), SubResource("Resource_5lmda"), SubResource("Resource_o4dm6")])
+metadata/_custom_type_script = "uid://csoy2dj6jccux"

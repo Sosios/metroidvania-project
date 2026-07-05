@@ -1043,7 +1043,7 @@ _data = {
 }
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=836337607]
-collision_layer = 2
+collision_layer = 32
 collision_mask = 85
 script = ExtResource("1_f3noi")
 speed = 50.0

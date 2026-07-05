@@ -2,6 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://ovw7hw38l1pt" path="res://scenes/levels/level_root_d.tscn" id="1_gdows"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="2_4w1dj"]
+[ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="2_gl5d6"]
+[ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="3_7uwl1"]
+[ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="4_y0aaf"]
+[ext_resource type="Texture2D" uid="uid://bujccw3m56vna" path="res://assets/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/pearl_01d.png" id="5_q77gy"]
+
+[sub_resource type="Resource" id="Resource_eehvg"]
+script = ExtResource("3_7uwl1")
+type = "info"
+text = "Le heros a maintenant le pouvoir des plateformes vertes avec la touche Ctrl ou X sur manette"
+title = "Plateformes vertes"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_im23q"]
+script = ExtResource("4_y0aaf")
+dialogue = Array[ExtResource("3_7uwl1")]([SubResource("Resource_eehvg")])
+metadata/_custom_type_script = "uid://csoy2dj6jccux"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wd6d"]
+size = Vector2(14, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lmda"]
 size = Vector2(105, 297)
@@ -13,6 +32,21 @@ tile_map_data = PackedByteArray("AAAeABIAAAAFAAcAAAAeABEAAAAFAAMAAAAeABAAAAAFAAQ
 
 [node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
 limit_top = -270
+
+[node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1809543543 instance=ExtResource("2_gl5d6")]
+position = Vector2(242, 160)
+type = "on_collision"
+dialogue = SubResource("Resource_im23q")
+id = 4
+add_platform = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DialogueSpawn" index="0" unique_id=1514248254]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_3wd6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Areas/DialogueSpawn" index="1" unique_id=244347351]
+position = Vector2(0, -7)
+texture = ExtResource("5_q77gy")
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
 position = Vector2(544, -214)

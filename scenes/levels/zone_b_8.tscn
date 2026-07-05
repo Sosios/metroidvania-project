@@ -193,7 +193,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwjkb"]
@@ -244,6 +244,7 @@ shape = SubResource("RectangleShape2D_ksq3u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Areas/DialogueSpawn" index="1" unique_id=1422973266]
 position = Vector2(390, 160)
 sprite_frames = SubResource("SpriteFrames_6qmw3")
+autoplay = "default"
 offset = Vector2(0, -21)
 flip_h = true
 

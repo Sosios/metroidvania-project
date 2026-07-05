@@ -22,10 +22,7 @@ func update(delta):
 	attack_time -= delta
 	if attack_time <= 0:
 		wait_time -= delta
-		if wait_time > 0:
-			if Input.is_action_just_pressed("attack") and SaveLoad.save_file.player_selected == 1:
-				Transitioned.emit(self,"attack4")
-		else:
+		if wait_time <= 0:
 			player.attack_1_area.monitoring = false
 			player.can_attack = false
 			attack_timer.start()

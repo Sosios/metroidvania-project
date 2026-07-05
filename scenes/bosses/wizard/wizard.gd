@@ -1,4 +1,4 @@
-extends Enemy
+extends CharacterBody2D
 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -38,7 +38,12 @@ var health = max_health:
 
 var sign : float
 
+func show_dialogue():
+	$DialogueSpawn/CollisionShape2D.global_position = sprite.global_position
+	await Globals.final_dialogue
+	TransitionLayer.change_scene("res://scenes/levels/ending.tscn")
 
+	
 
 func _ready() -> void:
 	var level = get_tree().current_scene
@@ -54,6 +59,8 @@ func cast_spell():
 
 func _physics_process(delta: float) -> void:
 	sign = 1.0 if sprite.flip_h else -1.0
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	move_and_slide()
 	for body in hurt_box.get_overlapping_bodies():
 		if "hurt" in body:

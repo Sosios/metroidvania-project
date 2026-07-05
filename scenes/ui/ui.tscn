@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cho2ck2hhmepd" path="res://assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Bar05a.png" id="6_jcn1r"]
 [ext_resource type="FontFile" uid="uid://dmg05ejiqhh6q" path="res://assets/Fonts/BoldPixels.ttf" id="6_pfayw"]
 [ext_resource type="Texture2D" uid="uid://dgwgkcfvfrt6p" path="res://assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_BarFill01d.png" id="9_y220t"]
+[ext_resource type="Texture2D" uid="uid://dph1v4vity0mi" path="res://assets/Personnages/Hero_face.png" id="11_4kltc"]
+[ext_resource type="Texture2D" uid="uid://sk5nwohccxd0" path="res://assets/Personnages/red_hood_face.png" id="12_swkix"]
+[ext_resource type="Texture2D" uid="uid://dfs6qx8pwvu2f" path="res://assets/Personnages/Jotem_face.png" id="13_hc5d0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcn1r"]
 font = ExtResource("4_y220t")
@@ -27,6 +30,22 @@ font = ExtResource("6_pfayw")
 
 [sub_resource type="LabelSettings" id="LabelSettings_y220t"]
 font = ExtResource("5_4kltc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swkix"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc5d0"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
 
 [node name="UI" type="CanvasLayer" unique_id=833769472]
 script = ExtResource("1_u7n8c")
@@ -149,5 +168,65 @@ text = "1"
 label_settings = SubResource("LabelSettings_y220t")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1048480608]
+offset_left = 5.0
+offset_top = 71.0
+offset_right = 79.0
+offset_bottom = 89.0
+theme_override_constants/separation = 10
+
+[node name="ReferenceRect" type="ReferenceRect" parent="HBoxContainer" unique_id=1762724679]
+z_index = 1
+custom_minimum_size = Vector2(18, 18)
+custom_maximum_size = Vector2(18, 18)
+layout_mode = 2
+border_width = 2.0
+editor_only = false
+
+[node name="HeroFace" type="Sprite2D" parent="HBoxContainer/ReferenceRect" unique_id=77498461]
+z_as_relative = false
+position = Vector2(9, 9)
+texture = ExtResource("11_4kltc")
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="HBoxContainer" unique_id=1237035770]
+z_index = 1
+custom_minimum_size = Vector2(18, 18)
+custom_maximum_size = Vector2(18, 18)
+propagate_maximum_size = true
+layout_mode = 2
+border_width = 2.0
+editor_only = false
+
+[node name="HeroFace" type="Sprite2D" parent="HBoxContainer/ReferenceRect2" unique_id=1536442708]
+z_as_relative = false
+position = Vector2(9, 9)
+texture = ExtResource("12_swkix")
+
+[node name="ReferenceRect3" type="ReferenceRect" parent="HBoxContainer" unique_id=1510432239]
+z_index = 1
+custom_minimum_size = Vector2(18, 18)
+custom_maximum_size = Vector2(18, 18)
+layout_mode = 2
+border_width = 2.0
+editor_only = false
+
+[node name="HeroFace" type="Sprite2D" parent="HBoxContainer/ReferenceRect3" unique_id=1390470180]
+z_as_relative = false
+position = Vector2(9, 9)
+texture = ExtResource("13_hc5d0")
+
+[node name="TimerValue" type="ProgressBar" parent="." unique_id=515582479]
+modulate = Color(1, 1, 1, 0.59000003)
+custom_minimum_size = Vector2(70, 0)
+custom_maximum_size = Vector2(70, 3)
+offset_left = 5.0
+offset_top = 92.0
+offset_right = 75.0
+offset_bottom = 98.0
+theme_override_styles/background = SubResource("StyleBoxFlat_swkix")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hc5d0")
+value = 100.0
+show_percentage = false
 
 [connection signal="timeout" from="MarginContainer2/Timer" to="." method="_on_timer_timeout"]
