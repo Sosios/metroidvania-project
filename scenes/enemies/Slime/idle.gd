@@ -11,7 +11,7 @@ func rand_direction():
 	
 func enter():
 	skeleton = get_parent().get_parent()
-	print("IDLE ENTERED")
+	#print("IDLE ENTERED")
 	timer = 1.0
 	var tween = create_tween()
 	tween.tween_property(skeleton,"scale",Vector2.ONE,0.2)

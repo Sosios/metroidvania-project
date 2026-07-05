@@ -15,7 +15,7 @@ func enter():
 	player = get_player()
 	player.attack_1_area.monitoring = false
 	direction = (player.global_position - player.hit_global_position).normalized()
-	print(direction)
+	#print(direction)
 	Globals.health -= player.hit_damage
 	Globals.stop = true
 	player.sprite.play("hit")

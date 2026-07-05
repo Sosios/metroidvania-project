@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 	var count = 0
 	for tile in get_map_tiles:
-		print(str(count)+": "+str(tile))
+		#print(str(count)+": "+str(tile))
 		original_tiles[tile] = [get_cell_source_id(tile), get_cell_atlas_coords(tile), get_cell_alternative_tile(tile)]
 		count += 1
 	update_discover()

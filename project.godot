@@ -65,6 +65,7 @@ Player=""
 ShadeRed=""
 Bosses=""
 Projectile=""
+UI=""
 
 [input]
 

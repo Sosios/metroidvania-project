@@ -35,7 +35,7 @@ func _input(event: InputEvent) -> void:
 		if pause:
 			visible = false
 			get_tree().paused = false
-		else:
+		elif not Globals.dialogue:
 			visible = true
 			get_tree().paused = true
 			if $TabContainer.current_tab == 0:

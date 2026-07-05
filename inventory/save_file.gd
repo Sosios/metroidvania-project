@@ -7,6 +7,8 @@ signal discover
 
 @export var slots: Array[InvSlot]
 
+@export var discovered_dialogues: Array[int]
+
 @export var weapon: InvItem:
 	set(value):
 		weapon = value

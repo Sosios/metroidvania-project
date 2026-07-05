@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://gqua18j7gi0w"]
+
+[ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="1_i2fkf"]
+[ext_resource type="Texture2D" uid="uid://dph1v4vity0mi" path="res://assets/Personnages/Hero_face.png" id="2_r8edx"]
+[ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="3_e5byt"]
+
+[sub_resource type="Resource" id="Resource_4prnj"]
+script = ExtResource("1_i2fkf")
+type = "info"
+text = "Bienvenue dans Pittsburgh Crusaders 2. Voici quelques conseils pour commencer votre aventure."
+title = "Tutoriel"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_l1xi5"]
+script = ExtResource("1_i2fkf")
+type = "info"
+text = "N'oubliez pas de consulter votre map avec M ou Select sur manette. Elle vous permet d'explorer le monde de Pittsburgh Crusaders 2 de maniere plus efficace."
+title = "Map"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[sub_resource type="Resource" id="Resource_3hq0p"]
+script = ExtResource("1_i2fkf")
+face = ExtResource("2_r8edx")
+text = "Allez, c'est parti !"
+title = "Heros"
+metadata/_custom_type_script = "uid://bf7exu506ef2b"
+
+[resource]
+script = ExtResource("3_e5byt")
+dialogue = Array[ExtResource("1_i2fkf")]([SubResource("Resource_4prnj"), SubResource("Resource_l1xi5"), SubResource("Resource_3hq0p")])
+metadata/_custom_type_script = "uid://csoy2dj6jccux"

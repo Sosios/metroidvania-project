@@ -10,12 +10,17 @@ var player_pos: Vector2
 
 signal boss_spell_cast(pos)
 
+signal next_dialogue
+
+signal transition_finished
+
 var direction = 1
 
 var attack_1_times := [0.5,0.4162,0.4162]
 var attack_2_times := [0.332,0.5,0.25]
 var attack_3_times := [0.5,0.6664]
 
+var dialogue := false
 
 var damage = 10
 

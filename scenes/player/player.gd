@@ -119,12 +119,6 @@ func change_character_left():
 	change_character()
 
 func change_character():
-	if SaveLoad.save_file.player_selected == 0:
-		final_attack = attack
-	elif SaveLoad.save_file.player_selected == 1:
-		final_attack = attack * 0.9
-	else:
-		final_attack = attack * 1.2
 	attack_1_area.monitoring = false
 	flip_h = sprite.flip_h
 	current_animation = sprite.animation

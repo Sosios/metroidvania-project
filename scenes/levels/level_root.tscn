@@ -24,6 +24,7 @@ script = ExtResource("1_dgq62")
 [node name="Player" parent="." unique_id=971349243 instance=ExtResource("3_b2cq8")]
 position = Vector2(239, 138)
 collision_mask = 334
+jump_velocity = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=312523826]
 limit_left = 0
@@ -66,6 +67,7 @@ process_priority = 2
 visible = false
 
 [node name="Control2" type="Control" parent="." unique_id=1485299654]
+process_mode = 3
 z_index = 20
 layout_mode = 3
 anchors_preset = 0

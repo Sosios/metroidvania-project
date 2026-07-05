@@ -24,7 +24,7 @@ func _on_hit_taken():
 	Transitioned.emit(self,"hit")
 
 func physics_update(delta):
-	print("attack timer: ", timer, " on_floor: ", slime.is_on_floor())
+	#print("attack timer: ", timer, " on_floor: ", slime.is_on_floor())
 	if timer > 0:
 		timer -= delta
 	else:

@@ -14,7 +14,7 @@ func physics_update(delta):
 	var direction = (boss.target_position - boss.global_position).normalized()
 	boss.velocity.x = direction.x * boss.speed
 	var dist = abs(boss.global_position.x - boss.target_position.x)
-	print(dist)
+	#print(dist)
 	if boss.is_on_wall():
 		Transitioned.emit(self, "idle")
 	if dist < 150.0:
