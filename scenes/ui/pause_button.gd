@@ -7,6 +7,15 @@ func _ready() -> void:
 	grab_focus()
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_focus_entered() -> void:
+	$Modern2.play()
+
+
+func _on_pressed() -> void:
+	$Modern8.play()

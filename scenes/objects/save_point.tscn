@@ -180,10 +180,11 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.1, 0.2)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vpi6i"]
-radius = 81.02469
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qmw3"]
+radius = 59.439045
 
 [node name="SavePoint" type="Area2D" unique_id=925440822]
+collision_layer = 8
 script = ExtResource("1_v51y8")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=212521768]
@@ -219,12 +220,11 @@ texture = SubResource("GradientTexture2D_v51y8")
 texture_scale = 14.44
 height = 30.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069293423]
-visible = false
-shape = SubResource("CircleShape2D_vpi6i")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1918201732]
 visible = false
 color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2007101559]
+shape = SubResource("CircleShape2D_6qmw3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

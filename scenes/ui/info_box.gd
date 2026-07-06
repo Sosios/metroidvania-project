@@ -22,6 +22,7 @@ func _process(_delta) -> void:
 			if text.visible_ratio != 1:
 				text.visible_ratio = 1
 			else:
+				$Modern2.play()
 				animation_player.play("appear",-1,-2.5,true)
 				await get_tree().create_timer(0.7).timeout
 				Globals.next_dialogue.emit()

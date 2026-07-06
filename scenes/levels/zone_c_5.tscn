@@ -8,15 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="4_tvk5n"]
 [ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="5_35yqr"]
 [ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="6_qiolj"]
+[ext_resource type="AudioStream" uid="uid://d3vv3c8pviwks" path="res://assets/OST/2.04 OVERCOME THE ROCKY PATH.mp3" id="9_tvk5n"]
 
-[sub_resource type="Curve2D" id="Curve2D_arqp5"]
+[sub_resource type="Curve2D" id="Curve2D_35yqr"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -576, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_8y3hm"]
+[sub_resource type="Curve2D" id="Curve2D_qiolj"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -256, 208, 0, 0, 0, 0, -256, 16)
@@ -47,13 +48,13 @@ tile_map_data = PackedByteArray("AAAdABAAAAADAAMAAAAdAA8AAAADAAMAAAAdAA4AAAADAAE
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("2_e1wp3")]
 position = Vector2(256, 224)
-curve = SubResource("Curve2D_arqp5")
+curve = SubResource("Curve2D_35yqr")
 path_time = 3.0
 type = "1"
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1975027257 instance=ExtResource("2_e1wp3")]
 position = Vector2(256, 224)
-curve = SubResource("Curve2D_8y3hm")
+curve = SubResource("Curve2D_qiolj")
 path_time = 2.0
 type = "1"
 
@@ -87,7 +88,7 @@ type = "2"
 position = Vector2(-368, 272)
 type = "2"
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_left = -480
 limit_bottom = 544
 
@@ -135,6 +136,8 @@ id = 93
 [node name="CellDiscover3" parent="CellAreas" index="2" unique_id=183209183 instance=ExtResource("2_colmm")]
 position = Vector2(-480, 0)
 id = 95
+play_new_music = true
+music = ExtResource("9_tvk5n")
 
 [node name="CellDiscover4" parent="CellAreas" index="3" unique_id=27752742 instance=ExtResource("2_colmm")]
 position = Vector2(-480, 270)

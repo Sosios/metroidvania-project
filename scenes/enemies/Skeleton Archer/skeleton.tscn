@@ -12,6 +12,12 @@
 [ext_resource type="Script" uid="uid://byy4t1bsiiwyb" path="res://scenes/enemies/Skeleton Archer/crouch.gd" id="7_0ts6o"]
 [ext_resource type="Script" uid="uid://b24p5ucd01usq" path="res://scenes/enemies/Skeleton Archer/get_up.gd" id="7_cdhfe"]
 [ext_resource type="Script" uid="uid://bo3dw2p5xa6q2" path="res://scenes/enemies/Skeleton Archer/crouch_reload.gd" id="9_0ts6o"]
+[ext_resource type="AudioStream" uid="uid://cjd0hfsr4doec" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-001.wav" id="13_w1m1q"]
+[ext_resource type="AudioStream" uid="uid://bkongiklf0kkd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-002.wav" id="14_40756"]
+[ext_resource type="AudioStream" uid="uid://b8jwcsx4r35jk" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-003.wav" id="15_ag7x3"]
+[ext_resource type="AudioStream" uid="uid://bqxtkedv3meai" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-004.wav" id="16_myd6v"]
+[ext_resource type="AudioStream" uid="uid://bdaem8oxroejd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-005.wav" id="17_j54vb"]
+[ext_resource type="AudioStream" uid="uid://cd10dk47xs2p1" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-006.wav" id="18_s2lf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67l2x"]
 size = Vector2(20, 44)
@@ -600,6 +606,38 @@ shape = SubResource("SegmentShape2D_6qmw3")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DirectionChangeArea" unique_id=1872830440]
 position = Vector2(12, 0)
 shape = SubResource("SegmentShape2D_6qmw3")
+
+[node name="HitSounds" type="Node" parent="." unique_id=2080993757]
+
+[node name="DsgnMiscMeleeSwordSlashHyPc001" type="AudioStreamPlayer" parent="HitSounds" unique_id=2083059114]
+stream = ExtResource("13_w1m1q")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc002" type="AudioStreamPlayer" parent="HitSounds" unique_id=441093961]
+stream = ExtResource("14_40756")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc003" type="AudioStreamPlayer" parent="HitSounds" unique_id=1881433800]
+stream = ExtResource("15_ag7x3")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc004" type="AudioStreamPlayer" parent="HitSounds" unique_id=836632298]
+stream = ExtResource("16_myd6v")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc005" type="AudioStreamPlayer" parent="HitSounds" unique_id=127111199]
+stream = ExtResource("17_j54vb")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc006" type="AudioStreamPlayer" parent="HitSounds" unique_id=1677546215]
+stream = ExtResource("18_s2lf0")
+volume_db = -10.0
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]

@@ -7504,6 +7504,7 @@ id = 5
 [node name="BossSpawn" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1422244529 instance=ExtResource("17_l1686")]
 position = Vector2(480, 223)
 boss = ExtResource("18_d76wp")
+final_boss = null
 
 [node name="PointLight2D2" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="14" unique_id=90593867]
 position = Vector2(2, -11)
@@ -7511,7 +7512,7 @@ energy = 0.5
 texture = ExtResource("19_npc5s")
 texture_scale = 0.2
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_top = -272
 limit_right = 960
 limit_bottom = 272

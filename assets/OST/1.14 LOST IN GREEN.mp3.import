@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0ibsiqp3570c"
+path="res://.godot/imported/1.14 LOST IN GREEN.mp3-94cd3a30484221fd6298040e9b5955e1.mp3str"
+
+[deps]
+
+source_file="res://assets/OST/1.14 LOST IN GREEN.mp3"
+dest_files=["res://.godot/imported/1.14 LOST IN GREEN.mp3-94cd3a30484221fd6298040e9b5955e1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

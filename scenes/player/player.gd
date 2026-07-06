@@ -4,6 +4,18 @@ extends CharacterBody2D
 @export var attack_1_area: Area2D
 @onready var areas = $Areas.get_children()
 
+@onready var jump_sounds = $Sounds/JumpSounds.get_children()
+@onready var land_sounds = $Sounds/LandSounds.get_children()
+@onready var attack_1_sounds = $Sounds/Attack1Sounds.get_children()
+@onready var attack_2_sounds = $Sounds/Attack2Sounds.get_children()
+@onready var attack_3_sounds= $Sounds/Attack3Sounds.get_children()
+
+@onready var run_sounds = $Sounds/RunSounds.get_children()
+@onready var hit_sounds = $Sounds/HitSounds.get_children()
+@onready var hit_voices = $Sounds/HitVoices.get_children()
+@onready var jump_voices = $Sounds/JumpVoices.get_children()
+@onready var dead_voices = $Sounds/DeadSounds.get_children()
+
 var attack_1_times := [0.5,0.4162,0.4162]
 var attack_2_times := [0.332,0.5,0.25]
 var attack_3_times := [0.5,0.6664]
@@ -35,6 +47,7 @@ var can_attack = true
 @onready var sprites = $Sprites.get_children()
 @onready var collisions = $Collisions.get_children()
 
+var dead:= false
 
 signal create_platform
 
@@ -126,41 +139,42 @@ func change_character_left():
 	change_character()
 
 func change_character():
-	attack_1_area.monitoring = false
-	flip_h = sprite.flip_h
-	current_animation = sprite.animation
-	if SaveLoad.save_file.player_selected == 0:
-		$Collision2.disabled = true
-		$Collision3.disabled = true
-		$Collision1.disabled = false
-	elif SaveLoad.save_file.player_selected == 1:
-		$Collision1.disabled = true
-		$Collision3.disabled = true
-		$Collision2.disabled = false
-	else:
-		$Collision1.disabled = true
-		$Collision3.disabled = false
-		$Collision2.disabled = true
-	sprite = sprites[SaveLoad.save_file.player_selected]
-	sprite.flip_h = flip_h
-	sprite.play(current_animation)
-	attack_1_area = sprite.get_child(0)
-	#general_ap.play("change_chara")
-	for animation in sprites:
-		animation.hide()
-	#await get_tree().create_timer(0.3).timeout
-	sprite.show()
-	#general_ap.play_backwards("change_chara")
-	animation_player = animations[SaveLoad.save_file.player_selected]
-	if SaveLoad.save_file.player_selected == 0:
-		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack
-	elif SaveLoad.save_file.player_selected == 1:
-		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 0.9
-	else:
-		SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 1.2
-		
-	skill_timer.stop()
-	skill_timer.wait_time = timer_lengths[SaveLoad.save_file.player_selected]
+	if not dead:
+		attack_1_area.monitoring = false
+		flip_h = sprite.flip_h
+		current_animation = sprite.animation
+		if SaveLoad.save_file.player_selected == 0:
+			$Collision2.disabled = true
+			$Collision3.disabled = true
+			$Collision1.disabled = false
+		elif SaveLoad.save_file.player_selected == 1:
+			$Collision1.disabled = true
+			$Collision3.disabled = true
+			$Collision2.disabled = false
+		else:
+			$Collision1.disabled = true
+			$Collision3.disabled = false
+			$Collision2.disabled = true
+		sprite = sprites[SaveLoad.save_file.player_selected]
+		sprite.flip_h = flip_h
+		sprite.play(current_animation)
+		attack_1_area = sprite.get_child(0)
+		#general_ap.play("change_chara")
+		for animation in sprites:
+			animation.hide()
+		#await get_tree().create_timer(0.3).timeout
+		sprite.show()
+		#general_ap.play_backwards("change_chara")
+		animation_player = animations[SaveLoad.save_file.player_selected]
+		if SaveLoad.save_file.player_selected == 0:
+			SaveLoad.save_file.final_attack = SaveLoad.save_file.attack
+		elif SaveLoad.save_file.player_selected == 1:
+			SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 0.9
+		else:
+			SaveLoad.save_file.final_attack = SaveLoad.save_file.attack * 1.2
+			
+		skill_timer.stop()
+		skill_timer.wait_time = timer_lengths[SaveLoad.save_file.player_selected]
 	
 
 
@@ -205,13 +219,17 @@ func unshade():
 	$ShadeLight.enabled = false
 
 func hurt(damage,pos):
-	if vuln and not invicibility:
+	if vuln and not invicibility and not dead:
 		hit_global_position = pos
 		hit_damage = damage
 		vuln = false
 		hit_timer.start()
 		$StateMachine.current_state = $StateMachine/Hit
 		$StateMachine/Hit.enter()
+		if Globals.health <= 0.0:
+			$StateMachine.current_state = $StateMachine/Dead
+			$StateMachine/Dead.enter()
+			dead = true
 
 func _on_hit_timer_timeout() -> void:
 	vuln = true

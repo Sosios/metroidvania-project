@@ -21,7 +21,10 @@ signal dialogue_emit(dialogue)
 signal final_dialogue
 
 signal save_ui
+ 
+signal teleport
 
+var current_save_room:= 0
 
 var timer_length: float:
 	set(value):

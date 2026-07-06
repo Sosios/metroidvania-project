@@ -2,32 +2,32 @@
 
 [ext_resource type="Script" uid="uid://c7e1fona7xngu" path="res://chest.gd" id="1_25bmr"]
 [ext_resource type="Resource" uid="uid://dgv5r3ccum17i" path="res://inventory/weapons/iron_sword.tres" id="2_hqyqw"]
-[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="3_w4yej"]
+[ext_resource type="Texture2D" uid="uid://b2rjohqi5icln" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_hqyqw"]
 [ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="4_w4yej"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gklf5"]
-atlas = ExtResource("3_w4yej")
-region = Rect2(256, 80, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4yej"]
+atlas = ExtResource("3_hqyqw")
+region = Rect2(288, 272, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qaidc"]
-atlas = ExtResource("3_w4yej")
-region = Rect2(288, 80, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gklf5"]
+atlas = ExtResource("3_hqyqw")
+region = Rect2(320, 272, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d1wel"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gklf5")
+"texture": SubResource("AtlasTexture_w4yej")
 }],
-"loop": true,
+"loop": 1,
 "name": &"closed",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qaidc")
+"texture": SubResource("AtlasTexture_gklf5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"opened",
 "speed": 5.0
 }]

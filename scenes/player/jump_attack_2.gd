@@ -41,6 +41,7 @@ func update(delta):
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, 2000 * delta)
 	if player.velocity.y == 0:
+		player.land_sounds[randi() % player.land_sounds.size()].play()
 		if direction:
 			Transitioned.emit(self,"run")
 		else:

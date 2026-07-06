@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://1737hi2oo6nr" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background_obj03.png" id="15_eoyem"]
 [ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="20_dbxk1"]
 [ext_resource type="Resource" uid="uid://gqua18j7gi0w" path="res://dialogues/beginning tutorial.tres" id="21_52r5n"]
+[ext_resource type="AudioStream" uid="uid://cuilqxj2a7t51" path="res://assets/OST/1.09 A WATERDROP IN THE DARK.mp3" id="24_voivb"]
+[ext_resource type="AudioStream" uid="uid://du3aiq4j6ixow" path="res://assets/ambience/Cave.wav" id="25_yb0r2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cafox"]
 shader = ExtResource("4_8jjcu")
@@ -7591,13 +7593,12 @@ texture = SubResource("GradientTexture2D_dbxk1")
 texture_scale = 0.8
 height = 50.0
 
-[node name="Camera2D" parent="Player" index="18" unique_id=312523826]
+[node name="Camera2D" parent="Player" index="19" unique_id=312523826]
 limit_right = 960
 limit_bottom = 271
 limit_smoothed = true
 
 [node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1809543543 instance=ExtResource("20_dbxk1")]
-type = "on_ready"
 dialogue = ExtResource("21_52r5n")
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("5_4vx7k")]
@@ -7618,6 +7619,12 @@ position = Vector2(927, 192)
 [node name="0" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("9_scins")]
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 change_color = true
+new_zone = true
+zone_name = "Caverne de cristal"
+play_new_music = true
+play_new_ambience = true
+music = ExtResource("24_voivb")
+ambience = ExtResource("25_yb0r2")
 
 [node name="1" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1559310973 instance=ExtResource("9_scins")]
 position = Vector2(480, 0)

@@ -9,6 +9,7 @@ var timer
 func enter():
 	timer = hit_timer
 	bat.velocity = Vector2.ZERO
+	$"../../HitSounds".get_children()[randi() % $"../../HitSounds".get_children().size()].play()
 	bat.health -= bat.damage_taken
 	bat.progress_bar.max_value = bat.max_health
 	bat.progress_bar.value = bat.health

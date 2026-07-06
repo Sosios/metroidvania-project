@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cujouahh0273h" path="res://assets/Personnages/Red hood free (zipped) Folder/red_hood_sprite_sheet2.png" id="10_xo6fl"]
 [ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="11_xo6fl"]
 [ext_resource type="Texture2D" uid="uid://dbbp5wnan1yjx" path="res://assets/Personnages/Jotem/Jotem spritesheet.png" id="12_ufhlb"]
+[ext_resource type="AudioStream" uid="uid://yo7dg5fca2gv" path="res://assets/SFX/UI/Modern2.mp3" id="14_0ifkr"]
+[ext_resource type="AudioStream" uid="uid://cw7y5jhvdih6b" path="res://assets/SFX/UI/Modern8.mp3" id="15_2fpi0"]
+[ext_resource type="AudioStream" uid="uid://da1gmjtmrdg1v" path="res://assets/SFX/UI/Modern14.mp3" id="16_scokt"]
 
 [sub_resource type="Animation" id="Animation_mbdly"]
 length = 0.001
@@ -532,12 +535,11 @@ theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_i86gu")
 theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_nw1ig")
 theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_ibklw")
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_1wi1b")
-current_tab = 1
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 
 [node name="Container" type="Control" parent="TabContainer" unique_id=607698453]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -650,6 +652,7 @@ theme_override_styles/focus = ExtResource("5_mbdly")
 shortcut = SubResource("Shortcut_nw1ig")
 
 [node name="Container2" type="Control" parent="TabContainer" unique_id=87501571]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -952,6 +955,15 @@ offset_top = 4.0
 offset_right = 49.0
 offset_bottom = 27.0
 label_settings = SubResource("LabelSettings_xo6fl")
+
+[node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=1304261063]
+stream = ExtResource("14_0ifkr")
+
+[node name="Modern8" type="AudioStreamPlayer" parent="." unique_id=484887679]
+stream = ExtResource("15_2fpi0")
+
+[node name="Modern14" type="AudioStreamPlayer" parent="." unique_id=985796228]
+stream = ExtResource("16_scokt")
 
 [connection signal="pressed" from="TabContainer/Container/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="TabContainer/Container/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

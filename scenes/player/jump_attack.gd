@@ -19,6 +19,7 @@ func enter():
 	player.velocity.x = 0.0
 	player.sprite.play("jump_attack_1")
 	player.animation_player.play("jump_attack1")
+	$"../../Sounds/HitVoices/1/Grunting2Sean".play()
 	player.sprite.get_child(0).position.x = abs(player.attack_1_area.position.x) * Globals.direction
 	
 func update(delta):
@@ -45,6 +46,7 @@ func update(delta):
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, 2500 * delta)
 	if player.velocity.y == 0:
+		player.land_sounds[randi() % player.land_sounds.size()].play()
 		if direction:
 			Transitioned.emit(self,"run")
 		else:

@@ -3,6 +3,7 @@ class_name PlayerRun
 
 var player: CharacterBody2D
 
+var walk_timer: float
 
 
 var speed_mult : float = 30.0
@@ -10,6 +11,7 @@ var speed_mult : float = 30.0
 
 
 func enter():
+	walk_timer = 0.0
 	player = get_player()
 	player.sprite.play("run")
 	player.animation_player.play("RESET")
@@ -23,6 +25,12 @@ func physics_update(delta):
 	#Movement
 	var direction : float = Input.get_axis("left", "right")
 	if direction:
+		if walk_timer <= 0.0:
+			player.run_sounds[randi() % player.run_sounds.size()].play()
+			walk_timer = 0.25
+		else:
+			walk_timer -= delta
+		
 		player.velocity.x = move_toward(player.velocity.x, direction * player.speed * speed_mult,2500 * delta)
 		if player.velocity.x < 0:
 			player.sprite.flip_h = true

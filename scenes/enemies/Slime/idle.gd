@@ -34,7 +34,8 @@ func physics_update(delta):
 		if timer <=0:
 			Transitioned.emit(self,"attack")
 	if slime:
-		slime.velocity = slime.direction * slime.speed 
+		if slime.is_on_floor():
+			slime.velocity = slime.direction * slime.speed 
 		if slime.direction.x != 0 :
 			slime.sprite.play("walk")
 		else:

@@ -30,5 +30,6 @@ func _save():
 func _load():
 	if FileAccess.file_exists(save_location):
 		save_file = ResourceLoader.load(save_location)
-		Globals.screen_color = save_file.screen_color
+		if save_file.screen_color:
+			Globals.screen_color = save_file.screen_color
 		

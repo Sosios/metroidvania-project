@@ -30,13 +30,13 @@ func _ready() -> void:
 
 
 func create_dialogue_box(title,text,face):
-	print(">>> create_dialogue_box appelé avec title=", title)
+	#print(">>> create_dialogue_box appelé avec title=", title)
 	var dialogue = dialogue_scene.instantiate()
 	canvas_layer.add_child(dialogue)
 	dialogue.dialogue_name.text = title
 	dialogue.text.text = text
 	dialogue.face.texture = face
-	print(">>> dialogue box ajoutée, enfants canvas_layer=", canvas_layer.get_child_count())
+	#print(">>> dialogue box ajoutée, enfants canvas_layer=", canvas_layer.get_child_count())
 	
 func create_info_box(title,text):
 	get_tree().paused = true

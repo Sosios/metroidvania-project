@@ -103,7 +103,6 @@ debug_color = Color(0.18900001, 0.25785002, 0.27, 0.41960785)
 
 [node name="SavePoint" parent="." index="9" unique_id=925440822 instance=ExtResource("4_vpi6i")]
 position = Vector2(256, 128)
-collision_layer = 8
 room = "uid://c44265tqif8wp"
 
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1119388546]
@@ -115,6 +114,4 @@ position = Vector2(416, 208)
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_f6uqg")]
 position = Vector2(0.09852314, -0.041431427)
 id = 32
-
-[node name="DirectionalLight2D" parent="." index="12" unique_id=1724915358]
-enabled = true
+stop_music = true

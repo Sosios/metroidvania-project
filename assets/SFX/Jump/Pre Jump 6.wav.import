@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfawpnrraggex"
+path="res://.godot/imported/Pre Jump 6.wav-2ec8f2cfd61f006c52d79b7dac57f7e6.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Jump/Pre Jump 6.wav"
+dest_files=["res://.godot/imported/Pre Jump 6.wav-2ec8f2cfd61f006c52d79b7dac57f7e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

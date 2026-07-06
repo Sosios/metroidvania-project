@@ -13,6 +13,14 @@
 [ext_resource type="Script" uid="uid://2ih043b41qqu" path="res://scenes/bosses/attack_1.gd" id="11_y4ohl"]
 [ext_resource type="Script" uid="uid://lqr4f643njcv" path="res://scenes/bosses/attack_2.gd" id="12_73iao"]
 [ext_resource type="Script" uid="uid://c2lynampxro7e" path="res://scenes/bosses/gollux/dead.gd" id="13_deaew"]
+[ext_resource type="AudioStream" uid="uid://cjd0hfsr4doec" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-001.wav" id="14_qy3tm"]
+[ext_resource type="AudioStream" uid="uid://bkongiklf0kkd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-002.wav" id="15_oehs0"]
+[ext_resource type="AudioStream" uid="uid://b8jwcsx4r35jk" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-003.wav" id="16_hof2c"]
+[ext_resource type="AudioStream" uid="uid://bqxtkedv3meai" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-004.wav" id="17_y4ohl"]
+[ext_resource type="AudioStream" uid="uid://bdaem8oxroejd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-005.wav" id="18_73iao"]
+[ext_resource type="AudioStream" uid="uid://cd10dk47xs2p1" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-006.wav" id="19_oue3q"]
+[ext_resource type="AudioStream" uid="uid://bk4qqwgrb1fan" path="res://assets/SFX/Retro Impact Punch 07.wav" id="20_hof2c"]
+[ext_resource type="AudioStream" uid="uid://170cx8tlkc4o" path="res://assets/SFX/Retro Impact Punch Hurt 01.wav" id="21_y4ohl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fklnq"]
 shader = ExtResource("2_deaew")
@@ -519,6 +527,30 @@ tracks/6/keys = {
 "update": 0,
 "values": [50.0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RetroImpactPunch07:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RetroImpactPunchHurt01:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_280r5"]
 resource_name = "attack_1"
@@ -560,6 +592,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RetroImpactPunchHurt01:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8186226),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5551t"]
 resource_name = "attack_2"
@@ -597,7 +641,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.8333334, 1, 1.1666667, 1.8333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"transitions": PackedFloat32Array(1000000, 1, 1, 1),
 "update": 0,
 "values": [Vector2(20, 0), Vector2(1108, 1), Vector2(22, 0), Vector2(16, 0)]
 }
@@ -649,6 +693,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [50.0, 50.0, 80.0, 50.0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RetroImpactPunch07:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5551t"]
 _data = {
@@ -666,9 +722,10 @@ script = ExtResource("1_o0xaw")
 material = SubResource("ShaderMaterial_fklnq")
 position = Vector2(0, -64)
 sprite_frames = SubResource("SpriteFrames_pd7vv")
-animation = &"move"
+animation = &"attack_1"
 autoplay = "idle"
-frame_progress = 0.68975633
+frame = 16
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111964255]
 position = Vector2(3.5, -28)
@@ -717,6 +774,44 @@ script = ExtResource("13_deaew")
 [node name="HitTimer" type="Timer" parent="." unique_id=1386662905]
 wait_time = 0.2
 one_shot = true
+
+[node name="HitSounds" type="Node" parent="." unique_id=1773221345]
+
+[node name="DsgnMiscMeleeSwordSlashHyPc001" type="AudioStreamPlayer" parent="HitSounds" unique_id=1527930630]
+stream = ExtResource("14_qy3tm")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc002" type="AudioStreamPlayer" parent="HitSounds" unique_id=1646185953]
+stream = ExtResource("15_oehs0")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc003" type="AudioStreamPlayer" parent="HitSounds" unique_id=1657316717]
+stream = ExtResource("16_hof2c")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc004" type="AudioStreamPlayer" parent="HitSounds" unique_id=971872571]
+stream = ExtResource("17_y4ohl")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc005" type="AudioStreamPlayer" parent="HitSounds" unique_id=1574400759]
+stream = ExtResource("18_73iao")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc006" type="AudioStreamPlayer" parent="HitSounds" unique_id=1803426090]
+stream = ExtResource("19_oue3q")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="RetroImpactPunch07" type="AudioStreamPlayer" parent="." unique_id=1981893722]
+stream = ExtResource("20_hof2c")
+
+[node name="RetroImpactPunchHurt01" type="AudioStreamPlayer" parent="." unique_id=2024601251]
+stream = ExtResource("21_y4ohl")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Attack1" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Attack2" method="_on_animation_player_animation_finished"]

@@ -14,6 +14,7 @@ func enter():
 		await get_tree().create_timer(0.015).timeout
 		Engine.time_scale = 1
 	slime.velocity = Vector2.ZERO
+	$"../../HitSounds".get_children()[randi() % $"../../HitSounds".get_children().size()].play()
 	slime.health -= slime.damage_taken
 	slime.progress_bar.max_value = slime.max_health
 	slime.progress_bar.value = slime.health

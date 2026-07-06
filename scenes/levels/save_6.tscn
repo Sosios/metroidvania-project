@@ -13,6 +13,7 @@ tile_map_data = PackedByteArray("AAAgABIAAAAFAAcAAAAgABEAAAAFAAQAAAAgABAAAAAFAAY
 
 [node name="SavePoint" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=925440822 instance=ExtResource("2_4o1tm")]
 position = Vector2(241, 133)
+room = "uid://7fut7yw0p7ax"
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735]
 target = "uid://bgsi3ppemubmv"
@@ -30,3 +31,6 @@ position = Vector2(461, 207)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677]
 id = 170
+type = "save_room"
+save_id = 5
+stop_music = true

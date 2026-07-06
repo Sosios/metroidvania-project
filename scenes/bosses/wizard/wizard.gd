@@ -72,15 +72,16 @@ func _physics_process(delta: float) -> void:
 
 func hit(damage):
 	if vuln and not shield:
+		$HitSounds.get_children()[randi() % $HitSounds.get_children().size()].play()
 		health -= damage
 		sprite.material.set_shader_parameter("progress", 0.5)
 		await get_tree().create_timer(0.1).timeout
 		sprite.material.set_shader_parameter("progress", 0)
 		$HitTimer.start()
 		vuln = false
-	if health <= 0:
-		$StateMachine.current_state = $StateMachine/Dead
-		$StateMachine.current_state.enter()
+		if health <= 0:
+			$StateMachine.current_state = $StateMachine/Dead
+			$StateMachine.current_state.enter()
 #func _on_hurt_box_body_entered(body: Node2D) -> void:
 	#if "hurt" in body and $StateMachine.current_state == $StateMachine/Follow:
 		#body.hurt(10,global_position)

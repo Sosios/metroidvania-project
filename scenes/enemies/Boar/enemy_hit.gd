@@ -10,6 +10,7 @@ var timer
 func enter():
 	var tween = create_tween()
 	tween.tween_property(boar,"velocity",Vector2.ZERO,0.2)
+	$"../../HitSounds".get_children()[randi() % $"../../HitSounds".get_children().size()].play()
 	timer = hit_timer
 	boar.health -= boar.damage_taken
 	boar.progress_bar.max_value = boar.max_health

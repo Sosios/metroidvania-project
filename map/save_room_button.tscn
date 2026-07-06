@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://imj7i60f6bs5"]
+
+[ext_resource type="Script" uid="uid://qvpk8bshuvmr" path="res://map/button.gd" id="1_errcs"]
+[ext_resource type="Texture2D" uid="uid://cedqiseuxud8a" path="res://assets/selected.png" id="2_dtq3k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8e5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_112ik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5grx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lct0g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8tny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lct0g"]
+atlas = ExtResource("2_dtq3k")
+region = Rect2(0, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8tny"]
+atlas = ExtResource("2_dtq3k")
+region = Rect2(24, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap8vc"]
+atlas = ExtResource("2_dtq3k")
+region = Rect2(48, 0, 24, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnugf"]
+atlas = ExtResource("2_dtq3k")
+region = Rect2(72, 0, 24, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qmw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lct0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8tny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap8vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnugf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Button" type="Button" unique_id=1606239031]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e8e5r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_112ik")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i5grx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lct0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8tny")
+script = ExtResource("1_errcs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189527824]
+visible = false
+position = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_6qmw3")
+autoplay = "default"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -8,7 +8,7 @@ var hit_timer := 0.5
 func enter():
 	wolf = get_parent().get_parent()
 	timer = hit_timer
-	
+	$"../../HitSounds".get_children()[randi() % $"../../HitSounds".get_children().size()].play()
 	wolf.health -= wolf.damage_taken
 	wolf.progress_bar.max_value = wolf.max_health
 	wolf.progress_bar.value = wolf.health

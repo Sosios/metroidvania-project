@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://trmgexadsolw" path="res://fire.gd" id="1_wx3kp"]
 [ext_resource type="Texture2D" uid="uid://bvw41mr3irj4y" path="res://assets/Effets/Retro Impact Effect Pack 5 A.png" id="2_0ctxs"]
+[ext_resource type="AudioStream" uid="uid://me8qg4x85cxr" path="res://scenes/bosses/wizard/Fireball 1.wav" id="2_5pbfp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pbfp"]
 atlas = ExtResource("2_0ctxs")
@@ -60,6 +61,12 @@ size = Vector2(45, 28)
 collision_layer = 32
 collision_mask = 5
 script = ExtResource("1_wx3kp")
+
+[node name="Fireball1" type="AudioStreamPlayer" parent="." unique_id=1403904869]
+stream = ExtResource("2_5pbfp")
+volume_db = -10.0
+pitch_scale = 1.5
+autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156475759]
 position = Vector2(22, 7)

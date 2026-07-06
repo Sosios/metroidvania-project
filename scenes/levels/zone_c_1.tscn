@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="3_o41m7"]
 [ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="4_yqruh"]
 [ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="5_pw40x"]
+[ext_resource type="AudioStream" uid="uid://d3vv3c8pviwks" path="res://assets/OST/2.04 OVERCOME THE ROCKY PATH.mp3" id="8_yqruh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
 b = Vector2(0, 48)
@@ -70,6 +71,10 @@ position = Vector2(256, 48)
 
 [node name="CellDiscover5" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("3_o41m7")]
 id = 73
+new_zone = true
+zone_name = "Montagnes Nahov"
+play_new_music = true
+music = ExtResource("8_yqruh")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=1052437509]
 navigation_polygon = SubResource("NavigationPolygon_d4qqu")

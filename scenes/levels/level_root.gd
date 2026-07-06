@@ -4,8 +4,10 @@ class_name Level
 
 @onready var player: CharacterBody2D = $Player
 @onready var canvas_layer: CanvasLayer = $Control2/CanvasLayer
+@onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 
+var zone_name_scene = preload("res://scenes/ui/zone_name.tscn")
 var ice_cube_scene = preload("res://assets/Boss/Pengu/ice_cube.tscn")
 var fire_scene = preload("res://scenes/bosses/wizard/fire.tscn")
 var lightning_scene = preload("res://scenes/bosses/wizard/lightning.tscn")
@@ -17,12 +19,15 @@ var dialogue_scene= preload("res://scenes/ui/dialogue_box.tscn")
 
 var spawn_scene = preload("res://scenes/ui/dialogue_spawn.tscn")
 
+var save_scene = preload("res://scenes/levels/save_ui.tscn")
+
 signal update
 
 
 
 func _ready() -> void:
 	update.emit()
+	Globals.dialogue = false
 	player.position = $TransitionPoints.get_children()[Globals.marker].position
 	player.sprite.flip_h = Globals.flip_h
 	for boss in get_tree().get_nodes_in_group("Bosses"):
@@ -33,7 +38,8 @@ func _ready() -> void:
 	for ui in get_tree().get_nodes_in_group("UI"):
 		ui.connect("dialogue_box", create_dialogue_box)
 		ui.connect("info_box", create_info_box)
-	Globals.connect
+		ui.connect("new_zone_ui", show_zone_name)
+	Globals.connect("save_ui",show_save)
 	Globals.boss_spell_cast.connect(cast_spell)
 	player.connect("create_platform",_on_create_platform)
 	if Globals.jump_up:
@@ -46,7 +52,14 @@ func _ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	Globals.stop = false
 	
+func show_zone_name(name):
+	var zone_name = zone_name_scene.instantiate()
+	zone_name.zone_name = name
+	canvas_layer.add_child(zone_name)
 
+func show_save():
+	var save_ui = save_scene.instantiate()
+	canvas_layer.add_child(save_ui)
 
 func show_dialogue(dialogue_spawn):
 	get_tree().paused = true
@@ -106,7 +119,7 @@ func create_cube(pos):
 	$Platforms.add_child.call_deferred(ice_cube)
 
 func _process(_delta: float) -> void:
-	$CanvasModulate.color = Globals.screen_color
+	canvas_modulate.color = Globals.screen_color
 
 func _on_create_platform():
 	var platform = platform_scene.instantiate()

@@ -2,8 +2,15 @@
 
 [ext_resource type="Script" uid="uid://csf02ju0dwa0n" path="res://globals/game.gd" id="1_qdmn5"]
 [ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_ehmke"]
-[ext_resource type="FontFile" uid="uid://b1xgnmi5ygort" path="res://assets/Fonts/AvenuePixel-Regular Mac.ttf" id="3_nqac0"]
-[ext_resource type="FontFile" uid="uid://cbxiwr3q6adyx" path="res://assets/Fonts/AvenuePixelStroke-Regular.ttf" id="4_y5hx0"]
+[ext_resource type="Texture2D" uid="uid://bbomi0fvxs0dh" path="res://assets/Backgrounds/Parallax/4-free-seamless-nature-pixel-backgrounds/nature 3/1.png" id="2_u0hhh"]
+[ext_resource type="Texture2D" uid="uid://he6vcnjqaprg" path="res://assets/Backgrounds/Parallax/4-free-seamless-nature-pixel-backgrounds/nature 3/2.png" id="3_ie6ya"]
+[ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="3_vtn3d"]
+[ext_resource type="Texture2D" uid="uid://cs842nwk0qh0t" path="res://assets/Backgrounds/Parallax/4-free-seamless-nature-pixel-backgrounds/nature 3/3.png" id="4_6dsdn"]
+[ext_resource type="AudioStream" uid="uid://yo7dg5fca2gv" path="res://assets/SFX/UI/Modern2.mp3" id="5_nqac0"]
+[ext_resource type="Texture2D" uid="uid://c0jiplln86cau" path="res://assets/Backgrounds/Parallax/4-free-seamless-nature-pixel-backgrounds/nature 3/4.png" id="5_ojkwq"]
+[ext_resource type="AudioStream" uid="uid://cw7y5jhvdih6b" path="res://assets/SFX/UI/Modern8.mp3" id="6_vtn3d"]
+[ext_resource type="AudioStream" uid="uid://da1gmjtmrdg1v" path="res://assets/SFX/UI/Modern14.mp3" id="6_y5hx0"]
+[ext_resource type="FontFile" uid="uid://dmg05ejiqhh6q" path="res://assets/Fonts/BoldPixels.ttf" id="8_sw6f3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtn3d"]
 
@@ -20,11 +27,40 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5hx0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u0hhh"]
-font = ExtResource("4_y5hx0")
-font_size = 96
+font = ExtResource("8_sw6f3")
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node" unique_id=1162406907]
 script = ExtResource("1_qdmn5")
+
+[node name="Parallaxes" type="Node2D" parent="." unique_id=791493544]
+position = Vector2(1, 3)
+
+[node name="1" type="Sprite2D" parent="Parallaxes" unique_id=765332832]
+position = Vector2(287, 159)
+texture = ExtResource("2_u0hhh")
+
+[node name="2" type="Sprite2D" parent="Parallaxes" unique_id=2114098115]
+texture_repeat = 2
+position = Vector2(575, 159)
+texture = ExtResource("3_ie6ya")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 324)
+
+[node name="3" type="Sprite2D" parent="Parallaxes" unique_id=1878976242]
+position = Vector2(287, 159)
+texture = ExtResource("4_6dsdn")
+
+[node name="4" type="Sprite2D" parent="Parallaxes" unique_id=1107626986]
+position = Vector2(287, 159)
+texture = ExtResource("5_ojkwq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=698569488]
+offset_right = 501.0
+offset_bottom = 284.0
+color = Color(0, 0, 0, 0.133)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1746685711]
 anchors_preset = 12
@@ -34,7 +70,7 @@ anchor_bottom = 1.0
 offset_top = -121.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = -7
+theme_override_constants/separation = 11
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1975562784]
 layout_mode = 2
@@ -46,7 +82,7 @@ custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=1986026357]
-position = Vector2(-8, 27)
+position = Vector2(-6, 11)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ehmke")
 region_enabled = true
@@ -56,8 +92,10 @@ region_rect = Rect2(245, 2, 7, 12)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("3_nqac0")
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vtn3d")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vtn3d")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1pwi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ylvxq")
@@ -75,7 +113,7 @@ custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/SubViewportContainer" unique_id=1211011830]
-position = Vector2(-8, 27)
+position = Vector2(-7, 12)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ehmke")
 region_enabled = true
@@ -83,8 +121,10 @@ region_rect = Rect2(245, 2, 7, 12)
 
 [node name="Load" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=741333401]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_nqac0")
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vtn3d")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vtn3d")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1pwi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ylvxq")
@@ -102,7 +142,7 @@ custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/SubViewportContainer" unique_id=1738697513]
-position = Vector2(-8, 28)
+position = Vector2(-7, 12)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ehmke")
 region_enabled = true
@@ -110,8 +150,10 @@ region_rect = Rect2(245, 2, 7, 12)
 
 [node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=1830088344]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_nqac0")
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vtn3d")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vtn3d")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1pwi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ylvxq")
@@ -120,14 +162,24 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_y5hx0")
 text = "Quitter le jeu"
 
 [node name="Label" type="Label" parent="." unique_id=2124946976]
-offset_left = 1.0
+offset_left = 46.0
 offset_top = -2.0
-offset_right = 480.0
+offset_right = 435.0
 offset_bottom = 145.0
-text = "GAME NAME"
+text = "Pittsburgh Crusaders 2"
 label_settings = SubResource("LabelSettings_u0hhh")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=1252532579]
+stream = ExtResource("5_nqac0")
+
+[node name="Modern8" type="AudioStreamPlayer" parent="." unique_id=922329291]
+stream = ExtResource("6_vtn3d")
+
+[node name="Modern14" type="AudioStreamPlayer" parent="." unique_id=332461500]
+stream = ExtResource("6_y5hx0")
 
 [connection signal="focus_entered" from="VBoxContainer/HBoxContainer/New" to="." method="_on_new_focus_entered"]
 [connection signal="focus_exited" from="VBoxContainer/HBoxContainer/New" to="." method="_on_new_focus_exited"]

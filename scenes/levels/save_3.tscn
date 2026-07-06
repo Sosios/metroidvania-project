@@ -96,6 +96,7 @@ tile_set = ExtResource("8_upjia")
 
 [node name="SavePoint" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="0" unique_id=925440822 instance=ExtResource("9_mp07d")]
 position = Vector2(244, 126)
+room = "uid://ddy8d8paeu2kn"
 
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("10_ownua")]
 target = "uid://bilf6sw8ix1nu"
@@ -106,9 +107,13 @@ position = Vector2(-44, 146)
 shape = SubResource("RectangleShape2D_6w44p")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1507072827]
-position = Vector2(112, 202)
+position = Vector2(110, 205)
 
 [node name="Marker2D2" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="1" unique_id=587740465]
 position = Vector2(36, 205)
 
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("11_3svqy")]
+id = 80
+type = "save_room"
+save_id = 2
+stop_music = true

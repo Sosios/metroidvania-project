@@ -36,14 +36,14 @@ func _ready() -> void:
 		send_dialogue(0)
 
 func send_dialogue(current):
-	print(">>> send_dialogue appelé avec current=", current)
-	print(">>> dialogue.dialogue[current] = ", dialogue.dialogue[current])
-	print(">>> type du DialogueBox = ", dialogue.dialogue[current].type)
+	#print(">>> send_dialogue appelé avec current=", current)
+	#print(">>> dialogue.dialogue[current] = ", dialogue.dialogue[current])
+	#print(">>> type du DialogueBox = ", dialogue.dialogue[current].type)
 	if dialogue.dialogue[current].type == "dialogue":
-		print(">>> émission dialogue_box")
+		#print(">>> émission dialogue_box")
 		dialogue_box.emit(dialogue.dialogue[current].title, dialogue.dialogue[current].text, dialogue.dialogue[current].face)
 	if dialogue.dialogue[current].type == "info":
-		print(">>> émission info_box")
+		#print(">>> émission info_box")
 		info_box.emit(dialogue.dialogue[current].title, dialogue.dialogue[current].text)
 
 func play_next():

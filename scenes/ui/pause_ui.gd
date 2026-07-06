@@ -31,7 +31,12 @@ func paused():
 	show()
 
 func _input(event: InputEvent) -> void:
+	if pause:
+		var select = Input.get_vector("ui_up","ui_down","ui_left","ui_right")
+		if select:
+			$Modern2.play()
 	if Input.is_action_just_pressed("pause"):
+		$Modern14.play()
 		if pause:
 			visible = false
 			get_tree().paused = false
@@ -72,19 +77,23 @@ func change_description(item):
 
 func _on_resume_pressed() -> void:
 	resume()
+	$Modern14.play()
 	pause = false
 
 
 func _on_quit_pressed() -> void:
+	$Modern14.play()
 	get_tree().quit(0)
 	
 
 func _on_right_pressed() -> void:
+	$Modern14.play()
 	$TabContainer.current_tab = 1
 	slots[0].grab_focus()
 
 
 
 func _on_left_pressed() -> void:
+	$Modern14.play()
 	$TabContainer.current_tab = 0
 	$TabContainer/Container/MarginContainer/VBoxContainer/Resume.grab_focus()

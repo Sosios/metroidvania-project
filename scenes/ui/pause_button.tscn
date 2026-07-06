@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dcswmkgdtp7be" path="res://scenes/ui/pause_button.gd" id="1_23jja"]
 [ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="1_kjjq4"]
 [ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_q8tpf"]
+[ext_resource type="AudioStream" uid="uid://yo7dg5fca2gv" path="res://assets/SFX/UI/Modern2.mp3" id="4_dog6p"]
+[ext_resource type="AudioStream" uid="uid://cw7y5jhvdih6b" path="res://assets/SFX/UI/Modern8.mp3" id="5_3p3uo"]
+[ext_resource type="AudioStream" uid="uid://da1gmjtmrdg1v" path="res://assets/SFX/UI/Modern14.mp3" id="6_qit7b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjjq4"]
 texture = ExtResource("1_q8tpf")
@@ -62,3 +65,15 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dog6p")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s75l5")
 theme_override_styles/focus = SubResource("StyleBoxTexture_3p3uo")
 script = ExtResource("1_23jja")
+
+[node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=71385720]
+stream = ExtResource("4_dog6p")
+
+[node name="Modern8" type="AudioStreamPlayer" parent="." unique_id=841689217]
+stream = ExtResource("5_3p3uo")
+
+[node name="Modern14" type="AudioStreamPlayer" parent="." unique_id=305720633]
+stream = ExtResource("6_qit7b")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -12,6 +12,8 @@ var jump_mult = -30.0
 func enter():
 	player = get_player()
 	player.animation_player.play("RESET")
+	player.jump_voices[SaveLoad.save_file.player_selected].play()
+	player.jump_sounds[randi() % player.jump_sounds.size()].play()
 	player.scale = Vector2(0.8,1.2)
 	if player.is_in_gravity_area and player.is_gravity:
 		player.velocity.y = -jump_velocity * jump_mult * 0.9
@@ -28,6 +30,7 @@ func physics_update(delta):
 	if player.velocity.y > 0:
 		player.sprite.play("fall")
 	if player.is_on_floor() or (player.is_gravity and player.is_on_ceiling()):
+		player.land_sounds[randi() % player.land_sounds.size()].play()
 		Transitioned.emit(self,"idle")
 		player.sprite.play("idle")
 		player.can_double_jump = true

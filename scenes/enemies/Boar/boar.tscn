@@ -13,6 +13,12 @@
 [ext_resource type="Script" uid="uid://bw2ugh5y5fwnv" path="res://scenes/enemies/Boar/enemy_hit.gd" id="9_ht0ru"]
 [ext_resource type="Script" uid="uid://6yiqa0jjtxik" path="res://scenes/enemies/Boar/falling.gd" id="10_05s3d"]
 [ext_resource type="Script" uid="uid://45nf6fxc5im8" path="res://scenes/enemies/Boar/stun.gd" id="11_cphac"]
+[ext_resource type="AudioStream" uid="uid://cjd0hfsr4doec" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-001.wav" id="14_vdbun"]
+[ext_resource type="AudioStream" uid="uid://bkongiklf0kkd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-002.wav" id="15_llimx"]
+[ext_resource type="AudioStream" uid="uid://b8jwcsx4r35jk" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-003.wav" id="16_h82sa"]
+[ext_resource type="AudioStream" uid="uid://bqxtkedv3meai" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-004.wav" id="17_l4v2g"]
+[ext_resource type="AudioStream" uid="uid://bdaem8oxroejd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-005.wav" id="18_ky5rj"]
+[ext_resource type="AudioStream" uid="uid://cd10dk47xs2p1" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-006.wav" id="19_4ds1c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("2_kbvu4")
@@ -284,6 +290,38 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_05s3d")
 max_value = 25.0
 value = 25.0
 show_percentage = false
+
+[node name="HitSounds" type="Node" parent="." unique_id=960391656]
+
+[node name="DsgnMiscMeleeSwordSlashHyPc001" type="AudioStreamPlayer" parent="HitSounds" unique_id=1036766450]
+stream = ExtResource("14_vdbun")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc002" type="AudioStreamPlayer" parent="HitSounds" unique_id=609173012]
+stream = ExtResource("15_llimx")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc003" type="AudioStreamPlayer" parent="HitSounds" unique_id=598326845]
+stream = ExtResource("16_h82sa")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc004" type="AudioStreamPlayer" parent="HitSounds" unique_id=1002679889]
+stream = ExtResource("17_l4v2g")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc005" type="AudioStreamPlayer" parent="HitSounds" unique_id=160881861]
+stream = ExtResource("18_ky5rj")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc006" type="AudioStreamPlayer" parent="HitSounds" unique_id=34012966]
+stream = ExtResource("19_4ds1c")
+volume_db = -10.0
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]

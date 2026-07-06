@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://ch4m7ktejso36"]
+
+[ext_resource type="Script" uid="uid://bmcyexjoxtpv2" path="res://save_ui.gd" id="1_xv4lm"]
+[ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_yip84"]
+[ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="3_ulpdm"]
+[ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="4_il3v0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gxkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ola1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udysh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgk50"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wy7ty"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ksq3u"]
+font = ExtResource("3_ulpdm")
+font_color = Color(0.5294118, 0.30980393, 0.26666668, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xv4lm"]
+font = ExtResource("3_ulpdm")
+font_color = Color(0.5294118, 0.30980393, 0.26666668, 1)
+
+[sub_resource type="Animation" id="Animation_um48m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(236, 130)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NinePatchRect/MarginContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vigj0"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8, 10), Vector2(190, 56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(236, 130), Vector2(145, 99)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NinePatchRect/MarginContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6rtl"]
+_data = {
+&"RESET": SubResource("Animation_um48m"),
+&"appear": SubResource("Animation_vigj0")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qmw3"]
+font = ExtResource("4_il3v0")
+font_color = Color(0.52984387, 0.31044567, 0.2670437, 1)
+
+[node name="SaveUI" type="Control" unique_id=322623912]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xv4lm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1589552905]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -36.0
+offset_right = 95.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yip84")
+region_rect = Rect2(11, 107, 26, 28)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=218509792]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1849320446]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="NinePatchRect/MarginContainer/HBoxContainer" unique_id=1154313383]
+custom_minimum_size = Vector2(90.69, 28.275)
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button2")
+focus_neighbor_right = NodePath("../Button2")
+focus_next = NodePath("../Button2")
+focus_previous = NodePath("../Button2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gxkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ola1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_udysh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rgk50")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7ty")
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/HBoxContainer/Button" unique_id=554649393]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 80.0
+offset_bottom = 32.0
+text = "Sauvegarder"
+label_settings = SubResource("LabelSettings_ksq3u")
+
+[node name="Button2" type="Button" parent="NinePatchRect/MarginContainer/HBoxContainer" unique_id=1609720510]
+custom_minimum_size = Vector2(92.295, 1.44)
+custom_maximum_size = Vector2(-1, 80.365)
+layout_mode = 2
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../Button")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gxkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ola1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_udysh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rgk50")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7ty")
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/HBoxContainer/Button2" unique_id=2094042249]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Teleportation"
+label_settings = SubResource("LabelSettings_xv4lm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=526175408]
+libraries/ = SubResource("AnimationLibrary_s6rtl")
+autoplay = &"appear"
+
+[node name="Label" type="Label" parent="." unique_id=1098704719]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 146.0
+offset_top = 108.0
+offset_right = 335.0
+offset_bottom = 131.0
+text = "Point de sauvegarde"
+label_settings = SubResource("LabelSettings_6qmw3")
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=477796363]
+process_mode = 3
+
+[connection signal="focus_entered" from="NinePatchRect/MarginContainer/HBoxContainer/Button" to="." method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="NinePatchRect/MarginContainer/HBoxContainer/Button" to="." method="_on_button_focus_exited"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="focus_entered" from="NinePatchRect/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_focus_entered"]
+[connection signal="focus_exited" from="NinePatchRect/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_focus_exited"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

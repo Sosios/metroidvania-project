@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4oxg0uoxhfql"
+path="res://.godot/imported/1.02 BEING SLOW ON THE WAVES.mp3-bdae78ef268cc387a210a99aab0a1751.mp3str"
+
+[deps]
+
+source_file="res://assets/OST/1.02 BEING SLOW ON THE WAVES.mp3"
+dest_files=["res://.godot/imported/1.02 BEING SLOW ON THE WAVES.mp3-bdae78ef268cc387a210a99aab0a1751.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

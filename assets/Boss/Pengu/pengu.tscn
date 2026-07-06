@@ -15,6 +15,12 @@
 [ext_resource type="Script" uid="uid://lopnlcs0h0fr" path="res://assets/Boss/Pengu/attack_ice.gd" id="11_bxene"]
 [ext_resource type="Script" uid="uid://q0q5mhetyi5p" path="res://assets/Boss/Pengu/attack_ray.gd" id="12_wipr6"]
 [ext_resource type="Script" uid="uid://cdt7fchly33pk" path="res://assets/Boss/Pengu/attack_peck.gd" id="13_pylka"]
+[ext_resource type="AudioStream" uid="uid://cjd0hfsr4doec" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-001.wav" id="16_g700v"]
+[ext_resource type="AudioStream" uid="uid://bkongiklf0kkd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-002.wav" id="17_tcr2x"]
+[ext_resource type="AudioStream" uid="uid://b8jwcsx4r35jk" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-003.wav" id="18_gpv74"]
+[ext_resource type="AudioStream" uid="uid://bqxtkedv3meai" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-004.wav" id="19_fu1ey"]
+[ext_resource type="AudioStream" uid="uid://bdaem8oxroejd" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-005.wav" id="20_7d7vp"]
+[ext_resource type="AudioStream" uid="uid://cd10dk47xs2p1" path="res://assets/SFX/Slash/DSGNMisc_MELEE-Sword Slash_HY_PC-006.wav" id="21_vhvgu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o4dm6"]
 shader = ExtResource("2_bxene")
@@ -924,5 +930,37 @@ script = ExtResource("11_3mwnb")
 [node name="HitTimer" type="Timer" parent="." unique_id=1450930193]
 wait_time = 0.25
 one_shot = true
+
+[node name="HitSounds" type="Node" parent="." unique_id=1164999078]
+
+[node name="DsgnMiscMeleeSwordSlashHyPc001" type="AudioStreamPlayer" parent="HitSounds" unique_id=1260966985]
+stream = ExtResource("16_g700v")
+volume_db = -20.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc002" type="AudioStreamPlayer" parent="HitSounds" unique_id=144004932]
+stream = ExtResource("17_tcr2x")
+volume_db = -20.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc003" type="AudioStreamPlayer" parent="HitSounds" unique_id=40435004]
+stream = ExtResource("18_gpv74")
+volume_db = -20.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc004" type="AudioStreamPlayer" parent="HitSounds" unique_id=2099398351]
+stream = ExtResource("19_fu1ey")
+volume_db = -20.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc005" type="AudioStreamPlayer" parent="HitSounds" unique_id=962687592]
+stream = ExtResource("20_7d7vp")
+volume_db = -20.0
+pitch_scale = 1.2
+
+[node name="DsgnMiscMeleeSwordSlashHyPc006" type="AudioStreamPlayer" parent="HitSounds" unique_id=976122385]
+stream = ExtResource("21_vhvgu")
+volume_db = -20.0
+pitch_scale = 1.2
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

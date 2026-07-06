@@ -1,9 +1,15 @@
 extends Node2D
 
+@export var type:int = 0
+@onready var map_rooms: TileMapLayer = $MapRooms
 
 func _ready():
 	$IndicationsDev.hide()
 	$MapUI.hide()
+	#Globals.connect("teleport",teleport_kill)
+	
+#func teleport_kill():
+	#queue_free()
 	
 func resume():
 	get_tree().paused = false
@@ -19,7 +25,9 @@ func _input(event: InputEvent) -> void:
 			resume()
 			$MapUI.hide()
 		else:
+			type = 0
 			paused()
 			$MapRooms.update()
 			$MapRooms.update_discover()
+			$MapRooms.zoom = true
 			$MapUI.show()

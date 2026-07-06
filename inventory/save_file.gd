@@ -26,6 +26,8 @@ func discover_room(room: int):
 	discovered_rooms.append(room)
 	discover.emit()
 
+@export var discovered_zones := []
+
 @export var opened_chests := []
 
 @export var opened_doors := []
@@ -43,6 +45,8 @@ func discover_room(room: int):
 @export var defense := 5.0
 
 var final_attack := attack
+
+@export var discovered_save_rooms : Array[int] = [0]
 
 @export var player_selected := 0:
 	set(value):

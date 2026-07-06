@@ -5,6 +5,9 @@
 [ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="3_w1v8g"]
 [ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="4_ob1aq"]
 [ext_resource type="Texture2D" uid="uid://dph1v4vity0mi" path="res://assets/Personnages/Hero_face.png" id="5_h44io"]
+[ext_resource type="AudioStream" uid="uid://yo7dg5fca2gv" path="res://assets/SFX/UI/Modern2.mp3" id="6_ob1aq"]
+[ext_resource type="AudioStream" uid="uid://cw7y5jhvdih6b" path="res://assets/SFX/UI/Modern8.mp3" id="7_31x7b"]
+[ext_resource type="AudioStream" uid="uid://da1gmjtmrdg1v" path="res://assets/SFX/UI/Modern14.mp3" id="8_3bb3i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6qmw3"]
 font = ExtResource("3_w1v8g")
@@ -394,3 +397,12 @@ region_rect = Rect2(245, 2, 7, 12)
 process_mode = 3
 libraries/ = SubResource("AnimationLibrary_j3gtb")
 autoplay = &"appear"
+
+[node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=1210044857]
+stream = ExtResource("6_ob1aq")
+
+[node name="Modern8" type="AudioStreamPlayer" parent="." unique_id=1688858533]
+stream = ExtResource("7_31x7b")
+
+[node name="Modern14" type="AudioStreamPlayer" parent="." unique_id=889986278]
+stream = ExtResource("8_3bb3i")

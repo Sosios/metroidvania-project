@@ -18,4 +18,5 @@ func enter():
 	SaveLoad.save_file.defeated_bosses.append(0)
 	SaveLoad.save_file.unlocked_doors.append(1)
 	SaveLoad.save_file.unlocked_doors.append(3)
+	Music.music.stop()
 	Globals.show_bar = false

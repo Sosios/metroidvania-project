@@ -96,6 +96,7 @@ tile_set = ExtResource("8_6mlpe")
 
 [node name="SavePoint" parent="Objects" unique_id=925440822 instance=ExtResource("9_ps5gx")]
 position = Vector2(241, 133)
+room = "uid://d0r2ls77jwek8"
 
 [node name="MovingPlatforms" type="Node2D" parent="." unique_id=1087597022]
 
@@ -121,6 +122,8 @@ script = ExtResource("11_snigt")
 [node name="TransitionAreas" type="Node2D" parent="." unique_id=1196047754]
 
 [node name="TransitionArea" parent="TransitionAreas" unique_id=71833735 instance=ExtResource("12_5cy2x")]
+target = "uid://bdqyjs2woqgb"
+marker = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea" unique_id=1972837965]
 position = Vector2(-52.5, 146)
@@ -128,17 +131,20 @@ shape = SubResource("RectangleShape2D_5lmda")
 
 [node name="TransitionPoints" type="Node2D" parent="." unique_id=1995865306]
 
+[node name="Marker2D2" type="Marker2D" parent="TransitionPoints" unique_id=907981878]
+position = Vector2(130, 207)
+
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" unique_id=2137886638]
 position = Vector2(49, 207)
-
-[node name="Marker2D2" type="Marker2D" parent="TransitionPoints" unique_id=907981878]
-position = Vector2(147, 207)
 
 [node name="CellAreas" type="Node2D" parent="." unique_id=995269704]
 metadata/_edit_group_ = true
 
 [node name="CellDiscover" parent="CellAreas" unique_id=553221677 instance=ExtResource("13_dholr")]
 id = 178
+type = "save_room"
+save_id = 6
+stop_music = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1724915358]
 enabled = false
@@ -173,3 +179,8 @@ offset_bottom = 40.0
 [node name="PauseUI" parent="Control2/CanvasLayer" unique_id=1193603374 instance=ExtResource("17_333xt")]
 process_priority = 2
 visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1421441114]
+position = Vector2(727.49994, 493.5)
+scale = Vector2(77.828125, 60.51563)
+metadata/_edit_lock_ = true

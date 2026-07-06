@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://df4mktccgmdr1" path="res://dialogue_spawn.gd" id="1_ec01k"]
 [ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="2_l1xi5"]
 [ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="4_dv7wk"]
+[ext_resource type="AudioStream" uid="uid://yo7dg5fca2gv" path="res://assets/SFX/UI/Modern2.mp3" id="4_xehha"]
+[ext_resource type="AudioStream" uid="uid://cw7y5jhvdih6b" path="res://assets/SFX/UI/Modern8.mp3" id="5_8riaf"]
+[ext_resource type="AudioStream" uid="uid://da1gmjtmrdg1v" path="res://assets/SFX/UI/Modern14.mp3" id="6_ktds7"]
 
 [sub_resource type="Resource" id="Resource_4prnj"]
 script = ExtResource("2_l1xi5")
@@ -17,5 +20,14 @@ metadata/_custom_type_script = "uid://csoy2dj6jccux"
 collision_layer = 8
 script = ExtResource("1_ec01k")
 dialogue = SubResource("Resource_ec01k")
+
+[node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=1884738756]
+stream = ExtResource("4_xehha")
+
+[node name="Modern8" type="AudioStreamPlayer" parent="." unique_id=547647290]
+stream = ExtResource("5_8riaf")
+
+[node name="Modern14" type="AudioStreamPlayer" parent="." unique_id=547185562]
+stream = ExtResource("6_ktds7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

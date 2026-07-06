@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 
 func hit(damage):
 	if vuln and not shield:
+		$HitSounds.get_children()[randi() % $HitSounds.get_children().size()].play()
 		health -= damage
 		sprite.material.set_shader_parameter("progress", 0.5)
 		await get_tree().create_timer(0.1).timeout

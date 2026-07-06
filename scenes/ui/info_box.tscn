@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dkyc3ogi1tgur" path="res://assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_d78kg"]
 [ext_resource type="FontFile" uid="uid://bkp42tqpn41xh" path="res://assets/Fonts/m6x11.ttf" id="3_32rdm"]
 [ext_resource type="FontFile" uid="uid://ppnyvapffn8w" path="res://assets/Fonts/monogram.ttf" id="4_0o137"]
+[ext_resource type="AudioStream" uid="uid://yo7dg5fca2gv" path="res://assets/SFX/UI/Modern2.mp3" id="5_0o137"]
+[ext_resource type="AudioStream" uid="uid://cw7y5jhvdih6b" path="res://assets/SFX/UI/Modern8.mp3" id="6_tn0nl"]
+[ext_resource type="AudioStream" uid="uid://da1gmjtmrdg1v" path="res://assets/SFX/UI/Modern14.mp3" id="7_hde0s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6qmw3"]
 font = ExtResource("3_32rdm")
@@ -272,7 +275,7 @@ layout_mode = 0
 offset_left = 130.19998
 offset_top = 66.0
 offset_right = 345.8
-offset_bottom = 220.00002
+offset_bottom = 220.0
 texture = ExtResource("2_d78kg")
 region_rect = Rect2(11, 107, 26, 28)
 patch_margin_left = 4
@@ -331,3 +334,12 @@ region_rect = Rect2(245, 2, 7, 12)
 process_mode = 3
 libraries/ = SubResource("AnimationLibrary_5q8cq")
 autoplay = &"appear"
+
+[node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=2005467663]
+stream = ExtResource("5_0o137")
+
+[node name="Modern8" type="AudioStreamPlayer" parent="." unique_id=1056718346]
+stream = ExtResource("6_tn0nl")
+
+[node name="Modern14" type="AudioStreamPlayer" parent="." unique_id=1120841492]
+stream = ExtResource("7_hde0s")

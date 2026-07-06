@@ -41,6 +41,7 @@ position = Vector2(422, 208)
 [node name="CellDiscover" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("4_ivqu8")]
 id = 18
 change_color = true
+stop_music = true
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." index="15" unique_id=1797845414]
 offset_right = 40.0

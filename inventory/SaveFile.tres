@@ -76,4 +76,5 @@ slots = Array[ExtResource("3_sjhgc")]([SubResource("Resource_65xq6"), SubResourc
 weapon = ExtResource("4_wh1an")
 can_dash = true
 can_gravity = true
+discovered_save_rooms = Array[int]([0, 1, 2])
 metadata/_custom_type_script = "uid://b2ct3ra6fidxu"

@@ -12,6 +12,7 @@ func enter():
 	attack_time = player.attack_2_times[SaveLoad.save_file.player_selected]
 	wait_time = 0.2
 	player.velocity.x = 0.0
+	player.attack_2_sounds[SaveLoad.save_file.player_selected].play()
 	player.sprite.play("attack_2")
 	if Globals.direction == 1:
 		player.animation_player.play("attack2_right")

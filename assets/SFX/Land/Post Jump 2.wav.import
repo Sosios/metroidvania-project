@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y2s4r4a3dcyv"
+path="res://.godot/imported/Post Jump 2.wav-eb0eaed4994528497b8e34e2cf3d8167.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Land/Post Jump 2.wav"
+dest_files=["res://.godot/imported/Post Jump 2.wav-eb0eaed4994528497b8e34e2cf3d8167.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

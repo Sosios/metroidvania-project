@@ -25,6 +25,7 @@ config/icon="res://icon.svg"
 Globals="*uid://buuf4r85risls"
 TransitionLayer="*uid://bd3uscjuont7o"
 SaveLoad="*uid://78momo47e3py"
+Music="*uid://d3iggo4ueqa5k"
 
 [debug]
 

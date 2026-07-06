@@ -20,6 +20,8 @@ func enter():
 	Globals.stop = true
 	player.sprite.play("hit")
 	player.general_ap.play("hit")
+	player.hit_voices[SaveLoad.save_file.player_selected].get_child(randi() % player.hit_voices[SaveLoad.save_file.player_selected].get_children().size()).play()
+	player.hit_sounds[randi () % player.hit_sounds.size()].play()
 	timer = 0.2
 	if Engine.time_scale == 1:
 		Engine.time_scale = 0.05

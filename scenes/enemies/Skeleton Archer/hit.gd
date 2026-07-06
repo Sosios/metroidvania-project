@@ -14,6 +14,7 @@ func enter():
 		await get_tree().create_timer(0.015).timeout
 		Engine.time_scale = 1
 	skeleton.velocity = Vector2.ZERO
+	$"../../HitSounds".get_children()[randi() % $"../../HitSounds".get_children().size()].play()
 	skeleton.health -= skeleton.damage_taken
 	skeleton.progress_bar.max_value = skeleton.max_health
 	skeleton.progress_bar.value = skeleton.health

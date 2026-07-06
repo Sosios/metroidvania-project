@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="4_wrcos"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="5_ffure"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="6_5rdf4"]
+[ext_resource type="AudioStream" uid="uid://dsc1xso1mriwj" path="res://assets/OST/3.20 VANISHING TRAIL.mp3" id="7_u2xqy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qe6ss"]
 shader = ExtResource("2_u2xqy")
@@ -49,7 +50,7 @@ material = SubResource("ShaderMaterial_qe6ss")
 tile_map_data = PackedByteArray("AAAFAPj/AAAAAAcAAAAGAPj/AAABAAcAAAAHAPj/AAACAAcAAAAIAPj/AAADAAcAAAAJAPj/AAAEAAcAAAAKAPj/AAAFAAcAAAAGAAIAAAAAAAEAAAAHAAIAAAABAAEAAAAIAAIAAAACAAEAAAAJAAIAAAADAAEAAAA=")
 tile_set = ExtResource("3_umd1d")
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_top = -270
 limit_right = 960
 
@@ -116,6 +117,8 @@ id = 146
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=220234454 instance=ExtResource("6_5rdf4")]
 position = Vector2(0, -270)
 id = 145
+play_new_music = true
+music = ExtResource("7_u2xqy")
 
 [node name="CellDiscover4" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="3" unique_id=2082220392 instance=ExtResource("6_5rdf4")]
 position = Vector2(480, -270)
