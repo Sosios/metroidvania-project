@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dvexwf5iiejj8" path="res://nodes/gravity_shift.tscn" id="7_nxthm"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="8_4hwy4"]
 [ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="8_wmvfk"]
+[ext_resource type="AudioStream" uid="uid://cuilqxj2a7t51" path="res://assets/OST/1.09 A WATERDROP IN THE DARK.mp3" id="12_nxthm"]
+[ext_resource type="AudioStream" uid="uid://du3aiq4j6ixow" path="res://assets/ambience/Cave.wav" id="13_25rvi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lmda"]
 shader = ExtResource("3_4hwy4")
@@ -18,7 +20,7 @@ shader_parameter/from = Color(0.02745098, 0.05490196, 0.16078432, 1)
 shader_parameter/to = Color(0, 0, 0.9187369, 1)
 shader_parameter/tolerance = 0.362000017195
 
-[sub_resource type="Curve2D" id="Curve2D_mreil"]
+[sub_resource type="Curve2D" id="Curve2D_vq0c4"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -261)
@@ -109,7 +111,7 @@ tex_scale = 0.15
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("6_wmvfk")]
 position = Vector2(313, 134)
-curve = SubResource("Curve2D_mreil")
+curve = SubResource("Curve2D_vq0c4")
 path_time = 2.5
 
 [node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("7_mreil")]
@@ -183,6 +185,10 @@ position = Vector2(0, -270)
 id = 133
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 change_color = true
+play_new_music = true
+play_new_ambience = true
+music = ExtResource("12_nxthm")
+ambience = ExtResource("13_25rvi")
 
 [node name="3" parent="CellAreas" index="3" unique_id=1373542 instance=ExtResource("2_usytp")]
 position = Vector2(480, -270)

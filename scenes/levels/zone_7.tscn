@@ -7723,7 +7723,8 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 [node name="CellDiscover4" parent="CellAreas" index="3" unique_id=1298849295 instance=ExtResource("18_5t4ft")]
 position = Vector2(0, 272)
 id = 4
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+change_color = true
 play_new_music = true
 play_new_ambience = true
 music = ExtResource("27_c8074")
@@ -7732,7 +7733,8 @@ ambience = ExtResource("28_f6kgm")
 [node name="CellDiscover7" parent="CellAreas" index="4" unique_id=1357309342 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 0)
 id = 10
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+change_color = true
 play_new_music = true
 play_new_ambience = true
 music = ExtResource("27_c8074")

@@ -16,15 +16,17 @@
 [ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="13_j1ei1"]
 [ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="14_pjg4k"]
 [ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="15_goxq2"]
+[ext_resource type="AudioStream" uid="uid://d0ibsiqp3570c" path="res://assets/OST/1.14 LOST IN GREEN.mp3" id="17_j1ei1"]
+[ext_resource type="AudioStream" uid="uid://epgv1dvyogxl" path="res://assets/ambience/Forest Night.ogg" id="18_pjg4k"]
 
-[sub_resource type="Curve2D" id="Curve2D_al085"]
+[sub_resource type="Curve2D" id="Curve2D_goxq2"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -192)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_mlrlj"]
+[sub_resource type="Curve2D" id="Curve2D_qucm0"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 154, -250, 0, 0, 0, 0, 154, -516)
@@ -204,12 +206,12 @@ position = Vector2(416, -923)
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("10_gj7yg")]
 position = Vector2(176, -128)
-curve = SubResource("Curve2D_al085")
+curve = SubResource("Curve2D_goxq2")
 path_time = 2.0
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1021599468 instance=ExtResource("10_gj7yg")]
 position = Vector2(176, -128)
-curve = SubResource("Curve2D_mlrlj")
+curve = SubResource("Curve2D_qucm0")
 path_time = 2.0
 
 [node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("12_mlrlj")]
@@ -370,7 +372,12 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 [node name="CellDiscover5" parent="CellAreas" index="3" unique_id=1023192376 instance=ExtResource("10_guksj")]
 position = Vector2(0, -816)
 id = 50
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+change_color = true
+play_new_music = true
+play_new_ambience = true
+music = ExtResource("17_j1ei1")
+ambience = ExtResource("18_pjg4k")
 
 [node name="CellDiscover6" parent="CellAreas" index="4" unique_id=376440703 instance=ExtResource("10_guksj")]
 position = Vector2(0, -1088)
@@ -381,6 +388,10 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 position = Vector2(0, -1360)
 id = 53
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+play_new_music = true
+play_new_ambience = true
+music = ExtResource("17_j1ei1")
+ambience = ExtResource("18_pjg4k")
 
 [node name="DarkLight" type="PointLight2D" parent="." index="12" unique_id=1461525394]
 visible = false
@@ -392,4 +403,5 @@ texture = SubResource("GradientTexture2D_dh760")
 metadata/_edit_lock_ = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=262018727]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_8d478")

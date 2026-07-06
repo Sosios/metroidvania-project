@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://c66wv7q5lgv2o" path="res://scenes/enemies/Bat/bat.tscn" id="6_qiolj"]
 [ext_resource type="AudioStream" uid="uid://d3vv3c8pviwks" path="res://assets/OST/2.04 OVERCOME THE ROCKY PATH.mp3" id="9_tvk5n"]
 
-[sub_resource type="Curve2D" id="Curve2D_35yqr"]
+[sub_resource type="Curve2D" id="Curve2D_tvk5n"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -576, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_qiolj"]
+[sub_resource type="Curve2D" id="Curve2D_35yqr"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -256, 208, 0, 0, 0, 0, -256, 16)
@@ -48,13 +48,13 @@ tile_map_data = PackedByteArray("AAAdABAAAAADAAMAAAAdAA8AAAADAAMAAAAdAA4AAAADAAE
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("2_e1wp3")]
 position = Vector2(256, 224)
-curve = SubResource("Curve2D_35yqr")
+curve = SubResource("Curve2D_tvk5n")
 path_time = 3.0
 type = "1"
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1975027257 instance=ExtResource("2_e1wp3")]
 position = Vector2(256, 224)
-curve = SubResource("Curve2D_qiolj")
+curve = SubResource("Curve2D_35yqr")
 path_time = 2.0
 type = "1"
 
@@ -144,4 +144,5 @@ position = Vector2(-480, 270)
 id = 94
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=249585294]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_44qjm")

@@ -13,7 +13,9 @@ func _ready() -> void:
 		add_child(boss_instance)
 		if not final_boss:
 			Music.music.stream = load("res://assets/OST/1.19 CRIMSON FIGHTER.mp3")
-			Music.music.play()
+		else:
+			Music.music.stream = load("res://assets/OST/3.13 A-TO-Z.mp3")
+		Music.music.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
