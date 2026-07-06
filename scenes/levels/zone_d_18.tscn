@@ -24,8 +24,9 @@ type = "1"
 position = Vector2(480, 224)
 boss = ExtResource("4_otheu")
 id = 3
+final_boss = true
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_top = -270
 limit_right = 960
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://eg0n3s1j3v65"]
 
 [ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="1_tj4ie"]
-[ext_resource type="Texture2D" uid="uid://c138pd8yo00of" path="res://assets/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/32x32/armor_01d.png" id="2_tj4ie"]
+[ext_resource type="Texture2D" uid="uid://c138pd8yo00of" path="res://assets/Icons/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/32x32/armor_01d.png" id="2_tj4ie"]
 
 [resource]
 script = ExtResource("1_tj4ie")

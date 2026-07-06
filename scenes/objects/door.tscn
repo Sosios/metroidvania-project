@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvhijbl44bn5y"]
 
 [ext_resource type="Script" uid="uid://bmd6mqc7tp8so" path="res://door.gd" id="1_yar34"]
-[ext_resource type="Texture2D" uid="uid://jmyo0dl2a6kg" path="res://assets/Legacy Fantasy - Debug Map/Assets/Game Boy Advance - Castlevania_ Aria of Sorrow - Miscellaneous - Various-export.png" id="2_uw3m6"]
+[ext_resource type="Texture2D" uid="uid://jmyo0dl2a6kg" path="res://assets/Backgrounds/Legacy Fantasy - Debug Map/Assets/Game Boy Advance - Castlevania_ Aria of Sorrow - Miscellaneous - Various-export.png" id="2_uw3m6"]
 
 [sub_resource type="Animation" id="Animation_xm0wp"]
 length = 0.001

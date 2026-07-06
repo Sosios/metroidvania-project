@@ -70,6 +70,7 @@ func hit(damage):
 		if health <= 0:
 			$StateMachine.current_state = $StateMachine/Dead
 			$StateMachine.current_state.enter()
+			Music.music.stop()
 #func _on_hurt_box_body_entered(body: Node2D) -> void:
 	#if "hurt" in body and $StateMachine.current_state == $StateMachine/Follow:
 		#body.hurt(10,global_position)

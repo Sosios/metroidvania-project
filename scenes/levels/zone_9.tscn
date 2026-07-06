@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bd3lajj6a57s4" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background03.png" id="4_m7xdu"]
 [ext_resource type="Texture2D" uid="uid://b2rjohqi5icln" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="5_y0euc"]
 [ext_resource type="Texture2D" uid="uid://bog8x45jm4nye" path="res://assets/Sunny-land-files/Assets/environment/tileset.png" id="6_xneo6"]
-[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="7_202kp"]
+[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Backgrounds/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="7_202kp"]
 [ext_resource type="Texture2D" uid="uid://du57loqnht2lo" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_1.png" id="8_nsjfa"]
 [ext_resource type="Texture2D" uid="uid://12y4axelnibd" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_2.png" id="9_7mjfb"]
 [ext_resource type="Texture2D" uid="uid://ii3or13nffmg" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/rocks.png" id="10_5mc2i"]

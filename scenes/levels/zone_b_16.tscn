@@ -27,7 +27,7 @@ shader_parameter/from = Color(0.19215687, 0.14901961, 0.03529412, 1)
 shader_parameter/to = Color(0, 1.92523e-07, 0.37330815, 1)
 shader_parameter/tolerance = 0.4650000220875
 
-[sub_resource type="Curve2D" id="Curve2D_b3ik6"]
+[sub_resource type="Curve2D" id="Curve2D_s7psg"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -224)
@@ -189,7 +189,7 @@ id = 21
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("12_e051r")]
 position = Vector2(224, -416)
-curve = SubResource("Curve2D_b3ik6")
+curve = SubResource("Curve2D_s7psg")
 
 [node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("14_upygx")]
 
@@ -267,9 +267,6 @@ position = Vector2(88, -8)
 position = Vector2(72, -352)
 type = "1"
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
-limit_top = -1088
-
 [node name="PointLight2D3" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=1233416336]
 position = Vector2(3, -11)
 scale = Vector2(1.4375, 1.4375)
@@ -277,6 +274,9 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_08rg5")
 texture_scale = 0.8
 height = 30.0
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
+limit_top = -1088
 
 [node name="DarkLight" type="PointLight2D" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=375765951]
 position = Vector2(180, -379.50003)

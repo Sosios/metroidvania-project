@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bog8x45jm4nye" path="res://assets/Sunny-land-files/Assets/environment/tileset.png" id="6_c0v6q"]
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="6_lc21m"]
 [ext_resource type="TileSet" uid="uid://brdjsc3lvfqyk" path="res://tilesets/tileset_red.tres" id="7_h1m4u"]
-[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="7_waun0"]
+[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Backgrounds/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="7_waun0"]
 [ext_resource type="Texture2D" uid="uid://du57loqnht2lo" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_1.png" id="8_08xn8"]
 [ext_resource type="PackedScene" uid="uid://7bg37d0cumx5" path="res://nodes/torch.tscn" id="8_hlrgv"]
 [ext_resource type="PackedScene" uid="uid://br2bbfpkry2n3" path="res://scenes/levels/shade_red.tscn" id="9_d2tt6"]

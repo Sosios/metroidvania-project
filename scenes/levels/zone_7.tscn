@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bd3lajj6a57s4" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/background03.png" id="4_xqk2k"]
 [ext_resource type="Texture2D" uid="uid://b2rjohqi5icln" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="5_l0jhl"]
 [ext_resource type="Texture2D" uid="uid://bog8x45jm4nye" path="res://assets/Sunny-land-files/Assets/environment/tileset.png" id="6_cyblw"]
-[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="7_lnk7k"]
+[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Backgrounds/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="7_lnk7k"]
 [ext_resource type="Texture2D" uid="uid://du57loqnht2lo" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_1.png" id="8_1qmej"]
 [ext_resource type="Texture2D" uid="uid://12y4axelnibd" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/main_lev_build_2.png" id="9_bf8cg"]
 [ext_resource type="Texture2D" uid="uid://ii3or13nffmg" path="res://assets/Backgrounds/CrystalWorld_v1.1/02. Crystal World/rocks.png" id="10_lodwg"]
@@ -7723,7 +7723,7 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 [node name="CellDiscover4" parent="CellAreas" index="3" unique_id=1298849295 instance=ExtResource("18_5t4ft")]
 position = Vector2(0, 272)
 id = 4
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 play_new_music = true
 play_new_ambience = true
 music = ExtResource("27_c8074")
@@ -7732,7 +7732,7 @@ ambience = ExtResource("28_f6kgm")
 [node name="CellDiscover7" parent="CellAreas" index="4" unique_id=1357309342 instance=ExtResource("18_5t4ft")]
 position = Vector2(-1440, 0)
 id = 10
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 play_new_music = true
 play_new_ambience = true
 music = ExtResource("27_c8074")

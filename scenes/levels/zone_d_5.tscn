@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccop1sw35gws0" path="res://scenes/ui/dialogue_spawn.tscn" id="2_gl5d6"]
 [ext_resource type="Script" uid="uid://bf7exu506ef2b" path="res://dialogues/dialogue_box.gd" id="3_7uwl1"]
 [ext_resource type="Script" uid="uid://csoy2dj6jccux" path="res://dialogues/dialogue.gd" id="4_y0aaf"]
-[ext_resource type="Texture2D" uid="uid://bujccw3m56vna" path="res://assets/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/pearl_01d.png" id="5_q77gy"]
+[ext_resource type="Texture2D" uid="uid://bujccw3m56vna" path="res://assets/Icons/Kyrises_16x16_RPG_Icon_Pack_V1.3/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/pearl_01d.png" id="5_q77gy"]
 
 [sub_resource type="Resource" id="Resource_eehvg"]
 script = ExtResource("3_7uwl1")

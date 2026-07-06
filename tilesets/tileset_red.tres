@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2rjohqi5icln" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_c6rnl"]
 [ext_resource type="Texture2D" uid="uid://bog8x45jm4nye" path="res://assets/Sunny-land-files/Assets/environment/tileset.png" id="2_aj63v"]
-[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="3_k6o8y"]
+[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Backgrounds/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="3_k6o8y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mh8av"]
 texture = ExtResource("1_c6rnl")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2obqt1a0xfax"]
 
 [ext_resource type="Shader" uid="uid://vn4dereha1d4" path="res://shaders/colorswap.gdshader" id="1_8dp8w"]
-[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="2_jb4ro"]
+[ext_resource type="Texture2D" uid="uid://ddr5b81y5x3n7" path="res://assets/Backgrounds/Legacy Fantasy - Debug Map/Assets/Tiles.png" id="2_jb4ro"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lacew"]
 shader = ExtResource("1_8dp8w")
