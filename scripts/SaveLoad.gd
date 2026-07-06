@@ -18,7 +18,7 @@ const save_location := "user://SaveFile.res"
 #}
 
 func _ready() -> void:
-	save_file = load("res://inventory/SaveFile.tres").duplicate()
+	save_file = load("res://inventory/SaveFile.res").duplicate()
 	#_load()
 
 func _save():

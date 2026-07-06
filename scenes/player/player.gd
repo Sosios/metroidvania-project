@@ -81,6 +81,7 @@ func _ready() -> void:
 	show()
 	change_character()
 	SaveLoad.save_file.connect("update",update_inventory)
+	Globals.dialogue = false
 
 func _physics_process(delta: float) -> void:
 	if not skill_timer.is_stopped():

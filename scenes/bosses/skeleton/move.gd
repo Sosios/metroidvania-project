@@ -10,10 +10,10 @@ func enter() -> void:
 	boss.sprite.flip_h = boss.global_position.x < boss.target_position.x
 
 func physics_update(delta):
-	var direction = (boss.target_position - boss.global_position).normalized()
-	boss.velocity.x = direction.x * boss.speed
-	var dist = boss.global_position.distance_to(boss.target_position)
-	if dist < 50.0:
+	var direction = sign(boss.target_position - boss.global_position)
+	boss.velocity.x = direction* boss.speed
+	var dist = boss.global_position.x -boss.target_position.x
+	if dist < 100.0:
 		Transitioned.emit(self, "attack")
 
 func exit() -> void:

@@ -11,8 +11,8 @@ func enter() -> void:
 	boss.sprite.flip_h = boss.global_position.x > boss.target_position.x
 
 func physics_update(delta):
-	var direction = (boss.target_position - boss.global_position).normalized()
-	boss.velocity.x = direction.x * boss.speed
+	var direction = sign(boss.target_position.x - boss.global_position.x)
+	boss.velocity.x = direction * boss.speed
 	var dist = abs(boss.global_position.x - boss.target_position.x)
 	#print(dist)
 	if boss.is_on_wall():

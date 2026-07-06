@@ -2,6 +2,7 @@ extends Node2D
 
 @export var type:int = 0
 @onready var map_rooms: TileMapLayer = $MapRooms
+@onready var bg: TileMapLayer = $Parallax2D/BG
 
 func _ready():
 	$IndicationsDev.hide()
@@ -26,8 +27,9 @@ func _input(event: InputEvent) -> void:
 			$MapUI.hide()
 		else:
 			type = 0
+			$MapRooms.zoom = true
 			paused()
 			$MapRooms.update()
 			$MapRooms.update_discover()
-			$MapRooms.zoom = true
+			
 			$MapUI.show()

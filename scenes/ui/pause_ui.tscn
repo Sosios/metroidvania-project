@@ -487,16 +487,6 @@ action = &"rb"
 [sub_resource type="Shortcut" id="Shortcut_nw1ig"]
 events = [SubResource("InputEventAction_i86gu")]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibklw"]
-shader = ExtResource("7_nw1ig")
-shader_parameter/palette_array_size = 9
-shader_parameter/input_palette_texture = ExtResource("8_1wi1b")
-shader_parameter/output_palette_texture = ExtResource("9_xo6fl")
-shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/progress = 0.0
-
 [sub_resource type="InputEventAction" id="InputEventAction_mbdly"]
 action = &"lb"
 
@@ -513,6 +503,16 @@ font = ExtResource("11_xo6fl")
 [sub_resource type="LabelSettings" id="LabelSettings_xo6fl"]
 font = ExtResource("11_xo6fl")
 font_color = Color(0.5647059, 0.38431373, 0.3647059, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibklw"]
+shader = ExtResource("7_nw1ig")
+shader_parameter/palette_array_size = 9
+shader_parameter/input_palette_texture = ExtResource("8_1wi1b")
+shader_parameter/output_palette_texture = ExtResource("9_xo6fl")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [node name="PauseUI" type="CanvasLayer" unique_id=460654282]
 process_mode = 3
@@ -777,43 +777,6 @@ layout_mode = 2
 [node name="InventorySlot16" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/GridContainer" unique_id=859193767 instance=ExtResource("6_i86gu")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=737417712]
-layout_mode = 2
-theme_override_constants/margin_left = 75
-theme_override_constants/margin_top = 66
-
-[node name="TextureRect" type="SubViewportContainer" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=725173194]
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=1841312139]
-material = SubResource("ShaderMaterial_ibklw")
-position = Vector2(-9.5, 14.5)
-rotation = -3.1415927
-scale = Vector2(2, -2)
-texture = ExtResource("10_2o4wk")
-region_enabled = true
-region_rect = Rect2(17, 78, 47, 44)
-
-[node name="Sprite2D2" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=678878936]
-visible = false
-material = SubResource("ShaderMaterial_ibklw")
-position = Vector2(-11.5, 6.5)
-rotation = -3.1415927
-scale = Vector2(2, -2)
-texture = ExtResource("10_xo6fl")
-region_enabled = true
-region_rect = Rect2(23, 12, 30, 40)
-
-[node name="Sprite2D3" type="Sprite2D" parent="TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect" unique_id=414267324]
-visible = false
-material = SubResource("ShaderMaterial_ibklw")
-position = Vector2(-8.5, 1.5)
-rotation = -3.1415927
-scale = Vector2(2, -2)
-texture = ExtResource("12_ufhlb")
-region_enabled = true
-region_rect = Rect2(43, 84, 38, 51)
-
 [node name="Left" type="Button" parent="TabContainer/Container2" unique_id=495752853]
 custom_minimum_size = Vector2(17, 21)
 layout_mode = 1
@@ -948,13 +911,63 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect3" unique_id=1304037049]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 4.0
-offset_right = 49.0
-offset_bottom = 27.0
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Container2/NinePatchRect3" unique_id=1383638252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.17250061
+offset_top = -1.5099945
+offset_right = 1.8275146
+offset_bottom = 2.4900055
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="TabContainer/Container2/NinePatchRect3/MarginContainer" unique_id=1304037049]
+custom_minimum_size = Vector2(0, 25.98)
+custom_maximum_size = Vector2(326.345, 266.245)
+layout_mode = 2
+text = "hrhhggfhhhhhhhhhhhhhhhh hhhhhhhhhhhhjhhhhhhhhhhhhh hhhhhhh hhhhhhhhhjhhhhjhhhhh"
 label_settings = SubResource("LabelSettings_xo6fl")
+autowrap_mode = 2
+
+[node name="Characters" type="Control" parent="TabContainer/Container2" unique_id=2064934713]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Container2/Characters" unique_id=1841312139]
+visible = false
+material = SubResource("ShaderMaterial_ibklw")
+position = Vector2(397, 165)
+rotation = 3.1415925
+scale = Vector2(2, -2)
+texture = ExtResource("10_2o4wk")
+region_enabled = true
+region_rect = Rect2(17, 78, 47, 44)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TabContainer/Container2/Characters" unique_id=678878936]
+visible = false
+material = SubResource("ShaderMaterial_ibklw")
+position = Vector2(395, 157)
+rotation = 3.1415925
+scale = Vector2(2, -2)
+texture = ExtResource("10_xo6fl")
+region_enabled = true
+region_rect = Rect2(23, 12, 30, 40)
+
+[node name="Sprite2D3" type="Sprite2D" parent="TabContainer/Container2/Characters" unique_id=414267324]
+material = SubResource("ShaderMaterial_ibklw")
+position = Vector2(398, 152)
+rotation = 3.1415925
+scale = Vector2(2, -2)
+texture = ExtResource("12_ufhlb")
+region_enabled = true
+region_rect = Rect2(43, 84, 38, 51)
 
 [node name="Modern2" type="AudioStreamPlayer" parent="." unique_id=1304261063]
 stream = ExtResource("14_0ifkr")

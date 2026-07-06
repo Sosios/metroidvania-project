@@ -46,7 +46,6 @@ func _ready() -> void:
 	
 	
 	
-	
 func update():
 	var tile_calc = map_to_local(get_map_tiles[Globals.current_room])
 	var calc_tile = local_to_map(player_map_pos.position)
@@ -72,6 +71,10 @@ func update_discover():
 
 
 func _process(delta: float) -> void:
+	#if map.bg.global_position.x >= 296.0:
+	map.bg.global_position.x = 0.0
+	#if map.bg.global_position.y >= 168.0:
+	map.bg.global_position.y = 0.0
 	var direction = Input.get_vector("right","left","down","ui_up")
 	if direction and get_parent().type == 0:
 		map.global_position += direction * delta * 150

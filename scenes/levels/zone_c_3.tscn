@@ -110,7 +110,7 @@ position = Vector2(1184, 8)
 position = Vector2(1440, 96)
 type = "1"
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_left = -962
 limit_right = 1920
 

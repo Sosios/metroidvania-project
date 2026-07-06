@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://d0ibsiqp3570c" path="res://assets/OST/1.14 LOST IN GREEN.mp3" id="19_u0elk"]
 [ext_resource type="AudioStream" uid="uid://epgv1dvyogxl" path="res://assets/ambience/Forest Night.ogg" id="20_xihb2"]
 
-[sub_resource type="Curve2D" id="Curve2D_3txs3"]
+[sub_resource type="Curve2D" id="Curve2D_u0elk"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 214, 0)
@@ -138,7 +138,7 @@ id = 7
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("9_bbrji")]
 visible = false
 position = Vector2(545, 144)
-curve = SubResource("Curve2D_3txs3")
+curve = SubResource("Curve2D_u0elk")
 
 [node name="Skullwolf" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1288262999 instance=ExtResource("10_wleeh")]
 position = Vector2(341, 205)

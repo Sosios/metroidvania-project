@@ -493,7 +493,7 @@ size = Vector2(262, 11)
 
 [node name="Slime" type="CharacterBody2D" unique_id=1109252605]
 collision_layer = 2
-collision_mask = 341
+collision_mask = 340
 script = ExtResource("1_oecqv")
 speed = 30.0
 

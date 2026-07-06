@@ -24,6 +24,13 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_mlrlj"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 154, -250, 0, 0, 0, 0, 154, -516)
+}
+point_count = 2
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6qmw3"]
 b = Vector2(0, 48)
 
@@ -198,6 +205,12 @@ position = Vector2(416, -923)
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("10_gj7yg")]
 position = Vector2(176, -128)
 curve = SubResource("Curve2D_al085")
+path_time = 2.0
+
+[node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=1021599468 instance=ExtResource("10_gj7yg")]
+position = Vector2(176, -128)
+curve = SubResource("Curve2D_mlrlj")
+path_time = 2.0
 
 [node name="EnemyBarriers" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=798562314 instance=ExtResource("12_mlrlj")]
 
@@ -275,7 +288,7 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_mlrlj")
 texture_scale = 0.8
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_left = 2
 limit_top = -1360
 
@@ -295,28 +308,28 @@ target = "uid://cco3n1b23gok8"
 position = Vector2(246, 416)
 shape = SubResource("RectangleShape2D_gj7yg")
 
-[node name="Save" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="2" unique_id=2540921 instance=ExtResource("9_b2u7c")]
+[node name="B6" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="2" unique_id=2540921 instance=ExtResource("9_b2u7c")]
 position = Vector2(242, -552)
 target = "uid://bk71q4jlu57vn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/Save" index="0" unique_id=1540617031]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/B6" index="0" unique_id=1540617031]
 position = Vector2(-250, 144)
 shape = SubResource("RectangleShape2D_dh760")
 
-[node name="TransitionArea4" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="3" unique_id=1116626525 instance=ExtResource("9_b2u7c")]
+[node name="Save2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="3" unique_id=1116626525 instance=ExtResource("9_b2u7c")]
 position = Vector2(242, -552)
 target = "uid://brroewr0s8sxc"
 marker = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea4" index="0" unique_id=1808986715]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/Save2" index="0" unique_id=1808986715]
 position = Vector2(-250, -128)
 shape = SubResource("RectangleShape2D_vqq1k")
 
-[node name="TransitionArea5" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="4" unique_id=1939010678 instance=ExtResource("9_b2u7c")]
+[node name="Boss2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="4" unique_id=1939010678 instance=ExtResource("9_b2u7c")]
 position = Vector2(736, -1096)
 target = "uid://gau4iahs1wu5"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea5" index="0" unique_id=1840365739]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/Boss2" index="0" unique_id=1840365739]
 position = Vector2(-212, -128)
 shape = SubResource("RectangleShape2D_al085")
 
@@ -346,7 +359,7 @@ change_color = true
 [node name="CellDiscover3" parent="CellAreas" index="1" unique_id=378693778 instance=ExtResource("10_guksj")]
 position = Vector2(0, -272)
 id = 64
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 change_color = true
 
 [node name="CellDiscover4" parent="CellAreas" index="2" unique_id=1185904701 instance=ExtResource("10_guksj")]

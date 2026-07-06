@@ -2,14 +2,14 @@ extends CanvasLayer
 
 var pause = false
 @onready var slots: Array = $TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/GridContainer.get_children()
-@onready var characters:= $TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect.get_children()
+@onready var characters:= $TabContainer/Container2/Characters.get_children()
 
 @onready var level_label: Label = $TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Niveau/Label2
 @onready var xp_label: Label = $TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Experience/Label2
 @onready var attack_label: Label = $TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Attaque2/Label2
 @onready var defense_label: Label = $TabContainer/Container2/NinePatchRect2/MarginContainer/VBoxContainer/Défense/Label2
 
-@onready var description_label: Label = $TabContainer/Container2/NinePatchRect3/Label
+@onready var description_label: Label = $TabContainer/Container2/NinePatchRect3/MarginContainer/Label
 
 
 func _ready() -> void:
@@ -63,7 +63,6 @@ func update_slots():
 	$TabContainer/Container2/EquippedWeapon/WeaponSprite.texture = SaveLoad.save_file.weapon.texture
 	if SaveLoad.save_file.armor:
 		$TabContainer/Container2/EquippedArmor/ArmorSprite.texture = SaveLoad.save_file.armor.texture
-	$TabContainer/Container2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TextureRect/Sprite2D.material.set_shader_parameter("output_palette_texture",SaveLoad.save_file.weapon.palette)
 	attack_label.text = str(int(SaveLoad.save_file.weapon.attack + SaveLoad.save_file.final_attack))
 	if SaveLoad.save_file.armor:
 		defense_label.text = str(int(SaveLoad.save_file.armor.defense + SaveLoad.save_file.defense))

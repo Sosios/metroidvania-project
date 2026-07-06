@@ -8,3 +8,4 @@ func enter():
 	player.dead_voices[SaveLoad.save_file.player_selected].play()
 	await player.sprite.animation_finished
 	TransitionLayer.change_scene("res://scenes/levels/game_over.tscn")
+	Globals.health = SaveLoad.save_file.max_health

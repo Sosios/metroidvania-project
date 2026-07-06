@@ -23,6 +23,7 @@ func _input(event: InputEvent) -> void:
 func _on_new_pressed() -> void:
 	Music.music.stop()
 	$Modern8.play()
+	SaveLoad.save_file = load("res://inventory/SaveFile.res").duplicate()
 	TransitionLayer.change_scene(SaveLoad.save_file.current_room)
 
 

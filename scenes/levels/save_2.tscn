@@ -61,6 +61,7 @@ texture = SubResource("GradientTexture2D_0disf")
 texture_scale = 0.8
 
 [node name="DarkLight" type="PointLight2D" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1986591832]
+visible = false
 position = Vector2(280, -733.99994)
 scale = Vector2(11.5, 15.481228)
 energy = 0.7

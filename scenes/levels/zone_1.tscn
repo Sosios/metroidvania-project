@@ -7601,11 +7601,11 @@ limit_smoothed = true
 [node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1809543543 instance=ExtResource("20_dbxk1")]
 dialogue = ExtResource("21_52r5n")
 
-[node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("5_4vx7k")]
+[node name="TransitionArea2" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("5_4vx7k")]
 position = Vector2(813.7863, 7.2825394)
 target = "uid://c0vrm2n1pdkuq"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1752090192]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea2" index="0" unique_id=1752090192]
 position = Vector2(251.01715, 94.71746)
 shape = SubResource("RectangleShape2D_hpot8")
 debug_color = Color(0.036217537, 0.03417754, 0.025156727, 0.41960785)
@@ -7617,7 +7617,7 @@ position = Vector2(12, 192)
 position = Vector2(927, 192)
 
 [node name="0" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="0" unique_id=553221677 instance=ExtResource("9_scins")]
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 change_color = true
 new_zone = true
 zone_name = "Caverne de cristal"
@@ -7630,6 +7630,9 @@ ambience = ExtResource("25_yb0r2")
 position = Vector2(480, 0)
 id = 1
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+
+[node name="CanvasModulate" parent="." index="11" unique_id=344921272]
+color = Color(0.30323282, 0.30323285, 0.30323276, 1)
 
 [node name="TransitionLayer" parent="." index="12" unique_id=420257169]
 visible = false

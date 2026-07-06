@@ -125,4 +125,5 @@ position = Vector2(480, -270)
 id = 148
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=2141525376]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_tooa7")
