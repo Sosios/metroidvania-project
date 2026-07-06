@@ -13,15 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="8_h0o57"]
 [ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="9_sekfd"]
 [ext_resource type="PackedScene" uid="uid://rfb8jsodcq40" path="res://scenes/enemies/Skeleton Archer/skeleton.tscn" id="10_ne5ah"]
+[ext_resource type="AudioStream" uid="uid://cs71jd6wm7ddl" path="res://assets/OST/2.09 NEXT STEP TOWARD THE UNKNOWN.mp3" id="14_4wxwh"]
 
-[sub_resource type="Curve2D" id="Curve2D_ejw8w"]
+[sub_resource type="Curve2D" id="Curve2D_h0o57"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -342)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_uwepf"]
+[sub_resource type="Curve2D" id="Curve2D_sekfd"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -157)
@@ -78,13 +79,13 @@ id = 8
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("4_q38v7")]
 position = Vector2(291, 0)
-curve = SubResource("Curve2D_ejw8w")
+curve = SubResource("Curve2D_h0o57")
 path_time = 4.5
 type = "1"
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=428494581 instance=ExtResource("4_q38v7")]
 position = Vector2(240, -343)
-curve = SubResource("Curve2D_uwepf")
+curve = SubResource("Curve2D_sekfd")
 path_time = 2.5
 type = "1"
 
@@ -145,7 +146,7 @@ type = "1"
 [node name="Skeleton" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="6" unique_id=330946052 instance=ExtResource("10_ne5ah")]
 position = Vector2(408, 160)
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_top = -810
 
 [node name="GravityShift" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1192841641 instance=ExtResource("5_qrw32")]
@@ -217,6 +218,9 @@ id = 119
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=2119438749 instance=ExtResource("7_8jvhn")]
 position = Vector2(0, -270)
 id = 117
+play_new_music = true
+play_new_ambience = true
+music = ExtResource("14_4wxwh")
 
 [node name="CellDiscover3" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="2" unique_id=2131688627 instance=ExtResource("7_8jvhn")]
 position = Vector2(0, -540)

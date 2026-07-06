@@ -6,6 +6,18 @@
 [ext_resource type="Material" uid="uid://dgt4w7p3e1x78" path="res://castle_blue.tres" id="3_mjgdt"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="3_qrah8"]
 [ext_resource type="PackedScene" uid="uid://c66wghkysbcig" path="res://nodes/ceiling_light.tscn" id="4_iq3mn"]
+[ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="5_ed4ls"]
+[ext_resource type="Script" uid="uid://bpc1k7gyqf208" path="res://inventory/inventory_item.gd" id="6_4kqx1"]
+[ext_resource type="Texture2D" uid="uid://c31ly5hcgowuf" path="res://assets/Icons/c_sword_6.png" id="7_s17t4"]
+
+[sub_resource type="Resource" id="Resource_83dml"]
+script = ExtResource("6_4kqx1")
+name = "Tyrfing ?"
+type = "sword"
+texture = ExtResource("7_s17t4")
+attack = -999.0
+description = "Une epee legendaire"
+metadata/_custom_type_script = "uid://bpc1k7gyqf208"
 
 [sub_resource type="Gradient" id="Gradient_c8ohj"]
 offsets = PackedFloat32Array(0.6, 1)
@@ -30,6 +42,11 @@ gradient = SubResource("Gradient_6pjd5")
 fill_from = Vector2(1, 0.5)
 fill_to = Vector2(0.90000004, 0.5)
 metadata/_snap_enabled = true
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_osabr"]
+vertices = PackedVector2Array(422, 138, 438, 138, 438, 182, 54, 182, 54, 246, -54, 246, -54, 70, -218, 70, -218, 214, -438, 214, -438, 26, 422, 26)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(7, 10, 11, 6), PackedInt32Array(3, 6, 11, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-448, 224, -448, 16, 432, 16, 432, 128, 448, 128, 448, 192, 64, 192, 64, 256, -64, 256, -64, 80, -208, 80, -208, 224)])
 
 [node name="ZoneB6" unique_id=342494649 instance=ExtResource("1_w66yq")]
 
@@ -62,6 +79,11 @@ position = Vector2(-327, 32)
 
 [node name="CeilingLight3" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="2" unique_id=612051896 instance=ExtResource("4_iq3mn")]
 position = Vector2(4, 29)
+
+[node name="Chest" parent="Objects" parent_id_path=PackedInt32Array(1256485490) index="3" unique_id=1614685710 instance=ExtResource("5_ed4ls")]
+position = Vector2(-400, 208)
+item = SubResource("Resource_83dml")
+id = 75
 
 [node name="PointLight2D3" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=851385633]
 position = Vector2(3, -11)
@@ -100,4 +122,8 @@ blend_mode = 1
 texture = SubResource("GradientTexture2D_iq3mn")
 
 [node name="CanvasModulate" parent="." index="12" unique_id=344921272]
-color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=248037554]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_osabr")

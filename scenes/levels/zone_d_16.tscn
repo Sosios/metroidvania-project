@@ -112,6 +112,8 @@ id = 196
 [node name="CellDiscover2" parent="CellAreas" parent_id_path=PackedInt32Array(995269704) index="1" unique_id=1561616208 instance=ExtResource("7_remqn")]
 position = Vector2(480, 0)
 id = 194
+color = Color(0.69803923, 0.53333336, 0.44705883, 1)
+change_color = true
 play_new_music = true
 music = ExtResource("8_2nt6i")
 
