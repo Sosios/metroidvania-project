@@ -23,11 +23,11 @@ func enter():
 	player.hit_voices[SaveLoad.save_file.player_selected].get_child(randi() % player.hit_voices[SaveLoad.save_file.player_selected].get_children().size()).play()
 	player.hit_sounds[randi () % player.hit_sounds.size()].play()
 	timer = 0.2
-	if Engine.time_scale == 1:
-		Engine.time_scale = 0.05
-		await get_tree().create_timer(0.015).timeout
-		Engine.time_scale = 1
-	player.velocity = Vector2(direction.x, -0.5).normalized()*200
+	Engine.time_scale = 0.05
+	await get_tree().create_timer(0.015,true,true,true).timeout
+	Engine.time_scale = 1
+	player.velocity = Vector2.ZERO
+	#player.velocity = Vector2(direction.x, -0.5).normalized()*200
 	
 func physics_update(delta):
 	timer -= delta
