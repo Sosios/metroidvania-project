@@ -3753,7 +3753,7 @@ color_ramp = SubResource("GradientTexture1D_f0qoe")
 
 [node name="Player" type="CharacterBody2D" unique_id=971349243 node_paths=PackedStringArray("sprite", "attack_1_area", "animation_player") groups=["Player"]]
 visible = false
-collision_mask = 844
+collision_mask = 780
 script = ExtResource("1_75vfm")
 sprite = NodePath("Sprites/AnimatedSprite2D")
 attack_1_area = NodePath("Sprites/AnimatedSprite2D/Attack1Area")

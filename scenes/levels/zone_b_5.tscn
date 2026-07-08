@@ -41,6 +41,11 @@ metadata/_snap_enabled = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh6qp"]
 size = Vector2(45, 293)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_swje5"]
+vertices = PackedVector2Array(1318, 198, 10, 198, 10, 90, 1318, 90)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 208, 0, 80, 1328, 80, 1328, 208)])
+
 [node name="ZoneB5" unique_id=342494649 instance=ExtResource("1_1natr")]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMaps" parent_id_path=PackedInt32Array(1528076793) index="0" unique_id=757189673]
@@ -109,7 +114,7 @@ texture = SubResource("GradientTexture2D_3tkfy")
 texture_scale = 0.8
 height = 30.0
 
-[node name="Camera2D" parent="Player" index="18" unique_id=312523826]
+[node name="Camera2D" parent="Player" index="19" unique_id=312523826]
 limit_right = 1440
 
 [node name="PointLight2D" type="PointLight2D" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=1842012075]
@@ -151,3 +156,6 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CanvasModulate" parent="." index="11" unique_id=344921272]
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=2059926149]
+navigation_polygon = SubResource("NavigationPolygon_swje5")

@@ -34,25 +34,25 @@ func _ready() -> void:
 			max_health = 25.0
 			exp_points = 10.0
 			damage_given = 10.0
-			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/palette.png"))
+			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Ennemis/Mob/Boar/palette.png"))
 		"1":
 			health = 55.0
 			max_health = 55.0
 			exp_points = 40.0
 			damage_given = 20.0
-			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/palette_02.png"))
+			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Ennemis/Mob/Boar/palette_02.png"))
 		"2":
 			health = 155.0
 			max_health = 155.0
 			exp_points = 130.0
 			damage_given = 50.0
-			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/palette_03.png"))
+			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Ennemis/Mob/Boar/palette_03.png"))
 		"3":
 			health = 325.0
 			max_health = 325.0
 			exp_points = 250.0
 			damage_given = 100.0
-			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/palette_04.png"))
+			sprite.material.set_shader_parameter("output_palette_texture",load("res://assets/Ennemis/Mob/Boar/palette_04.png"))
 	progress_bar.value = health
 	progress_bar.hide()
 

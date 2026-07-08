@@ -74,9 +74,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksq3u"]
-size = Vector2(274, 267)
+size = Vector2(451, 685)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gxkd"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5px7"]
 size = Vector2(12, 12)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85n13"]
@@ -104,19 +107,17 @@ speed = 50.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1940283063]
 material = SubResource("ShaderMaterial_5lmda")
 sprite_frames = SubResource("SpriteFrames_bxebe")
-animation = &"idle"
+animation = &"fly"
 autoplay = "idle"
 
 [node name="DetectArea" type="Area2D" parent="." unique_id=58285570]
-visible = false
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1025759439]
-position = Vector2(0, 133.5)
+position = Vector2(-0.5, -4.5)
 shape = SubResource("RectangleShape2D_ksq3u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028312693]
-visible = false
 shape = SubResource("RectangleShape2D_7gxkd")
 
 [node name="StateMachine" parent="." unique_id=594427277 node_paths=PackedStringArray("initial_state") instance=ExtResource("3_mamjo")]
@@ -137,11 +138,10 @@ bat = NodePath("../..")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1747670913]
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=604695079]
-visible = false
 collision_layer = 32
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox" unique_id=1157892293]
-shape = SubResource("RectangleShape2D_7gxkd")
+shape = SubResource("RectangleShape2D_u5px7")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1828613426]
 offset_left = -17.0

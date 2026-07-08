@@ -16,14 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://cqajvl6be2omc" path="res://scenes/enemies/Skullwolf/skullwolf.tscn" id="10_gj5yh"]
 [ext_resource type="PackedScene" uid="uid://ql41wd6q7x2d" path="res://scenes/enemies/Slime/slime.tscn" id="11_4aqsh"]
 
-[sub_resource type="Curve2D" id="Curve2D_p6vw1"]
+[sub_resource type="Curve2D" id="Curve2D_jsplc"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -144)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_x7wsd"]
+[sub_resource type="Curve2D" id="Curve2D_ffjon"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -48, 16, 0, 0, 0, 0, -240, 16)
@@ -55,6 +55,9 @@ fill_to = Vector2(0.508547, 0.36324787)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skdjn"]
 size = Vector2(206, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qmw3"]
+size = Vector2(1250, 160)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7d6ue"]
 vertices = PackedVector2Array(875.8594, 42, 902, 68.140625, 902, 198, 694, 198, 827.8594, 42, 694, 230, 506, 230, 506, 198, 644.1406, 42, 330, 198, 330, 70, 278, 70, 278, 198, 58, 198, 58, 68.140625, 84.140625, 42, 795.8594, 10, 676.1406, 10)
@@ -115,11 +118,11 @@ metadata/_edit_lock_ = true
 
 [node name="MovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="0" unique_id=1132493905 instance=ExtResource("5_7d6ue")]
 position = Vector2(736, 176)
-curve = SubResource("Curve2D_p6vw1")
+curve = SubResource("Curve2D_jsplc")
 
 [node name="MovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1087597022) index="1" unique_id=542487500 instance=ExtResource("5_7d6ue")]
 position = Vector2(736, 176)
-curve = SubResource("Curve2D_x7wsd")
+curve = SubResource("Curve2D_ffjon")
 
 [node name="Bat" parent="Enemies" parent_id_path=PackedInt32Array(318202915) index="0" unique_id=1265163812 instance=ExtResource("6_aya2m")]
 position = Vector2(240, 48)
@@ -142,15 +145,15 @@ position = Vector2(104, 208)
 position = Vector2(832, 208)
 type = "1"
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="17" unique_id=312523826]
-limit_right = 960
-
 [node name="PointLight2D3" type="PointLight2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=1089632103]
 position = Vector2(3, -11)
 scale = Vector2(1.4375, 1.4375)
 energy = 0.5
 texture = SubResource("GradientTexture2D_5a4wm")
 texture_scale = 0.8
+
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
+limit_right = 960
 
 [node name="DarkLight" type="PointLight2D" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=733666604]
 visible = false
@@ -178,6 +181,10 @@ region_rect = Rect2(0, 0, 201.355, 10)
 [node name="TransitionArea" parent="TransitionAreas" parent_id_path=PackedInt32Array(1196047754) index="0" unique_id=71833735 instance=ExtResource("8_8tquc")]
 target = "uid://ckdyfeefp8myx"
 marker = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionAreas/TransitionArea" index="0" unique_id=1949161356]
+position = Vector2(615, -80)
+shape = SubResource("RectangleShape2D_6qmw3")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPoints" parent_id_path=PackedInt32Array(1995865306) index="0" unique_id=1444148383]
 position = Vector2(736, 68)

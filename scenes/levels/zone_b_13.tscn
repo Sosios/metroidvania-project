@@ -10,7 +10,7 @@
 [ext_resource type="TileSet" uid="uid://jtr5i5jmpshj" path="res://tilesets/forest_tileset.tres" id="8_ot71h"]
 [ext_resource type="PackedScene" uid="uid://dttraiuiqhmi2" path="res://scenes/ui/chest.tscn" id="9_poqyh"]
 [ext_resource type="PackedScene" uid="uid://mvvhwgoep3v8" path="res://scenes/levels/transition_area.tscn" id="10_f0plq"]
-[ext_resource type="Resource" uid="uid://wllhvgmvjghn" path="res://inventory/weapons/sword4.tres" id="10_u8tmv"]
+[ext_resource type="Resource" uid="uid://df3rlko8orbiu" path="res://inventory/armor/armor_02.tres" id="10_u8tmv"]
 [ext_resource type="PackedScene" uid="uid://ddvj77xpwnr1x" path="res://nodes/cell_discover.tscn" id="11_pq8db"]
 
 [sub_resource type="Gradient" id="Gradient_wu28o"]

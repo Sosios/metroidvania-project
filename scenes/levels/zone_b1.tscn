@@ -48,6 +48,11 @@ metadata/_snap_enabled = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rt4wv"]
 size = Vector2(23, 337.25)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xihb2"]
+vertices = PackedVector2Array(1430, 10, 1430, 198, 1370, 198, 1370, 54, 10, 10, 1302, 54, 1302, 198, 922, 198, 922, 73.82031, 774, 54, 774, 198, 554, 198, 554, 153.82031, 422, 134, 422, 198, 10, 198, 514.3594, 134, 882.3594, 54)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 4), PackedInt32Array(9, 12, 16), PackedInt32Array(5, 8, 17), PackedInt32Array(4, 5, 17), PackedInt32Array(4, 17, 9), PackedInt32Array(13, 4, 9, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 208, 0, 0, 1440, 0, 1440, 208, 1360, 208, 1360, 64, 1312, 64, 1312, 208, 912, 208, 912, 80, 880, 64, 784, 64, 784, 64, 784, 208, 544, 208, 544, 160, 512, 144, 512, 144, 432, 144, 432, 208)])
+
 [node name="Level" unique_id=342494649 instance=ExtResource("1_h25df")]
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallaxes" parent_id_path=PackedInt32Array(691625541) index="0" unique_id=1789976369]
@@ -252,3 +257,6 @@ id = 20
 [node name="CellDiscover3" parent="CellAreas" index="2" unique_id=1067793381 instance=ExtResource("4_pjwxy")]
 position = Vector2(960, 0)
 id = 21
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="17" unique_id=25813014]
+navigation_polygon = SubResource("NavigationPolygon_xihb2")
