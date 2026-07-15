@@ -60,6 +60,10 @@ var show_bar: bool = false:
 		show_bar = value
 		boss_update.emit()
 
+var new_zone: bool
+
+var zone_name := ""
+
 var boss_health: float:
 	set(value):
 		boss_health = value

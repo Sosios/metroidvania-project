@@ -51,5 +51,5 @@ func _on_body_entered(body: Node2D) -> void:
 			Music.ambience.play()
 	if new_zone:
 		if zone_name not in SaveLoad.save_file.discovered_zones:
-			new_zone_ui.emit()
-	
+			Globals.new_zone = true
+			Globals.zone_name = zone_name

@@ -23,9 +23,9 @@ func _ready() -> void:
 	
 	var count = 0
 	for tile in get_map_tiles:
-		#print(str(count)+": "+str(tile))
+		print(str(count)+": "+str(tile))
 		original_tiles[tile] = [get_cell_source_id(tile), get_cell_atlas_coords(tile), get_cell_alternative_tile(tile)]
-		#count += 1
+		count += 1
 	if get_parent().type == 0:
 		for button in save_rooms.get_children():
 			button.get_child(0).hide()

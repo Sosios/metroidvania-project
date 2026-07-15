@@ -217,7 +217,7 @@ energy = 0.5
 texture = ExtResource("10_o6v00")
 texture_scale = 0.2
 
-[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="18" unique_id=312523826]
+[node name="Camera2D" parent="Player" parent_id_path=PackedInt32Array(971349243) index="19" unique_id=312523826]
 limit_right = 2400
 
 [node name="HurtArea" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="0" unique_id=754456728 instance=ExtResource("11_o6v00")]
@@ -277,17 +277,17 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover3" parent="CellAreas" index="2" unique_id=558492750 instance=ExtResource("4_1iync")]
 position = Vector2(960.58276, -0.119911194)
-id = 6
+id = 30
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover4" parent="CellAreas" index="3" unique_id=1649864341 instance=ExtResource("4_1iync")]
 position = Vector2(1440.5989, 0)
-id = 7
+id = 17
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="CellDiscover5" parent="CellAreas" index="4" unique_id=964532054 instance=ExtResource("4_1iync")]
 position = Vector2(1920.6287, 0.15247726)
-id = 8
+id = 6
 color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="15" unique_id=1144570393]

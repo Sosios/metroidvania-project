@@ -16,14 +16,14 @@ signal spell_cast(pos)
 
 var damage_taken : float
 
-@export var max_health = 5000.0
+@export var max_health = 10000.0
 
 var health = max_health:
 	set(value):
 		health = value
 		Globals.boss_health = health
 
-@export var exp_points:float = 300.0
+@export var exp_points:float = 1000.0
 
 @export var speed:float = 100.0
 

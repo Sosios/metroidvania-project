@@ -50,8 +50,12 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1152, 324)
 
 [node name="3" type="Sprite2D" parent="Parallaxes" unique_id=1878976242]
-position = Vector2(287, 159)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(575, 159)
 texture = ExtResource("4_6dsdn")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 324)
 
 [node name="4" type="Sprite2D" parent="Parallaxes" unique_id=1107626986]
 position = Vector2(287, 159)

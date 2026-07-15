@@ -67,6 +67,7 @@ process_priority = 2
 visible = false
 
 [node name="Control2" type="Control" parent="." unique_id=1485299654]
+process_mode = 3
 z_index = 20
 layout_mode = 3
 anchors_preset = 0
@@ -76,7 +77,6 @@ offset_bottom = 40.0
 [node name="CanvasLayer" type="CanvasLayer" parent="Control2" unique_id=2014856886]
 
 [node name="ZoneName" parent="Control2/CanvasLayer" unique_id=480929479 instance=ExtResource("7_craya")]
-process_mode = 1
 
 [node name="PauseUI" parent="Control2/CanvasLayer" unique_id=1193603374 instance=ExtResource("6_adcqg")]
 process_priority = 2

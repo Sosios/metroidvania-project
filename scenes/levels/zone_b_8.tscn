@@ -234,6 +234,7 @@ texture = SubResource("GradientTexture2D_xpune")
 [node name="DialogueSpawn" parent="Areas" parent_id_path=PackedInt32Array(1586744123) index="1" unique_id=1809543543 instance=ExtResource("4_poisv")]
 type = "on_collision"
 dialogue = SubResource("Resource_yfckr")
+id = 8
 add_character = true
 add_dash = true
 

@@ -2,6 +2,7 @@ extends Node
 
 var save_file : Save
 
+
 const save_location := "user://SaveFile.res"
 
 #var contents_to_save: Dictionary = {

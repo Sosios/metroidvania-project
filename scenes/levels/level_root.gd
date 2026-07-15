@@ -7,7 +7,8 @@ class_name Level
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 
-var zone_name_scene = preload("res://scenes/ui/zone_name.tscn")
+@onready var zone_name: Control = $Control2/CanvasLayer/ZoneName
+
 var ice_cube_scene = preload("res://assets/Boss/Pengu/ice_cube.tscn")
 var fire_scene = preload("res://scenes/bosses/wizard/fire.tscn")
 var lightning_scene = preload("res://scenes/bosses/wizard/lightning.tscn")
@@ -16,6 +17,7 @@ var platform_scene = preload("res://scenes/objects/platform.tscn")
 
 var info_scene= preload("res://scenes/ui/info_box.tscn")
 var dialogue_scene= preload("res://scenes/ui/dialogue_box.tscn")
+
 
 var spawn_scene = preload("res://scenes/ui/dialogue_spawn.tscn")
 
@@ -38,7 +40,6 @@ func _ready() -> void:
 	for ui in get_tree().get_nodes_in_group("UI"):
 		ui.connect("dialogue_box", create_dialogue_box)
 		ui.connect("info_box", create_info_box)
-		ui.connect("new_zone_ui", show_zone_name)
 	Globals.connect("save_ui",show_save)
 	Globals.boss_spell_cast.connect(cast_spell)
 	player.connect("create_platform",_on_create_platform)
@@ -51,11 +52,12 @@ func _ready() -> void:
 	Globals.stop = true
 	await get_tree().create_timer(0.2).timeout
 	Globals.stop = false
-	
-func show_zone_name(name):
-	var zone_name = zone_name_scene.instantiate()
-	zone_name.zone_name = name
-	canvas_layer.add_child(zone_name)
+	if Globals.new_zone:
+		zone_name.show()
+		zone_name.zone_name = Globals.zone_name
+		zone_name.anim.play("default")
+	else:
+		zone_name.hide()
 
 func show_save():
 	var save_ui = save_scene.instantiate()

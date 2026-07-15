@@ -77,7 +77,7 @@ var final_attack := attack
 				final_attack = attack * 0.9
 			else:
 				final_attack = attack * 1.2
-			defense = (defense+5)*1.01
+			defense = (defense+3)*1.01
 			Globals.health = Globals.health * (((max_health+20)*1.03)/max_health)
 			max_health = (max_health+20)*1.03
 		update.emit()

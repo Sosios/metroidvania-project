@@ -10,9 +10,12 @@ func _ready() -> void:
 	Music.music.play()
 	
 func _process(delta: float) -> void:
-	clouds.position.x -= 0.5
+	clouds.position.x -= 0.4
 	if clouds.position.x <= 0.0:
 		clouds.position.x = 575
+	$"Parallaxes/3".position.x -= 0.3
+	if $"Parallaxes/3".position.x <= 0.0:
+		$"Parallaxes/3".position.x = 575
 
 func _input(event: InputEvent) -> void:
 	var select = Input.get_axis("ui_up","ui_down")

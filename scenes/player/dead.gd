@@ -7,5 +7,7 @@ func enter():
 	player.sprite.play("dead")
 	player.dead_voices[SaveLoad.save_file.player_selected].play()
 	await player.sprite.animation_finished
+	SaveLoad._load()
 	TransitionLayer.change_scene("res://scenes/levels/game_over.tscn")
 	Globals.health = SaveLoad.save_file.max_health
+	Globals.show_bar = false

@@ -23,6 +23,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:new_zone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_chug5"]
 resource_name = "new_animation"
@@ -53,11 +65,23 @@ tracks/1/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:new_zone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_83ef3"]
 _data = {
 &"RESET": SubResource("Animation_5t5rh"),
-&"new_animation": SubResource("Animation_chug5")
+&"default": SubResource("Animation_chug5")
 }
 
 [node name="ZoneName" type="Control" unique_id=480929479]
@@ -90,4 +114,3 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=531526919]
 libraries/ = SubResource("AnimationLibrary_83ef3")
-autoplay = &"new_animation"

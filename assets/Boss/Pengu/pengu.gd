@@ -10,14 +10,14 @@ signal ice_cube(pos)
 
 var damage_taken : float
 
-@export var max_health = 2800.0
+@export var max_health = 7200.0
 
 var health = max_health:
 	set(value):
 		health = value
 		Globals.boss_health = health
 
-@export var exp_points:float = 200.0
+@export var exp_points:float = 700.0
 
 @export var speed:float = 100.0
 
